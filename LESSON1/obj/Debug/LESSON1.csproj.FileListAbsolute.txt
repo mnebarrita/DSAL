@@ -1,0 +1,13 @@
+C:\Users\Mica\source\repos\LESSON1\LESSON1\obj\Debug\LESSON1.csproj.AssemblyReference.cache
+C:\Users\Mica\source\repos\LESSON1\LESSON1\obj\Debug\LESSON1.Activity1.resources
+C:\Users\Mica\source\repos\LESSON1\LESSON1\obj\Debug\LESSON1.Properties.Resources.resources
+C:\Users\Mica\source\repos\LESSON1\LESSON1\obj\Debug\LESSON1.csproj.GenerateResource.cache
+C:\Users\Mica\source\repos\LESSON1\LESSON1\obj\Debug\LESSON1.csproj.CoreCompileInputs.cache
+C:\Users\Mica\source\repos\LESSON1\LESSON1\bin\Debug\LESSON1.exe.config
+C:\Users\Mica\source\repos\LESSON1\LESSON1\bin\Debug\LESSON1.exe
+C:\Users\Mica\source\repos\LESSON1\LESSON1\bin\Debug\LESSON1.pdb
+C:\Users\Mica\source\repos\LESSON1\LESSON1\obj\Debug\LESSON1.exe
+C:\Users\Mica\source\repos\LESSON1\LESSON1\obj\Debug\LESSON1.pdb
+C:\Users\Mica\source\repos\LESSON1\LESSON1\obj\Debug\LESSON1.exe.config
+C:\Users\Mica\source\repos\LESSON1\LESSON1\obj\Debug\LESSON1.Activity2.resources
+C:\Users\Mica\source\repos\LESSON1\LESSON1\obj\Debug\LESSON1.Activity3.resources
