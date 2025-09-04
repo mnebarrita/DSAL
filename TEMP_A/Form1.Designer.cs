@@ -66,12 +66,12 @@
             this.label21 = new System.Windows.Forms.Label();
             this.txtMiscFee = new System.Windows.Forms.TextBox();
             this.txtTuitionFee = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.txtTotalUnits = new System.Windows.Forms.TextBox();
+            this.txtCompLab1 = new System.Windows.Forms.TextBox();
+            this.txtTotalUnits1 = new System.Windows.Forms.TextBox();
             this.txtCreditUnits = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.txtCiscoLab1 = new System.Windows.Forms.TextBox();
+            this.txtExamBooklet1 = new System.Windows.Forms.TextBox();
+            this.txtTotalTuitionandFee1 = new System.Windows.Forms.TextBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.listBox3 = new System.Windows.Forms.ListBox();
@@ -97,16 +97,17 @@
             this.label34 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
-            this.textBox22 = new System.Windows.Forms.TextBox();
-            this.textBox23 = new System.Windows.Forms.TextBox();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.textBox25 = new System.Windows.Forms.TextBox();
+            this.txtCompLab2 = new System.Windows.Forms.TextBox();
+            this.txtCiscoLab2 = new System.Windows.Forms.TextBox();
+            this.txtExamBooklet2 = new System.Windows.Forms.TextBox();
+            this.txtTotalOtherFee = new System.Windows.Forms.TextBox();
             this.label37 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
-            this.textBox26 = new System.Windows.Forms.TextBox();
-            this.textBox27 = new System.Windows.Forms.TextBox();
+            this.txtTotalNumUnits = new System.Windows.Forms.TextBox();
+            this.txtTotalTuitionandFee2 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,6 +116,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(146, 114);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -124,7 +126,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
-            this.button1.Text = "browse";
+            this.button1.Text = "Browse";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -433,21 +435,21 @@
             this.txtTuitionFee.TabIndex = 12;
             this.txtTuitionFee.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
             // 
-            // textBox14
+            // txtCompLab1
             // 
-            this.textBox14.Location = new System.Drawing.Point(460, 214);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(209, 20);
-            this.textBox14.TabIndex = 12;
-            this.textBox14.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
+            this.txtCompLab1.Location = new System.Drawing.Point(460, 214);
+            this.txtCompLab1.Name = "txtCompLab1";
+            this.txtCompLab1.Size = new System.Drawing.Size(209, 20);
+            this.txtCompLab1.TabIndex = 12;
+            this.txtCompLab1.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
             // 
-            // txtTotalUnits
+            // txtTotalUnits1
             // 
-            this.txtTotalUnits.Location = new System.Drawing.Point(460, 189);
-            this.txtTotalUnits.Name = "txtTotalUnits";
-            this.txtTotalUnits.Size = new System.Drawing.Size(209, 20);
-            this.txtTotalUnits.TabIndex = 12;
-            this.txtTotalUnits.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
+            this.txtTotalUnits1.Location = new System.Drawing.Point(460, 189);
+            this.txtTotalUnits1.Name = "txtTotalUnits1";
+            this.txtTotalUnits1.Size = new System.Drawing.Size(209, 20);
+            this.txtTotalUnits1.TabIndex = 12;
+            this.txtTotalUnits1.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
             // 
             // txtCreditUnits
             // 
@@ -457,26 +459,29 @@
             this.txtCreditUnits.TabIndex = 12;
             this.txtCreditUnits.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
             // 
-            // textBox17
+            // txtCiscoLab1
             // 
-            this.textBox17.Location = new System.Drawing.Point(460, 287);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(209, 20);
-            this.textBox17.TabIndex = 13;
+            this.txtCiscoLab1.Location = new System.Drawing.Point(460, 287);
+            this.txtCiscoLab1.Name = "txtCiscoLab1";
+            this.txtCiscoLab1.Size = new System.Drawing.Size(209, 20);
+            this.txtCiscoLab1.TabIndex = 13;
+            this.txtCiscoLab1.TextChanged += new System.EventHandler(this.textBox17_TextChanged);
             // 
-            // textBox18
+            // txtExamBooklet1
             // 
-            this.textBox18.Location = new System.Drawing.Point(460, 313);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(209, 20);
-            this.textBox18.TabIndex = 14;
+            this.txtExamBooklet1.Location = new System.Drawing.Point(460, 313);
+            this.txtExamBooklet1.Name = "txtExamBooklet1";
+            this.txtExamBooklet1.Size = new System.Drawing.Size(209, 20);
+            this.txtExamBooklet1.TabIndex = 14;
+            this.txtExamBooklet1.TextChanged += new System.EventHandler(this.textBox18_TextChanged);
             // 
-            // textBox19
+            // txtTotalTuitionandFee1
             // 
-            this.textBox19.Location = new System.Drawing.Point(460, 339);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(209, 20);
-            this.textBox19.TabIndex = 15;
+            this.txtTotalTuitionandFee1.Location = new System.Drawing.Point(460, 339);
+            this.txtTotalTuitionandFee1.Name = "txtTotalTuitionandFee1";
+            this.txtTotalTuitionandFee1.Size = new System.Drawing.Size(209, 20);
+            this.txtTotalTuitionandFee1.TabIndex = 15;
+            this.txtTotalTuitionandFee1.TextChanged += new System.EventHandler(this.txtTotalTuitionandFee1_TextChanged);
             // 
             // listBox1
             // 
@@ -694,37 +699,38 @@
             this.label36.AutoSize = true;
             this.label36.Location = new System.Drawing.Point(15, 686);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(90, 13);
+            this.label36.Size = new System.Drawing.Size(125, 13);
             this.label36.TabIndex = 11;
-            this.label36.Text = "Total Tuition Fee:";
+            this.label36.Text = "Total Other School Fees:";
             // 
-            // textBox22
+            // txtCompLab2
             // 
-            this.textBox22.Location = new System.Drawing.Point(167, 616);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(189, 20);
-            this.textBox22.TabIndex = 34;
+            this.txtCompLab2.Location = new System.Drawing.Point(167, 616);
+            this.txtCompLab2.Name = "txtCompLab2";
+            this.txtCompLab2.Size = new System.Drawing.Size(189, 20);
+            this.txtCompLab2.TabIndex = 34;
+            this.txtCompLab2.TextChanged += new System.EventHandler(this.txtCompLab2_TextChanged);
             // 
-            // textBox23
+            // txtCiscoLab2
             // 
-            this.textBox23.Location = new System.Drawing.Point(167, 635);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(189, 20);
-            this.textBox23.TabIndex = 34;
+            this.txtCiscoLab2.Location = new System.Drawing.Point(167, 635);
+            this.txtCiscoLab2.Name = "txtCiscoLab2";
+            this.txtCiscoLab2.Size = new System.Drawing.Size(189, 20);
+            this.txtCiscoLab2.TabIndex = 34;
             // 
-            // textBox24
+            // txtExamBooklet2
             // 
-            this.textBox24.Location = new System.Drawing.Point(167, 653);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(189, 20);
-            this.textBox24.TabIndex = 34;
+            this.txtExamBooklet2.Location = new System.Drawing.Point(167, 653);
+            this.txtExamBooklet2.Name = "txtExamBooklet2";
+            this.txtExamBooklet2.Size = new System.Drawing.Size(189, 20);
+            this.txtExamBooklet2.TabIndex = 34;
             // 
-            // textBox25
+            // txtTotalOtherFee
             // 
-            this.textBox25.Location = new System.Drawing.Point(147, 679);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(209, 20);
-            this.textBox25.TabIndex = 35;
+            this.txtTotalOtherFee.Location = new System.Drawing.Point(147, 679);
+            this.txtTotalOtherFee.Name = "txtTotalOtherFee";
+            this.txtTotalOtherFee.Size = new System.Drawing.Size(209, 20);
+            this.txtTotalOtherFee.TabIndex = 35;
             // 
             // label37
             // 
@@ -744,23 +750,24 @@
             this.label38.TabIndex = 37;
             this.label38.Text = "Total Tuition and Fee:";
             // 
-            // textBox26
+            // txtTotalNumUnits
             // 
-            this.textBox26.Location = new System.Drawing.Point(503, 551);
-            this.textBox26.Name = "textBox26";
-            this.textBox26.Size = new System.Drawing.Size(209, 20);
-            this.textBox26.TabIndex = 38;
+            this.txtTotalNumUnits.Location = new System.Drawing.Point(503, 551);
+            this.txtTotalNumUnits.Name = "txtTotalNumUnits";
+            this.txtTotalNumUnits.Size = new System.Drawing.Size(209, 20);
+            this.txtTotalNumUnits.TabIndex = 38;
             // 
-            // textBox27
+            // txtTotalTuitionandFee2
             // 
-            this.textBox27.Location = new System.Drawing.Point(503, 575);
-            this.textBox27.Name = "textBox27";
-            this.textBox27.Size = new System.Drawing.Size(209, 20);
-            this.textBox27.TabIndex = 39;
+            this.txtTotalTuitionandFee2.Location = new System.Drawing.Point(503, 575);
+            this.txtTotalTuitionandFee2.Name = "txtTotalTuitionandFee2";
+            this.txtTotalTuitionandFee2.Size = new System.Drawing.Size(209, 20);
+            this.txtTotalTuitionandFee2.TabIndex = 39;
+            this.txtTotalTuitionandFee2.TextChanged += new System.EventHandler(this.txtTotalTuitionandFee2_TextChanged);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(568, 16);
+            this.button2.Location = new System.Drawing.Point(617, 11);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(101, 65);
             this.button2.TabIndex = 40;
@@ -770,29 +777,41 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(568, 89);
+            this.button3.Location = new System.Drawing.Point(510, 11);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(101, 61);
+            this.button3.Size = new System.Drawing.Size(101, 65);
             this.button3.TabIndex = 41;
             this.button3.Text = "New/Cancel";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.button5.Location = new System.Drawing.Point(510, 82);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(208, 68);
+            this.button5.TabIndex = 42;
+            this.button5.Text = "Calculate";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(725, 718);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox27);
-            this.Controls.Add(this.textBox26);
+            this.Controls.Add(this.txtTotalTuitionandFee2);
+            this.Controls.Add(this.txtTotalNumUnits);
             this.Controls.Add(this.label38);
             this.Controls.Add(this.label37);
-            this.Controls.Add(this.textBox25);
-            this.Controls.Add(this.textBox24);
-            this.Controls.Add(this.textBox23);
-            this.Controls.Add(this.textBox22);
+            this.Controls.Add(this.txtTotalOtherFee);
+            this.Controls.Add(this.txtExamBooklet2);
+            this.Controls.Add(this.txtCiscoLab2);
+            this.Controls.Add(this.txtCompLab2);
             this.Controls.Add(this.label35);
             this.Controls.Add(this.label34);
             this.Controls.Add(this.label33);
@@ -813,12 +832,12 @@
             this.Controls.Add(this.listBox3);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.textBox19);
-            this.Controls.Add(this.textBox18);
-            this.Controls.Add(this.textBox17);
+            this.Controls.Add(this.txtTotalTuitionandFee1);
+            this.Controls.Add(this.txtExamBooklet1);
+            this.Controls.Add(this.txtCiscoLab1);
             this.Controls.Add(this.txtCreditUnits);
-            this.Controls.Add(this.txtTotalUnits);
-            this.Controls.Add(this.textBox14);
+            this.Controls.Add(this.txtTotalUnits1);
+            this.Controls.Add(this.txtCompLab1);
             this.Controls.Add(this.txtTotalTuitionFee);
             this.Controls.Add(this.txtTuitionFee);
             this.Controls.Add(this.txtTotalMiscFee);
@@ -911,12 +930,12 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox txtMiscFee;
         private System.Windows.Forms.TextBox txtTuitionFee;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox txtTotalUnits;
+        private System.Windows.Forms.TextBox txtCompLab1;
+        private System.Windows.Forms.TextBox txtTotalUnits1;
         private System.Windows.Forms.TextBox txtCreditUnits;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.TextBox textBox19;
+        private System.Windows.Forms.TextBox txtCiscoLab1;
+        private System.Windows.Forms.TextBox txtExamBooklet1;
+        private System.Windows.Forms.TextBox txtTotalTuitionandFee1;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.ListBox listBox3;
@@ -942,16 +961,17 @@
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.TextBox textBox22;
-        private System.Windows.Forms.TextBox textBox23;
-        private System.Windows.Forms.TextBox textBox24;
-        private System.Windows.Forms.TextBox textBox25;
+        private System.Windows.Forms.TextBox txtCompLab2;
+        private System.Windows.Forms.TextBox txtCiscoLab2;
+        private System.Windows.Forms.TextBox txtExamBooklet2;
+        private System.Windows.Forms.TextBox txtTotalOtherFee;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.TextBox textBox26;
-        private System.Windows.Forms.TextBox textBox27;
+        private System.Windows.Forms.TextBox txtTotalNumUnits;
+        private System.Windows.Forms.TextBox txtTotalTuitionandFee2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button5;
     }
 }
 

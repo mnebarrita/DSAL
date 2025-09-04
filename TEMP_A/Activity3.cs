@@ -68,10 +68,13 @@ namespace Lesson2
             int qty;
             double price;
 
-            qty = Convert.ToInt32(qtyTxtbox.Text);
-            price = Convert.ToDouble(priceTxtbox.Text);
+            if (!int.TryParse(qtyTxtbox.Text, out qty) || !double.TryParse(priceTxtbox.Text, out price))
+            {
+                MessageBox.Show("Enter valid Quantity and Price first.");
+                return;
+            }
 
-            // assign values to the CLASS FIELDS
+            // Senior discount = 30%
             discount_amt = (qty * price) * 0.30;
             discounted_amt = (qty * price) - discount_amt;
 
@@ -87,19 +90,22 @@ namespace Lesson2
 
         private void regularRdbtn_CheckedChanged(object sender, EventArgs e)
         {
-            //Declaration of variables within a method of an obiect
             int qty;
-            double price, discount_amt, discounted_amt;
-            //convert string data from textboxes to numeric and place it as value of the variable
-            qty = Convert.ToInt32(qtyTxtbox.Text);
-            price = Convert.ToDouble(priceTxtbox.Text);
-            //create a formula needed for computation
+            double price;
+
+            if (!int.TryParse(qtyTxtbox.Text, out qty) || !double.TryParse(priceTxtbox.Text, out price))
+            {
+                MessageBox.Show("Enter valid Quantity and Price first.");
+                return;
+            }
+
+            // Regular discount = 10%
             discount_amt = (qty * price) * 0.10;
             discounted_amt = (qty * price) - discount_amt;
-            //converting numeric data to string and display it inside the textboxes
+
             discountTxtbox.Text = discount_amt.ToString("n");
             discountedTxtbox.Text = discounted_amt.ToString("n");
-            //codes for unchecking the other radio buttons in the interface once the senior citizen method executed
+
             senrRdbtn.Checked = false;
             EmployeeRdbtn.Checked = false;
             noTaxRdbtn.Checked = false;
@@ -108,19 +114,22 @@ namespace Lesson2
 
         private void EmployeeRdbtn_CheckedChanged(object sender, EventArgs e)
         {
-            //Declaration of variables within a method of an obiect
             int qty;
-            double price, discount_amt, discounted_amt;
-            //convert string data from textboxes to numeric and place it as value of the variable
-            qty = Convert.ToInt32(qtyTxtbox.Text);
-            price = Convert.ToDouble(priceTxtbox.Text);
-            //create a formula needed for computation
+            double price;
+
+            if (!int.TryParse(qtyTxtbox.Text, out qty) || !double.TryParse(priceTxtbox.Text, out price))
+            {
+                MessageBox.Show("Enter valid Quantity and Price first.");
+                return;
+            }
+
+            // Employee discount = 15%
             discount_amt = (qty * price) * 0.15;
             discounted_amt = (qty * price) - discount_amt;
-            //converting numeric data to string and display it inside the textboxes
+
             discountTxtbox.Text = discount_amt.ToString("n");
             discountedTxtbox.Text = discounted_amt.ToString("n");
-            //codes for unchecking the other radio buttons in the interface once the senior citizen method executed
+
             regularRdbtn.Checked = false;
             senrRdbtn.Checked = false;
             noTaxRdbtn.Checked = false;
@@ -129,19 +138,22 @@ namespace Lesson2
 
         private void noTaxRdbtn_CheckedChanged(object sender, EventArgs e)
         {
-            //Declaration of variables within a method of an obiect
             int qty;
-            double price, discount_amt, discounted_amt;
-            //convert string data from textboxes to numeric and place it as value of the variable
-            qty = Convert.ToInt32(qtyTxtbox.Text);
-            price = Convert.ToDouble(priceTxtbox.Text);
-            //create a formula needed for computation
-            discount_amt = (qty * price) * 0;
-            discounted_amt = (qty * price) - discount_amt;
-            //converting numeric data to string and display it inside the textboxes
+            double price;
+
+            if (!int.TryParse(qtyTxtbox.Text, out qty) || !double.TryParse(priceTxtbox.Text, out price))
+            {
+                MessageBox.Show("Enter valid Quantity and Price first.");
+                return;
+            }
+
+            // No tax = no discount
+            discount_amt = 0;
+            discounted_amt = (qty * price);
+
             discountTxtbox.Text = discount_amt.ToString("n");
             discountedTxtbox.Text = discounted_amt.ToString("n");
-            //codes for unchecking the other radio buttons in the interface once the senior citizen method executed
+
             regularRdbtn.Checked = false;
             EmployeeRdbtn.Checked = false;
             senrRdbtn.Checked = false;
