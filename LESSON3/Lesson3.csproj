@@ -52,6 +52,12 @@
     <Compile Include="Activity3.Designer.cs">
       <DependentUpon>Activity3.cs</DependentUpon>
     </Compile>
+    <Compile Include="EXAM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EXAM.Designer.cs">
+      <DependentUpon>EXAM.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Activity3.resx">
       <DependentUpon>Activity3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EXAM.resx">
+      <DependentUpon>EXAM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -85,6 +94,15 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Quiz &amp; Lesson 2 Activity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quiz &amp; Lesson 2 Activity.Designer.cs">
+      <DependentUpon>Quiz &amp; Lesson 2 Activity.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Quiz &amp; Lesson 2 Activity.resx">
+      <DependentUpon>Quiz &amp; Lesson 2 Activity.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -154,6 +172,66 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Images\vlzoyixmollaak59yyal.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images_Pizza\amanos.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images_Pizza\cauliflower crust.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images_Pizza\dominos.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images_Pizza\hawaii.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images_Pizza\NYPizza.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images_Pizza\pepperoni.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images_Pizza\pizza 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images_Pizza\pizza 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images_Pizza\pizza 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images_Pizza\pizza 4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images_Pizza\pizza 5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images_Pizza\pizza 6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images_Pizza\pizza 7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images_Pizza\pizza 8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images_Pizza\pizza 9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images_Pizza\pizza barbeque.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images_Pizza\pizza special a.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images_Pizza\pizza special b.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images_Pizza\pizza special c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images_Pizza\pizza special d.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
