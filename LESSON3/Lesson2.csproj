@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Activity2.cs">
+    <Compile Include="Activity3.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Activity2.Designer.cs">
-      <DependentUpon>Activity2.cs</DependentUpon>
+    <Compile Include="Activity3.Designer.cs">
+      <DependentUpon>Activity3.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -60,8 +60,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Activity2.resx">
-      <DependentUpon>Activity2.cs</DependentUpon>
+    <EmbeddedResource Include="Activity3.resx">
+      <DependentUpon>Activity3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -74,6 +74,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -87,6 +88,72 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\bekye2rwrh17qakvnjj3.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\EX-O-Valorant-skins-1024x576.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\FoodBundleA.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\FoodBundleB.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\gaia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\glitchpop.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\ion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\lbmwngpvfuqpymso2vcg.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Mystbloom-Valorant-1024x576.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\prime.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\qy8btojo07yxijxt0bm6.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\radiantcrisis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\SOL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\splashx-valorant-skins-1024x576.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Untitled-design-2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Valorant-Doombringer-skins-1024x576.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\valorant-kuronami-skinline.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Valorant-Nocturnum-skins-1024x576.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\valorant-Primordium-skinline.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Valorant-skin-bundle-header-img-1024x576.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\valorant-zedd-spectrum-skins-scaled.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\vlzoyixmollaak59yyal.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
