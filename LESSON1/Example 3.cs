@@ -148,5 +148,10 @@ namespace LESSON1
         {
 
         }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
