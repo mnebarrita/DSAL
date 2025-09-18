@@ -17,6 +17,99 @@ namespace LESSON5
         {
             InitializeComponent();
         }
+        // ================================
+        // SSS CONTRIBUTION (2025 Table)
+        // ================================
+        private double GetSSSContribution(double grossIncome)
+        {
+            if (grossIncome < 5250) return 250;
+            else if (grossIncome <= 5749.99) return 275;
+            else if (grossIncome <= 6249.99) return 300;
+            else if (grossIncome <= 6749.99) return 325;
+            else if (grossIncome <= 7249.99) return 350;
+            else if (grossIncome <= 7749.99) return 375;
+            else if (grossIncome <= 8249.99) return 400;
+            else if (grossIncome <= 8749.99) return 425;
+            else if (grossIncome <= 9249.99) return 450;
+            else if (grossIncome <= 9749.99) return 475;
+            else if (grossIncome <= 10249.99) return 500;
+            else if (grossIncome <= 10749.99) return 525;
+            else if (grossIncome <= 11249.99) return 550;
+            else if (grossIncome <= 11749.99) return 575;
+            else if (grossIncome <= 12249.99) return 600;
+            else if (grossIncome <= 12749.99) return 625;
+            else if (grossIncome <= 13249.99) return 650;
+            else if (grossIncome <= 13749.99) return 675;
+            else if (grossIncome <= 14249.99) return 700;
+            else if (grossIncome <= 14749.99) return 725;
+            else if (grossIncome <= 15249.99) return 750;
+            else if (grossIncome <= 15749.99) return 775;
+            else if (grossIncome <= 16249.99) return 800;
+            else if (grossIncome <= 16749.99) return 825;
+            else if (grossIncome <= 17249.99) return 850;
+            else if (grossIncome <= 17749.99) return 875;
+            else if (grossIncome <= 18249.99) return 900;
+            else if (grossIncome <= 18749.99) return 925;
+            else if (grossIncome <= 19249.99) return 950;
+            else if (grossIncome <= 19749.99) return 975;
+            else if (grossIncome <= 20249.99) return 1000;
+            else if (grossIncome <= 20749.99) return 1025;
+            else if (grossIncome <= 21249.99) return 1050;
+            else if (grossIncome <= 21749.99) return 1075;
+            else if (grossIncome <= 22249.99) return 1100;
+            else if (grossIncome <= 22749.99) return 1125;
+            else if (grossIncome <= 23249.99) return 1150;
+            else if (grossIncome <= 23749.99) return 1175;
+            else if (grossIncome <= 24249.99) return 1200;
+            else if (grossIncome <= 24749.99) return 1225;
+            else if (grossIncome <= 25249.99) return 1250;
+            else if (grossIncome <= 25749.99) return 1275;
+            else if (grossIncome <= 26249.99) return 1300;
+            else if (grossIncome <= 26749.99) return 1325;
+            else if (grossIncome <= 27249.99) return 1350;
+            else if (grossIncome <= 27749.99) return 1375;
+            else if (grossIncome <= 28249.99) return 1400;
+            else if (grossIncome <= 28749.99) return 1425;
+            else if (grossIncome <= 29249.99) return 1450;
+            else if (grossIncome <= 29749.99) return 1475;
+            else if (grossIncome <= 30249.99) return 1500;
+            else if (grossIncome <= 30749.99) return 1525;
+            else if (grossIncome <= 31249.99) return 1550;
+            else if (grossIncome <= 31749.99) return 1575;
+            else if (grossIncome <= 32249.99) return 1600;
+            else if (grossIncome <= 32749.99) return 1625;
+            else if (grossIncome <= 33249.99) return 1650;
+            else if (grossIncome <= 33749.99) return 1675;
+            else if (grossIncome <= 34249.99) return 1700;
+            else return 1725; // for >= 34750
+
+
+        }
+        // ================================
+        // PHILHEALTH CONTRIBUTION
+        // ================================
+        private double GetPhilHealth(double grossIncome)
+        {
+            double contrib = grossIncome * 0.05; // 5%
+            if (contrib < 500) contrib = 500;
+            if (contrib > 5000) contrib = 5000;
+            return contrib;
+        }
+
+        // ================================
+        // WITHHOLDING TAX (Semi-Monthly)
+        // ================================
+        private double GetWithholdingTax(double grossIncome)
+        {
+            // Simplified TRAIN law (semi-monthly version)
+            if (grossIncome <= 10417) return 0;
+            else if (grossIncome <= 16666) return (grossIncome - 10417) * 0.20;
+            else if (grossIncome <= 33333) return 1250 + (grossIncome - 16666) * 0.25;
+            else if (grossIncome <= 83333) return 5416.67 + (grossIncome - 33333) * 0.30;
+            else if (grossIncome <= 333333) return 20416.67 + (grossIncome - 83333) * 0.32;
+            else return 100416.67 + (grossIncome - 333333) * 0.35;
+        }
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -80,6 +173,19 @@ namespace LESSON5
             // --- GROSS INCOME ---
             double grossIncome = basicIncome + honorIncome + otherIncome;
             grossincome.Text = grossIncome.ToString("F2");
+
+            // --- REGULAR DEDUCTIONS (auto-fill when pressing gross) ---
+            double sss = GetSSSContribution(grossIncome);
+            double philhealth = GetPhilHealth(grossIncome);
+            double pagibig = 200; // semi-monthly fixed
+            double incomeTax = GetWithholdingTax(grossIncome);
+
+            // Display to textboxes
+            SSSctrb.Text = sss.ToString("F2");
+            phctrb.Text = philhealth.ToString("F2");
+            pagibigctrb.Text = pagibig.ToString("F2");
+            incometaxctrb.Text = incomeTax.ToString("F2");
+
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -193,86 +299,21 @@ namespace LESSON5
             payslip.lblSSS.Text = SSSctrb.Text;
             payslip.lblPhilHealth.Text = phctrb.Text;
             payslip.lblWithholdingTax.Text = incometaxctrb.Text;
-            payslip.lblHDMF.Text = "200";
+            payslip.lblHDMF.Text = "200";   // Pag-IBIG
             payslip.lblSSSWISP.Text = "750.00";
 
-            // Totals Section (optional – depends on your form design)
-            payslip.lblEarnings.Text = grossincome.Text;
-            payslip.lblDeductions.Text = totaldeductions.Text;
-            payslip.lblOvertime_bs.Text = netincome.Text;
+            // Totals Section (middle part)
+            payslip.lblEarnings.Text = grossincome.Text;         // total earnings
+            payslip.lblDeductions.Text = totaldeductions.Text;   // total deductions
+            payslip.lblOvertime_bs.Text = incomepercutoff_oi.Text; // overtime amount only
+
+            // Bottom Section (summary)
+            payslip.lblGrossEarnings.Text = grossincome.Text;
+            payslip.lbltotaldeductions.Text = totaldeductions.Text;
+            payslip.lblnetpay.Text = netincome.Text;
 
             // Show the Payslip window
             payslip.Show();
         }
     }
 }
-
-/*
-// --- SSS CONTRIBUTION (matches the table starting at <5250) ---
-private decimal ComputeSSSContribution(decimal grossIncome)
-{
-    // start at <5250 as in your image (employee share = 250)
-    if (grossIncome < 5250m) return 250.00m;
-    else if (grossIncome <= 5749.99m) return 275.00m;
-    else if (grossIncome <= 6249.99m) return 300.00m;
-    else if (grossIncome <= 6749.99m) return 325.00m;
-    else if (grossIncome <= 7249.99m) return 350.00m;
-    else if (grossIncome <= 7749.99m) return 375.00m;
-    else if (grossIncome <= 8249.99m) return 400.00m;
-    else if (grossIncome <= 8749.99m) return 425.00m;
-    else if (grossIncome <= 9249.99m) return 450.00m;
-    else if (grossIncome <= 9749.99m) return 475.00m;
-    else if (grossIncome <= 10249.99m) return 500.00m;
-    else if (grossIncome <= 10749.99m) return 525.00m;
-    else if (grossIncome <= 11249.99m) return 550.00m;
-    else if (grossIncome <= 11749.99m) return 575.00m;
-    else if (grossIncome <= 12249.99m) return 600.00m;
-    else if (grossIncome <= 12749.99m) return 625.00m;
-    else if (grossIncome <= 13249.99m) return 650.00m;
-    else if (grossIncome <= 13749.99m) return 675.00m;
-    else if (grossIncome <= 14249.99m) return 700.00m;
-    else if (grossIncome <= 14749.99m) return 725.00m;
-    else if (grossIncome <= 15249.99m) return 750.00m;
-    else if (grossIncome <= 15749.99m) return 775.00m;
-    else if (grossIncome <= 16249.99m) return 800.00m;
-    else if (grossIncome <= 16749.99m) return 825.00m;
-    else if (grossIncome <= 17249.99m) return 850.00m;
-    else if (grossIncome <= 17749.99m) return 875.00m;
-    else if (grossIncome <= 18249.99m) return 900.00m;
-    else if (grossIncome <= 18749.99m) return 925.00m;
-    else if (grossIncome <= 19249.99m) return 950.00m;
-    else if (grossIncome <= 19749.99m) return 975.00m;
-    else if (grossIncome <= 20249.99m) return 1000.00m;
-    else if (grossIncome <= 20749.99m) return 1025.00m;
-    else if (grossIncome <= 21249.99m) return 1050.00m;
-    else if (grossIncome <= 21749.99m) return 1075.00m;
-    else if (grossIncome <= 22249.99m) return 1100.00m;
-    else if (grossIncome <= 22749.99m) return 1125.00m;
-    else if (grossIncome <= 23249.99m) return 1150.00m;
-    else if (grossIncome <= 23749.99m) return 1175.00m;
-    else if (grossIncome <= 24249.99m) return 1200.00m;
-    else if (grossIncome <= 24749.99m) return 1225.00m;
-    else if (grossIncome <= 25249.99m) return 1250.00m;
-    else if (grossIncome <= 25749.99m) return 1275.00m;
-    else if (grossIncome <= 26249.99m) return 1300.00m;
-    else if (grossIncome <= 26749.99m) return 1325.00m;
-    else if (grossIncome <= 27249.99m) return 1350.00m;
-    else if (grossIncome <= 27749.99m) return 1375.00m;
-    else if (grossIncome <= 28249.99m) return 1400.00m;
-    else if (grossIncome <= 28749.99m) return 1425.00m;
-    else if (grossIncome <= 29249.99m) return 1450.00m;
-    else if (grossIncome <= 29749.99m) return 1475.00m;
-    else if (grossIncome <= 30249.99m) return 1500.00m;
-    else if (grossIncome <= 30749.99m) return 1525.00m;
-    else if (grossIncome <= 31249.99m) return 1550.00m;
-    else if (grossIncome <= 31749.99m) return 1575.00m;
-    else if (grossIncome <= 32249.99m) return 1600.00m;
-    else if (grossIncome <= 32749.99m) return 1625.00m;
-    else if (grossIncome <= 33249.99m) return 1650.00m;
-    else if (grossIncome <= 33749.99m) return 1675.00m;
-    else if (grossIncome <= 34249.99m) return 1700.00m;
-    else if (grossIncome <= 34749.99m) return 1725.00m;
-    else return 1725.00m; // max cap
-}
-
-    /*
