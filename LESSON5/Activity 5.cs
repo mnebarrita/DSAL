@@ -101,7 +101,7 @@ namespace LESSON5
         // ================================
         private double GetWithholdingTax(double grossIncome)
         {
-            // Simplified TRAIN law (semi-monthly version)
+            // Simplified TRAIN law (semi-monthly)
             if (grossIncome <= 10417) return 0;
             else if (grossIncome <= 16666) return (grossIncome - 10417) * 0.20;
             else if (grossIncome <= 33333) return 1250 + (grossIncome - 16666) * 0.25;

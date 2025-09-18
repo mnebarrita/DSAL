@@ -19,13 +19,13 @@ namespace LESSON5
         private double deductions;
         private double overtime;
 
-        // Constructor that accepts values
+        // Constructor 
         public PayslipForm(double grossEarnings, double totalDeductions, double netPay,
                            double earnings, double deductions, double overtime)
         {
             InitializeComponent();
 
-            // Store the values in the private fields
+            // Store the values 
             this.grossEarnings = grossEarnings;
             this.totalDeductions = totalDeductions;
             this.netPay = netPay;
