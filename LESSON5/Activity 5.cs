@@ -81,7 +81,7 @@ namespace LESSON5
             else if (grossIncome <= 33249.99) return 1650;
             else if (grossIncome <= 33749.99) return 1675;
             else if (grossIncome <= 34249.99) return 1700;
-            else return 1725; // for >= 34750
+            else return 1750; // for >= 34750
 
 
         }

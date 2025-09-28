@@ -52,6 +52,12 @@
     <Compile Include="Activity 5.Designer.cs">
       <DependentUpon>Activity 5.cs</DependentUpon>
     </Compile>
+    <Compile Include="L5Example1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="L5Example1.Designer.cs">
+      <DependentUpon>L5Example1.cs</DependentUpon>
+    </Compile>
     <Compile Include="PayslipForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Activity 5.resx">
       <DependentUpon>Activity 5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="L5Example1.resx">
+      <DependentUpon>L5Example1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PayslipForm.resx">
       <DependentUpon>PayslipForm.cs</DependentUpon>
