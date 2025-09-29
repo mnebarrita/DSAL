@@ -1,6 +1,6 @@
-﻿namespace Lesson2
+﻿namespace mainsystem
 {
-    partial class Activity2
+    partial class L2E3
     {
         /// <summary>
         /// Required designer variable.
@@ -801,7 +801,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Activity2";
             this.Text = "Activity2";
-            this.Load += new System.EventHandler(this.Activity2_Load);
+            this.Load += new System.EventHandler(this.L2_Activity2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

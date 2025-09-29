@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace Lesson2
 {
-    public partial class Activity2 : Form
+    public partial class L2E3 : Form
     {
         private double qty_total = 0;
         private double discount_totalgiven = 0;
         private double discounted_total = 0;
-        public Activity2()
+        public L2E3()
         {
             InitializeComponent();
         }

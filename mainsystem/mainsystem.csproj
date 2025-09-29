@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D7522AC3-17FE-43F7-A457-F4BEBDE14B8C}</ProjectGuid>
+    <ProjectGuid>{84CE7757-1CC5-498E-B325-C4C52A711E67}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Lesson2</RootNamespace>
-    <AssemblyName>Lesson2</AssemblyName>
+    <RootNamespace>mainsystem</RootNamespace>
+    <AssemblyName>mainsystem</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="L2E3.cs">
+    <Compile Include="EXAM[ERROR].cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="L2E3.Designer.cs">
-      <DependentUpon>L2E3.cs</DependentUpon>
+    <Compile Include="EXAM[ERROR].Designer.cs">
+      <DependentUpon>EXAM[ERROR].cs</DependentUpon>
+    </Compile>
+    <Compile Include="L4Activity 4_PrintFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="L4Activity 4_PrintFrm.Designer.cs">
+      <DependentUpon>L4Activity 4_PrintFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="L3Activity3[ERROR].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="L3Activity3[ERROR].Designer.cs">
+      <DependentUpon>L3Activity3[ERROR].cs</DependentUpon>
     </Compile>
     <Compile Include="L2Activity2.cs">
       <SubType>Form</SubType>
@@ -58,13 +70,67 @@
     <Compile Include="L2Activity2.Designer.cs">
       <DependentUpon>L2Activity2.cs</DependentUpon>
     </Compile>
+    <Compile Include="L2E3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="L2E3.Designer.cs">
+      <DependentUpon>L2E3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="L1E3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="L1E3.Designer.cs">
+      <DependentUpon>L1E3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="L1E2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="L1E2.Designer.cs">
+      <DependentUpon>L1E2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="L1E1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="L1E1.Designer.cs">
+      <DependentUpon>L1E1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="L2E3.resx">
-      <DependentUpon>L2E3.cs</DependentUpon>
+    <Compile Include="L3Quiz &amp; Lesson 2 Activity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="L3Quiz &amp; Lesson 2 Activity.Designer.cs">
+      <DependentUpon>L3Quiz &amp; Lesson 2 Activity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="L3Transfer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="L3Transfer.Designer.cs">
+      <DependentUpon>L3Transfer.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="EXAM[ERROR].resx">
+      <DependentUpon>EXAM[ERROR].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="L4Activity 4_PrintFrm.resx">
+      <DependentUpon>L4Activity 4_PrintFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="L3Activity3[ERROR].resx">
+      <DependentUpon>L3Activity3[ERROR].cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="L2Activity2.resx">
       <DependentUpon>L2Activity2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="L2E3.resx">
+      <DependentUpon>L2E3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="L1E3.resx">
+      <DependentUpon>L1E3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="L1E2.resx">
+      <DependentUpon>L1E2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="L1E1.resx">
+      <DependentUpon>L1E1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -75,6 +141,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="L3Quiz &amp; Lesson 2 Activity.resx">
+      <DependentUpon>L3Quiz &amp; Lesson 2 Activity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="L3Transfer.resx">
+      <DependentUpon>L3Transfer.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

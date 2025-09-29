@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Lesson2
+namespace mainsystem
 {
     internal static class Program
     {
@@ -16,7 +16,7 @@ namespace Lesson2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new L2Activity2());
+            Application.Run(new Quiz1());
         }
     }
 }
