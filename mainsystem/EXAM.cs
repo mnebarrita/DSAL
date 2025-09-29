@@ -2,48 +2,33 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Lesson2
+namespace mainsystem
 {
     public partial class EXAM : Form
     {
         private double total_amount = 0;
         private int total_qty = 0;
-
         public EXAM()
         {
             InitializeComponent();
         }
-
-                private bool TryParseDouble(string text, out double value)
+        private bool TryParseDouble(string text, out double value)
         {
             return double.TryParse(
                 text.Replace("P", "").Replace(",", "").Replace(" ", "").Trim(),
                 out value
             );
         }
-
         private bool TryParseInt(string text, out int value)
         {
             return int.TryParse(text.Trim(), out value);
         }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox11_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void EXAM_Load(object sender, EventArgs e)
         {
             // DISABLING TEXTBOXES
@@ -67,12 +52,7 @@ namespace Lesson2
             B_HawaiiancheckBox.Checked = false;
         }
 
-        private void pictureBox18_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        private void foodARdbt_CheckedChanged(object sender, EventArgs e)
         {
             double price;
             // change form background
@@ -142,17 +122,12 @@ namespace Lesson2
             displayListbox.Items.Add("Discount Amount: " + discountTxtbox.Text);
         }
 
-        private void displayListbox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             double cash_given, change, total_amountPaid;
             cash_given = Convert.ToDouble(cashTxtbox.Text);
             total_amountPaid = Convert.ToDouble(totalBillsTxtbox.Text);
-            
+
             /*if (!TryParseDouble(cashTxtbox.Text, out cash_given) ||
                 !TryParseDouble(totalBillsTxtbox.Text, out total_amountPaid))
             {
@@ -165,6 +140,7 @@ namespace Lesson2
             displayListbox.Items.Add("Total Bills: " + " " + totalBillsTxtbox.Text);
             displayListbox.Items.Add("Cash Given: " + " " + cashTxtbox.Text);
             displayListbox.Items.Add("Total No. Of Items: " + " " + totalQtyTxtbox.Text);
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -172,11 +148,6 @@ namespace Lesson2
             Activity_4_PrintFrm print = new Activity_4_PrintFrm();
             print.printdisplayListbox.Items.AddRange(displayListbox.Items);
             print.Show();
-        }
-
-        private void DisplayPictureBox_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -252,13 +223,5 @@ namespace Lesson2
             totalBillsTxtbox.Text = total_amount.ToString("n");
             discountedTxtbox.Text = discounted_amount.ToString("n");
         }
-
-        private void totalBillsTxtbox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        // all your checkBoxX_CheckedChanged remain as is...
-        // (I didn’t modify them because they’re already consistent with TryParseDouble if needed)
     }
 }

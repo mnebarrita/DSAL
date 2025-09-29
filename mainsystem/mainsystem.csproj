@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>mainsystem.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,23 +49,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EXAM[ERROR].cs">
+    <Compile Include="Activity 5.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EXAM[ERROR].Designer.cs">
-      <DependentUpon>EXAM[ERROR].cs</DependentUpon>
+    <Compile Include="Activity 5.Designer.cs">
+      <DependentUpon>Activity 5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EXAM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EXAM.Designer.cs">
+      <DependentUpon>EXAM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="L3Activity3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="L3Activity3.Designer.cs">
+      <DependentUpon>L3Activity3.cs</DependentUpon>
     </Compile>
     <Compile Include="L4Activity 4_PrintFrm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="L4Activity 4_PrintFrm.Designer.cs">
       <DependentUpon>L4Activity 4_PrintFrm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="L3Activity3[ERROR].cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="L3Activity3[ERROR].Designer.cs">
-      <DependentUpon>L3Activity3[ERROR].cs</DependentUpon>
     </Compile>
     <Compile Include="L2Activity2.cs">
       <SubType>Form</SubType>
@@ -94,6 +103,24 @@
     <Compile Include="L1E1.Designer.cs">
       <DependentUpon>L1E1.cs</DependentUpon>
     </Compile>
+    <Compile Include="L5Example1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="L5Example1.Designer.cs">
+      <DependentUpon>L5Example1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="L6MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="L6MainForm.Designer.cs">
+      <DependentUpon>L6MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PayslipForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayslipForm.Designer.cs">
+      <DependentUpon>PayslipForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="L3Quiz &amp; Lesson 2 Activity.cs">
@@ -108,14 +135,17 @@
     <Compile Include="L3Transfer.Designer.cs">
       <DependentUpon>L3Transfer.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="EXAM[ERROR].resx">
-      <DependentUpon>EXAM[ERROR].cs</DependentUpon>
+    <EmbeddedResource Include="Activity 5.resx">
+      <DependentUpon>Activity 5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EXAM.resx">
+      <DependentUpon>EXAM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="L3Activity3.resx">
+      <DependentUpon>L3Activity3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="L4Activity 4_PrintFrm.resx">
       <DependentUpon>L4Activity 4_PrintFrm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="L3Activity3[ERROR].resx">
-      <DependentUpon>L3Activity3[ERROR].cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="L2Activity2.resx">
       <DependentUpon>L2Activity2.cs</DependentUpon>
@@ -132,6 +162,15 @@
     <EmbeddedResource Include="L1E1.resx">
       <DependentUpon>L1E1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="L5Example1.resx">
+      <DependentUpon>L5Example1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="L6MainForm.resx">
+      <DependentUpon>L6MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayslipForm.resx">
+      <DependentUpon>PayslipForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -140,6 +179,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="L3Quiz &amp; Lesson 2 Activity.resx">
       <DependentUpon>L3Quiz &amp; Lesson 2 Activity.cs</DependentUpon>
@@ -159,6 +199,144 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WIN_20250923_11_05_27_Pro.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Doombringer-skins-1024x576.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\elderflame.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\evori dreamwings.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\EX-O-Valorant-skins-1024x576.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\FoodBundleA.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\FoodBundleB.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\gaia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\glitchpop.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\ion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\kuronami-skinline.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Mystbloom-Valorant-1024x576.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Nocturnum-skins-1024x576.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\prelude.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\prime.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Primordium-skinline.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\protocol.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\radiantcrisis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\RES.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\RGX.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\SOL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\spectrum-skins-scaled.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\splashx-valorant-skins-1024x576.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images_Pizza\amanos.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images_Pizza\cauliflower crust.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images_Pizza\clear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images_Pizza\dominos.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images_Pizza\FoodBundleA.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images_Pizza\FoodBundleB.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images_Pizza\hawaii.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images_Pizza\NYPizza.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images_Pizza\pepperoni.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images_Pizza\pizza 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images_Pizza\pizza 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images_Pizza\pizza 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images_Pizza\pizza 4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images_Pizza\pizza 5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images_Pizza\pizza 6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images_Pizza\pizza 7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images_Pizza\pizza 8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images_Pizza\pizza 9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images_Pizza\pizza barbeque.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images_Pizza\pizza special a.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images_Pizza\pizza special b.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images_Pizza\pizza special c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images_Pizza\pizza special d.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

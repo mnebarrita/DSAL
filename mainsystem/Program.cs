@@ -16,7 +16,7 @@ namespace mainsystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Quiz1());
+            Application.Run(new EXAM());
         }
     }
 }
