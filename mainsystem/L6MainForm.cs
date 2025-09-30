@@ -19,7 +19,7 @@ namespace mainsystem
 
         private void cashier1ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            L2E3 newMDIChild = new L2E3();
+            L3Activity3 newMDIChild = new L3Activity3();
             newMDIChild.MdiParent = this;
             newMDIChild.Show();
         }
@@ -127,6 +127,11 @@ namespace mainsystem
             L2E3 newMDIChild = new L2E3();
             newMDIChild.MdiParent = this;
             newMDIChild.Show();
+        }
+
+        private void payrollToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

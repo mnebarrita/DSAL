@@ -120,6 +120,7 @@
             this.payrollToolStripMenuItem.Name = "payrollToolStripMenuItem";
             this.payrollToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.payrollToolStripMenuItem.Text = "Payroll";
+            this.payrollToolStripMenuItem.Click += new System.EventHandler(this.payrollToolStripMenuItem_Click);
             // 
             // employeeInformationToolStripMenuItem
             // 
