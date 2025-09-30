@@ -44,8 +44,6 @@
             this.cashier2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.simplePOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.userAccountPageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.payrolApplicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.employeeRegistrationPageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,10 +57,10 @@
             this.cascadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.otherWorksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quizToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.activity1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.activity2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.activity3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.activity5ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.miFloValoIncToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.miFloValoBundlesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -82,7 +80,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(756, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1924, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -100,10 +98,8 @@
             // pOSAdministratorToolStripMenuItem
             // 
             this.pOSAdministratorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.activity1ToolStripMenuItem,
-            this.activity2ToolStripMenuItem,
-            this.activity3ToolStripMenuItem,
-            this.activity5ToolStripMenuItem});
+            this.miFloValoIncToolStripMenuItem,
+            this.miFloValoBundlesToolStripMenuItem});
             this.pOSAdministratorToolStripMenuItem.Name = "pOSAdministratorToolStripMenuItem";
             this.pOSAdministratorToolStripMenuItem.Size = new System.Drawing.Size(117, 20);
             this.pOSAdministratorToolStripMenuItem.Text = "POS Administrator";
@@ -163,7 +159,7 @@
             this.toolStripButton2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(756, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(1924, 27);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -201,24 +197,6 @@
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(24, 24);
-            this.toolStripButton1.Text = "toolStripButton1";
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(24, 24);
-            this.toolStripButton2.Text = "toolStripButton2";
-            // 
             // userAccountPageToolStripMenuItem
             // 
             this.userAccountPageToolStripMenuItem.Name = "userAccountPageToolStripMenuItem";
@@ -242,31 +220,31 @@
             // salesReportsToolStripMenuItem
             // 
             this.salesReportsToolStripMenuItem.Name = "salesReportsToolStripMenuItem";
-            this.salesReportsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salesReportsToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.salesReportsToolStripMenuItem.Text = "Sales Reports";
             // 
             // productsReportsToolStripMenuItem
             // 
             this.productsReportsToolStripMenuItem.Name = "productsReportsToolStripMenuItem";
-            this.productsReportsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.productsReportsToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.productsReportsToolStripMenuItem.Text = "Products Reports";
             // 
             // employeeReportsToolStripMenuItem
             // 
             this.employeeReportsToolStripMenuItem.Name = "employeeReportsToolStripMenuItem";
-            this.employeeReportsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.employeeReportsToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.employeeReportsToolStripMenuItem.Text = "Employee Reports";
             // 
             // payrolReportsToolStripMenuItem
             // 
             this.payrolReportsToolStripMenuItem.Name = "payrolReportsToolStripMenuItem";
-            this.payrolReportsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.payrolReportsToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.payrolReportsToolStripMenuItem.Text = "Payrol Reports";
             // 
             // userReportsToolStripMenuItem
             // 
             this.userReportsToolStripMenuItem.Name = "userReportsToolStripMenuItem";
-            this.userReportsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.userReportsToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.userReportsToolStripMenuItem.Text = "User Reports";
             // 
             // tileVerticalToolStripMenuItem
@@ -305,39 +283,41 @@
             this.quizToolStripMenuItem.Text = "Quiz";
             this.quizToolStripMenuItem.Click += new System.EventHandler(this.quizToolStripMenuItem_Click);
             // 
-            // activity1ToolStripMenuItem
+            // toolStripButton1
             // 
-            this.activity1ToolStripMenuItem.Name = "activity1ToolStripMenuItem";
-            this.activity1ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.activity1ToolStripMenuItem.Text = "Activity 1";
-            this.activity1ToolStripMenuItem.Click += new System.EventHandler(this.activity1ToolStripMenuItem_Click);
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButton1.Text = "toolStripButton1";
             // 
-            // activity2ToolStripMenuItem
+            // toolStripButton2
             // 
-            this.activity2ToolStripMenuItem.Name = "activity2ToolStripMenuItem";
-            this.activity2ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.activity2ToolStripMenuItem.Text = "Activity 2";
-            this.activity2ToolStripMenuItem.Click += new System.EventHandler(this.activity2ToolStripMenuItem_Click);
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButton2.Text = "toolStripButton2";
             // 
-            // activity3ToolStripMenuItem
+            // miFloValoIncToolStripMenuItem
             // 
-            this.activity3ToolStripMenuItem.Name = "activity3ToolStripMenuItem";
-            this.activity3ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.activity3ToolStripMenuItem.Text = "Activity 3";
-            this.activity3ToolStripMenuItem.Click += new System.EventHandler(this.activity3ToolStripMenuItem_Click);
+            this.miFloValoIncToolStripMenuItem.Name = "miFloValoIncToolStripMenuItem";
+            this.miFloValoIncToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.miFloValoIncToolStripMenuItem.Text = "MiFlo Valo Inc.";
             // 
-            // activity5ToolStripMenuItem
+            // miFloValoBundlesToolStripMenuItem
             // 
-            this.activity5ToolStripMenuItem.Name = "activity5ToolStripMenuItem";
-            this.activity5ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.activity5ToolStripMenuItem.Text = "Activity 5";
-            this.activity5ToolStripMenuItem.Click += new System.EventHandler(this.activity5ToolStripMenuItem_Click);
+            this.miFloValoBundlesToolStripMenuItem.Name = "miFloValoBundlesToolStripMenuItem";
+            this.miFloValoBundlesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.miFloValoBundlesToolStripMenuItem.Text = "MiFlo Valo Bundles";
             // 
             // L6MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(756, 366);
+            this.ClientSize = new System.Drawing.Size(1924, 1061);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
@@ -345,6 +325,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "L6MainForm";
             this.Text = "L6MainForm";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
@@ -385,9 +366,7 @@
         private System.Windows.Forms.ToolStripMenuItem cascadeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem otherWorksToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quizToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem activity1ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem activity2ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem activity3ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem activity5ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem miFloValoIncToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem miFloValoBundlesToolStripMenuItem;
     }
 }

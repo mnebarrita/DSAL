@@ -513,6 +513,16 @@ namespace mainsystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap thumb_1920_1205937 {
+            get {
+                object obj = ResourceManager.GetObject("thumb-1920-1205937", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap WIN_20250923_11_05_27_Pro {
             get {
                 object obj = ResourceManager.GetObject("WIN_20250923_11_05_27_Pro", resourceCulture);

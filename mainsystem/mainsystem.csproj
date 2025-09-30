@@ -338,5 +338,8 @@
   <ItemGroup>
     <None Include="Images_Pizza\pizza special d.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thumb-1920-1205937.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
