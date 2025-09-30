@@ -16,7 +16,7 @@ namespace mainsystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new EXAM());
+            Application.Run(new L5Example1());
         }
     }
 }

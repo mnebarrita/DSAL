@@ -29,33 +29,55 @@ namespace mainsystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // store username -> password pairs
-            var accounts = new Dictionary<string, string>()
-    {
-        { "Accounting", "AccountingPass123" },
-        { "Admin", "AdminPass123" },
-        { "Cashier1", "cash1pass" },
-        { "Cashier2", "cash2pass" }
-    };
+            string Admin, AdminPass,
+                Cashier1, Cashier1Pass,
+                Cashier2, Cashier2Pass,
+                Accounting, AccountingPass;
 
-            string enteredUser = usernameTxtbox.Text.Trim();
-            string enteredPass = passwordTxtbox.Text;
+            Admin = "Admin";
+            AdminPass = "Admin";
 
-            // verify credentials
-            if (accounts.TryGetValue(enteredUser, out string correctPass) && enteredPass == correctPass)
+            Cashier1 = "Cashier1";
+            Cashier1Pass = "Cashier1";
+
+            Cashier2 = "Cashier2";
+            Cashier2Pass = "Cashier2";
+
+            Accounting = "Accounting";
+            AccountingPass = "AccountingPass";
+
+            if (usernameTxtbox.Text == Admin && passwordTxtbox.Text == AdminPass)
             {
-                MessageBox.Show("Welcome!!!");
-                L5Example1 adminfrm = new L5Example1();
-                adminfrm.Show();
-                this.Hide();
+                L6MainForm newMDIChild = new L6MainForm();
+                newMDIChild.Show();
+            }
+            else if (usernameTxtbox.Text == Cashier1 && passwordTxtbox.Text == Cashier1Pass)
+            {
+                Activity1 newMDIChild = new Activity1();
+                newMDIChild.Show();
+            }
+            else if (usernameTxtbox.Text == Cashier2 && passwordTxtbox.Text == Cashier2Pass)
+            {
+                Activity2 newMDIChild = new Activity2();
+                newMDIChild.Show();
+            }
+            else if (usernameTxtbox.Text == Accounting && passwordTxtbox.Text == AccountingPass)
+            {
+                EXAM newMDIChild = new EXAM();
+                newMDIChild.Show();
             }
             else
             {
-                MessageBox.Show("Login Failed", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                usernameTxtbox.Clear();
-                passwordTxtbox.Clear();
-                usernameTxtbox.Focus();
+                MessageBox.Show("Wrong password or Username, try again",
+                        "Login Failed",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
             }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
