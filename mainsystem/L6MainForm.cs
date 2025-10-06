@@ -26,7 +26,7 @@ namespace mainsystem
 
         private void cashier2ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Activity2 newMDIChild = new Activity2();
+            Activity3 newMDIChild = new Activity3();
             newMDIChild.MdiParent = this;
             newMDIChild.Show();
         }
@@ -130,6 +130,11 @@ namespace mainsystem
         }
 
         private void payrollToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void L6MainForm_Load(object sender, EventArgs e)
         {
 
         }

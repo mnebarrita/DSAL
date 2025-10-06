@@ -323,5 +323,10 @@ namespace Lesson2
             itemnameTxtbox.Text = "Primordium";
             priceTxtbox.Text = "8700";
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
