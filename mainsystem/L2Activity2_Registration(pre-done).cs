@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace mainsystem
 {
-    public partial class L2Activity2 : Form
+    public partial class L2Activity2_Cashier : Form
     {
-        public L2Activity2()
+        public L2Activity2_Cashier()
         {
             InitializeComponent();
             // This is the correct place to add items to the ComboBox.

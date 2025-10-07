@@ -10,8 +10,10 @@ using System.Windows.Forms;
 
 namespace mainsystem
 {
+
     public partial class L3Activity3 : Form
     {
+        private bool isLoading = true;
         // Running totals
         private double qty_total = 0;
         private double discount_totalgiven = 0;
@@ -27,7 +29,9 @@ namespace mainsystem
         }
         private void L3Activity3_Load(object sender, EventArgs e)
         {
-            // codes for disabling textboxes
+            isLoading = true;
+
+        // codes for disabling textboxes
             itemnameTxtbox.Enabled = false;
             priceTxtbox.Enabled = false;
             discountedTxtbox.Enabled = false;
@@ -41,6 +45,8 @@ namespace mainsystem
             noTaxRdbtn.Checked = true;
 
             this.AcceptButton = button1;
+
+            isLoading = false;
         }
 
         private void ComputeDiscounts()
@@ -86,86 +92,65 @@ namespace mainsystem
 
         private void pictureBox2_Click_1(object sender, EventArgs e)
         {
-            SelectItem("Prelude to Chaos", 8700);
-            itemnameTxtbox.Text = "Gaia Bundle";
-            priceTxtbox.Text = "10500";
+            SelectItem("Gaia Bundle", 10500);
         }
 
         private void pictureBox3_Click_1(object sender, EventArgs e)
         {
-            SelectItem("Prelude to Chaos", 8700);
-            itemnameTxtbox.Text = "Glitchpop Bundle";
-            priceTxtbox.Text = "8700";
+            SelectItem("Glitchpop Bundle", 8700);
         }
 
         private void pictureBox4_Click_1(object sender, EventArgs e)
         {
-            SelectItem("Prelude to Chaos", 8700); 
-            itemnameTxtbox.Text = "Ion Bundle";
-            priceTxtbox.Text = "8700";
+            SelectItem("Ion Bundle", 8700);
         }
 
         private void pictureBox6_Click_1(object sender, EventArgs e)
         {
-            SelectItem("Prelude to Chaos", 8700); 
-            itemnameTxtbox.Text = "Protocol 781-A";
-            priceTxtbox.Text = "9900";
+            SelectItem("Protocol 781-A", 9900); 
+            itemnameTxtbox.Text = "";
+            priceTxtbox.Text = "";
         }
 
         private void pictureBox7_Click_1(object sender, EventArgs e)
         {
-            SelectItem("Prelude to Chaos", 8700);
-            itemnameTxtbox.Text = "Mystbloom Bundle";
-            priceTxtbox.Text = "8700";
+            SelectItem("Mystbloom Bundle", 8700);
         }
 
         private void pictureBox8_Click_1(object sender, EventArgs e)
         {
-            SelectItem("Prelude to Chaos", 8700); 
-            itemnameTxtbox.Text = "Prime Bundle";
-            priceTxtbox.Text = "7100";
+            SelectItem("Prime Bundle", 7100); 
         }
 
         private void pictureBox9_Click_1(object sender, EventArgs e)
         {
-            SelectItem("Prelude to Chaos", 8700); 
-            itemnameTxtbox.Text = "Radiant Entertainment System";
-            priceTxtbox.Text = "11900";
+            SelectItem("Radiant Entertainment System", 11900);
         }
 
         private void pictureBox10_Click_1(object sender, EventArgs e)
         {
-            SelectItem("Prelude to Chaos", 8700); 
-            itemnameTxtbox.Text = "Radiant Crisis Bundle";
-            priceTxtbox.Text = "7100";
+            SelectItem("Radiant Crisis Bundle", 7100); 
         }
 
         private void pictureBox11_Click_1(object sender, EventArgs e)
         {
-            SelectItem("Prelude to Chaos", 8700); 
-            itemnameTxtbox.Text = "Sentinels of Light Bundle";
-            priceTxtbox.Text = "8700";
+            SelectItem("Sentinels of Light Bundle", 8700);
         }
 
         private void pictureBox12_Click_1(object sender, EventArgs e)
         {
-            SelectItem("Prelude to Chaos", 8700); 
-            itemnameTxtbox.Text = "SplashX";
-            priceTxtbox.Text = "6700";
+            SelectItem("SplashX", 6700);
         }
 
         private void pictureBox13_Click_1(object sender, EventArgs e)
         {
-            SelectItem("Prelude to Chaos", 8700); 
-            itemnameTxtbox.Text = "RGX 11z Pro";
-            priceTxtbox.Text = "6700";
+            SelectItem("RGX 11z Pro", 6700); 
+            
         }
 
         private void pictureBox14_Click_1(object sender, EventArgs e)
         {
-            SelectItem("Prelude to Chaos", 8700); 
-            itemnameTxtbox.Text = "Doombringer";
-            priceTxtbox.Text = "8700";
+            SelectItem("Doombringer", 8700);
         }
 
         private void pictureBox15_Click_1(object sender, EventArgs e)
@@ -177,36 +162,27 @@ namespace mainsystem
 
         private void pictureBox16_Click_1(object sender, EventArgs e)
         {
-            SelectItem("Prelude to Chaos", 8700); 
-            itemnameTxtbox.Text = "Zedd X Valorant SPECTRUM";
-            priceTxtbox.Text = "10700";
+            SelectItem("Zedd X Valorant SPECTRUM", 10700); 
         }
 
         private void pictureBox17_Click_1(object sender, EventArgs e)
         {
-            SelectItem("Prelude to Chaos", 8700); 
-            itemnameTxtbox.Text = "Elderflame";
-            priceTxtbox.Text = "9900";
+            SelectItem("Elderflame", 9900);
         }
 
         private void pictureBox18_Click_1(object sender, EventArgs e)
         {
-            SelectItem("Prelude to Chaos", 8700); 
-            itemnameTxtbox.Text = "Evori Dreamwings";
-            priceTxtbox.Text = "9900";
+            SelectItem("Evori Dreamwings", 9900);
         }
 
         private void pictureBox19_Click_1(object sender, EventArgs e)
         {
-            itemnameTxtbox.Text = "Nocturnum";
-            priceTxtbox.Text = "8700";
+            SelectItem("Nocturnum", 8700);
         }
 
         private void pictureBox20_Click_1(object sender, EventArgs e)
         {
-            SelectItem("Prelude to Chaos", 8700); 
-            itemnameTxtbox.Text = "Primordium";
-            priceTxtbox.Text = "8700";
+            SelectItem("Primordium", 8700);
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -301,6 +277,8 @@ namespace mainsystem
 
         private void senrRdbtn_CheckedChanged(object sender, EventArgs e)
         {
+            if (isLoading) return; // 🚫 Skip during form load
+
             if (senrRdbtn.Checked)
             {
                 discountRate = 0.30; // Senior = 30%
@@ -310,6 +288,8 @@ namespace mainsystem
 
         private void regularRdbtn_CheckedChanged(object sender, EventArgs e)
         {
+            if (isLoading) return; // 🚫 Skip during form load
+
             if (regularRdbtn.Checked)
             {
                 discountRate = 0.10; // Regular = 10%
@@ -319,6 +299,8 @@ namespace mainsystem
 
         private void EmployeeRdbtn_CheckedChanged(object sender, EventArgs e)
         {
+            if (isLoading) return; // 🚫 Skip during form load
+
             if (EmployeeRdbtn.Checked)
             {
                 discountRate = 0.15; // Employee = 15%
@@ -328,6 +310,8 @@ namespace mainsystem
 
         private void noTaxRdbtn_CheckedChanged(object sender, EventArgs e)
         {
+            if (isLoading) return; // 🚫 Skip during form load
+
             if (noTaxRdbtn.Checked)
             {
                 discountRate = 0.00; // None

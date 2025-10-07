@@ -49,23 +49,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Activity 5.cs">
+    <Compile Include="L5Activity 5_Payroll.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Activity 5.Designer.cs">
-      <DependentUpon>Activity 5.cs</DependentUpon>
+    <Compile Include="L5Activity 5_Payroll.Designer.cs">
+      <DependentUpon>L5Activity 5_Payroll.cs</DependentUpon>
     </Compile>
-    <Compile Include="EXAM.cs">
+    <Compile Include="EXAM_Cashier.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EXAM.Designer.cs">
-      <DependentUpon>EXAM.cs</DependentUpon>
+    <Compile Include="EXAM_Cashier.Designer.cs">
+      <DependentUpon>EXAM_Cashier.cs</DependentUpon>
     </Compile>
-    <Compile Include="L3Activity3.cs">
+    <Compile Include="L3Activity3_Cashier%28pre-done%29.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="L3Activity3.Designer.cs">
-      <DependentUpon>L3Activity3.cs</DependentUpon>
+    <Compile Include="L3Activity3_Cashier%28pre-done%29.Designer.cs">
+      <DependentUpon>L3Activity3_Cashier%28pre-done%29.cs</DependentUpon>
     </Compile>
     <Compile Include="L4Activity 4_PrintFrm.cs">
       <SubType>Form</SubType>
@@ -73,17 +73,11 @@
     <Compile Include="L4Activity 4_PrintFrm.Designer.cs">
       <DependentUpon>L4Activity 4_PrintFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="L2Activity2.cs">
+    <Compile Include="L2Activity2_Registration%28pre-done%29.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="L2Activity2.Designer.cs">
-      <DependentUpon>L2Activity2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="L2E3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="L2E3.Designer.cs">
-      <DependentUpon>L2E3.cs</DependentUpon>
+    <Compile Include="L2Activity2_Registration%28pre-done%29.Designer.cs">
+      <DependentUpon>L2Activity2_Registration%28pre-done%29.cs</DependentUpon>
     </Compile>
     <Compile Include="L1E3.cs">
       <SubType>Form</SubType>
@@ -103,17 +97,17 @@
     <Compile Include="L1E1.Designer.cs">
       <DependentUpon>L1E1.cs</DependentUpon>
     </Compile>
-    <Compile Include="L5Example1.cs">
+    <Compile Include="L5E1_Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="L5Example1.Designer.cs">
-      <DependentUpon>L5Example1.cs</DependentUpon>
+    <Compile Include="L5E1_Login.Designer.cs">
+      <DependentUpon>L5E1_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="L6MainForm.cs">
+    <Compile Include="L6MainForm_Admin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="L6MainForm.Designer.cs">
-      <DependentUpon>L6MainForm.cs</DependentUpon>
+    <Compile Include="L6MainForm_Admin.Designer.cs">
+      <DependentUpon>L6MainForm_Admin.cs</DependentUpon>
     </Compile>
     <Compile Include="PayslipForm.cs">
       <SubType>Form</SubType>
@@ -123,11 +117,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="L3Quiz &amp; Lesson 2 Activity.cs">
+    <Compile Include="L3Quiz_Registration.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="L3Quiz &amp; Lesson 2 Activity.Designer.cs">
-      <DependentUpon>L3Quiz &amp; Lesson 2 Activity.cs</DependentUpon>
+    <Compile Include="L3Quiz_Registration.Designer.cs">
+      <DependentUpon>L3Quiz_Registration.cs</DependentUpon>
     </Compile>
     <Compile Include="L3Transfer.cs">
       <SubType>Form</SubType>
@@ -135,23 +129,23 @@
     <Compile Include="L3Transfer.Designer.cs">
       <DependentUpon>L3Transfer.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Activity 5.resx">
-      <DependentUpon>Activity 5.cs</DependentUpon>
+    <Compile Include="TransparentPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="L5Activity 5_Payroll.resx">
+      <DependentUpon>L5Activity 5_Payroll.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EXAM.resx">
-      <DependentUpon>EXAM.cs</DependentUpon>
+    <EmbeddedResource Include="EXAM_Cashier.resx">
+      <DependentUpon>EXAM_Cashier.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="L3Activity3.resx">
-      <DependentUpon>L3Activity3.cs</DependentUpon>
+    <EmbeddedResource Include="L3Activity3_Cashier%28pre-done%29.resx">
+      <DependentUpon>L3Activity3_Cashier%28pre-done%29.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="L4Activity 4_PrintFrm.resx">
       <DependentUpon>L4Activity 4_PrintFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="L2Activity2.resx">
-      <DependentUpon>L2Activity2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="L2E3.resx">
-      <DependentUpon>L2E3.cs</DependentUpon>
+    <EmbeddedResource Include="L2Activity2_Registration%28pre-done%29.resx">
+      <DependentUpon>L2Activity2_Registration%28pre-done%29.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="L1E3.resx">
       <DependentUpon>L1E3.cs</DependentUpon>
@@ -162,11 +156,11 @@
     <EmbeddedResource Include="L1E1.resx">
       <DependentUpon>L1E1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="L5Example1.resx">
-      <DependentUpon>L5Example1.cs</DependentUpon>
+    <EmbeddedResource Include="L5E1_Login.resx">
+      <DependentUpon>L5E1_Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="L6MainForm.resx">
-      <DependentUpon>L6MainForm.cs</DependentUpon>
+    <EmbeddedResource Include="L6MainForm_Admin.resx">
+      <DependentUpon>L6MainForm_Admin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PayslipForm.resx">
       <DependentUpon>PayslipForm.cs</DependentUpon>
@@ -181,8 +175,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="L3Quiz &amp; Lesson 2 Activity.resx">
-      <DependentUpon>L3Quiz &amp; Lesson 2 Activity.cs</DependentUpon>
+    <EmbeddedResource Include="L3Quiz_Registration.resx">
+      <DependentUpon>L3Quiz_Registration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="L3Transfer.resx">
       <DependentUpon>L3Transfer.cs</DependentUpon>
@@ -340,6 +334,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\thumb-1920-1205937.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0ff6826e-4429-4892-8b5d-e5fa75f4f18e.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\84a2abf7b1934c0fe9d9a6ae62780c40.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Excitebike Windows Login Screen.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1123550.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

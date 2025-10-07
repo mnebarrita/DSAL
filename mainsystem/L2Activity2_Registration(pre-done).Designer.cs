@@ -1,6 +1,6 @@
 ﻿namespace mainsystem
 {
-    partial class L2Activity2
+    partial class L2Activity2_Cashier
     {
         /// <summary>
         /// Required designer variable.

@@ -298,6 +298,7 @@
             // 
             // changeTxtbox
             // 
+            this.changeTxtbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
             this.changeTxtbox.Location = new System.Drawing.Point(296, 37);
             this.changeTxtbox.Margin = new System.Windows.Forms.Padding(4);
             this.changeTxtbox.Name = "changeTxtbox";

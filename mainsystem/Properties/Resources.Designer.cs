@@ -63,6 +63,36 @@ namespace mainsystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _0ff6826e_4429_4892_8b5d_e5fa75f4f18e {
+            get {
+                object obj = ResourceManager.GetObject("0ff6826e-4429-4892-8b5d-e5fa75f4f18e", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1123550 {
+            get {
+                object obj = ResourceManager.GetObject("1123550", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _84a2abf7b1934c0fe9d9a6ae62780c40 {
+            get {
+                object obj = ResourceManager.GetObject("84a2abf7b1934c0fe9d9a6ae62780c40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap amanos {
             get {
                 object obj = ResourceManager.GetObject("amanos", resourceCulture);
@@ -113,6 +143,26 @@ namespace mainsystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap download {
+            get {
+                object obj = ResourceManager.GetObject("download", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap download1 {
+            get {
+                object obj = ResourceManager.GetObject("download1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap elderflame {
             get {
                 object obj = ResourceManager.GetObject("elderflame", resourceCulture);
@@ -136,6 +186,16 @@ namespace mainsystem.Properties {
         internal static System.Drawing.Bitmap EX_O_Valorant_skins_1024x576 {
             get {
                 object obj = ResourceManager.GetObject("EX-O-Valorant-skins-1024x576", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Excitebike_Windows_Login_Screen {
+            get {
+                object obj = ResourceManager.GetObject("Excitebike Windows Login Screen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -1,6 +1,6 @@
 ﻿namespace mainsystem
 {
-    partial class EXAM
+    partial class EXAM_Cashier
     {
         /// <summary>
         /// Required designer variable.

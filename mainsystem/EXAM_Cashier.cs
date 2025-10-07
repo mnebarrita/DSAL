@@ -12,7 +12,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace mainsystem
 {
-    public partial class EXAM : Form
+    public partial class EXAM_Cashier : Form
     {
         private double total_amount = 0;
         private int total_qty = 0;
@@ -21,7 +21,7 @@ namespace mainsystem
         private int currentItemLastQuantity = 0;
         private double currentItemLastAmount = 0.0;
         private bool updatingQuantity = false;
-        public EXAM()
+        public EXAM_Cashier()
         {
             InitializeComponent();
         }
