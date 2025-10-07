@@ -13,103 +13,35 @@ namespace mainsystem
 {
     public partial class Payroll_FunctionForm : Form
     {
+        // ---- Contribution Tables ----
+        private readonly double[] philRanges = {
+            10000, 11000, 12000, 13000, 14000, 15000, 16000, 17000, 18000, 19000, 20000,
+            21000, 22000, 23000, 24000, 25000, 26000, 27000, 28000, 29000, 30000,
+            31000, 32000, 33000, 34000, 35000, 36000, 37000, 38000, 39000
+        };
+        private readonly double[] philAmounts = {
+            137.50, 151.25, 165.00, 178.75, 192.50, 206.25, 220.00, 233.75, 247.50, 261.25,
+            275.25, 288.75, 302.50, 316.25, 330.00, 343.75, 357.50, 371.25, 385.00, 398.75,
+            412.50, 426.25, 440.00, 453.75, 467.50, 481.25, 495.00, 508.75, 522.50, 536.25
+        };
+
+        private readonly double[] sssRanges = {
+            1000, 1249.99, 1749.99, 2249.99, 2749.99, 3249.99, 3749.99, 4249.99,
+            4749.99, 5249.99, 5749.99, 6249.99, 6749.99, 7249.99, 7749.99, 8249.99,
+            8749.99, 9249.99, 9749.99, 10249.99, 10749.99, 11249.99, 11749.99, 12249.99,
+            12749.99, 13249.99, 13749.99, 14249.99, 14749.99, 15249.99, 15749.99, 16249.99
+        };
+        private readonly double[] sssAmounts = {
+            0.00, 36.30, 54.50, 72.70, 90.80, 109.00, 127.20, 145.30,
+            163.50, 181.70, 199.80, 218.00, 236.20, 254.30, 272.50, 290.70,
+            308.80, 327.00, 345.20, 363.30, 381.50, 399.70, 417.80, 436.00,
+            454.20, 472.30, 490.50, 508.70, 526.80, 545.00, 563.20, 581.30
+        };
+
         public Payroll_FunctionForm()
         {
             InitializeComponent();
         }
-        // ================================
-        // SSS CONTRIBUTION (2025 Table)
-        // ================================
-        private double GetSSSContribution(double grossIncome)
-        {
-            if (grossIncome < 5250) return 250;
-            else if (grossIncome <= 5749.99) return 275;
-            else if (grossIncome <= 6249.99) return 300;
-            else if (grossIncome <= 6749.99) return 325;
-            else if (grossIncome <= 7249.99) return 350;
-            else if (grossIncome <= 7749.99) return 375;
-            else if (grossIncome <= 8249.99) return 400;
-            else if (grossIncome <= 8749.99) return 425;
-            else if (grossIncome <= 9249.99) return 450;
-            else if (grossIncome <= 9749.99) return 475;
-            else if (grossIncome <= 10249.99) return 500;
-            else if (grossIncome <= 10749.99) return 525;
-            else if (grossIncome <= 11249.99) return 550;
-            else if (grossIncome <= 11749.99) return 575;
-            else if (grossIncome <= 12249.99) return 600;
-            else if (grossIncome <= 12749.99) return 625;
-            else if (grossIncome <= 13249.99) return 650;
-            else if (grossIncome <= 13749.99) return 675;
-            else if (grossIncome <= 14249.99) return 700;
-            else if (grossIncome <= 14749.99) return 725;
-            else if (grossIncome <= 15249.99) return 750;
-            else if (grossIncome <= 15749.99) return 775;
-            else if (grossIncome <= 16249.99) return 800;
-            else if (grossIncome <= 16749.99) return 825;
-            else if (grossIncome <= 17249.99) return 850;
-            else if (grossIncome <= 17749.99) return 875;
-            else if (grossIncome <= 18249.99) return 900;
-            else if (grossIncome <= 18749.99) return 925;
-            else if (grossIncome <= 19249.99) return 950;
-            else if (grossIncome <= 19749.99) return 975;
-            else if (grossIncome <= 20249.99) return 1000;
-            else if (grossIncome <= 20749.99) return 1025;
-            else if (grossIncome <= 21249.99) return 1050;
-            else if (grossIncome <= 21749.99) return 1075;
-            else if (grossIncome <= 22249.99) return 1100;
-            else if (grossIncome <= 22749.99) return 1125;
-            else if (grossIncome <= 23249.99) return 1150;
-            else if (grossIncome <= 23749.99) return 1175;
-            else if (grossIncome <= 24249.99) return 1200;
-            else if (grossIncome <= 24749.99) return 1225;
-            else if (grossIncome <= 25249.99) return 1250;
-            else if (grossIncome <= 25749.99) return 1275;
-            else if (grossIncome <= 26249.99) return 1300;
-            else if (grossIncome <= 26749.99) return 1325;
-            else if (grossIncome <= 27249.99) return 1350;
-            else if (grossIncome <= 27749.99) return 1375;
-            else if (grossIncome <= 28249.99) return 1400;
-            else if (grossIncome <= 28749.99) return 1425;
-            else if (grossIncome <= 29249.99) return 1450;
-            else if (grossIncome <= 29749.99) return 1475;
-            else if (grossIncome <= 30249.99) return 1500;
-            else if (grossIncome <= 30749.99) return 1525;
-            else if (grossIncome <= 31249.99) return 1550;
-            else if (grossIncome <= 31749.99) return 1575;
-            else if (grossIncome <= 32249.99) return 1600;
-            else if (grossIncome <= 32749.99) return 1625;
-            else if (grossIncome <= 33249.99) return 1650;
-            else if (grossIncome <= 33749.99) return 1675;
-            else if (grossIncome <= 34249.99) return 1700;
-            else return 1750; // for >= 34750
-
-
-        }
-        // ================================
-        // PHILHEALTH CONTRIBUTION
-        // ================================
-        private double GetPhilHealth(double grossIncome)
-        {
-            double contrib = grossIncome * 0.05; // 5%
-            if (contrib < 500) contrib = 500;
-            if (contrib > 5000) contrib = 5000;
-            return contrib;
-        }
-
-        // ================================
-        // WITHHOLDING TAX (Semi-Monthly)
-        // ================================
-        private double GetWithholdingTax(double grossIncome)
-        {
-            // Simplified TRAIN law (semi-monthly)
-            if (grossIncome <= 10417) return 0;
-            else if (grossIncome <= 16666) return (grossIncome - 10417) * 0.20;
-            else if (grossIncome <= 33333) return 1250 + (grossIncome - 16666) * 0.25;
-            else if (grossIncome <= 83333) return 5416.67 + (grossIncome - 33333) * 0.30;
-            else if (grossIncome <= 333333) return 20416.67 + (grossIncome - 83333) * 0.32;
-            else return 100416.67 + (grossIncome - 333333) * 0.35;
-        }
-
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -133,8 +65,24 @@ namespace mainsystem
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            CenterPanel();
+            this.Resize += (s, ev) => CenterPanel(); // recenter when form resizes
 
+            // disable computed fields
+            incomepercutoff_bi.Enabled = false;
+            incomepercutoff_hi.Enabled = false;
+            incomepercutoff_oi.Enabled = false;
+            grossincome.Enabled = false;
+            totaldeductions.Enabled = false;
+            netincome.Enabled = false;
         }
+
+        private void CenterPanel()
+        {
+         //   panelMain.Left = (this.ClientSize.Width - panelMain.Width) / 2;
+          //  panelMain.Top = (this.ClientSize.Height - panelMain.Height) / 2;
+        }
+
         // ================================
         // GROSS INCOME BUTTON
         // ================================
@@ -144,8 +92,8 @@ namespace mainsystem
             double basicRate = 0, basicHours = 0, basicIncome = 0;
             if (rph_bi.Text != "" && numhrspercutoff_bi.Text != "")
             {
-                basicRate = Convert.ToDouble(rph_bi.Text);
-                basicHours = Convert.ToDouble(numhrspercutoff_bi.Text);
+                double.TryParse(rph_bi.Text, out basicRate);
+                double.TryParse(numhrspercutoff_bi.Text, out basicHours);
                 basicIncome = basicRate * basicHours;
                 incomepercutoff_bi.Text = basicIncome.ToString("F2");
             }
@@ -314,6 +262,54 @@ namespace mainsystem
 
             // Show the Payslip window
             payslip.Show();
+        }
+        // ================================
+        // HELPER FUNCTIONS (SSS, PHILHEALTH, TAX)
+        // ================================
+
+        // ------------------------
+        // SSS Computation
+        // ------------------------
+        private double GetSSSContribution(double income)
+        {
+            for (int i = 0; i < sssRanges.Length; i++)
+            {
+                if (income <= sssRanges[i])
+                    return sssAmounts[i];
+            }
+            return sssAmounts[sssAmounts.Length - 1];
+        }
+
+        // ------------------------
+        // PhilHealth Computation
+        // ------------------------
+        private double GetPhilHealth(double income)
+        {
+            for (int i = 0; i < philRanges.Length; i++)
+            {
+                if (income <= philRanges[i])
+                    return philAmounts[i];
+            }
+            return philAmounts[philAmounts.Length - 1];
+        }
+
+        // ------------------------
+        // Withholding Tax (Simplified)
+        // ------------------------
+        private double GetWithholdingTax(double income)
+        {
+            if (income <= 20832)
+                return 0;
+            else if (income <= 33333)
+                return (income - 20833) * 0.20;
+            else if (income <= 66667)
+                return 2500 + (income - 33333) * 0.25;
+            else if (income <= 166667)
+                return 10833 + (income - 66667) * 0.30;
+            else if (income <= 666667)
+                return 40833 + (income - 166667) * 0.32;
+            else
+                return 200833 + (income - 666667) * 0.35;
         }
     }
 }
