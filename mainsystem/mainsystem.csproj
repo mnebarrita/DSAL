@@ -49,6 +49,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Payroll_FunctionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payroll_FunctionForm.Designer.cs">
+      <DependentUpon>Payroll_FunctionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POS1_FunctionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POS1_FunctionForm.Designer.cs">
+      <DependentUpon>POS1_FunctionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POS2_FunctionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POS2_FunctionForm.Designer.cs">
+      <DependentUpon>POS2_FunctionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="L3Activity3_Cashier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="L3Activity3_Cashier.Designer.cs">
+      <DependentUpon>L3Activity3_Cashier.cs</DependentUpon>
+    </Compile>
     <Compile Include="L5Activity 5_Payroll.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,12 +84,6 @@
     </Compile>
     <Compile Include="EXAM_Cashier.Designer.cs">
       <DependentUpon>EXAM_Cashier.cs</DependentUpon>
-    </Compile>
-    <Compile Include="L3Activity3_Cashier%28pre-done%29.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="L3Activity3_Cashier%28pre-done%29.Designer.cs">
-      <DependentUpon>L3Activity3_Cashier%28pre-done%29.cs</DependentUpon>
     </Compile>
     <Compile Include="L4Activity 4_PrintFrm.cs">
       <SubType>Form</SubType>
@@ -132,14 +150,23 @@
     <Compile Include="TransparentPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="Payroll_FunctionForm.resx">
+      <DependentUpon>Payroll_FunctionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POS1_FunctionForm.resx">
+      <DependentUpon>POS1_FunctionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POS2_FunctionForm.resx">
+      <DependentUpon>POS2_FunctionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="L3Activity3_Cashier.resx">
+      <DependentUpon>L3Activity3_Cashier.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="L5Activity 5_Payroll.resx">
       <DependentUpon>L5Activity 5_Payroll.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EXAM_Cashier.resx">
       <DependentUpon>EXAM_Cashier.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="L3Activity3_Cashier%28pre-done%29.resx">
-      <DependentUpon>L3Activity3_Cashier%28pre-done%29.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="L4Activity 4_PrintFrm.resx">
       <DependentUpon>L4Activity 4_PrintFrm.cs</DependentUpon>

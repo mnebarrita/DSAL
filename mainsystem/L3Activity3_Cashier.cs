@@ -156,8 +156,6 @@ namespace mainsystem
         private void pictureBox15_Click_1(object sender, EventArgs e)
         {
             SelectItem("Prelude to Chaos", 8700); 
-            itemnameTxtbox.Text = "Kuronami Bundle";
-            priceTxtbox.Text = "9500";
         }
 
         private void pictureBox16_Click_1(object sender, EventArgs e)

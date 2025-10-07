@@ -15,12 +15,14 @@ namespace mainsystem
         public L6MainForm_Admin()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterParent;
         }
 
         private void cashier1ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             L3Activity3 newMDIChild = new L3Activity3();
             newMDIChild.MdiParent = this;
+            newMDIChild.WindowState = FormWindowState.Maximized;
             newMDIChild.Show();
         }
 
@@ -28,6 +30,8 @@ namespace mainsystem
         {
             EXAM_Cashier newMDIChild = new EXAM_Cashier();
             newMDIChild.MdiParent = this;
+            this.FormBorderStyle = FormBorderStyle.None;
+            newMDIChild.WindowState = FormWindowState.Maximized;
             newMDIChild.Show();
         }
 
@@ -35,6 +39,7 @@ namespace mainsystem
         {
             Activity1 newMDIChild = new Activity1();
             newMDIChild.MdiParent = this;
+            newMDIChild.WindowState = FormWindowState.Maximized;
             newMDIChild.Show();
         }
 
@@ -47,6 +52,7 @@ namespace mainsystem
         {
             Activity5 newMDIChild = new Activity5();
             newMDIChild.MdiParent = this;
+            newMDIChild.WindowState = FormWindowState.Maximized;
             newMDIChild.Show();
         }
         private void tileVerticalToolStripMenuItem_Click(object sender, EventArgs e)
@@ -78,6 +84,7 @@ namespace mainsystem
         {
             Quiz1 newMDIChild = new Quiz1();
             newMDIChild.MdiParent = this;
+            newMDIChild.WindowState = FormWindowState.Maximized;
             newMDIChild.Show();
         }
 
@@ -85,6 +92,7 @@ namespace mainsystem
         {
             Activity1 newMDIChild = new Activity1();
             newMDIChild.MdiParent = this;
+            newMDIChild.WindowState = FormWindowState.Maximized;
             newMDIChild.Show();
         }
 
@@ -92,6 +100,7 @@ namespace mainsystem
         {
             Activity2 newMDIChild = new Activity2();
             newMDIChild.MdiParent = this;
+            newMDIChild.WindowState = FormWindowState.Maximized;
             newMDIChild.Show();
         }
 
@@ -99,6 +108,7 @@ namespace mainsystem
         {
             Activity3 newMDIChild = new Activity3();
             newMDIChild.MdiParent = this;
+            newMDIChild.WindowState = FormWindowState.Maximized;
             newMDIChild.Show();
         }
 
@@ -106,6 +116,7 @@ namespace mainsystem
         {
             L2Activity2_Cashier newMDIChild = new L2Activity2_Cashier();
             newMDIChild.MdiParent = this;
+            newMDIChild.WindowState = FormWindowState.Maximized;
             newMDIChild.Show();
         }
 
@@ -113,6 +124,7 @@ namespace mainsystem
         {
             L3Activity3 newMDIChild = new L3Activity3();
             newMDIChild.MdiParent = this;
+            newMDIChild.WindowState = FormWindowState.Maximized;
             newMDIChild.Show();
         }
 
@@ -125,6 +137,7 @@ namespace mainsystem
         {
             L3Activity3 newMDIChild = new L3Activity3();
             newMDIChild.MdiParent = this;
+            newMDIChild.WindowState = FormWindowState.Maximized;
             newMDIChild.Show();
         }
 
@@ -139,6 +152,7 @@ namespace mainsystem
         {
             Activity1 newMDIChild = new Activity1();
             newMDIChild.MdiParent = this;
+            newMDIChild.WindowState = FormWindowState.Maximized;
             newMDIChild.Show();
         }
 
@@ -146,6 +160,7 @@ namespace mainsystem
         {
             Activity5 newMDIChild = new Activity5();
             newMDIChild.MdiParent = this;
+            newMDIChild.WindowState = FormWindowState.Maximized;
             newMDIChild.Show();
         }
 
@@ -153,6 +168,7 @@ namespace mainsystem
         {
             Quiz1 newMDIChild = new Quiz1();
             newMDIChild.MdiParent = this;
+            newMDIChild.WindowState = FormWindowState.Maximized;
             newMDIChild.Show();
         }
 
