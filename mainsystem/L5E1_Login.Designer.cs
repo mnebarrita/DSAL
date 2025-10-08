@@ -47,7 +47,7 @@
             this.usernameTxtbox.Location = new System.Drawing.Point(171, 146);
             this.usernameTxtbox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.usernameTxtbox.Name = "usernameTxtbox";
-            this.usernameTxtbox.Size = new System.Drawing.Size(196, 22);
+            this.usernameTxtbox.Size = new System.Drawing.Size(196, 26);
             this.usernameTxtbox.TabIndex = 1;
             // 
             // button1
@@ -69,7 +69,7 @@
             this.label2.Font = new System.Drawing.Font("Sylfaen", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.label2.Location = new System.Drawing.Point(81, 188);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 16);
+            this.label2.Size = new System.Drawing.Size(74, 19);
             this.label2.TabIndex = 0;
             this.label2.Text = "Password:";
             // 
@@ -79,7 +79,7 @@
             this.passwordTxtbox.Location = new System.Drawing.Point(171, 185);
             this.passwordTxtbox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.passwordTxtbox.Name = "passwordTxtbox";
-            this.passwordTxtbox.Size = new System.Drawing.Size(196, 22);
+            this.passwordTxtbox.Size = new System.Drawing.Size(196, 26);
             this.passwordTxtbox.TabIndex = 1;
             this.passwordTxtbox.UseSystemPasswordChar = true;
             // 
@@ -102,7 +102,7 @@
             this.label1.Font = new System.Drawing.Font("Sylfaen", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.label1.Location = new System.Drawing.Point(81, 149);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 16);
+            this.label1.Size = new System.Drawing.Size(74, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Username:";
             // 
@@ -121,7 +121,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label2);
@@ -142,8 +142,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.BackgroundImage = global::mainsystem.Properties.Resources._1123550;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1218, 632);
             this.Controls.Add(this.pictureBox1);

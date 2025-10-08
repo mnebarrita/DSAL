@@ -34,14 +34,14 @@ namespace mainsystem
             isLoading = true;
 
         // codes for disabling textboxes
-            itemnameTxtbox.Enabled = false;
-            priceTxtbox.Enabled = false;
-            discountedTxtbox.Enabled = false;
-            qtyTotalTxtbox.Enabled = false;
-            discountTotalTxtbox.Enabled = false;
-            discountedTotalTxtbox.Enabled = false;
-            changeTxtbox.Enabled = false;
-            discountTxtbox.Enabled = false;
+            itemnameTxtbox.ReadOnly = true;
+            priceTxtbox.ReadOnly = true;
+            discountedTxtbox.ReadOnly = true;
+            qtyTotalTxtbox.ReadOnly = true;
+            discountTotalTxtbox.ReadOnly = true;
+            discountedTotalTxtbox.ReadOnly = true;
+            changeTxtbox.ReadOnly = true;
+            discountTxtbox.ReadOnly = true;
 
             // Default radio button (no discount)
             noTaxRdbtn.Checked = true;
@@ -50,15 +50,11 @@ namespace mainsystem
 
             isLoading = false;
 
-            // Automatically connect all keypad buttons
-            foreach (Control ctrl in panelMain.Controls)
-            {
-                if (ctrl is Button btn && btn.Tag?.ToString() == "keypad")
-                {
-                    btn.Click += keypad;
-                }
-            }
-        }
+            this.BackgroundImage = Properties.Resources.POS1wallpaper;
+            this.BackgroundImageLayout = ImageLayout.Stretch;
+            qtyTxtbox.Focus();
+
+
         }
 
         private void CenterPanel()
@@ -381,10 +377,140 @@ namespace mainsystem
 
         private void button6_Click(object sender, EventArgs e)
         {
-            
+            Button btn = sender as Button;
+            if (btn != null)
+            {
+                cash_renderedtxtbox.Text += btn.Text; // Append pressed button value
+            }
         }
 
         private void button7_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            if (btn != null)
+            {
+                cash_renderedtxtbox.Text += btn.Text; // Append pressed button value
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            if (btn != null)
+            {
+                cash_renderedtxtbox.Text += btn.Text; // Append pressed button value
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            if (btn != null)
+            {
+                cash_renderedtxtbox.Text += btn.Text; // Append pressed button value
+            }
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            if (btn != null)
+            {
+                cash_renderedtxtbox.Text += btn.Text; // Append pressed button value
+            }
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            if (btn != null)
+            {
+                cash_renderedtxtbox.Text += btn.Text; // Append pressed button value
+            }
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            if (btn != null)
+            {
+                cash_renderedtxtbox.Text += btn.Text; // Append pressed button value
+            }
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            if (btn != null)
+            {
+                cash_renderedtxtbox.Text += btn.Text; // Append pressed button value
+            }
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            if (btn != null)
+            {
+                cash_renderedtxtbox.Text += btn.Text; // Append pressed button value
+            }
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            if (btn != null)
+            {
+                cash_renderedtxtbox.Text += btn.Text; // Append pressed button value
+            }
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            if (btn != null)
+            {
+                cash_renderedtxtbox.Text += btn.Text; // Append pressed button value
+            }
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            if (btn != null)
+            {
+                cash_renderedtxtbox.Text += btn.Text; // Append pressed button value
+            }
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            if (btn != null)
+            {
+                cash_renderedtxtbox.Text += btn.Text; // Append pressed button value
+            }
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            if (btn != null)
+            {
+                cash_renderedtxtbox.Text += btn.Text; // Append pressed button value
+            }
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            if (btn != null)
+            {
+                cash_renderedtxtbox.Text += btn.Text; // Append pressed button value
+            }
+        }
+
+        private void qtyTxtbox_TextChanged(object sender, EventArgs e)
         {
 
         }

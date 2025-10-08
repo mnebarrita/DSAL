@@ -473,6 +473,26 @@ namespace mainsystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap POS1wallpaper {
+            get {
+                object obj = ResourceManager.GetObject("POS1wallpaper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap POS2wallpaper {
+            get {
+                object obj = ResourceManager.GetObject("POS2wallpaper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap prelude {
             get {
                 object obj = ResourceManager.GetObject("prelude", resourceCulture);

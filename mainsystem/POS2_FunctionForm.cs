@@ -83,6 +83,10 @@ namespace mainsystem
             B_FriescheckBox.Checked = false;
             B_halohalocheckBox.Checked = false;
             B_HawaiiancheckBox.Checked = false;
+
+            this.BackgroundImage = Properties.Resources.POS2wallpaper;
+            this.BackgroundImageLayout = ImageLayout.Stretch;
+
         }
 
         private void CenterPanel()
@@ -94,11 +98,9 @@ namespace mainsystem
         {
             if (foodARdbt.Checked)
             {
+                displayListbox.Items.Clear();
                 double price = 1000.00;   // given bundle price
                 double discount = 200.00; // given discount
-
-                // change form background
-                this.BackColor = Color.LightCyan;
 
                 // insert image in PictureBox
                 DisplayPictureBox.Image = Properties.Resources.FoodBundleA;
@@ -139,11 +141,9 @@ namespace mainsystem
         {
             if (foodBRdbt.Checked)
             {
+                displayListbox.Items.Clear();
                 double price = 1299.00;                  // given bundle price
                 double discount = price * 0.15;          // 15% discount
-
-                // Change background
-                this.BackColor = Color.LightBlue;
 
                 // insert image in PictureBox
                 DisplayPictureBox.Image = Properties.Resources.FoodBundleB;
@@ -237,7 +237,7 @@ namespace mainsystem
             foodARdbt.Enabled = true;
             foodBRdbt.Enabled = true;
 
-            DisplayPictureBox.Image = Properties.Resources.clear;
+            DisplayPictureBox.Image = null;
             this.BackColor = SystemColors.Control;
 
             // reset all checkboxes
@@ -442,6 +442,16 @@ namespace mainsystem
             discountedTxtbox.Text = currentItemAmount.ToString("N2");   // Discounted Amount for this item
             totalBillsTxtbox.Text = total_amount.ToString("N2");          // Total Bills
             totalQtyTxtbox.Text = total_qty.ToString();                 // Total Quantity
+        }
+
+        private void discountTxtbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

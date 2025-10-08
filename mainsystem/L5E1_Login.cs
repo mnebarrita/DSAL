@@ -25,9 +25,9 @@ namespace mainsystem
             this.AcceptButton = button1;
             this.CenterLoginElements(); // (your centering function)
 
-            this.Opacity = 0.95;
-            this.BackColor = Color.Black;
-            this.TransparencyKey = Color.Empty;
+            this.BackgroundImage = Properties.Resources.MyBackground;
+            this.BackgroundImageLayout = ImageLayout.Stretch;
+
 
 
         }
