@@ -135,7 +135,7 @@ namespace mainsystem
 
         private void cashier1ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            L3Activity3 newMDIChild = new L3Activity3();
+            POS1_FunctionForm newMDIChild = new POS1_FunctionForm();
             newMDIChild.MdiParent = this;
             newMDIChild.WindowState = FormWindowState.Maximized;
             newMDIChild.Show();
@@ -143,7 +143,7 @@ namespace mainsystem
 
         private void cashier2ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            EXAM_Cashier newMDIChild = new EXAM_Cashier();
+            POS2_FunctionForm newMDIChild = new POS2_FunctionForm();
             newMDIChild.MdiParent = this;
             newMDIChild.Show();
         }
@@ -158,7 +158,7 @@ namespace mainsystem
 
         private void payrollApplicationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Activity5 newMDIChild = new Activity5();
+            Payroll_FunctionForm newMDIChild = new Payroll_FunctionForm();
             newMDIChild.MdiParent = this;
             newMDIChild.WindowState = FormWindowState.Maximized;
             newMDIChild.Show();
@@ -181,6 +181,11 @@ namespace mainsystem
         {
             statusStrip1.Items.Add("Welcome, Admin");
             statusStrip1.Items.Add(DateTime.Now.ToString("f"));
+        }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

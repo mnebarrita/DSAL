@@ -27,27 +27,43 @@ namespace mainsystem
         }
         private void HandleCheckBoxClick(System.Windows.Forms.CheckBox chk, double price)
         {
-            // Assign values
-            priceTxtBox.Text = price.ToString("N2");  // Set price
-            discountTxtbox.Text = "0.00";            // No discount
+            // If checkbox is checked, add item to total; if unchecked, subtract it
+            if (chk.Checked)
+            {
+                priceTxtBox.Text = price.ToString("N2");
+                discountTxtbox.Text = "0.00";
+                displayListbox.Items.Add(chk.Text + " " + price.ToString("N2"));
 
-            // Add to listbox
-            displayListbox.Items.Add(chk.Text + " " + priceTxtBox.Text);
+                total_amount += price;
+                total_qty += 1;
+            }
+            else
+            {
+                // If unchecked, remove from total
+                total_amount -= price;
+                total_qty -= 1;
 
-            // Prevent TextChanged from reacting to this programmatic change
-            updatingQuantity = true;
-            qtyTxtbox.Text = "0";
-            updatingQuantity = false;
+                // Optionally, remove item from listbox
+                for (int i = displayListbox.Items.Count - 1; i >= 0; i--)
+                {
+                    if (displayListbox.Items[i].ToString().StartsWith(chk.Text))
+                    {
+                        displayListbox.Items.RemoveAt(i);
+                        break;
+                    }
+                }
+            }
 
-            // Reset tracking for this new current item
-            currentItemLastQuantity = 0;
-            currentItemLastAmount = 0.0;
-
-            qtyTxtbox.Focus();
+            // Update totals
+            totalBillsTxtbox.Text = total_amount.ToString("N2");
+            totalQtyTxtbox.Text = total_qty.ToString();
         }
 
         private void EXAM_Load(object sender, EventArgs e)
         {
+            CenterPanel();
+            this.Resize += (s, ev) => CenterPanel();
+
             // DISABLING TEXTBOXES
             priceTxtBox.Enabled = false;
             changeTxtbox.Enabled = false;
@@ -69,6 +85,11 @@ namespace mainsystem
             B_HawaiiancheckBox.Checked = false;
         }
 
+        private void CenterPanel()
+        {
+            panelMain.Left = (this.ClientSize.Width - panelMain.Width) / 2;
+            panelMain.Top = (this.ClientSize.Height - panelMain.Height) / 2;
+        }
         private void foodARdbt_CheckedChanged(object sender, EventArgs e)
         {
             if (foodARdbt.Checked)
@@ -109,7 +130,7 @@ namespace mainsystem
                 displayListbox.Items.Add("         Discount Amount: " + discountTxtbox.Text);
 
                 // Reset quantity
-                qtyTxtbox.Text = "0";
+                qtyTxtbox.Text = "1";
                 qtyTxtbox.Focus();
             }
         }
@@ -155,7 +176,7 @@ namespace mainsystem
                 displayListbox.Items.Add("         Discount Amount: " + discountTxtbox.Text);
 
                 // Reset quantity
-                qtyTxtbox.Text = "0";
+                qtyTxtbox.Text = "1";
                 qtyTxtbox.Focus();
             }
         }
@@ -202,6 +223,7 @@ namespace mainsystem
         }
         private void button4_Click(object sender, EventArgs e)
         {
+
             total_amount = 0;
             total_qty = 0;
             currentItemLastAmount = 0.0;
@@ -216,6 +238,7 @@ namespace mainsystem
             foodBRdbt.Enabled = true;
 
             DisplayPictureBox.Image = Properties.Resources.clear;
+            this.BackColor = SystemColors.Control;
 
             // reset all checkboxes
             A_CokeCheckBox.Checked = false;
@@ -258,6 +281,7 @@ namespace mainsystem
             totalQtyTxtbox.Text = "";
             cashTxtbox.Text = "";
             changeTxtbox.Text = "";
+
         }
 
         private void button5_Click(object sender, EventArgs e)

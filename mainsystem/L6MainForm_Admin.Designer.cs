@@ -77,8 +77,8 @@
             this.windowToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1924, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1443, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -92,48 +92,48 @@
             this.studentToolStripMenuItem,
             this.logoutToolStripMenuItem1});
             this.pOSAdministratorToolStripMenuItem.Name = "pOSAdministratorToolStripMenuItem";
-            this.pOSAdministratorToolStripMenuItem.Size = new System.Drawing.Size(145, 24);
+            this.pOSAdministratorToolStripMenuItem.Size = new System.Drawing.Size(117, 20);
             this.pOSAdministratorToolStripMenuItem.Text = "POS Administrator";
             // 
             // cashier1ToolStripMenuItem1
             // 
             this.cashier1ToolStripMenuItem1.Name = "cashier1ToolStripMenuItem1";
-            this.cashier1ToolStripMenuItem1.Size = new System.Drawing.Size(227, 26);
+            this.cashier1ToolStripMenuItem1.Size = new System.Drawing.Size(181, 22);
             this.cashier1ToolStripMenuItem1.Text = "Cashier 1";
             this.cashier1ToolStripMenuItem1.Click += new System.EventHandler(this.cashier1ToolStripMenuItem1_Click);
             // 
             // cashier2ToolStripMenuItem1
             // 
             this.cashier2ToolStripMenuItem1.Name = "cashier2ToolStripMenuItem1";
-            this.cashier2ToolStripMenuItem1.Size = new System.Drawing.Size(227, 26);
+            this.cashier2ToolStripMenuItem1.Size = new System.Drawing.Size(181, 22);
             this.cashier2ToolStripMenuItem1.Text = "Cashier 2";
             this.cashier2ToolStripMenuItem1.Click += new System.EventHandler(this.cashier2ToolStripMenuItem1_Click);
             // 
             // simplePOSToolStripMenuItem1
             // 
             this.simplePOSToolStripMenuItem1.Name = "simplePOSToolStripMenuItem1";
-            this.simplePOSToolStripMenuItem1.Size = new System.Drawing.Size(227, 26);
+            this.simplePOSToolStripMenuItem1.Size = new System.Drawing.Size(181, 22);
             this.simplePOSToolStripMenuItem1.Text = "Simple POS";
             this.simplePOSToolStripMenuItem1.Click += new System.EventHandler(this.simplePOSToolStripMenuItem1_Click);
             // 
             // payrollApplicationToolStripMenuItem
             // 
             this.payrollApplicationToolStripMenuItem.Name = "payrollApplicationToolStripMenuItem";
-            this.payrollApplicationToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
+            this.payrollApplicationToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.payrollApplicationToolStripMenuItem.Text = "Payroll Application";
             this.payrollApplicationToolStripMenuItem.Click += new System.EventHandler(this.payrollApplicationToolStripMenuItem_Click);
             // 
             // studentToolStripMenuItem
             // 
             this.studentToolStripMenuItem.Name = "studentToolStripMenuItem";
-            this.studentToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
+            this.studentToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.studentToolStripMenuItem.Text = "Student Registration";
             this.studentToolStripMenuItem.Click += new System.EventHandler(this.studentToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem1
             // 
             this.logoutToolStripMenuItem1.Name = "logoutToolStripMenuItem1";
-            this.logoutToolStripMenuItem1.Size = new System.Drawing.Size(227, 26);
+            this.logoutToolStripMenuItem1.Size = new System.Drawing.Size(181, 22);
             this.logoutToolStripMenuItem1.Text = "Logout";
             this.logoutToolStripMenuItem1.Click += new System.EventHandler(this.logoutToolStripMenuItem1_Click);
             // 
@@ -144,27 +144,27 @@
             this.cashier2ToolStripMenuItem,
             this.simplePOSToolStripMenuItem});
             this.pOSCASHIERToolStripMenuItem.Name = "pOSCASHIERToolStripMenuItem";
-            this.pOSCASHIERToolStripMenuItem.Size = new System.Drawing.Size(102, 24);
+            this.pOSCASHIERToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
             this.pOSCASHIERToolStripMenuItem.Text = "POS Cashier";
             // 
             // cashier1ToolStripMenuItem
             // 
             this.cashier1ToolStripMenuItem.Name = "cashier1ToolStripMenuItem";
-            this.cashier1ToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
+            this.cashier1ToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.cashier1ToolStripMenuItem.Text = "Cashier1";
             this.cashier1ToolStripMenuItem.Click += new System.EventHandler(this.cashier1ToolStripMenuItem_Click);
             // 
             // cashier2ToolStripMenuItem
             // 
             this.cashier2ToolStripMenuItem.Name = "cashier2ToolStripMenuItem";
-            this.cashier2ToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
+            this.cashier2ToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.cashier2ToolStripMenuItem.Text = "Cashier2";
             this.cashier2ToolStripMenuItem.Click += new System.EventHandler(this.cashier2ToolStripMenuItem_Click);
             // 
             // simplePOSToolStripMenuItem
             // 
             this.simplePOSToolStripMenuItem.Name = "simplePOSToolStripMenuItem";
-            this.simplePOSToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
+            this.simplePOSToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.simplePOSToolStripMenuItem.Text = "Simple POS";
             this.simplePOSToolStripMenuItem.Click += new System.EventHandler(this.simplePOSToolStripMenuItem_Click);
             // 
@@ -177,41 +177,41 @@
             this.example21ToolStripMenuItem,
             this.example31ToolStripMenuItem});
             this.samplesToolStripMenuItem.Name = "samplesToolStripMenuItem";
-            this.samplesToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
+            this.samplesToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
             this.samplesToolStripMenuItem.Text = "Samples";
             // 
             // example1ToolStripMenuItem
             // 
             this.example1ToolStripMenuItem.Name = "example1ToolStripMenuItem";
-            this.example1ToolStripMenuItem.Size = new System.Drawing.Size(172, 26);
+            this.example1ToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.example1ToolStripMenuItem.Text = "Example 1.1";
             this.example1ToolStripMenuItem.Click += new System.EventHandler(this.example1ToolStripMenuItem_Click);
             // 
             // example2ToolStripMenuItem
             // 
             this.example2ToolStripMenuItem.Name = "example2ToolStripMenuItem";
-            this.example2ToolStripMenuItem.Size = new System.Drawing.Size(172, 26);
+            this.example2ToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.example2ToolStripMenuItem.Text = "Example 1.2";
             this.example2ToolStripMenuItem.Click += new System.EventHandler(this.example2ToolStripMenuItem_Click);
             // 
             // example3ToolStripMenuItem
             // 
             this.example3ToolStripMenuItem.Name = "example3ToolStripMenuItem";
-            this.example3ToolStripMenuItem.Size = new System.Drawing.Size(172, 26);
+            this.example3ToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.example3ToolStripMenuItem.Text = "Example 1.3";
             this.example3ToolStripMenuItem.Click += new System.EventHandler(this.example3ToolStripMenuItem_Click);
             // 
             // example21ToolStripMenuItem
             // 
             this.example21ToolStripMenuItem.Name = "example21ToolStripMenuItem";
-            this.example21ToolStripMenuItem.Size = new System.Drawing.Size(172, 26);
+            this.example21ToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.example21ToolStripMenuItem.Text = "Example 2.1";
             this.example21ToolStripMenuItem.Click += new System.EventHandler(this.example21ToolStripMenuItem_Click);
             // 
             // example31ToolStripMenuItem
             // 
             this.example31ToolStripMenuItem.Name = "example31ToolStripMenuItem";
-            this.example31ToolStripMenuItem.Size = new System.Drawing.Size(172, 26);
+            this.example31ToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.example31ToolStripMenuItem.Text = "Example 3.1";
             this.example31ToolStripMenuItem.Click += new System.EventHandler(this.example31ToolStripMenuItem_Click);
             // 
@@ -220,14 +220,14 @@
             this.payrollToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.payrolApplicationToolStripMenuItem});
             this.payrollToolStripMenuItem.Name = "payrollToolStripMenuItem";
-            this.payrollToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
+            this.payrollToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.payrollToolStripMenuItem.Text = "Payroll";
             this.payrollToolStripMenuItem.Click += new System.EventHandler(this.payrollToolStripMenuItem_Click);
             // 
             // payrolApplicationToolStripMenuItem
             // 
             this.payrolApplicationToolStripMenuItem.Name = "payrolApplicationToolStripMenuItem";
-            this.payrolApplicationToolStripMenuItem.Size = new System.Drawing.Size(213, 26);
+            this.payrolApplicationToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.payrolApplicationToolStripMenuItem.Text = "Payrol Application";
             this.payrolApplicationToolStripMenuItem.Click += new System.EventHandler(this.payrolApplicationToolStripMenuItem_Click);
             // 
@@ -236,13 +236,13 @@
             this.otherWorksToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.studentRegistrationToolStripMenuItem});
             this.otherWorksToolStripMenuItem.Name = "otherWorksToolStripMenuItem";
-            this.otherWorksToolStripMenuItem.Size = new System.Drawing.Size(104, 24);
+            this.otherWorksToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
             this.otherWorksToolStripMenuItem.Text = "Other Works";
             // 
             // studentRegistrationToolStripMenuItem
             // 
             this.studentRegistrationToolStripMenuItem.Name = "studentRegistrationToolStripMenuItem";
-            this.studentRegistrationToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
+            this.studentRegistrationToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.studentRegistrationToolStripMenuItem.Text = "Student Registration";
             this.studentRegistrationToolStripMenuItem.Click += new System.EventHandler(this.studentRegistrationToolStripMenuItem_Click);
             // 
@@ -253,27 +253,27 @@
             this.tileHorizontalToolStripMenuItem,
             this.cascadeToolStripMenuItem});
             this.windowToolStripMenuItem.Name = "windowToolStripMenuItem";
-            this.windowToolStripMenuItem.Size = new System.Drawing.Size(78, 24);
+            this.windowToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
             this.windowToolStripMenuItem.Text = "Window";
             // 
             // tileVerticalToolStripMenuItem
             // 
             this.tileVerticalToolStripMenuItem.Name = "tileVerticalToolStripMenuItem";
-            this.tileVerticalToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
+            this.tileVerticalToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.tileVerticalToolStripMenuItem.Text = "Tile Vertical";
             this.tileVerticalToolStripMenuItem.Click += new System.EventHandler(this.tileVerticalToolStripMenuItem_Click);
             // 
             // tileHorizontalToolStripMenuItem
             // 
             this.tileHorizontalToolStripMenuItem.Name = "tileHorizontalToolStripMenuItem";
-            this.tileHorizontalToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
+            this.tileHorizontalToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.tileHorizontalToolStripMenuItem.Text = "Tile Horizontal";
             this.tileHorizontalToolStripMenuItem.Click += new System.EventHandler(this.tileHorizontalToolStripMenuItem_Click);
             // 
             // cascadeToolStripMenuItem
             // 
             this.cascadeToolStripMenuItem.Name = "cascadeToolStripMenuItem";
-            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
+            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.cascadeToolStripMenuItem.Text = "Cascade";
             this.cascadeToolStripMenuItem.Click += new System.EventHandler(this.cascadeToolStripMenuItem_Click);
             // 
@@ -283,11 +283,12 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton4,
             this.toolStripSeparator1});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 28);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1924, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(1443, 27);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
+            this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
             // 
             // toolStripButton4
             // 
@@ -295,7 +296,7 @@
             this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
             this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(29, 24);
+            this.toolStripButton4.Size = new System.Drawing.Size(24, 24);
             this.toolStripButton4.Text = "toolStripButton4";
             this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
@@ -313,24 +314,25 @@
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip1.Location = new System.Drawing.Point(0, 1033);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 835);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1924, 22);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 10, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(1443, 22);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             this.statusStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip1_ItemClicked);
             // 
             // L6MainForm_Admin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.ClientSize = new System.Drawing.Size(1443, 857);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "L6MainForm_Admin";
             this.Text = "L6MainForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

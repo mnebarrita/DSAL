@@ -28,10 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(L5E1_Login));
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.usernameTxtbox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,17 +41,13 @@
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // usernameTxtbox
             // 
             this.usernameTxtbox.Font = new System.Drawing.Font("Sylfaen", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.usernameTxtbox.Location = new System.Drawing.Point(171, 146);
             this.usernameTxtbox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.usernameTxtbox.Name = "usernameTxtbox";
-            this.usernameTxtbox.Size = new System.Drawing.Size(196, 26);
+            this.usernameTxtbox.Size = new System.Drawing.Size(196, 22);
             this.usernameTxtbox.TabIndex = 1;
             // 
             // button1
@@ -76,7 +69,7 @@
             this.label2.Font = new System.Drawing.Font("Sylfaen", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.label2.Location = new System.Drawing.Point(81, 188);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 19);
+            this.label2.Size = new System.Drawing.Size(56, 16);
             this.label2.TabIndex = 0;
             this.label2.Text = "Password:";
             // 
@@ -86,7 +79,7 @@
             this.passwordTxtbox.Location = new System.Drawing.Point(171, 185);
             this.passwordTxtbox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.passwordTxtbox.Name = "passwordTxtbox";
-            this.passwordTxtbox.Size = new System.Drawing.Size(196, 26);
+            this.passwordTxtbox.Size = new System.Drawing.Size(196, 22);
             this.passwordTxtbox.TabIndex = 1;
             this.passwordTxtbox.UseSystemPasswordChar = true;
             // 
@@ -109,7 +102,7 @@
             this.label1.Font = new System.Drawing.Font("Sylfaen", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.label1.Location = new System.Drawing.Point(81, 149);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 19);
+            this.label1.Size = new System.Drawing.Size(59, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Username:";
             // 
@@ -168,8 +161,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;

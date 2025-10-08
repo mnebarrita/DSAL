@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="POS1_FunctionFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POS1_FunctionFrm.Designer.cs">
+      <DependentUpon>POS1_FunctionFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Payroll_FunctionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +150,9 @@
     <Compile Include="TransparentPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="POS1_FunctionFrm.resx">
+      <DependentUpon>POS1_FunctionFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Payroll_FunctionForm.resx">
       <DependentUpon>Payroll_FunctionForm.cs</DependentUpon>
     </EmbeddedResource>

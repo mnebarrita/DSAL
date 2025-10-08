@@ -24,7 +24,6 @@ namespace mainsystem
             passwordTxtbox.UseSystemPasswordChar = true;
             this.AcceptButton = button1;
             this.CenterLoginElements(); // (your centering function)
-            timer1.Start();          // Begin fade-in
 
             this.Opacity = 0.95;
             this.BackColor = Color.Black;
@@ -117,18 +116,6 @@ namespace mainsystem
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            if (this.Opacity < 1)
-            {
-                this.Opacity += 0.05;   // Adjust speed (0.05 = smooth, 0.1 = faster)
-            }
-            else
-            {
-                timer1.Stop();       // Stop once fully visible
-            }
         }
     }
 }

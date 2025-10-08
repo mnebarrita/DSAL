@@ -79,8 +79,8 @@ namespace mainsystem
 
         private void CenterPanel()
         {
-         //   panelMain.Left = (this.ClientSize.Width - panelMain.Width) / 2;
-          //  panelMain.Top = (this.ClientSize.Height - panelMain.Height) / 2;
+            panelMain.Left = (this.ClientSize.Width - panelMain.Width) / 2;
+            panelMain.Top = (this.ClientSize.Height - panelMain.Height) / 2;
         }
 
         // ================================
@@ -310,6 +310,11 @@ namespace mainsystem
                 return 40833 + (income - 166667) * 0.32;
             else
                 return 200833 + (income - 666667) * 0.35;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
