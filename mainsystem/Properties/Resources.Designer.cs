@@ -73,16 +73,6 @@ namespace mainsystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _1123550 {
-            get {
-                object obj = ResourceManager.GetObject("1123550", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap _84a2abf7b1934c0fe9d9a6ae62780c40 {
             get {
                 object obj = ResourceManager.GetObject("84a2abf7b1934c0fe9d9a6ae62780c40", resourceCulture);
@@ -96,6 +86,26 @@ namespace mainsystem.Properties {
         internal static System.Drawing.Bitmap amanos {
             get {
                 object obj = ResourceManager.GetObject("amanos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap background {
+            get {
+                object obj = ResourceManager.GetObject("background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap background1 {
+            get {
+                object obj = ResourceManager.GetObject("background1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -286,6 +296,16 @@ namespace mainsystem.Properties {
         internal static System.Drawing.Bitmap kuronami_skinline {
             get {
                 object obj = ResourceManager.GetObject("kuronami-skinline", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap loginwp {
+            get {
+                object obj = ResourceManager.GetObject("loginwp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -130,8 +130,8 @@
   <data name="RES" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\RES.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="download1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\download1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="POS2wallpaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\POS2wallpaper.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="dominos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images_Pizza\dominos.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,8 +178,14 @@
   <data name="pizza special b" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images_Pizza\pizza special b.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="loginwp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loginwp.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="elderflame" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\elderflame.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pizza special d" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images_Pizza\pizza special d.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="POS1wallpaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\POS1wallpaper.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -190,23 +196,20 @@
   <data name="pizza 6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images_Pizza\pizza 6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pizza special d" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images_Pizza\pizza special d.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="download1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\download1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="NYPizza" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images_Pizza\NYPizza.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FoodBundleB1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images_Pizza\FoodBundleB.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pizza 8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images_Pizza\pizza 8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="glitchpop" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\glitchpop.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pizza 3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images_Pizza\pizza 3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="spectrum-skins-scaled" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\spectrum-skins-scaled.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="RGX" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\RGX.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -226,20 +229,20 @@
   <data name="download" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\download.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="evori dreamwings" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\evori dreamwings.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="FoodBundleB1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images_Pizza\FoodBundleB.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="EX-O-Valorant-skins-1024x576" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\EX-O-Valorant-skins-1024x576.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Mystbloom-Valorant-1024x576" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\Mystbloom-Valorant-1024x576.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="spectrum-skins-scaled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\spectrum-skins-scaled.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="splashx-valorant-skins-1024x576" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\splashx-valorant-skins-1024x576.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1123550" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1123550.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="evori dreamwings" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\evori dreamwings.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pizza 5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images_Pizza\pizza 5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -253,8 +256,11 @@
   <data name="84a2abf7b1934c0fe9d9a6ae62780c40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\84a2abf7b1934c0fe9d9a6ae62780c40.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cauliflower crust" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images_Pizza\cauliflower crust.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="kuronami-skinline" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\kuronami-skinline.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pizza 4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images_Pizza\pizza 4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -268,19 +274,19 @@
   <data name="FoodBundleA" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\FoodBundleA.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="kuronami-skinline" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\kuronami-skinline.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Mystbloom-Valorant-1024x576" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Mystbloom-Valorant-1024x576.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="prelude" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\prelude.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pizza 8" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images_Pizza\pizza 8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cauliflower crust" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images_Pizza\cauliflower crust.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="hawaii" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images_Pizza\hawaii.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="POS2wallpaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\POS2wallpaper.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="background1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\background1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -49,17 +49,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="POS1_FunctionFrm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="POS1_FunctionFrm.Designer.cs">
-      <DependentUpon>POS1_FunctionFrm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Payroll_FunctionForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Payroll_FunctionForm.Designer.cs">
       <DependentUpon>Payroll_FunctionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POS1_FunctionFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POS1_FunctionFrm.Designer.cs">
+      <DependentUpon>POS1_FunctionFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="POS2_FunctionForm.cs">
       <SubType>Form</SubType>
@@ -147,14 +147,19 @@
     <Compile Include="L3Transfer.Designer.cs">
       <DependentUpon>L3Transfer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="TransparentPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <EmbeddedResource Include="POS1_FunctionFrm.resx">
-      <DependentUpon>POS1_FunctionFrm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Payroll_FunctionForm.resx">
       <DependentUpon>Payroll_FunctionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POS1_FunctionFrm.resx">
+      <DependentUpon>POS1_FunctionFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="POS2_FunctionForm.resx">
       <DependentUpon>POS2_FunctionForm.cs</DependentUpon>
@@ -194,14 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="L3Quiz_Registration.resx">
       <DependentUpon>L3Quiz_Registration.cs</DependentUpon>
     </EmbeddedResource>
@@ -385,6 +385,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\POS2wallpaper.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loginwp.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

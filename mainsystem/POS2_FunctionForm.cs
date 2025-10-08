@@ -453,5 +453,10 @@ namespace mainsystem
         {
 
         }
+
+        private void panelMain_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
