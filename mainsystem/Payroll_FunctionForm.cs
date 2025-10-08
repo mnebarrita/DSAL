@@ -67,6 +67,7 @@ namespace mainsystem
         {
             CenterPanel();
             this.Resize += (s, ev) => CenterPanel(); // recenter when form resizes
+            FN.Focus();
 
             // disable computed fields
             incomepercutoff_bi.Enabled = false;
