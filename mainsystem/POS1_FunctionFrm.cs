@@ -122,9 +122,7 @@ namespace mainsystem
 
         private void pictureBox6_Click_1(object sender, EventArgs e)
         {
-            SelectItem("Protocol 781-A", 9900); 
-            itemnameTxtbox.Text = "";
-            priceTxtbox.Text = "";
+            SelectItem("Protocol 781-A", 9900);
         }
 
         private void pictureBox7_Click_1(object sender, EventArgs e)

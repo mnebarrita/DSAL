@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -35,11 +36,11 @@ namespace mainsystem
             discounttotaltxtbox.Enabled = false;
 
             // Codes for inserting pictures or image
-            pictureBox16.Image = Image.FromFile(@"C:\Users\Mica\source\repos\DSAL\mainsystem\Images\RGX.jpg");
-            pictureBox17.Image = Image.FromFile(@"C:\Users\Mica\source\repos\DSAL\mainsystem\Images\glitchpop.jpg");
-            pictureBox18.Image = Image.FromFile(@"C:\Users\Mica\source\repos\DSAL\mainsystem\Images\EX-O-Valorant-skins-1024x576.jpg");
-            pictureBox19.Image = Image.FromFile(@"C:\Users\Mica\source\repos\DSAL\mainsystem\Images\Mystbloom-Valorant-1024x576.jpg");
-            pictureBox20.Image = Image.FromFile(@"C:\Users\Mica\source\repos\DSAL\mainsystem\Images\splashx-valorant-skins-1024x576.jpg");
+            pictureBox16.Image = Image.FromFile(@"C:\Users\Mica\source\repos\mnebarrita\DSAL\mainsystem\Images\RGX.jpg");
+            pictureBox17.Image = Image.FromFile(@"C:\Users\Mica\source\repos\mnebarrita\DSAL\mainsystem\Images\glitchpop.jpg");
+            pictureBox18.Image = Image.FromFile(@"C:\Users\Mica\source\repos\mnebarrita\DSAL\mainsystem\Images\EX-O-Valorant-skins-1024x576.jpg");
+            pictureBox19.Image = Image.FromFile(@"C:\Users\Mica\source\repos\mnebarrita\DSAL\mainsystem\Images\Mystbloom-Valorant-1024x576.jpg");
+            pictureBox20.Image = Image.FromFile(@"C:\Users\Mica\source\repos\mnebarrita\DSAL\mainsystem\Images\splashx-valorant-skins-1024x576.jpg");
 
             // codes for inserting name of the image inside the label tool
             // Row 1
