@@ -210,34 +210,16 @@ namespace mainsystem
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (displayListbox.SelectedIndex != -1)
-            {
-                string selectedItem = displayListbox.SelectedItem.ToString();
+            // Reset totals and current-item trackers
+            total_amount = 0;
+            total_qty = 0;
+            currentItemLastAmount = 0;
+            currentItemLastQuantity = 0;
 
-                // Try to extract the price from the selected item (the part after the last space)
-                string[] parts = selectedItem.Split(' ');
-                double itemPrice = 0;
-                double.TryParse(parts.Last(), out itemPrice);
-
-                // Remove the selected item
-                displayListbox.Items.RemoveAt(displayListbox.SelectedIndex);
-
-                // Update totals (assuming each line in the listbox = 1 item)
-                total_amount -= itemPrice;
-                total_qty -= 1;
-
-                // Ensure totals don’t go below zero
-                if (total_amount < 0) total_amount = 0;
-                if (total_qty < 0) total_qty = 0;
-
-                // Refresh display
-                totalBillsTxtbox.Text = total_amount.ToString("N2");
-                totalQtyTxtbox.Text = total_qty.ToString();
-            }
-            else
-            {
-                MessageBox.Show("Please select an item to remove.", "Remove Order", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            discountedTxtbox.Text = "0.00";
+            totalBillsTxtbox.Text = "0.00";
+            totalQtyTxtbox.Text = "0";
+            displayListbox.Items.Clear();
         }
         private void button4_Click(object sender, EventArgs e)
         {

@@ -72,17 +72,17 @@ namespace mainsystem
             }
             else if (usernameTxtbox.Text == Cashier1 && passwordTxtbox.Text == Cashier1Pass)
             {
-                POS1_FunctionForm newMDIChild = new POS1_FunctionForm();
+                Activity1 newMDIChild = new Activity1();
                 newMDIChild.Show();
             }
             else if (usernameTxtbox.Text == Cashier2 && passwordTxtbox.Text == Cashier2Pass)
             {
-                POS2_FunctionForm newMDIChild = new POS2_FunctionForm();
+                Activity2 newMDIChild = new Activity2();
                 newMDIChild.Show();
             }
             else if (usernameTxtbox.Text == Accounting && passwordTxtbox.Text == AccountingPass)
             {
-                Payroll_FunctionForm newMDIChild = new Payroll_FunctionForm();
+                EXAM_Cashier newMDIChild = new EXAM_Cashier();
                 newMDIChild.Show();
             }
             else

@@ -271,7 +271,6 @@
             this.groupBox5.Controls.Add(this.checkBox3);
             this.groupBox5.Controls.Add(this.checkBox2);
             this.groupBox5.Controls.Add(this.checkBox1);
-            this.groupBox5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox5.Location = new System.Drawing.Point(459, 56);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox5.Name = "groupBox5";
