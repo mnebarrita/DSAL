@@ -1162,8 +1162,9 @@
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(1077, 713);
             this.panelMain.TabIndex = 90;
+            this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
             // 
-            // POS1_FunctionForm
+            // POS1_ClassForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1172,7 +1173,7 @@
             this.Controls.Add(this.panelMain);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "POS1_FunctionForm";
+            this.Name = "POS1_ClassForm";
             this.Text = "L3Activity3";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.POS1_FunctionForm_Load);
