@@ -117,12 +117,14 @@
             this.pOS2ToolStripMenuItem1.Name = "pOS2ToolStripMenuItem1";
             this.pOS2ToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.pOS2ToolStripMenuItem1.Text = "POS 2";
+            this.pOS2ToolStripMenuItem1.Click += new System.EventHandler(this.pOS2ToolStripMenuItem1_Click);
             // 
             // payrollToolStripMenuItem1
             // 
             this.payrollToolStripMenuItem1.Name = "payrollToolStripMenuItem1";
             this.payrollToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.payrollToolStripMenuItem1.Text = "Payroll";
+            this.payrollToolStripMenuItem1.Click += new System.EventHandler(this.payrollToolStripMenuItem1_Click);
             // 
             // pOSClassToolStripMenuItem1
             // 
@@ -137,21 +139,21 @@
             // pOS1ToolStripMenuItem2
             // 
             this.pOS1ToolStripMenuItem2.Name = "pOS1ToolStripMenuItem2";
-            this.pOS1ToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
+            this.pOS1ToolStripMenuItem2.Size = new System.Drawing.Size(136, 26);
             this.pOS1ToolStripMenuItem2.Text = "POS 1";
             this.pOS1ToolStripMenuItem2.Click += new System.EventHandler(this.pOS1ToolStripMenuItem2_Click);
             // 
             // pOS2ToolStripMenuItem2
             // 
             this.pOS2ToolStripMenuItem2.Name = "pOS2ToolStripMenuItem2";
-            this.pOS2ToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
+            this.pOS2ToolStripMenuItem2.Size = new System.Drawing.Size(136, 26);
             this.pOS2ToolStripMenuItem2.Text = "POS 2";
             this.pOS2ToolStripMenuItem2.Click += new System.EventHandler(this.pOS2ToolStripMenuItem2_Click);
             // 
             // payrollToolStripMenuItem2
             // 
             this.payrollToolStripMenuItem2.Name = "payrollToolStripMenuItem2";
-            this.payrollToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
+            this.payrollToolStripMenuItem2.Size = new System.Drawing.Size(136, 26);
             this.payrollToolStripMenuItem2.Text = "Payroll";
             this.payrollToolStripMenuItem2.Click += new System.EventHandler(this.payrollToolStripMenuItem2_Click);
             // 

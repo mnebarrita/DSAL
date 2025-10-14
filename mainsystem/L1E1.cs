@@ -128,6 +128,11 @@ namespace mainsystem
             panelMain.Left = (this.ClientSize.Width - panelMain.Width) / 2;
             panelMain.Top = (this.ClientSize.Height - panelMain.Height) / 2;
         }
+
+        private void panelMain_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 
 }

@@ -84,8 +84,7 @@ namespace mainsystem
             B_halohalocheckBox.Checked = false;
             B_HawaiiancheckBox.Checked = false;
 
-            this.BackgroundImage = Properties.Resources.POS2wallpaper;
-            this.BackgroundImageLayout = ImageLayout.Stretch;
+            
 
         }
 
@@ -98,6 +97,8 @@ namespace mainsystem
         {
             if (foodARdbt.Checked)
             {
+                // change form background
+                this.BackColor = Color.LightCyan;
                 displayListbox.Items.Clear();
                 double price = 1000.00;   // given bundle price
                 double discount = 200.00; // given discount
@@ -141,6 +142,7 @@ namespace mainsystem
         {
             if (foodBRdbt.Checked)
             {
+                this.BackColor = Color.LightBlue;
                 displayListbox.Items.Clear();
                 double price = 1299.00;                  // given bundle price
                 double discount = price * 0.15;          // 15% discount

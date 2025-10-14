@@ -704,6 +704,7 @@
             this.groupBox1.Size = new System.Drawing.Size(408, 174);
             this.groupBox1.TabIndex = 66;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // button4
             // 
@@ -1162,6 +1163,7 @@
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(1077, 713);
             this.panelMain.TabIndex = 90;
+            this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
             // 
             // POS1_FunctionForm
             // 

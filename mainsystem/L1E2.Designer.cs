@@ -117,6 +117,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -142,13 +143,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Broadway", 18F);
-            this.label1.Location = new System.Drawing.Point(21, 9);
+            this.label1.Location = new System.Drawing.Point(23, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(274, 34);
             this.label1.TabIndex = 1;
@@ -170,7 +172,7 @@
             this.groupBox2.Controls.Add(this.pricetxtbox);
             this.groupBox2.Controls.Add(this.quantitytxtbox);
             this.groupBox2.Controls.Add(this.itemnametxtbox);
-            this.groupBox2.Location = new System.Drawing.Point(18, 60);
+            this.groupBox2.Location = new System.Drawing.Point(20, 60);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(370, 182);
             this.groupBox2.TabIndex = 5;
@@ -303,7 +305,7 @@
             this.groupBox3.Controls.Add(this.qty_totaltxtbox);
             this.groupBox3.Controls.Add(this.discounttotaltxtbox);
             this.groupBox3.Controls.Add(this.discountedtotaltxtbox);
-            this.groupBox3.Location = new System.Drawing.Point(18, 248);
+            this.groupBox3.Location = new System.Drawing.Point(20, 248);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(370, 96);
             this.groupBox3.TabIndex = 6;
@@ -364,7 +366,7 @@
             this.groupBox4.Controls.Add(this.textBox9);
             this.groupBox4.Controls.Add(this.label12);
             this.groupBox4.Controls.Add(this.label11);
-            this.groupBox4.Location = new System.Drawing.Point(18, 345);
+            this.groupBox4.Location = new System.Drawing.Point(20, 345);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(370, 116);
             this.groupBox4.TabIndex = 7;
@@ -422,7 +424,7 @@
             this.groupBox1.Controls.Add(this.button11);
             this.groupBox1.Controls.Add(this.button13);
             this.groupBox1.Controls.Add(this.button12);
-            this.groupBox1.Location = new System.Drawing.Point(18, 467);
+            this.groupBox1.Location = new System.Drawing.Point(20, 467);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(370, 221);
             this.groupBox1.TabIndex = 9;
@@ -615,7 +617,7 @@
             this.groupBox5.Controls.Add(this.pictureBox3);
             this.groupBox5.Controls.Add(this.pictureBox2);
             this.groupBox5.Controls.Add(this.pictureBox1);
-            this.groupBox5.Location = new System.Drawing.Point(394, 12);
+            this.groupBox5.Location = new System.Drawing.Point(396, 12);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(547, 682);
             this.groupBox5.TabIndex = 10;
@@ -1010,24 +1012,32 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(250, 41);
+            this.label2.Location = new System.Drawing.Point(252, 41);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(138, 16);
             this.label2.TabIndex = 36;
             this.label2.Text = "Naomi Erica C. Barrita";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.groupBox5);
+            this.panel1.Controls.Add(this.groupBox2);
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Controls.Add(this.groupBox3);
+            this.panel1.Controls.Add(this.groupBox4);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(966, 694);
+            this.panel1.TabIndex = 37;
             // 
             // Activity2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(964, 700);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel1);
             this.Name = "Activity2";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Activity2_Load);
@@ -1060,8 +1070,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -1155,5 +1166,6 @@
         private System.Windows.Forms.PictureBox pictureBox17;
         private System.Windows.Forms.PictureBox pictureBox16;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -8,36 +8,28 @@ namespace mainsystem
 {
     public class POSCalculator
     {
-        public string ItemName { get; set; }
-        public double Price { get; set; }
-        public int Quantity { get; set; }
         public double DiscountRate { get; set; }
+        public double DiscountAmount { get; private set; }
+        public double DiscountedAmount { get; private set; }
 
-        // subtotal
-        public double GetSubtotal()
+        public POSCalculator()
         {
-            return Price * Quantity;
+            DiscountRate = 0.0;
         }
 
-        // discount amount
-        public double GetDiscount()
+        public void ComputeDiscount(double price, int qty)
         {
-            return GetSubtotal() * DiscountRate;
+            double subtotal = price * qty;
+            DiscountAmount = subtotal * DiscountRate;
+            DiscountedAmount = subtotal - DiscountAmount;
         }
 
-        // discounted total
-        public double GetDiscountedTotal()
+        public double ComputeChange(double cash, double total)
         {
-            return GetSubtotal() - GetDiscount();
-        }
-
-        // change
-        public double GetChange(double amountPaid)
-        {
-            return amountPaid - GetDiscountedTotal();
+            return cash - total;
         }
     }
+}
 internal class POS1Calculator
-    {
-    }
+{
 }

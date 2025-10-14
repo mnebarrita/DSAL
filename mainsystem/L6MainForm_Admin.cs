@@ -190,7 +190,10 @@ namespace mainsystem
 
         private void pOS1ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            POS1_FunctionForm newMDIChild = new POS1_FunctionForm();
+            newMDIChild.MdiParent = this;
+            newMDIChild.WindowState = FormWindowState.Maximized;
+            newMDIChild.Show();
         }
 
         private void pOS1ToolStripMenuItem2_Click(object sender, EventArgs e)
@@ -212,6 +215,22 @@ namespace mainsystem
         private void payrollToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             Payroll_ClassForm newMDIChild = new Payroll_ClassForm();
+            newMDIChild.MdiParent = this;
+            newMDIChild.WindowState = FormWindowState.Maximized;
+            newMDIChild.Show();
+        }
+
+        private void pOS2ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            POS2_FunctionForm newMDIChild = new POS2_FunctionForm();
+            newMDIChild.MdiParent = this;
+            newMDIChild.WindowState = FormWindowState.Maximized;
+            newMDIChild.Show();
+        }
+
+        private void payrollToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Payroll_FunctionForm newMDIChild = new Payroll_FunctionForm();
             newMDIChild.MdiParent = this;
             newMDIChild.WindowState = FormWindowState.Maximized;
             newMDIChild.Show();

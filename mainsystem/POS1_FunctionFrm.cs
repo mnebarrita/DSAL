@@ -271,7 +271,27 @@ namespace mainsystem
                 discountTxtbox.Text = discount.ToString("N2");
                 discountedTxtbox.Text = discountedAmount.ToString("N2");
 
-                // Update summary totals safely (remove commas)
+                // --- Check for cash before summary update ---
+                string cashText = cash_renderedtxtbox.Text.Replace(",", "");
+                if (!double.TryParse(cashText, out double cash))
+                {
+                    MessageBox.Show("Please enter a valid cash amount.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                double change = cash - discountedAmount;
+
+                if (change < 0)
+                {
+                    MessageBox.Show("Insufficient cash!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    changeTxtbox.Text = "0.00";
+                    return; // stop here — do NOT go to summary
+                }
+
+                // If we reach here, cash is sufficient
+                changeTxtbox.Text = change.ToString("N2");
+
+                // --- Update summary totals safely ---
                 double totalQty = double.Parse(string.IsNullOrWhiteSpace(qtyTotalTxtbox.Text) ? "0" : qtyTotalTxtbox.Text.Replace(",", ""));
                 double totalDiscount = double.Parse(string.IsNullOrWhiteSpace(discountTotalTxtbox.Text) ? "0" : discountTotalTxtbox.Text.Replace(",", ""));
                 double totalDiscounted = double.Parse(string.IsNullOrWhiteSpace(discountedTotalTxtbox.Text) ? "0" : discountedTotalTxtbox.Text.Replace(",", ""));
@@ -509,6 +529,16 @@ namespace mainsystem
         }
 
         private void qtyTxtbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelMain_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }

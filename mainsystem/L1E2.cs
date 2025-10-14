@@ -11,8 +11,10 @@ using System.Windows.Forms;
 
 namespace mainsystem
 {
+
     public partial class Activity2 : Form
     {
+        private bool isLoading = true;
         public Activity2()
         {
             InitializeComponent();
@@ -25,6 +27,9 @@ namespace mainsystem
 
         private void Activity2_Load(object sender, EventArgs e)
         {
+            CenterPanel();
+            this.Resize += (s, ev) => CenterPanel();
+
             // Codes for disabling the textboxes
             itemnametxtbox.Enabled = false;
             pricetxtbox.Enabled = false;
@@ -72,6 +77,12 @@ namespace mainsystem
             label31.Text = "EX.O Collection";
             label32.Text = "Mystbloom";
             label33.Text = "SplashX";
+        }
+
+        private void CenterPanel()
+        {
+            panel1.Left = (this.ClientSize.Width - panel1.Width) / 2;
+            panel1.Top = (this.ClientSize.Height - panel1.Height) / 2;
         }
 
         private void pictureBox16_Click(object sender, EventArgs e)

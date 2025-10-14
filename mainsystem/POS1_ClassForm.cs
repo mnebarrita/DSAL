@@ -13,6 +13,7 @@ namespace mainsystem
 
     public partial class POS1_ClassForm : Form
     {
+        //private POSCalculator calculator = new POSCalculator();
         private bool isLoading = true;
         // Running totals
         private double qty_total = 0;
