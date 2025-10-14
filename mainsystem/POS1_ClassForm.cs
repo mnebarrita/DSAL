@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace mainsystem
 {
 
-    public partial class POS1_FunctionForm : Form
+    public partial class POS1_ClassForm : Form
     {
         private bool isLoading = true;
         // Running totals
@@ -23,7 +23,7 @@ namespace mainsystem
         private double discount_amt = 0;
         private double discounted_amt = 0;
         private double discountRate = 0;
-        public POS1_FunctionForm()
+        public POS1_ClassForm()
         {
             InitializeComponent();
         }

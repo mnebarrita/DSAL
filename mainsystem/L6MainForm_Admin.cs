@@ -187,5 +187,34 @@ namespace mainsystem
         {
 
         }
+
+        private void pOS1ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pOS1ToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            POS1_ClassForm newMDIChild = new POS1_ClassForm();
+            newMDIChild.MdiParent = this;
+            newMDIChild.WindowState = FormWindowState.Maximized;
+            newMDIChild.Show();
+        }
+
+        private void pOS2ToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            POS2_ClassForm newMDIChild = new POS2_ClassForm();
+            newMDIChild.MdiParent = this;
+            newMDIChild.WindowState = FormWindowState.Maximized;
+            newMDIChild.Show();
+        }
+
+        private void payrollToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Payroll_ClassForm newMDIChild = new Payroll_ClassForm();
+            newMDIChild.MdiParent = this;
+            newMDIChild.WindowState = FormWindowState.Maximized;
+            newMDIChild.Show();
+        }
     }
 }

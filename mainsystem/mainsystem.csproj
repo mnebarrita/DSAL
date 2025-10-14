@@ -49,17 +49,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Payroll_ClassForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payroll_ClassForm.Designer.cs">
+      <DependentUpon>Payroll_ClassForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Payroll_FunctionForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Payroll_FunctionForm.Designer.cs">
       <DependentUpon>Payroll_FunctionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="POS1Calculator.cs" />
+    <Compile Include="POS1_ClassForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POS1_ClassForm.Designer.cs">
+      <DependentUpon>POS1_ClassForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="POS1_FunctionFrm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="POS1_FunctionFrm.Designer.cs">
       <DependentUpon>POS1_FunctionFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POS2_ClassForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POS2_ClassForm.Designer.cs">
+      <DependentUpon>POS2_ClassForm.cs</DependentUpon>
     </Compile>
     <Compile Include="POS2_FunctionForm.cs">
       <SubType>Form</SubType>
@@ -155,11 +174,20 @@
     <Compile Include="TransparentPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="Payroll_ClassForm.resx">
+      <DependentUpon>Payroll_ClassForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Payroll_FunctionForm.resx">
       <DependentUpon>Payroll_FunctionForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="POS1_ClassForm.resx">
+      <DependentUpon>POS1_ClassForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="POS1_FunctionFrm.resx">
       <DependentUpon>POS1_FunctionFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POS2_ClassForm.resx">
+      <DependentUpon>POS2_ClassForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="POS2_FunctionForm.resx">
       <DependentUpon>POS2_FunctionForm.cs</DependentUpon>
@@ -394,6 +422,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\background1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="NewFolder1\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
