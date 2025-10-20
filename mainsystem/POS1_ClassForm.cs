@@ -13,17 +13,13 @@ namespace mainsystem
 
     public partial class POS1_ClassForm : Form
     {
+        POS1_Functions posFunctions = new POS1_Functions();
         //private POSCalculator calculator = new POSCalculator();
         private bool isLoading = true;
         // Running totals
         private double qty_total = 0;
         private double discount_totalgiven = 0;
         private double discounted_total = 0;
-
-        // Current item values
-        private double discount_amt = 0;
-        private double discounted_amt = 0;
-        private double discountRate = 0;
         public POS1_ClassForm()
         {
             InitializeComponent();
@@ -63,37 +59,16 @@ namespace mainsystem
             panelMain.Left = (this.ClientSize.Width - panelMain.Width) / 2;
             panelMain.Top = (this.ClientSize.Height - panelMain.Height) / 2;
         }
-
-        private void ComputeDiscounts()
-        {
-            if (!int.TryParse(qtyTxtbox.Text, out int qty) || qty <= 0)
-            {
-                MessageBox.Show("Please enter a valid quantity.");
-                return;
-            }
-
-            if (!double.TryParse(priceTxtbox.Text, out double price) || price <= 0)
-            {
-                MessageBox.Show("Please select an item first.");
-                return;
-            }
-
-            double subtotal = qty * price;
-            discount_amt = subtotal * discountRate;
-            discounted_amt = subtotal - discount_amt;
-
-            discountTxtbox.Text = discount_amt.ToString("n");
-            discountedTxtbox.Text = discounted_amt.ToString("n");
-        }
-
         private void SelectItem(string itemName, double price)
         {
             itemnameTxtbox.Text = itemName;
             priceTxtbox.Text = price.ToString("N0");
             qtyTxtbox.Text = "1";
             noTaxRdbtn.Checked = true;
-            discountRate = 0.00;
-            ComputeDiscounts();
+
+            posFunctions.discountRate = 0.00;
+
+            posFunctions.Compute(qtyTxtbox, priceTxtbox, discountTxtbox, discountedTxtbox);
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)
@@ -246,77 +221,71 @@ namespace mainsystem
 
         private void button2_Click(object sender, EventArgs e)
         {
-            try
+            if (posFunctions.ConvertQuantityPrice(qtyTxtbox, priceTxtbox))
             {
-                // Remove commas before parsing
-                double price = double.Parse(priceTxtbox.Text.Replace(",", ""));
-                int qty = int.Parse(qtyTxtbox.Text.Replace(",", ""));
-                double discountRate = 0;
+                // --- Compute current discount + discounted amount ---
+                posFunctions.Compute(qtyTxtbox, priceTxtbox, discountTxtbox, discountedTxtbox);
 
-                // Determine which discount applies
-                if (senrRdbtn.Checked)
-                    discountRate = 0.30;   // 30%
-                else if (regularRdbtn.Checked)
-                    discountRate = 0.10;   // 10%
-                else if (EmployeeRdbtn.Checked)
-                    discountRate = 0.15;   // 15%
-                else if (noTaxRdbtn.Checked)
-                    discountRate = 0.00;   // No discount
+                // --- Cash Validation ---
+                string cashText = cash_renderedtxtbox.Text.Replace(",", "");
+                if (!double.TryParse(cashText, out double cash))
+                {
+                    MessageBox.Show("Please enter a valid cash amount.", "Error",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
-                // Calculate
-                double amount = price * qty;
-                double discount = amount * discountRate;
-                double discountedAmount = amount - discount;
+                // --- Change Calculation ---
+                double change = cash - posFunctions.discounted_amt;
+                if (change < 0)
+                {
+                    MessageBox.Show("Insufficient cash!", "Warning",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    changeTxtbox.Text = "0.00";
+                    return; // stop here — don’t update totals
+                }
 
-                // Display results
-                discountTxtbox.Text = discount.ToString("N2");
-                discountedTxtbox.Text = discountedAmount.ToString("N2");
+                changeTxtbox.Text = change.ToString("N2");
 
-                // Update summary totals safely (remove commas)
-                double totalQty = double.Parse(string.IsNullOrWhiteSpace(qtyTotalTxtbox.Text) ? "0" : qtyTotalTxtbox.Text.Replace(",", ""));
-                double totalDiscount = double.Parse(string.IsNullOrWhiteSpace(discountTotalTxtbox.Text) ? "0" : discountTotalTxtbox.Text.Replace(",", ""));
-                double totalDiscounted = double.Parse(string.IsNullOrWhiteSpace(discountedTotalTxtbox.Text) ? "0" : discountedTotalTxtbox.Text.Replace(",", ""));
-
-                qtyTotalTxtbox.Text = (totalQty + qty).ToString();
-                discountTotalTxtbox.Text = (totalDiscount + discount).ToString("N2");
-                discountedTotalTxtbox.Text = (totalDiscounted + discountedAmount).ToString("N2");
+                // --- Update totals (including total discount given) ---
+                posFunctions.UpdateTotals(qtyTotalTxtbox, discountTotalTxtbox, discountedTotalTxtbox);
             }
-            catch
+            else
             {
-                MessageBox.Show("Please check your input values.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Invalid quantity or price.");
             }
         }
 
         private void senrRdbtn_CheckedChanged(object sender, EventArgs e)
         {
-            if (isLoading) return; // 🚫 Skip during form load
+            if (isLoading) return;
 
             if (senrRdbtn.Checked)
             {
-                discountRate = 0.30; // Senior = 30%
-                ComputeDiscounts();
+                posFunctions.discountRate = 0.30; // Senior = 30%
+                posFunctions.Compute(qtyTxtbox, priceTxtbox, discountTxtbox, discountedTxtbox);
             }
         }
 
         private void regularRdbtn_CheckedChanged(object sender, EventArgs e)
         {
-            if (isLoading) return; // 🚫 Skip during form load
+            if (isLoading) return;
 
             if (regularRdbtn.Checked)
             {
-                discountRate = 0.10; // Regular = 10%
-                ComputeDiscounts();
+                posFunctions.discountRate = 0.10;
+                posFunctions.Compute(qtyTxtbox, priceTxtbox, discountTxtbox, discountedTxtbox);
             }
         }
 
         private void EmployeeRdbtn_CheckedChanged(object sender, EventArgs e)
         {
-            if (isLoading) return; // 🚫 Skip during form load
+            if (isLoading) return;
 
             if (EmployeeRdbtn.Checked)
             {
-                discountRate = 0.15; // Employee = 15%
-                ComputeDiscounts();
+                posFunctions.discountRate = 0.15;
+                posFunctions.Compute(qtyTxtbox, priceTxtbox, discountTxtbox, discountedTxtbox);
             }
         }
 
@@ -326,8 +295,8 @@ namespace mainsystem
 
             if (noTaxRdbtn.Checked)
             {
-                discountRate = 0.00; // None
-                ComputeDiscounts();
+                posFunctions.discountRate = 0.00;
+                posFunctions.Compute(qtyTxtbox, priceTxtbox, discountTxtbox, discountedTxtbox);
             }
         }
 
@@ -339,34 +308,7 @@ namespace mainsystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                string cashText = cash_renderedtxtbox.Text.Replace(",", "");
-                string totalText = discountedTxtbox.Text.Replace(",", "");
 
-
-                if (!double.TryParse(cashText, out double cash) || !double.TryParse(totalText, out double total))
-                {
-                    MessageBox.Show("Please enter a valid cash amount.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                double change = cash - total;
-
-                if (change < 0)
-                {
-                    MessageBox.Show("Insufficient cash!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    changeTxtbox.Text = "0.00";
-                }
-                else
-                {
-                    changeTxtbox.Text = change.ToString("N2");
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Please enter a valid cash amount.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
         private void cash_renderedtxtbox_TextChanged(object sender, EventArgs e)

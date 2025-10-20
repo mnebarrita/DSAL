@@ -73,6 +73,7 @@
     <Compile Include="POS1_FunctionFrm.Designer.cs">
       <DependentUpon>POS1_FunctionFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="POS1_Functions.cs" />
     <Compile Include="POS2_ClassForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +171,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SampleLongMethod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SampleLongMethod.Designer.cs">
+      <DependentUpon>SampleLongMethod.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransparentPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -234,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="L3Transfer.resx">
       <DependentUpon>L3Transfer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SampleLongMethod.resx">
+      <DependentUpon>SampleLongMethod.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -424,6 +434,24 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="NewFolder1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %284%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %283%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %282%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\me whwn im omw.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sad-Cat-Meme-Download-PNG-Image.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
