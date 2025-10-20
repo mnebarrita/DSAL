@@ -28,19 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.printdisplayListbox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(681, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Bakla ako";
             // 
             // label2
             // 
@@ -54,21 +44,22 @@
             // 
             // printdisplayListbox
             // 
+            this.printdisplayListbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
             this.printdisplayListbox.FormattingEnabled = true;
-            this.printdisplayListbox.ItemHeight = 16;
+            this.printdisplayListbox.ItemHeight = 58;
             this.printdisplayListbox.Location = new System.Drawing.Point(25, 66);
             this.printdisplayListbox.Name = "printdisplayListbox";
-            this.printdisplayListbox.Size = new System.Drawing.Size(627, 580);
+            this.printdisplayListbox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.printdisplayListbox.Size = new System.Drawing.Size(627, 526);
             this.printdisplayListbox.TabIndex = 2;
             // 
             // Activity_4_PrintFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(679, 654);
+            this.ClientSize = new System.Drawing.Size(685, 654);
             this.Controls.Add(this.printdisplayListbox);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Name = "Activity_4_PrintFrm";
             this.Text = "Activity_4_PrintFrm";
             this.Load += new System.EventHandler(this.Activity_4_PrintFrm_Load);
@@ -78,8 +69,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.ListBox printdisplayListbox;
     }

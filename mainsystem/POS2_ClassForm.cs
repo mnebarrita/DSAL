@@ -14,6 +14,7 @@ namespace mainsystem
 {
     public partial class POS2_ClassForm : Form
     {
+        POS2_Functions pos2 = new POS2_Functions();
         private double total_amount = 0;
         private int total_qty = 0;
 
@@ -27,11 +28,9 @@ namespace mainsystem
         }
         private void HandleCheckBoxClick(System.Windows.Forms.CheckBox chk, double price)
         {
-            // If checkbox is checked, add item to total; if unchecked, subtract it
             if (chk.Checked)
             {
                 priceTxtBox.Text = price.ToString("N2");
-                discountTxtbox.Text = "0.00";
                 displayListbox.Items.Add(chk.Text + " " + price.ToString("N2"));
 
                 total_amount += price;
@@ -39,11 +38,9 @@ namespace mainsystem
             }
             else
             {
-                // If unchecked, remove from total
                 total_amount -= price;
                 total_qty -= 1;
 
-                // Optionally, remove item from listbox
                 for (int i = displayListbox.Items.Count - 1; i >= 0; i--)
                 {
                     if (displayListbox.Items[i].ToString().StartsWith(chk.Text))
@@ -54,7 +51,7 @@ namespace mainsystem
                 }
             }
 
-            // Update totals
+            // Only update totals here
             totalBillsTxtbox.Text = total_amount.ToString("N2");
             totalQtyTxtbox.Text = total_qty.ToString();
         }
@@ -210,16 +207,7 @@ namespace mainsystem
 
         private void button3_Click(object sender, EventArgs e)
         {
-            // Reset totals and current-item trackers
-            total_amount = 0;
-            total_qty = 0;
-            currentItemLastAmount = 0;
-            currentItemLastQuantity = 0;
-
-            discountedTxtbox.Text = "0.00";
-            totalBillsTxtbox.Text = "0.00";
-            totalQtyTxtbox.Text = "0";
-            displayListbox.Items.Clear();
+            pos2.Reset(discountedTxtbox, totalBillsTxtbox, totalQtyTxtbox, displayListbox);
         }
         private void button4_Click(object sender, EventArgs e)
         {
@@ -395,53 +383,12 @@ namespace mainsystem
 
         private void totalQtyTxtbox_TextChanged(object sender, EventArgs e)
         {
-            // You can add logic here if you want to handle changes to the totalQtyTxtbox.
-            // For now, this is just a placeholder to resolve the event handler error.
+            
         }
 
         private void qtyTxtbox_TextChanged_1(object sender, EventArgs e)
         {
-            // If we are setting text programmatically, ignore
-            if (updatingQuantity) return;
-
-            // Parse with TryParse to avoid exceptions
-            if (!double.TryParse(priceTxtBox.Text, out double price))
-            {
-                // no valid price -> nothing to do
-                discountedTxtbox.Text = "0.00";
-                return;
-            }
-
-            if (!int.TryParse(qtyTxtbox.Text, out int quantity))
-            {
-                // invalid quantity -> treat as 0
-                quantity = 0;
-            }
-
-            if (!double.TryParse(discountTxtbox.Text, out double discountAmt))
-            {
-                discountAmt = 0.0;
-            }
-
-            // Compute amount for current item
-            double currentItemAmount = (price * quantity) - discountAmt;
-
-            // Compute deltas from previously recorded values (prevents double counting)
-            double amountDelta = currentItemAmount - currentItemLastAmount;
-            int qtyDelta = quantity - currentItemLastQuantity;
-
-            // Update running totals by deltas
-            total_amount += amountDelta;
-            total_qty += qtyDelta;
-
-            // Save current item state for future delta computations
-            currentItemLastAmount = currentItemAmount;
-            currentItemLastQuantity = quantity;
-
-            // Display the current item calculations and totals
-            discountedTxtbox.Text = currentItemAmount.ToString("N2");   // Discounted Amount for this item
-            totalBillsTxtbox.Text = total_amount.ToString("N2");          // Total Bills
-            totalQtyTxtbox.Text = total_qty.ToString();                 // Total Quantity
+            pos2.UpdateQuantity(qtyTxtbox, priceTxtBox, discountTxtbox, discountedTxtbox, totalBillsTxtbox, totalQtyTxtbox);
         }
 
         private void discountTxtbox_TextChanged(object sender, EventArgs e)

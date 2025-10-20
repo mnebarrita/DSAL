@@ -152,6 +152,7 @@
     <Compile Include="PayslipForm.Designer.cs">
       <DependentUpon>PayslipForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="POS2_Functions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="L3Quiz_Registration.cs">
