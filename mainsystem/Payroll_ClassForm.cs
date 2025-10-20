@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using WinFormsTextBox = System.Windows.Forms.TextBox;
 
 namespace mainsystem
 {
@@ -37,6 +38,85 @@ namespace mainsystem
             308.80, 327.00, 345.20, 363.30, 381.50, 399.70, 417.80, 436.00,
             454.20, 472.30, 490.50, 508.70, 526.80, 545.00, 563.20, 581.30
         };
+
+        private void btnCompute_Click(object sender, EventArgs e)
+        {
+            Payroll payroll = new Payroll();
+
+            // --- Parse user inputs safely ---
+            // CS0206 fix: TryParse needs an out variable (cannot use a property directly).
+            double basicPay = 0;
+            double.TryParse(incomepercutoff_bi.Text, out basicPay);
+            payroll.BasicPay = basicPay;
+
+            double honorarium = 0;
+            double.TryParse(incomepercutoff_hi.Text, out honorarium);
+            payroll.Honorarium = honorarium;
+
+            double otherIncome = 0;
+            double.TryParse(incomepercutoff_oi.Text, out otherIncome);
+            payroll.OtherIncome = otherIncome;
+
+            // Handle optional controls that may not exist in the designer.
+            // This prevents CS0103 (name does not exist) by doing a runtime lookup.
+            WinFormsTextBox absencesBox = this.Controls.Find("absencesTxt", true).FirstOrDefault() as WinFormsTextBox;
+            if (absencesBox != null)
+            {
+                double.TryParse(absencesBox.Text, out double absences);
+                payroll.Absences = absences;
+            }
+            else
+            {
+                payroll.Absences = 0; // safe default when control missing
+            }
+
+            WinFormsTextBox tardinessBox = this.Controls.Find("tardinessTxt", true).FirstOrDefault() as WinFormsTextBox;
+            if (tardinessBox != null)
+            {
+                double.TryParse(tardinessBox.Text, out double tardiness);
+                payroll.Tardiness = tardiness;
+            }
+            else
+            {
+                payroll.Tardiness = 0; // safe default when control missing
+            }
+
+            // Loans & contributions (out variable declarations are fine in C# 7.3)
+            double.TryParse(sssloan.Text, out double sssLoan);
+            double.TryParse(pagibigloan.Text, out double pagibigLoanVal);
+            double.TryParse(FSD.Text, out double facSavingsDep);
+            double.TryParse(FSL.Text, out double facSavingsLoan);
+            double.TryParse(salaryloan.Text, out double salaryLoanVal);
+            double.TryParse(otherloans.Text, out double otherLoansVal);
+
+            // --- Compute gross ---
+            payroll.ComputeGross();
+            grossincome.Text = payroll.GrossIncome.ToString("F2");
+
+            // --- Compute deductions ---
+            // Regular contributions
+            payroll.SSS = GetSSSContribution(payroll.GrossIncome);
+            payroll.PhilHealth = GetPhilHealth(payroll.GrossIncome);
+            payroll.Pagibig = 200; // fixed semi-monthly
+            payroll.Tax = GetWithholdingTax(payroll.GrossIncome);
+
+            // Other deductions
+            payroll.Loan = sssLoan + pagibigLoanVal + facSavingsLoan + salaryLoanVal + otherLoansVal;
+            payroll.Savings = facSavingsDep;
+
+            // Compute total deductions and net income
+            payroll.ComputeDeductions();
+            payroll.ComputeNet();
+
+            // --- Display deductions ---
+            SSSctrb.Text = payroll.SSS.ToString("F2");
+            phctrb.Text = payroll.PhilHealth.ToString("F2");
+            pagibigctrb.Text = payroll.Pagibig.ToString("F2");
+            incometaxctrb.Text = payroll.Tax.ToString("F2");
+
+            totaldeductions.Text = payroll.TotalDeductions.ToString("F2");
+            netincome.Text = payroll.NetIncome.ToString("F2");
+        }
 
         public Payroll_ClassForm()
         {
@@ -178,44 +258,15 @@ namespace mainsystem
             grossincome.Text = "";
             netincome.Text = "";
             totaldeductions.Text = "";
+            pictureBox1.Image = null;
+
         }
         // ================================
         // NET INCOME BUTTON
         // ================================
         private void button2_Click(object sender, EventArgs e)
         {
-            // --- REGULAR DEDUCTIONS ---
-            double sss = 0, philhealth = 0, pagibig = 200, incomeTax = 0;
-
-            if (SSSctrb.Text != "") sss = Convert.ToDouble(SSSctrb.Text);
-            if (phctrb.Text != "") philhealth = Convert.ToDouble(phctrb.Text);
-            if (incometaxctrb.Text != "") incomeTax = Convert.ToDouble(incometaxctrb.Text);
-
-            // Pag-IBIG is always fixed at 200
-            pagibigctrb.Text = pagibig.ToString("F2");
-
-            // --- OTHER DEDUCTIONS ---
-            double sssLoan = 0, pagibigLoanVal = 0, facSavingsDep = 0, facSavingsLoan = 0, salaryLoanVal = 0, otherLoansVal = 0;
-
-            if (sssloan.Text != "") sssLoan = Convert.ToDouble(sssloan.Text);
-            if (pagibigloan.Text != "") pagibigLoanVal = Convert.ToDouble(pagibigloan.Text);
-            if (FSD.Text != "") facSavingsDep = Convert.ToDouble(FSD.Text);
-            if (FSL.Text != "") facSavingsLoan = Convert.ToDouble(FSL.Text);
-            if (salaryloan.Text != "") salaryLoanVal = Convert.ToDouble(salaryloan.Text);
-            if (otherloans.Text != "") otherLoansVal = Convert.ToDouble(otherloans.Text);
-
-            // --- TOTAL DEDUCTIONS ---
-            double totalDeductions = sss + philhealth + pagibig + incomeTax +
-                                     sssLoan + pagibigLoanVal + facSavingsDep +
-                                     facSavingsLoan + salaryLoanVal + otherLoansVal;
-            totaldeductions.Text = totalDeductions.ToString("F2");
-
-            // --- NET INCOME ---
-            double grossIncome = 0;
-            if (grossincome.Text != "") grossIncome = Convert.ToDouble(grossincome.Text);
-
-            double netIncome = grossIncome - totalDeductions;
-            netincome.Text = netIncome.ToString("F2");
+            btnCompute_Click(sender, e);
         }
 
         private void label12_Click(object sender, EventArgs e)
@@ -299,20 +350,20 @@ namespace mainsystem
         // ------------------------
         private double GetWithholdingTax(double income)
         {
-            if (income <= 20832)
+
+            if (income <= 20833)
                 return 0;
             else if (income <= 33333)
-                return (income - 20833) * 0.20;
+                return (income - 20833) * 0.15; // 15% of excess
             else if (income <= 66667)
-                return 2500 + (income - 33333) * 0.25;
+                return 1875 + (income - 33333) * 0.20;
             else if (income <= 166667)
-                return 10833 + (income - 66667) * 0.30;
+                return 8541.80 + (income - 66667) * 0.25;
             else if (income <= 666667)
-                return 40833 + (income - 166667) * 0.32;
+                return 33541.80 + (income - 166667) * 0.30;
             else
-                return 200833 + (income - 666667) * 0.35;
+                return 183541.80 + (income - 666667) * 0.35;
         }
-
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 

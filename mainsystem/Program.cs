@@ -16,7 +16,7 @@ namespace mainsystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new POS2_ClassForm());
+            Application.Run(new Payroll_FunctionForm());
         }
     }
 }

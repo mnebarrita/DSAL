@@ -61,6 +61,7 @@
     <Compile Include="Payroll_FunctionForm.Designer.cs">
       <DependentUpon>Payroll_FunctionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Payroll_Functions.cs" />
     <Compile Include="POS1_ClassForm.cs">
       <SubType>Form</SubType>
     </Compile>
