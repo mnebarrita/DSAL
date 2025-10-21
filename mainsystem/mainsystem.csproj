@@ -49,6 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="employee_dbconnection.cs" />
+    <Compile Include="loginDb_dbconnections.cs" />
     <Compile Include="Payroll_ClassForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +64,8 @@
       <DependentUpon>Payroll_FunctionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Payroll_Functions.cs" />
+    <Compile Include="payrol_dbconnection.cs" />
+    <Compile Include="payrol_variables.cs" />
     <Compile Include="POS1_ClassForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +164,7 @@
     <Compile Include="POS_Admin.Designer.cs">
       <DependentUpon>POS_Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="pos_dbconnection.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="L3Quiz_Registration.cs">
