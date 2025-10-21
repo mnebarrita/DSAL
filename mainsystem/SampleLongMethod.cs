@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -46,43 +44,55 @@ namespace mainsystem
             }
         }
 
-        private void SampleLongMethod_Load(object sender, EventArgs e)
+        private void LoadDataGrid()
         {
-
-        }
-
-        private void Save_Click(object sender, EventArgs e)
-        {
-            connection.Open();
-            sql = "INSERT INTO studentTb1 (student_id, student_name, department, picpath) " +
-    "VALUES ('" + studentNumTxtBox.Text + "','" + studentNameTxtBox.Text + "','"
-    + departmentTxtBox.Text + "','" + picturepathTxtBox.Text + "')";
-            command = new SqlCommand(sql, connection);
-            command.CommandType = CommandType.Text;
-
-            adapter = new SqlDataAdapter(command);
-            adapter.InsertCommand = command;
-            command.ExecuteNonQuery();
-
             sql = "SELECT * FROM studentTb1";
-            command = new SqlCommand(sql, connection);
-            command.CommandType = CommandType.Text;
-
-            adapter = new SqlDataAdapter(command);
-            adapter.SelectCommand = command;
-            command.ExecuteNonQuery();
-
+            adapter = new SqlDataAdapter(sql, connection);
             dset = new DataSet();
             adapter.Fill(dset, "studentTb1");
-
             griddisplay.DataSource = dset.Tables[0];
-            pictureBox1.Image = Image.FromFile(@"C:\Users\Mica\Downloads\me whwn im omw.jpg");
+        }
+
+        private void ClearFields()
+        {
             studentNameTxtBox.Clear();
             studentNumTxtBox.Clear();
             departmentTxtBox.Clear();
             picturepathTxtBox.Clear();
+            pictureBox1.Image = null;
+        }
 
-            connection.Close();
+        private void SampleLongMethod_Load(object sender, EventArgs e)
+        {
+            LoadDataGrid();
+        }
+         
+        private void Save_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                connection.Open();
+                sql = "INSERT INTO studentTb1 (student_id, student_name, department, picpath) VALUES (@id, @name, @dept, @path)";
+                command = new SqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@id", studentNumTxtBox.Text);
+                command.Parameters.AddWithValue("@name", studentNameTxtBox.Text);
+                command.Parameters.AddWithValue("@dept", departmentTxtBox.Text);
+                command.Parameters.AddWithValue("@path", picturepathTxtBox.Text);
+                command.ExecuteNonQuery();
+
+                LoadDataGrid();
+                ClearFields();
+
+                MessageBox.Show("Record saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error saving record: " + ex.Message);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open) connection.Close();
+            }
         }
 
         private void Search_Click(object sender, EventArgs e)
@@ -112,7 +122,6 @@ namespace mainsystem
             {
                 MessageBox.Show("No student found.");
             }
-
             connection.Close();
         }
 
@@ -127,51 +136,74 @@ namespace mainsystem
                 command.ExecuteNonQuery();
 
                 // Refresh grid
-                sql = "SELECT * FROM studentTb1";
-                adapter = new SqlDataAdapter(sql, connection);
-                dset = new DataSet();
-                adapter.Fill(dset, "studentTb1");
-                griddisplay.DataSource = dset.Tables[0];
+                LoadDataGrid();
 
                 connection.Close();
+                MessageBox.Show("Record deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-
         }
 
         private void Edit_Click(object sender, EventArgs e)
         {
-            connection.Open();
-            sql = "UPDATE studentTb1 SET student_name=@name, department=@dept, picpath=@path WHERE student_id=@id";
-            command = new SqlCommand(sql, connection);
-            command.Parameters.AddWithValue("@name", studentNameTxtBox.Text);
-            command.Parameters.AddWithValue("@dept", departmentTxtBox.Text);
-            command.Parameters.AddWithValue("@path", picturepathTxtBox.Text);
-            command.Parameters.AddWithValue("@id", studentNumTxtBox.Text);
-            command.ExecuteNonQuery();
+            if (string.IsNullOrWhiteSpace(studentNumTxtBox.Text))
+            {
+                MessageBox.Show("Please enter the Student ID to edit.", "Input Required", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
-            // Refresh grid
-            sql = "SELECT * FROM studentTb1";
-            adapter = new SqlDataAdapter(sql, connection);
-            dset = new DataSet();
-            adapter.Fill(dset, "studentTb1");
-            griddisplay.DataSource = dset.Tables[0];
+            try
+            {
+                connection.Open();
 
-            connection.Close();
-            MessageBox.Show("Updated successfully!");
+                if (string.IsNullOrEmpty(picturepathTxtBox.Text))
+                {
+                    MessageBox.Show("Please select a valid picture path before continuing.");
+                    return;
+                }
 
+                string path_to_update = picturepathTxtBox.Text;
+
+                // Secure Parameterized SQL UPDATE statement: update all fields for a given student_id
+                sql = "UPDATE studentTb1 SET student_name = @name, department = @dept, picpath = @path WHERE student_id = @id";
+                command = new SqlCommand(sql, connection);
+                command.CommandType = CommandType.Text;
+
+                // Set parameters for the fields being updated
+                command.Parameters.AddWithValue("@name", studentNameTxtBox.Text);
+                command.Parameters.AddWithValue("@dept", departmentTxtBox.Text);
+                command.Parameters.AddWithValue("@path", path_to_update);
+                command.Parameters.AddWithValue("@id", studentNumTxtBox.Text);
+
+                int rowsAffected = command.ExecuteNonQuery();
+
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Record updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadDataGrid();
+                    ClearFields();
+                    //SetDefaultImage();
+                }
+                else
+                {
+                    MessageBox.Show($"No record found with ID: {studentNumTxtBox.Text} to update.", "Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error updating data: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open) connection.Close();
+            }
         }
 
         private void New_Click(object sender, EventArgs e)
         {
-            studentNameTxtBox.Clear();
-            studentNumTxtBox.Clear();
-            departmentTxtBox.Clear();
-            picturepathTxtBox.Clear();
-            pictureBox1.Image = null;
+            ClearFields();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void pictureBox_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
             {
@@ -180,89 +212,17 @@ namespace mainsystem
 
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    PictureBox clickedBox = (PictureBox)sender; // Get the clicked picturebox
+                    PictureBox clickedBox = (PictureBox)sender;
                     clickedBox.Image = Image.FromFile(ofd.FileName);
                     picturepathTxtBox.Text = ofd.FileName;
                 }
             }
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-            using (OpenFileDialog ofd = new OpenFileDialog())
-            {
-                ofd.Title = "Select an Image";
-                ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
-
-                if (ofd.ShowDialog() == DialogResult.OK)
-                {
-                    PictureBox clickedBox = (PictureBox)sender; // Get the clicked picturebox
-                    clickedBox.Image = Image.FromFile(ofd.FileName);
-                    picturepathTxtBox.Text = ofd.FileName;
-                }
-            }
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-            using (OpenFileDialog ofd = new OpenFileDialog())
-            {
-                ofd.Title = "Select an Image";
-                ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
-
-                if (ofd.ShowDialog() == DialogResult.OK)
-                {
-                    PictureBox clickedBox = (PictureBox)sender; // Get the clicked picturebox
-                    clickedBox.Image = Image.FromFile(ofd.FileName);
-                    picturepathTxtBox.Text = ofd.FileName;
-                }
-            }
-        }
-
-        private void pictureBox5_Click(object sender, EventArgs e)
-        {
-            using (OpenFileDialog ofd = new OpenFileDialog())
-            {
-                ofd.Title = "Select an Image";
-                ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
-
-                if (ofd.ShowDialog() == DialogResult.OK)
-                {
-                    PictureBox clickedBox = (PictureBox)sender; // Get the clicked picturebox
-                    clickedBox.Image = Image.FromFile(ofd.FileName);
-                    picturepathTxtBox.Text = ofd.FileName;
-                }
-            }
-        }
-
-        private void pictureBox6_Click(object sender, EventArgs e)
-        {
-            using (OpenFileDialog ofd = new OpenFileDialog())
-            {
-                ofd.Title = "Select an Image";
-                ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
-
-                if (ofd.ShowDialog() == DialogResult.OK)
-                {
-                    PictureBox clickedBox = (PictureBox)sender; // Get the clicked picturebox
-                    clickedBox.Image = Image.FromFile(ofd.FileName);
-                    picturepathTxtBox.Text = ofd.FileName;
-                }
-            }
-        }
-
-        private void griddisplay_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void Cancel_Click(object sender, EventArgs e)
         {
-            studentNameTxtBox.Clear();
-            studentNumTxtBox.Clear();
-            departmentTxtBox.Clear();
-            picturepathTxtBox.Clear();
-            pictureBox1.Image = null;
+            ClearFields();
         }
     }
     }
