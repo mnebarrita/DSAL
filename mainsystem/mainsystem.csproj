@@ -199,6 +199,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="L14_Classes\useraccount_db_connection.cs" />
+    <Compile Include="Variables.cs" />
     <EmbeddedResource Include="POS\Payroll_ClassForm.resx">
       <DependentUpon>Payroll_ClassForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -38,8 +38,7 @@ namespace mainsystem
         {
             panelMain.Left = (this.ClientSize.Width - panelMain.Width) / 2;
             panelMain.Top = (this.ClientSize.Height - panelMain.Height) / 2;
-            pictureBox1.Left = (this.ClientSize.Width - pictureBox1.Width) / 2 + 25;
-            pictureBox1.Top = (this.ClientSize.Height - pictureBox1.Height) / 2 - 125;
+            
         }
         private void button2_Click(object sender, EventArgs e)
         {
