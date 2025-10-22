@@ -64,9 +64,17 @@ namespace mainsystem
 
         private void SampleLongMethod_Load(object sender, EventArgs e)
         {
+            CenterPanel();
+            this.Resize += (s, ev) => CenterPanel(); // recenter when form resizes
             LoadDataGrid();
         }
-         
+
+        private void CenterPanel()
+        {
+            panel1.Left = (this.ClientSize.Width - panel1.Width) / 2;
+            panel1.Top = (this.ClientSize.Height - panel1.Height) / 2;
+        }
+
         private void Save_Click(object sender, EventArgs e)
         {
             try
@@ -223,6 +231,11 @@ namespace mainsystem
         private void Cancel_Click(object sender, EventArgs e)
         {
             ClearFields();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
     }
