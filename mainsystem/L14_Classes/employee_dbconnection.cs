@@ -22,7 +22,7 @@ namespace mainsystem
         {
             // connection of c# to sql
             employee_sql_connection = new SqlConnection();
-            employee_connectionString = "Data Source=MICACHU\\SQLEXPRESS; Initial Catalog=SampleDatabaseDb; User ID=Micachu; Password=morats;";
+            employee_connectionString = "Data Source=MICACHU\\SQLEXPRESS; Initial Catalog=POSDB; User ID=Micachu; Password=morats;";
             employee_sql_connection = new SqlConnection(employee_connectionString);
             employee_sql_connection.ConnectionString = employee_connectionString;
             employee_sql_connection.Open();

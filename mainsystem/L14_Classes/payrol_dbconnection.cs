@@ -22,7 +22,7 @@ namespace mainsystem
         {
             // Codes to establish a connection from C# forms to the SQL Server database
             payrol_sql_connection = new SqlConnection();
-            payrol_connectionString = "Data Source=MICACHU\\SQLEXPRESS; Initial Catalog=SampleDatabaseDb; User ID=Micachu; Password=morats;";
+            payrol_connectionString = "Data Source=MICACHU\\SQLEXPRESS; Initial Catalog=POSDB; User ID=Micachu; Password=morats;";
             payrol_sql_connection = new SqlConnection(payrol_connectionString);
             payrol_sql_connection.ConnectionString = payrol_connectionString;
             payrol_sql_connection.Open();

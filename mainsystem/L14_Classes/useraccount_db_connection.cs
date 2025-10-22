@@ -22,7 +22,7 @@ namespace mainsystem
             //codes to establish connection from C# Forms to the SQL Server database
             useraccount_sql_connection = new SqlConnection();
             useraccount_connectionString = "Data Source=MICACHU\\SQLEXPRESS; " +
-                "Initial Catalog=SampleDatabaseDb; User ID=Micachu; Password=morats;";
+                "Initial Catalog=POSDB; User ID=Micachu; Password=morats;";
         }
         public void useraccount_cmd()//public function codes that support the mssql query
         {
@@ -60,13 +60,13 @@ namespace mainsystem
                                                   //the database inside MSSQL to C# or Visual Studio
         {
             useraccount_sql_dataset = new DataSet();
-            useraccount_sql_dataadapter.Fill(useraccount_sql_dataset, "pos_empRegTbl");
+            useraccount_sql_dataadapter.Fill(useraccount_sql_dataset, "pos_empRegTb1");
         }
         public void useraccount_sqldatasetSELECT_Account()//codes for mirroring the
                                                           //contents of the database inside the MSSQL going to C# or Visual Studio
         {
             useraccount_sql_dataset = new DataSet();
-            useraccount_sql_dataadapter.Fill(useraccount_sql_dataset, "useraccountTbl");
+            useraccount_sql_dataadapter.Fill(useraccount_sql_dataset, "useraccountTb1");
         }
     }
 
