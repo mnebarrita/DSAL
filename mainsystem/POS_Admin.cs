@@ -16,7 +16,7 @@ namespace mainsystem
 {
     public partial class POS_Admin : Form
     {
-        pos_dbconnection posdb_connect = new pos_dbconnection();
+        posdb_connect posdb_connect = new posdb_connect();
         private OpenFileDialog openFileDialog1 = new OpenFileDialog();
 
         private string picpath;
@@ -104,6 +104,29 @@ namespace mainsystem
             }
         }
 
+        private DataTable TransposeDataTable(DataTable dt)
+        {
+            DataTable transposed = new DataTable();
+
+            // Create columns based on original rows
+            transposed.Columns.Add("Column");
+            foreach (DataRow row in dt.Rows)
+                transposed.Columns.Add(row[0].ToString());
+
+            // Fill rows based on original columns
+            for (int i = 0; i < dt.Columns.Count; i++)
+            {
+                DataRow newRow = transposed.NewRow();
+                newRow[0] = dt.Columns[i].ColumnName;
+
+                for (int j = 0; j < dt.Rows.Count; j++)
+                    newRow[j + 1] = dt.Rows[j][i].ToString();
+
+                transposed.Rows.Add(newRow);
+            }
+
+            return transposed;
+        }
 
         private void LoadComboBoxIDs()
         {
@@ -153,8 +176,8 @@ namespace mainsystem
             CenterPanel();
             this.Resize += (s, ev) => CenterPanel();
 
-            try
-            {
+            //try
+            //{
                 // Hide picpath textboxes 
                 picpathTxtbox1.Hide(); picpathTxtbox2.Hide(); picpathTxtbox3.Hide(); picpathTxtbox4.Hide();
                 picpathTxtbox5.Hide(); picpathTxtbox6.Hide(); picpathTxtbox7.Hide(); picpathTxtbox8.Hide();
@@ -176,15 +199,15 @@ namespace mainsystem
                     dataGridView1.DataSource = posdb_connect.pos_sql_dataset.Tables[0];
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error occurs in this area. Please contact your administrator!\n\n" + ex.Message);
-            }
-        }
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Error occurs in this area. Please contact your administrator!\n\n" + ex.Message);
+            //}
+        //}
 
         private void SEARCH_Click(object sender, EventArgs e)
         {
-            try
+            //try
             {
                 posdb_connect.pos_sql = "SELECT * FROM pos_nameTb1 " +
                     "INNER JOIN pos_picTb1 ON pos_nameTb1.pos_id = pos_picTb1.pos_id " +
@@ -283,15 +306,15 @@ namespace mainsystem
                 priceTxtbox19.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][64].ToString();
                 priceTxtbox20.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][65].ToString();
             }
-            catch (Exception)
-            {
-                MessageBox.Show("Error occurs in this area. Please contact your administrator!");
-            }
+            //catch (Exception)
+            //{
+            //    MessageBox.Show("Error occurs in this area. Please contact your administrator!");
+            //}
         }
 
         private void SAVE_Click(object sender, EventArgs e)
         {
-            try
+            //try
             {
                 // Insert into name table (pos_nameTb1)
                 posdb_connect.pos_sql = "INSERT INTO pos_nameTb1 (pos_id, name1, name2, name3, name4, name5, name6, name7, name8, name9, name10, name11, name12, name13, name14, name15, name16, name17, name18, name19, name20) " +
@@ -335,15 +358,15 @@ namespace mainsystem
 
                 cleartextboxes();
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error occurs in this area. Please contact your administrator!\n\n" + ex.Message);
-            }
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Error occurs in this area. Please contact your administrator!\n\n" + ex.Message);
+            //}
         }
 
         private void UPDATE_Click(object sender, EventArgs e)
         {
-            try
+            //try
             {
                 // Update name table
                 posdb_connect.pos_sql = "UPDATE pos_nameTb1 SET " +
@@ -374,7 +397,7 @@ namespace mainsystem
                 // Update pic table
                 posdb_connect.pos_sql = "UPDATE pos_picTb1 SET " +
                     "pic1 = '" + picpathTxtbox1.Text + "', pic2 = '" + picpathTxtbox2.Text + "', pic3 = '" + picpathTxtbox3.Text + "', pic4 = '" + picpathTxtbox4.Text + "', " +
-                    "pic5 = '" + picpathTxtbox5.Text + "', pic6 = '" + picpathTxtbox6.Text + "', pic7 = '" + picpathTxtbox7.Text + "', pic8 = '" + picpathTxtbox8.Text + ", " +
+                    "pic5 = '" + picpathTxtbox5.Text + "', pic6 = '" + picpathTxtbox6.Text + "', pic7 = '" + picpathTxtbox7.Text + "', pic8 = '" + picpathTxtbox8.Text + "', " +
                     "pic9 = '" + picpathTxtbox9.Text + "', pic10 = '" + picpathTxtbox10.Text + "', pic11 = '" + picpathTxtbox11.Text + "', pic12 = '" + picpathTxtbox12.Text + "', " +
                     "pic13 = '" + picpathTxtbox13.Text + "', pic14 = '" + picpathTxtbox14.Text + "', pic15 = '" + picpathTxtbox15.Text + "', pic16 = '" + picpathTxtbox16.Text + "', " +
                     "pic17 = '" + picpathTxtbox17.Text + "', pic18 = '" + picpathTxtbox18.Text + "', pic19 = '" + picpathTxtbox19.Text + "', pic20 = '" + picpathTxtbox20.Text + "' " +
@@ -405,15 +428,15 @@ namespace mainsystem
 
                 cleartextboxes();
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error occurs in this area. Please contact your administrator!\n\n" + ex.Message);
-            }
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Error occurs in this area. Please contact your administrator!\n\n" + ex.Message);
+            //}
         }
 
         private void DELETE_Click(object sender, EventArgs e)
         {
-            try
+            //try
             {
                 // Delete price row
                 posdb_connect.pos_sql = "DELETE FROM pos_priceTb1 WHERE pos_id = '" + comboBox1.Text + "'";
@@ -442,10 +465,10 @@ namespace mainsystem
 
                 cleartextboxes();
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error occurs in this area. Please contact your administrator!\n\n" + ex.Message);
-            }
+            //catch (Exception ex)
+            //{
+            //   MessageBox.Show("Error occurs in this area. Please contact your administrator!\n\n" + ex.Message);
+            //}
         }
 
         private void NEWCANCEL_Click(object sender, EventArgs e)

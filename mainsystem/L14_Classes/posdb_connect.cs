@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace mainsystem
 {
-    internal class pos_dbconnection
+    internal class posdb_connect
     {
         // Declaration of variables for database connections and query which to access from one form to another
         public string pos_connectionString = null;
@@ -80,8 +80,8 @@ namespace mainsystem
         }
         public void pos_select()
         {
-            pos_sql = "SELECT * FROM pos_nameTb1 INNER JOIN pos_picTb1 ON" +
-                "pos_nameTb1.pos_id = pos_picTb1.pos_id INNER JOIN pos_priceTb1 ON" +
+            pos_sql = "SELECT * FROM pos_nameTb1 INNER JOIN pos_picTb1 ON " +
+                "pos_nameTb1.pos_id = pos_picTb1.pos_id INNER JOIN pos_priceTb1 ON " +
                 "pos_picTb1.pos_id = pos_priceTb1.pos_id";
         }
         public void pos_select_cashier()
