@@ -20,13 +20,26 @@ namespace mainsystem
 
         public void pos_connString()
         {
-            // Codes to establish a connection from C# forms to the SQL Server database
-            pos_sql_connection = new SqlConnection();
             pos_connectionString = "Data Source=MICACHU\\SQLEXPRESS; Initial Catalog=POSDB; User ID=Micachu; Password=morats;";
             pos_sql_connection = new SqlConnection(pos_connectionString);
-            pos_sql_connection.ConnectionString = pos_connectionString;
-            pos_sql_connection.Open();
         }
+
+        public void posdb_open()
+        {
+            if (pos_sql_connection.State == ConnectionState.Closed)
+            {
+                pos_sql_connection.Open();
+            }
+        }
+
+        public void posdb_close()
+        {
+            if (pos_sql_connection.State == ConnectionState.Open)
+            {
+                pos_sql_connection.Close();
+            }
+        }
+
 
         public void pos_cmd()
         {

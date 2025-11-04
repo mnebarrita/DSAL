@@ -51,8 +51,8 @@ namespace mainsystem
                 picpathTxtbox19.Clear(); picpathTxtbox20.Clear();
 
                 // Clear price textboxes (1..20)
-                priceTxtbox6.Clear(); priceTxtbox7.Clear(); priceTxtbox8.Clear();
-                priceTxtbox9.Clear(); priceTxtbox10.Clear(); priceTxtbox11.Clear();
+                priceTxtbox1.Clear(); priceTxtbox2.Clear(); priceTxtbox3.Clear();
+                priceTxtbox4.Clear(); priceTxtbox5.Clear(); priceTxtbox6.Clear();
                 priceTxtbox7.Clear(); priceTxtbox8.Clear(); priceTxtbox9.Clear();
                 priceTxtbox10.Clear(); priceTxtbox11.Clear(); priceTxtbox12.Clear();
                 priceTxtbox13.Clear(); priceTxtbox14.Clear(); priceTxtbox15.Clear();
@@ -66,7 +66,7 @@ namespace mainsystem
                 nameTxtbox10.Clear(); nameTxtbox11.Clear(); nameTxtbox12.Clear();
                 nameTxtbox13.Clear(); nameTxtbox14.Clear(); nameTxtbox15.Clear();
                 nameTxtbox16.Clear(); nameTxtbox17.Clear(); nameTxtbox18.Clear();
-                nameTxtbox9.Clear(); nameTxtbox20.Clear();
+                nameTxtbox19.Clear(); nameTxtbox20.Clear();
 
                 // Reset all picture boxes to default image (1..20) if default exists
                 if (pic != null)
@@ -130,32 +130,45 @@ namespace mainsystem
 
         private void LoadComboBoxIDs()
         {
-            
-                // Clear previous items to avoid duplicates
-                comboBox1.Items.Clear();
+            try
+            {
+                posdb_connect.pos_connString(); // setup connection string
+                posdb_connect.posdb_open(); // open connection
 
-                // Query all available pos_id values from the database
-                posdb_connect.pos_sql = "SELECT pos_id FROM pos_nameTb1 ORDER BY pos_id ASC";
-                posdb_connect.pos_cmd();
-                posdb_connect.pos_sqladapterSelect();
-                posdb_connect.pos_sqldatasetSELECT();
+                comboBox1.Items.Clear(); // Clear existing items
 
-                // If data exists, add them to comboBox
-                if (posdb_connect.pos_sql_dataset != null &&
-                    posdb_connect.pos_sql_dataset.Tables.Count > 0 &&
-                    posdb_connect.pos_sql_dataset.Tables[0].Rows.Count > 0)
+                // Use a clean, parameterized SQL query
+                string query = "SELECT pos_id FROM pos_nameTb1 ORDER BY pos_id ASC";
+
+                using (SqlCommand cmd = new SqlCommand(query, posdb_connect.pos_sql_connection))
                 {
-                    foreach (DataRow row in posdb_connect.pos_sql_dataset.Tables[0].Rows)
+                    using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        comboBox1.Items.Add(row["pos_id"].ToString());
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                comboBox1.Items.Add(reader["pos_id"].ToString());
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("No POS IDs found in the database.");
+                        }
                     }
                 }
-                else
-                {
-                    MessageBox.Show("No POS IDs found in the database.");
-                }
             }
-            
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading IDs: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                posdb_connect.posdb_close(); // Always close
+            }
+        }
+
+
 
 
         private void CenterPanel()
@@ -166,157 +179,194 @@ namespace mainsystem
 
         private void POS_Admin_Load(object sender, EventArgs e)
         {
-            string sql = "SELECT * FROM pos_nameTb1";
-            SqlDataAdapter adapter = new SqlDataAdapter(sql, posdb_connect.pos_connectionString);
-            DataSet dset = new DataSet();
-            adapter.Fill(dset, "pos_nameTb1");
-            dataGridView1.DataSource = dset.Tables[0];
+            try
+            { 
+                posdb_connect.pos_connString();
+                posdb_connect.posdb_open();
 
+                string sql = "SELECT * FROM pos_nameTb1";
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, posdb_connect.pos_sql_connection);
+                DataSet dset = new DataSet();
+                adapter.Fill(dset, "pos_nameTb1");
+                dataGridView1.DataSource = dset.Tables[0];
 
-            CenterPanel();
-            this.Resize += (s, ev) => CenterPanel();
+                //Center panel (UI logic) ---
+                CenterPanel();
+                this.Resize += (s, ev) => CenterPanel();
 
-            //try
-            //{
-                // Hide picpath textboxes 
                 picpathTxtbox1.Hide(); picpathTxtbox2.Hide(); picpathTxtbox3.Hide(); picpathTxtbox4.Hide();
                 picpathTxtbox5.Hide(); picpathTxtbox6.Hide(); picpathTxtbox7.Hide(); picpathTxtbox8.Hide();
                 picpathTxtbox9.Hide(); picpathTxtbox10.Hide(); picpathTxtbox11.Hide(); picpathTxtbox12.Hide();
                 picpathTxtbox13.Hide(); picpathTxtbox14.Hide(); picpathTxtbox15.Hide(); picpathTxtbox16.Hide();
                 picpathTxtbox17.Hide(); picpathTxtbox18.Hide(); picpathTxtbox19.Hide(); picpathTxtbox20.Hide();
 
-                // Load ComboBox IDs here 👇
                 LoadComboBoxIDs();
 
-                // Load data from DB
-                posdb_connect.pos_select();
-                posdb_connect.pos_cmd();
-                posdb_connect.pos_sqladapterSelect();
-                posdb_connect.pos_sqldatasetSELECT();
 
                 if (posdb_connect.pos_sql_dataset != null && posdb_connect.pos_sql_dataset.Tables.Count > 0)
                 {
                     dataGridView1.DataSource = posdb_connect.pos_sql_dataset.Tables[0];
                 }
             }
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Error occurs in this area. Please contact your administrator!\n\n" + ex.Message);
-            //}
-        //}
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error occurs while loading the form.\n\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                // --- STEP 7: Always close the connection ---
+                posdb_connect.posdb_close();
+            }
+        }
 
         private void SEARCH_Click(object sender, EventArgs e)
         {
-            //try
+            try
             {
-                posdb_connect.pos_sql = "SELECT * FROM pos_nameTb1 " +
-                    "INNER JOIN pos_picTb1 ON pos_nameTb1.pos_id = pos_picTb1.pos_id " +
-                    "INNER JOIN pos_priceTb1 ON pos_picTb1.pos_id = pos_priceTb1.pos_id " +
-                    "WHERE pos_nameTb1.pos_id = '" + comboBox1.Text + "'";
+                posdb_connect.pos_connString();
+                posdb_connect.posdb_open();
+                {
+                    posdb_connect.pos_sql = "SELECT * FROM pos_nameTb1 " +
+                        "INNER JOIN pos_picTb1 ON pos_nameTb1.pos_id = pos_picTb1.pos_id " +
+                        "INNER JOIN pos_priceTb1 ON pos_picTb1.pos_id = pos_priceTb1.pos_id " +
+                        "WHERE pos_nameTb1.pos_id = '" + comboBox1.Text + "'";
 
-                posdb_connect.pos_cmd();
-                posdb_connect.pos_sqladapterSelect();
-                posdb_connect.pos_sqldatasetSELECT();
+                    posdb_connect.pos_cmd();
+                    posdb_connect.pos_sqladapterSelect();
+                    posdb_connect.pos_sqldatasetSELECT();
+                    
 
-                dataGridView1.DataSource = posdb_connect.pos_sql_dataset.Tables[0];
 
-                // Name TextBoxes
-                nameTxtbox1.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][2].ToString();
-                nameTxtbox2.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][3].ToString();
-                nameTxtbox3.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][4].ToString();
-                nameTxtbox4.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][5].ToString();
-                nameTxtbox5.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][6].ToString();
-                nameTxtbox6.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][7].ToString();
-                nameTxtbox7.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][8].ToString();
-                nameTxtbox8.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][9].ToString();
-                nameTxtbox9.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][10].ToString();
-                nameTxtbox10.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][11].ToString();
-                nameTxtbox11.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][12].ToString();
-                nameTxtbox12.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][13].ToString();
-                nameTxtbox13.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][14].ToString();
-                nameTxtbox14.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][15].ToString();
-                nameTxtbox15.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][16].ToString();
-                nameTxtbox16.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][17].ToString();
-                nameTxtbox17.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][18].ToString();
-                nameTxtbox18.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][19].ToString();
-                nameTxtbox19.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][20].ToString();
-                nameTxtbox20.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][21].ToString();
+                    dataGridView1.DataSource = posdb_connect.pos_sql_dataset.Tables[0];
 
-                // PictureBoxes
-                picpathTxtbox1.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][24].ToString();
-                pictureBox1.Image = Image.FromFile(picpathTxtbox1.Text);
-                picpathTxtbox2.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][25].ToString();
-                pictureBox2.Image = Image.FromFile(picpathTxtbox2.Text);
-                picpathTxtbox3.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][26].ToString();
-                pictureBox3.Image = Image.FromFile(picpathTxtbox3.Text);
-                picpathTxtbox4.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][27].ToString();
-                pictureBox4.Image = Image.FromFile(picpathTxtbox4.Text);
-                picpathTxtbox5.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][28].ToString();
-                pictureBox5.Image = Image.FromFile(picpathTxtbox5.Text);
-                picpathTxtbox6.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][29].ToString();
-                pictureBox6.Image = Image.FromFile(picpathTxtbox6.Text);
-                picpathTxtbox7.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][30].ToString();
-                pictureBox7.Image = Image.FromFile(picpathTxtbox7.Text);
-                picpathTxtbox8.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][31].ToString();
-                pictureBox8.Image = Image.FromFile(picpathTxtbox8.Text);
-                picpathTxtbox9.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][32].ToString();
-                pictureBox9.Image = Image.FromFile(picpathTxtbox9.Text);
-                picpathTxtbox10.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][33].ToString();
-                pictureBox10.Image = Image.FromFile(picpathTxtbox10.Text);
-                picpathTxtbox11.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][34].ToString();
-                pictureBox11.Image = Image.FromFile(picpathTxtbox11.Text);
-                picpathTxtbox12.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][35].ToString();
-                pictureBox12.Image = Image.FromFile(picpathTxtbox12.Text);
-                picpathTxtbox13.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][36].ToString();
-                pictureBox13.Image = Image.FromFile(picpathTxtbox13.Text);
-                picpathTxtbox14.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][37].ToString();
-                pictureBox14.Image = Image.FromFile(picpathTxtbox14.Text);
-                picpathTxtbox15.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][38].ToString();
-                pictureBox15.Image = Image.FromFile(picpathTxtbox15.Text);
-                picpathTxtbox16.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][39].ToString();
-                pictureBox16.Image = Image.FromFile(picpathTxtbox16.Text);
-                picpathTxtbox17.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][40].ToString();
-                pictureBox17.Image = Image.FromFile(picpathTxtbox17.Text);
-                picpathTxtbox18.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][41].ToString();
-                pictureBox18.Image = Image.FromFile(picpathTxtbox18.Text);
-                picpathTxtbox19.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][42].ToString();
-                pictureBox19.Image = Image.FromFile(picpathTxtbox19.Text);
-                picpathTxtbox20.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][43].ToString();
-                pictureBox20.Image = Image.FromFile(picpathTxtbox20.Text);
+                    // Name TextBoxes
+                    nameTxtbox1.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][2] == DBNull.Value ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][2].ToString();
+                    nameTxtbox2.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][3] == DBNull.Value ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][3].ToString();
+                    nameTxtbox3.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][4] == DBNull.Value ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][4].ToString();
+                    nameTxtbox4.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][5] == DBNull.Value ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][5].ToString();
+                    nameTxtbox5.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][6] == DBNull.Value ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][6].ToString();
+                    nameTxtbox6.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][7] == DBNull.Value ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][7].ToString();
+                    nameTxtbox7.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][8] == DBNull.Value ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][8].ToString();
+                    nameTxtbox8.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][9] == DBNull.Value ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][9].ToString();
+                    nameTxtbox9.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][10] == DBNull.Value ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][10].ToString();
+                    nameTxtbox10.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][11] == DBNull.Value ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][11].ToString();
+                    nameTxtbox11.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][12] == DBNull.Value ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][12].ToString();
+                    nameTxtbox12.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][13] == DBNull.Value ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][13].ToString();
+                    nameTxtbox13.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][14] == DBNull.Value ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][14].ToString();
+                    nameTxtbox14.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][15] == DBNull.Value ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][15].ToString();
+                    nameTxtbox15.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][16] == DBNull.Value ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][16].ToString();
+                    nameTxtbox16.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][17] == DBNull.Value ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][17].ToString();
+                    nameTxtbox17.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][18] == DBNull.Value ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][18].ToString();
+                    nameTxtbox18.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][19] == DBNull.Value ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][19].ToString();
+                    nameTxtbox19.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][20] == DBNull.Value ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][20].ToString();
+                    nameTxtbox20.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][21] == DBNull.Value ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][21].ToString();
 
-                // Prices
-                priceTxtbox1.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][46].ToString();
-                priceTxtbox2.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][47].ToString();
-                priceTxtbox3.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][48].ToString();
-                priceTxtbox4.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][49].ToString();
-                priceTxtbox5.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][50].ToString();
-                priceTxtbox6.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][51].ToString();
-                priceTxtbox7.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][52].ToString();
-                priceTxtbox8.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][53].ToString();
-                priceTxtbox9.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][54].ToString();
-                priceTxtbox10.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][55].ToString();
-                priceTxtbox11.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][56].ToString();
-                priceTxtbox12.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][57].ToString();
-                priceTxtbox13.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][58].ToString();
-                priceTxtbox14.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][59].ToString();
-                priceTxtbox15.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][60].ToString();
-                priceTxtbox16.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][61].ToString();
-                priceTxtbox17.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][62].ToString();
-                priceTxtbox18.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][63].ToString();
-                priceTxtbox19.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][64].ToString();
-                priceTxtbox20.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][65].ToString();
+
+                    // PictureBoxes (null + file check)
+                    picpathTxtbox1.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][24].ToString();
+                    if (File.Exists(picpathTxtbox1.Text)) pictureBox1.Image = Image.FromFile(picpathTxtbox1.Text); else pictureBox1.Image = null;
+
+                    picpathTxtbox2.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][25].ToString();
+                    if (File.Exists(picpathTxtbox2.Text)) pictureBox2.Image = Image.FromFile(picpathTxtbox2.Text); else pictureBox2.Image = null;
+
+                    picpathTxtbox3.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][26].ToString();
+                    if (File.Exists(picpathTxtbox3.Text)) pictureBox3.Image = Image.FromFile(picpathTxtbox3.Text); else pictureBox3.Image = null;
+
+                    picpathTxtbox4.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][27].ToString();
+                    if (File.Exists(picpathTxtbox4.Text)) pictureBox4.Image = Image.FromFile(picpathTxtbox4.Text); else pictureBox4.Image = null;
+
+                    picpathTxtbox5.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][28].ToString();
+                    if (File.Exists(picpathTxtbox5.Text)) pictureBox5.Image = Image.FromFile(picpathTxtbox5.Text); else pictureBox5.Image = null;
+
+                    picpathTxtbox6.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][29].ToString();
+                    if (File.Exists(picpathTxtbox6.Text)) pictureBox6.Image = Image.FromFile(picpathTxtbox6.Text); else pictureBox6.Image = null;
+
+                    picpathTxtbox7.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][30].ToString();
+                    if (File.Exists(picpathTxtbox7.Text)) pictureBox7.Image = Image.FromFile(picpathTxtbox7.Text); else pictureBox7.Image = null;
+
+                    picpathTxtbox8.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][31].ToString();
+                    if (File.Exists(picpathTxtbox8.Text)) pictureBox8.Image = Image.FromFile(picpathTxtbox8.Text); else pictureBox8.Image = null;
+
+                    picpathTxtbox9.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][32].ToString();
+                    if (File.Exists(picpathTxtbox9.Text)) pictureBox9.Image = Image.FromFile(picpathTxtbox9.Text); else pictureBox9.Image = null;
+
+                    picpathTxtbox10.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][33].ToString();
+                    if (File.Exists(picpathTxtbox10.Text)) pictureBox10.Image = Image.FromFile(picpathTxtbox10.Text); else pictureBox10.Image = null;
+
+                    picpathTxtbox11.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][34].ToString();
+                    if (File.Exists(picpathTxtbox11.Text)) pictureBox11.Image = Image.FromFile(picpathTxtbox11.Text); else pictureBox11.Image = null;
+
+                    picpathTxtbox12.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][35].ToString();
+                    if (File.Exists(picpathTxtbox12.Text)) pictureBox12.Image = Image.FromFile(picpathTxtbox12.Text); else pictureBox12.Image = null;
+
+                    picpathTxtbox13.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][36].ToString();
+                    if (File.Exists(picpathTxtbox13.Text)) pictureBox13.Image = Image.FromFile(picpathTxtbox13.Text); else pictureBox13.Image = null;
+
+                    picpathTxtbox14.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][37].ToString();
+                    if (File.Exists(picpathTxtbox14.Text)) pictureBox14.Image = Image.FromFile(picpathTxtbox14.Text); else pictureBox14.Image = null;
+
+                    picpathTxtbox15.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][38].ToString();
+                    if (File.Exists(picpathTxtbox15.Text)) pictureBox15.Image = Image.FromFile(picpathTxtbox15.Text); else pictureBox15.Image = null;
+
+                    picpathTxtbox16.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][39].ToString();
+                    if (File.Exists(picpathTxtbox16.Text)) pictureBox16.Image = Image.FromFile(picpathTxtbox16.Text); else pictureBox16.Image = null;
+
+                    picpathTxtbox17.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][40].ToString();
+                    if (File.Exists(picpathTxtbox17.Text)) pictureBox17.Image = Image.FromFile(picpathTxtbox17.Text); else pictureBox17.Image = null;
+
+                    picpathTxtbox18.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][41].ToString();
+                    if (File.Exists(picpathTxtbox18.Text)) pictureBox18.Image = Image.FromFile(picpathTxtbox18.Text); else pictureBox18.Image = null;
+
+                    picpathTxtbox19.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][42].ToString();
+                    if (File.Exists(picpathTxtbox19.Text)) pictureBox19.Image = Image.FromFile(picpathTxtbox19.Text); else pictureBox19.Image = null;
+
+                    picpathTxtbox20.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][43].ToString();
+                    if (File.Exists(picpathTxtbox20.Text)) pictureBox20.Image = Image.FromFile(picpathTxtbox20.Text); else pictureBox20.Image = null;
+
+
+                    // Prices (null-safe)
+                    priceTxtbox1.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0].IsNull(46) ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][46].ToString();
+                    priceTxtbox2.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0].IsNull(47) ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][47].ToString();
+                    priceTxtbox3.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0].IsNull(48) ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][48].ToString();
+                    priceTxtbox4.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0].IsNull(49) ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][49].ToString();
+                    priceTxtbox5.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0].IsNull(50) ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][50].ToString();
+                    priceTxtbox6.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0].IsNull(51) ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][51].ToString();
+                    priceTxtbox7.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0].IsNull(52) ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][52].ToString();
+                    priceTxtbox8.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0].IsNull(53) ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][53].ToString();
+                    priceTxtbox9.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0].IsNull(54) ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][54].ToString();
+                    priceTxtbox10.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0].IsNull(55) ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][55].ToString();
+                    priceTxtbox11.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0].IsNull(56) ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][56].ToString();
+                    priceTxtbox12.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0].IsNull(57) ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][57].ToString();
+                    priceTxtbox13.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0].IsNull(58) ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][58].ToString();
+                    priceTxtbox14.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0].IsNull(59) ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][59].ToString();
+                    priceTxtbox15.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0].IsNull(60) ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][60].ToString();
+                    priceTxtbox16.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0].IsNull(61) ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][61].ToString();
+                    priceTxtbox17.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0].IsNull(62) ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][62].ToString();
+                    priceTxtbox18.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0].IsNull(63) ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][63].ToString();
+                    priceTxtbox19.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0].IsNull(64) ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][64].ToString();
+                    priceTxtbox20.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0].IsNull(65) ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][65].ToString();
+
+                }
             }
-            //catch (Exception)
-            //{
-            //    MessageBox.Show("Error occurs in this area. Please contact your administrator!");
-            //}
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error updating: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                posdb_connect.posdb_close();
+            }
         }
 
         private void SAVE_Click(object sender, EventArgs e)
         {
-            //try
+            try
             {
-                // Insert into name table (pos_nameTb1)
+                posdb_connect.pos_connString();
+                posdb_connect.posdb_open();
+
+
+                // Insert into pos_nameTb1
                 posdb_connect.pos_sql = "INSERT INTO pos_nameTb1 (pos_id, name1, name2, name3, name4, name5, name6, name7, name8, name9, name10, name11, name12, name13, name14, name15, name16, name17, name18, name19, name20) " +
                     "VALUES ('" + comboBox1.Text + "', '" +
                     nameTxtbox1.Text + "', '" + nameTxtbox2.Text + "', '" + nameTxtbox3.Text + "', '" + nameTxtbox4.Text + "', '" + nameTxtbox5.Text + "', '" +
@@ -326,17 +376,17 @@ namespace mainsystem
                 posdb_connect.pos_cmd();
                 posdb_connect.pos_sqladapterInsert();
 
-                // Insert into price table (pos_priceTb1)
+                //  Insert into pos_priceTb1
                 posdb_connect.pos_sql = "INSERT INTO pos_priceTb1 (pos_id, price1, price2, price3, price4, price5, price6, price7, price8, price9, price10, price11, price12, price13, price14, price15, price16, price17, price18, price19, price20) " +
                     "VALUES ('" + comboBox1.Text + "', '" +
-                    priceTxtbox1.Text + ", '" + priceTxtbox2.Text + "', '" + priceTxtbox3.Text + ", '" + priceTxtbox4.Text + "', '" + priceTxtbox5.Text + "', '" + priceTxtbox6.Text + "', '" +
-                    priceTxtbox7.Text + "', '" + priceTxtbox8.Text + "', '" + priceTxtbox9.Text + "', '" + priceTxtbox10.Text + "', '" + priceTxtbox11.Text + "', '" + priceTxtbox12.Text + ", '" +
-                    priceTxtbox13.Text + "', '" + priceTxtbox14.Text + "', '" + priceTxtbox15.Text + "', '" + priceTxtbox16.Text + "', '" + priceTxtbox17.Text + "', '" + priceTxtbox18.Text + ", '" +
+                    priceTxtbox1.Text + "', '" + priceTxtbox2.Text + "', '" + priceTxtbox3.Text + "', '" + priceTxtbox4.Text + "', '" + priceTxtbox5.Text + "', '" +
+                    priceTxtbox6.Text + "', '" + priceTxtbox7.Text + "', '" + priceTxtbox8.Text + "', '" + priceTxtbox9.Text + "', '" + priceTxtbox10.Text + "', '" + priceTxtbox11.Text + "', '" +
+                    priceTxtbox12.Text + "', '" + priceTxtbox13.Text + "', '" + priceTxtbox14.Text + "', '" + priceTxtbox15.Text + "', '" + priceTxtbox16.Text + "', '" + priceTxtbox17.Text + "', '" + priceTxtbox18.Text + "', '" +
                     priceTxtbox19.Text + "', '" + priceTxtbox20.Text + "')";
                 posdb_connect.pos_cmd();
                 posdb_connect.pos_sqladapterInsert();
 
-                // Insert into picture path table (pos_picTb1)
+                // Insert into pos_picTb1
                 posdb_connect.pos_sql = "INSERT INTO pos_picTb1 (pos_id, pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8, pic9, pic10, pic11, pic12, pic13, pic14, pic15, pic16, pic17, pic18, pic19, pic20) " +
                     "VALUES ('" + comboBox1.Text + "', '" +
                     picpathTxtbox1.Text + "', '" + picpathTxtbox2.Text + "', '" + picpathTxtbox3.Text + "', '" + picpathTxtbox4.Text + "', '" + picpathTxtbox5.Text + "', '" +
@@ -356,119 +406,167 @@ namespace mainsystem
                     dataGridView1.DataSource = posdb_connect.pos_sql_dataset.Tables[0];
                 }
 
+                // Let the user know it saved
+                MessageBox.Show("Data saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Clear input fields
                 cleartextboxes();
             }
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Error occurs in this area. Please contact your administrator!\n\n" + ex.Message);
-            //}
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while saving: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                posdb_connect.posdb_close();
+            }
         }
 
         private void UPDATE_Click(object sender, EventArgs e)
         {
-            //try
+            try
             {
-                // Update name table
-                posdb_connect.pos_sql = "UPDATE pos_nameTb1 SET " +
-                    "name1 = '" + nameTxtbox1.Text + "', " +
-                    "name2 = '" + nameTxtbox2.Text + "', " +
-                    "name3 = '" + nameTxtbox3.Text + "', " +
-                    "name4 = '" + nameTxtbox4.Text + "', " +
-                    "name5 = '" + nameTxtbox5.Text + "', " +
-                    "name6 = '" + nameTxtbox6.Text + "', " +
-                    "name7 = '" + nameTxtbox7.Text + "', " +
-                    "name8 = '" + nameTxtbox8.Text + "', " +
-                    "name9 = '" + nameTxtbox9.Text + "', " +
-                    "name10 = '" + nameTxtbox10.Text + "', " +
-                    "name11 = '" + nameTxtbox11.Text + "', " +
-                    "name12 = '" + nameTxtbox12.Text + "', " +
-                    "name13 = '" + nameTxtbox13.Text + "', " +
-                    "name14 = '" + nameTxtbox14.Text + "', " +
-                    "name15 = '" + nameTxtbox15.Text + "', " +
-                    "name16 = '" + nameTxtbox16.Text + "', " +
-                    "name17 = '" + nameTxtbox17.Text + "', " +
-                    "name18 = '" + nameTxtbox18.Text + "', " +
-                    "name19 = '" + nameTxtbox19.Text + "', " +
-                    "name20 = '" + nameTxtbox20.Text + "' " +
-                    "WHERE pos_id = '" + comboBox1.Text + "'";
-                posdb_connect.pos_cmd();
-                posdb_connect.pos_sqladapterUpdate();
-
-                // Update pic table
-                posdb_connect.pos_sql = "UPDATE pos_picTb1 SET " +
-                    "pic1 = '" + picpathTxtbox1.Text + "', pic2 = '" + picpathTxtbox2.Text + "', pic3 = '" + picpathTxtbox3.Text + "', pic4 = '" + picpathTxtbox4.Text + "', " +
-                    "pic5 = '" + picpathTxtbox5.Text + "', pic6 = '" + picpathTxtbox6.Text + "', pic7 = '" + picpathTxtbox7.Text + "', pic8 = '" + picpathTxtbox8.Text + "', " +
-                    "pic9 = '" + picpathTxtbox9.Text + "', pic10 = '" + picpathTxtbox10.Text + "', pic11 = '" + picpathTxtbox11.Text + "', pic12 = '" + picpathTxtbox12.Text + "', " +
-                    "pic13 = '" + picpathTxtbox13.Text + "', pic14 = '" + picpathTxtbox14.Text + "', pic15 = '" + picpathTxtbox15.Text + "', pic16 = '" + picpathTxtbox16.Text + "', " +
-                    "pic17 = '" + picpathTxtbox17.Text + "', pic18 = '" + picpathTxtbox18.Text + "', pic19 = '" + picpathTxtbox19.Text + "', pic20 = '" + picpathTxtbox20.Text + "' " +
-                    "WHERE pos_id = '" + comboBox1.Text + "'";
-                posdb_connect.pos_cmd();
-                posdb_connect.pos_sqladapterUpdate();
-
-                // Update price table
-                posdb_connect.pos_sql = "UPDATE pos_priceTb1 SET " +
-                    "price1 = '" + priceTxtbox1.Text + "', price2 = '" + priceTxtbox2.Text + "', price3 = '" + priceTxtbox3.Text + "', price4 = '" + priceTxtbox4.Text + "', " +
-                    "price5 = '" + priceTxtbox5.Text + "', price6 = '" + priceTxtbox6.Text + "', price7 = '" + priceTxtbox7.Text + "', price8 = '" + priceTxtbox8.Text + "', " +
-                    "price9 = '" + priceTxtbox9.Text + "', price10 = '" + priceTxtbox10.Text + "', price11 = '" + priceTxtbox11.Text + "', price12 = '" + priceTxtbox12.Text + "', " +
-                    "price13 = '" + priceTxtbox13.Text + "', price14 = '" + priceTxtbox14.Text + "', price15 = '" + priceTxtbox15.Text + "', price16 = '" + priceTxtbox16.Text + "', " +
-                    "price17 = '" + priceTxtbox17.Text + "', price18 = '" + priceTxtbox18.Text + "', price19 = '" + priceTxtbox19.Text + "', price20 = '" + priceTxtbox20.Text + "' " +
-                    "WHERE pos_id = '" + comboBox1.Text + "'";
-                posdb_connect.pos_cmd();
-                posdb_connect.pos_sqladapterUpdate();
-
-                // Refresh dataset & grid
-                posdb_connect.pos_select();
-                posdb_connect.pos_cmd();
-                posdb_connect.pos_sqladapterSelect();
-                posdb_connect.pos_sqldatasetSELECT();
-                if (posdb_connect.pos_sql_dataset != null && posdb_connect.pos_sql_dataset.Tables.Count > 0)
+                posdb_connect.pos_connString();
+                posdb_connect.posdb_open();
                 {
-                    dataGridView1.DataSource = posdb_connect.pos_sql_dataset.Tables[0];
-                }
+                    // Update name table
+                    posdb_connect.pos_sql = "UPDATE pos_nameTb1 SET " +
+                        "name1 = '" + nameTxtbox1.Text + "', " +
+                        "name2 = '" + nameTxtbox2.Text + "', " +
+                        "name3 = '" + nameTxtbox3.Text + "', " +
+                        "name4 = '" + nameTxtbox4.Text + "', " +
+                        "name5 = '" + nameTxtbox5.Text + "', " +
+                        "name6 = '" + nameTxtbox6.Text + "', " +
+                        "name7 = '" + nameTxtbox7.Text + "', " +
+                        "name8 = '" + nameTxtbox8.Text + "', " +
+                        "name9 = '" + nameTxtbox9.Text + "', " +
+                        "name10 = '" + nameTxtbox10.Text + "', " +
+                        "name11 = '" + nameTxtbox11.Text + "', " +
+                        "name12 = '" + nameTxtbox12.Text + "', " +
+                        "name13 = '" + nameTxtbox13.Text + "', " +
+                        "name14 = '" + nameTxtbox14.Text + "', " +
+                        "name15 = '" + nameTxtbox15.Text + "', " +
+                        "name16 = '" + nameTxtbox16.Text + "', " +
+                        "name17 = '" + nameTxtbox17.Text + "', " +
+                        "name18 = '" + nameTxtbox18.Text + "', " +
+                        "name19 = '" + nameTxtbox19.Text + "', " +
+                        "name20 = '" + nameTxtbox20.Text + "' " +
+                        "WHERE pos_id = '" + comboBox1.Text + "'";
+                    posdb_connect.pos_cmd();
+                    posdb_connect.pos_sqladapterUpdate();
 
-                cleartextboxes();
+                    // Update pic table
+                    posdb_connect.pos_sql = "UPDATE pos_picTb1 SET " +
+                        "pic1 = '" + picpathTxtbox1.Text + "', pic2 = '" + picpathTxtbox2.Text + "', pic3 = '" + picpathTxtbox3.Text + "', pic4 = '" + picpathTxtbox4.Text + "', " +
+                        "pic5 = '" + picpathTxtbox5.Text + "', pic6 = '" + picpathTxtbox6.Text + "', pic7 = '" + picpathTxtbox7.Text + "', pic8 = '" + picpathTxtbox8.Text + "', " +
+                        "pic9 = '" + picpathTxtbox9.Text + "', pic10 = '" + picpathTxtbox10.Text + "', pic11 = '" + picpathTxtbox11.Text + "', pic12 = '" + picpathTxtbox12.Text + "', " +
+                        "pic13 = '" + picpathTxtbox13.Text + "', pic14 = '" + picpathTxtbox14.Text + "', pic15 = '" + picpathTxtbox15.Text + "', pic16 = '" + picpathTxtbox16.Text + "', " +
+                        "pic17 = '" + picpathTxtbox17.Text + "', pic18 = '" + picpathTxtbox18.Text + "', pic19 = '" + picpathTxtbox19.Text + "', pic20 = '" + picpathTxtbox20.Text + "' " +
+                        "WHERE pos_id = '" + comboBox1.Text + "'";
+                    posdb_connect.pos_cmd();
+                    posdb_connect.pos_sqladapterUpdate();
+
+                    // Update price table
+                    posdb_connect.pos_sql = "UPDATE pos_priceTb1 SET " +
+                        "price1 = '" + priceTxtbox1.Text + "', price2 = '" + priceTxtbox2.Text + "', price3 = '" + priceTxtbox3.Text + "', price4 = '" + priceTxtbox4.Text + "', " +
+                        "price5 = '" + priceTxtbox5.Text + "', price6 = '" + priceTxtbox6.Text + "', price7 = '" + priceTxtbox7.Text + "', price8 = '" + priceTxtbox8.Text + "', " +
+                        "price9 = '" + priceTxtbox9.Text + "', price10 = '" + priceTxtbox10.Text + "', price11 = '" + priceTxtbox11.Text + "', price12 = '" + priceTxtbox12.Text + "', " +
+                        "price13 = '" + priceTxtbox13.Text + "', price14 = '" + priceTxtbox14.Text + "', price15 = '" + priceTxtbox15.Text + "', price16 = '" + priceTxtbox16.Text + "', " +
+                        "price17 = '" + priceTxtbox17.Text + "', price18 = '" + priceTxtbox18.Text + "', price19 = '" + priceTxtbox19.Text + "', price20 = '" + priceTxtbox20.Text + "' " +
+                        "WHERE pos_id = '" + comboBox1.Text + "'";
+                    posdb_connect.pos_cmd();
+                    posdb_connect.pos_sqladapterUpdate();
+
+                    // Refresh dataset & grid
+                    posdb_connect.pos_select();
+                    posdb_connect.pos_cmd();
+                    posdb_connect.pos_sqladapterSelect();
+                    posdb_connect.pos_sqldatasetSELECT();
+                    if (posdb_connect.pos_sql_dataset != null && posdb_connect.pos_sql_dataset.Tables.Count > 0)
+                    {
+                        dataGridView1.DataSource = posdb_connect.pos_sql_dataset.Tables[0];
+                    }
+                    MessageBox.Show("Record successfully updated!", "Update Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    cleartextboxes();
+                }
             }
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Error occurs in this area. Please contact your administrator!\n\n" + ex.Message);
-            //}
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error updating: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                posdb_connect.posdb_close();
+            }
         }
 
         private void DELETE_Click(object sender, EventArgs e)
         {
-            //try
+            try
             {
-                // Delete price row
-                posdb_connect.pos_sql = "DELETE FROM pos_priceTb1 WHERE pos_id = '" + comboBox1.Text + "'";
-                posdb_connect.pos_cmd();
-                posdb_connect.pos_sqladapterDelete();
+                posdb_connect.pos_connString();
+                posdb_connect.posdb_open();
 
-                // Delete pic row
-                posdb_connect.pos_sql = "DELETE FROM pos_picTb1 WHERE pos_id = '" + comboBox1.Text + "'";
-                posdb_connect.pos_cmd();
-                posdb_connect.pos_sqladapterDelete();
+                DialogResult confirm = MessageBox.Show(
+                    "Are you sure you want to delete this record?",
+                    "Confirm Delete",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning
+                );
 
-                // Delete name row
-                posdb_connect.pos_sql = "DELETE FROM pos_nameTb1 WHERE pos_id = '" + comboBox1.Text + "'";
-                posdb_connect.pos_cmd();
-                posdb_connect.pos_sqladapterDelete();
+                if (confirm == DialogResult.Yes)
 
-                // Refresh dataset & grid
-                posdb_connect.pos_select();
-                posdb_connect.pos_cmd();
-                posdb_connect.pos_sqladapterSelect();
-                posdb_connect.pos_sqldatasetSELECT();
-                if (posdb_connect.pos_sql_dataset != null && posdb_connect.pos_sql_dataset.Tables.Count > 0)
                 {
-                    dataGridView1.DataSource = posdb_connect.pos_sql_dataset.Tables[0];
-                }
+                    // Delete price row
+                    posdb_connect.pos_sql = "DELETE FROM pos_priceTb1 WHERE pos_id = '" + comboBox1.Text + "'";
+                    posdb_connect.pos_cmd();
+                    posdb_connect.pos_sqladapterDelete();
 
-                cleartextboxes();
+                    // Delete pic row
+                    posdb_connect.pos_sql = "DELETE FROM pos_picTb1 WHERE pos_id = '" + comboBox1.Text + "'";
+                    posdb_connect.pos_cmd();
+                    posdb_connect.pos_sqladapterDelete();
+
+                    // Delete name row
+                    posdb_connect.pos_sql = "DELETE FROM pos_nameTb1 WHERE pos_id = '" + comboBox1.Text + "'";
+                    posdb_connect.pos_cmd();
+                    posdb_connect.pos_sqladapterDelete();
+
+                    // Refresh dataset & grid
+                    posdb_connect.pos_select();
+                    posdb_connect.pos_cmd();
+                    posdb_connect.pos_sqladapterSelect();
+                    posdb_connect.pos_sqldatasetSELECT();
+                    if (posdb_connect.pos_sql_dataset != null && posdb_connect.pos_sql_dataset.Tables.Count > 0)
+                    {
+                        dataGridView1.DataSource = posdb_connect.pos_sql_dataset.Tables[0];
+                    }
+
+                    cleartextboxes();
+
+                    //Refresh ComboBox and DataGridView after delete
+                    comboBox1.Items.Clear();
+                    LoadComboBoxIDs(); // reload available pos_ids
+
+                    dataGridView1.DataSource = null;
+                    string sql = "SELECT * FROM pos_nameTb1";
+                    SqlDataAdapter adapter = new SqlDataAdapter(sql, posdb_connect.pos_sql_connection);
+                    DataSet dset = new DataSet();
+                    adapter.Fill(dset, "pos_nameTb1");
+                    dataGridView1.DataSource = dset.Tables[0];
+
+                    MessageBox.Show("Record successfully deleted.", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
-            //catch (Exception ex)
-            //{
-            //   MessageBox.Show("Error occurs in this area. Please contact your administrator!\n\n" + ex.Message);
-            //}
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error occurs in this area. Please contact your administrator!\n\n" + ex.Message);
+            }
+            finally
+            {
+                posdb_connect.posdb_close();
+            }
         }
 
         private void NEWCANCEL_Click(object sender, EventArgs e)
@@ -580,6 +678,11 @@ namespace mainsystem
         private void pictureBox20_Click(object sender, EventArgs e)
         {
             SelectImage(pictureBox20, picpathTxtbox20);
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
