@@ -28,7 +28,7 @@ namespace mainsystem
         }
         private void cleartextboxes()
         {
-            //try
+            try
             {
                 // Load the default image (adjust path if necessary)
                 string defaultImagePath = @"C:\Users\Mica\Downloads\download (8).jpg";
@@ -87,10 +87,10 @@ namespace mainsystem
                     pictureBox17.Image = null; pictureBox18.Image = null; pictureBox19.Image = null; pictureBox20.Image = null;
                 }
             }
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Error occurs in this area. Please contact your administrator!\n\n" + ex.Message);
-            //}
+            catch (Exception ex)
+            {
+               MessageBox.Show("Error occurs in this area. Please contact your administrator!\n\n" + ex.Message);
+            }
         }
         private void SelectImage(System.Windows.Forms.PictureBox pictureBox, System.Windows.Forms.TextBox textBox)
         {
@@ -177,6 +177,7 @@ namespace mainsystem
             panelMain.Top = (this.ClientSize.Height - panelMain.Height) / 2;
         }
 
+
         private void POS_Admin_Load(object sender, EventArgs e)
         {
             try
@@ -188,7 +189,12 @@ namespace mainsystem
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, posdb_connect.pos_sql_connection);
                 DataSet dset = new DataSet();
                 adapter.Fill(dset, "pos_nameTb1");
-                dataGridView1.DataSource = dset.Tables[0];
+
+                DataTable original = dset.Tables[0];  // your original data
+                DataTable transposed = TransposeDataTable(original);
+                dataGridView1.DataSource = transposed;
+
+
 
                 //Center panel (UI logic) ---
                 CenterPanel();
@@ -214,7 +220,6 @@ namespace mainsystem
             }
             finally
             {
-                // --- STEP 7: Always close the connection ---
                 posdb_connect.posdb_close();
             }
         }
@@ -234,10 +239,10 @@ namespace mainsystem
                     posdb_connect.pos_cmd();
                     posdb_connect.pos_sqladapterSelect();
                     posdb_connect.pos_sqldatasetSELECT();
-                    
 
-
-                    dataGridView1.DataSource = posdb_connect.pos_sql_dataset.Tables[0];
+                    DataTable original = posdb_connect.pos_sql_dataset.Tables[0];  // original search result
+                    DataTable transposed = TransposeDataTable(original);            // transpose rows ↔ columns
+                    dataGridView1.DataSource = transposed;                          // bind to DataGridView
 
                     // Name TextBoxes
                     nameTxtbox1.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][2] == DBNull.Value ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][2].ToString();
@@ -403,7 +408,10 @@ namespace mainsystem
                 posdb_connect.pos_sqldatasetSELECT();
                 if (posdb_connect.pos_sql_dataset != null && posdb_connect.pos_sql_dataset.Tables.Count > 0)
                 {
-                    dataGridView1.DataSource = posdb_connect.pos_sql_dataset.Tables[0];
+                    DataTable original = posdb_connect.pos_sql_dataset.Tables[0];  // original search result
+                    DataTable transposed = TransposeDataTable(original);            // transpose rows ↔ columns
+                    dataGridView1.DataSource = transposed;                          // bind to DataGridView
+
                 }
 
                 // Let the user know it saved
@@ -484,7 +492,10 @@ namespace mainsystem
                     posdb_connect.pos_sqldatasetSELECT();
                     if (posdb_connect.pos_sql_dataset != null && posdb_connect.pos_sql_dataset.Tables.Count > 0)
                     {
-                        dataGridView1.DataSource = posdb_connect.pos_sql_dataset.Tables[0];
+                        DataTable original = posdb_connect.pos_sql_dataset.Tables[0];  // original search result
+                        DataTable transposed = TransposeDataTable(original);            // transpose rows ↔ columns
+                        dataGridView1.DataSource = transposed;                          // bind to DataGridView
+
                     }
                     MessageBox.Show("Record successfully updated!", "Update Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -540,7 +551,10 @@ namespace mainsystem
                     posdb_connect.pos_sqldatasetSELECT();
                     if (posdb_connect.pos_sql_dataset != null && posdb_connect.pos_sql_dataset.Tables.Count > 0)
                     {
-                        dataGridView1.DataSource = posdb_connect.pos_sql_dataset.Tables[0];
+                        DataTable original = posdb_connect.pos_sql_dataset.Tables[0];  // original search result
+                        DataTable transposed = TransposeDataTable(original);            // transpose rows ↔ columns
+                        dataGridView1.DataSource = transposed;                          // bind to DataGridView
+
                     }
 
                     cleartextboxes();
