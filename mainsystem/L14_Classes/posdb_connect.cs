@@ -56,6 +56,7 @@ namespace mainsystem
             pos_sql_command.ExecuteNonQuery();
         }
 
+
         public void pos_sqladapterInsert()
         {
             // Public function codes for mediating between C# language and the MSSQL INSERT command

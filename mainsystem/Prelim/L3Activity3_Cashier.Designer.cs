@@ -878,7 +878,6 @@
             // 
             // pictureBox20
             // 
-            this.pictureBox20.Image = global::mainsystem.Properties.Resources.Primordium_skinline;
             this.pictureBox20.Location = new System.Drawing.Point(1224, 665);
             this.pictureBox20.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox20.Name = "pictureBox20";
@@ -890,7 +889,6 @@
             // 
             // pictureBox19
             // 
-            this.pictureBox19.Image = global::mainsystem.Properties.Resources.Nocturnum_skins_1024x576;
             this.pictureBox19.Location = new System.Drawing.Point(1059, 665);
             this.pictureBox19.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox19.Name = "pictureBox19";
@@ -902,7 +900,6 @@
             // 
             // pictureBox18
             // 
-            this.pictureBox18.Image = global::mainsystem.Properties.Resources.evori_dreamwings;
             this.pictureBox18.Location = new System.Drawing.Point(894, 665);
             this.pictureBox18.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox18.Name = "pictureBox18";
@@ -914,7 +911,6 @@
             // 
             // pictureBox17
             // 
-            this.pictureBox17.Image = global::mainsystem.Properties.Resources.elderflame;
             this.pictureBox17.Location = new System.Drawing.Point(728, 665);
             this.pictureBox17.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox17.Name = "pictureBox17";
@@ -926,7 +922,6 @@
             // 
             // pictureBox16
             // 
-            this.pictureBox16.Image = global::mainsystem.Properties.Resources.spectrum_skins_scaled;
             this.pictureBox16.Location = new System.Drawing.Point(563, 665);
             this.pictureBox16.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox16.Name = "pictureBox16";
@@ -938,7 +933,6 @@
             // 
             // pictureBox15
             // 
-            this.pictureBox15.Image = global::mainsystem.Properties.Resources.kuronami_skinline;
             this.pictureBox15.Location = new System.Drawing.Point(1224, 448);
             this.pictureBox15.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox15.Name = "pictureBox15";
@@ -950,7 +944,6 @@
             // 
             // pictureBox14
             // 
-            this.pictureBox14.Image = global::mainsystem.Properties.Resources.Doombringer_skins_1024x576;
             this.pictureBox14.Location = new System.Drawing.Point(1059, 448);
             this.pictureBox14.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox14.Name = "pictureBox14";
@@ -962,7 +955,6 @@
             // 
             // pictureBox13
             // 
-            this.pictureBox13.Image = global::mainsystem.Properties.Resources.RGX;
             this.pictureBox13.Location = new System.Drawing.Point(894, 448);
             this.pictureBox13.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox13.Name = "pictureBox13";
@@ -974,7 +966,6 @@
             // 
             // pictureBox12
             // 
-            this.pictureBox12.Image = global::mainsystem.Properties.Resources.splashx_valorant_skins_1024x576;
             this.pictureBox12.Location = new System.Drawing.Point(728, 448);
             this.pictureBox12.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox12.Name = "pictureBox12";
@@ -986,7 +977,6 @@
             // 
             // pictureBox11
             // 
-            this.pictureBox11.Image = global::mainsystem.Properties.Resources.SOL;
             this.pictureBox11.Location = new System.Drawing.Point(563, 448);
             this.pictureBox11.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox11.Name = "pictureBox11";
@@ -998,7 +988,6 @@
             // 
             // pictureBox10
             // 
-            this.pictureBox10.Image = global::mainsystem.Properties.Resources.radiantcrisis;
             this.pictureBox10.Location = new System.Drawing.Point(1224, 224);
             this.pictureBox10.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox10.Name = "pictureBox10";
@@ -1010,7 +999,6 @@
             // 
             // pictureBox9
             // 
-            this.pictureBox9.Image = global::mainsystem.Properties.Resources.RES;
             this.pictureBox9.Location = new System.Drawing.Point(1059, 224);
             this.pictureBox9.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox9.Name = "pictureBox9";
@@ -1022,7 +1010,6 @@
             // 
             // pictureBox8
             // 
-            this.pictureBox8.Image = global::mainsystem.Properties.Resources.prime;
             this.pictureBox8.Location = new System.Drawing.Point(894, 224);
             this.pictureBox8.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox8.Name = "pictureBox8";
@@ -1034,7 +1021,6 @@
             // 
             // pictureBox7
             // 
-            this.pictureBox7.Image = global::mainsystem.Properties.Resources.Mystbloom_Valorant_1024x576;
             this.pictureBox7.Location = new System.Drawing.Point(728, 224);
             this.pictureBox7.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox7.Name = "pictureBox7";
@@ -1046,7 +1032,6 @@
             // 
             // pictureBox6
             // 
-            this.pictureBox6.Image = global::mainsystem.Properties.Resources.protocol;
             this.pictureBox6.Location = new System.Drawing.Point(563, 224);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox6.Name = "pictureBox6";
@@ -1058,7 +1043,6 @@
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Image = global::mainsystem.Properties.Resources.prelude;
             this.pictureBox5.Location = new System.Drawing.Point(563, 10);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox5.Name = "pictureBox5";
@@ -1070,7 +1054,6 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = global::mainsystem.Properties.Resources.ion;
             this.pictureBox4.Location = new System.Drawing.Point(1224, 10);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox4.Name = "pictureBox4";
@@ -1082,7 +1065,6 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::mainsystem.Properties.Resources.glitchpop;
             this.pictureBox3.Location = new System.Drawing.Point(1059, 10);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
@@ -1094,7 +1076,6 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::mainsystem.Properties.Resources.gaia;
             this.pictureBox2.Location = new System.Drawing.Point(894, 10);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
@@ -1106,7 +1087,6 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::mainsystem.Properties.Resources.EX_O_Valorant_skins_1024x576;
             this.pictureBox1.Location = new System.Drawing.Point(728, 10);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";

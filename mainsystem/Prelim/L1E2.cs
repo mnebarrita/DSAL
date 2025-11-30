@@ -40,13 +40,6 @@ namespace mainsystem
             discountedtotaltxtbox.Enabled = false;
             discounttotaltxtbox.Enabled = false;
 
-            // Codes for inserting pictures or image
-            pictureBox16.Image = Image.FromFile(@"C:\Users\Mica\source\repos\mnebarrita\DSAL\mainsystem\Images\RGX.jpg");
-            pictureBox17.Image = Image.FromFile(@"C:\Users\Mica\source\repos\mnebarrita\DSAL\mainsystem\Images\glitchpop.jpg");
-            pictureBox18.Image = Image.FromFile(@"C:\Users\Mica\source\repos\mnebarrita\DSAL\mainsystem\Images\EX-O-Valorant-skins-1024x576.jpg");
-            pictureBox19.Image = Image.FromFile(@"C:\Users\Mica\source\repos\mnebarrita\DSAL\mainsystem\Images\Mystbloom-Valorant-1024x576.jpg");
-            pictureBox20.Image = Image.FromFile(@"C:\Users\Mica\source\repos\mnebarrita\DSAL\mainsystem\Images\splashx-valorant-skins-1024x576.jpg");
-
             // codes for inserting name of the image inside the label tool
             // Row 1
             label3.Text = "Radiant Crisis";
@@ -91,6 +84,11 @@ namespace mainsystem
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

@@ -43,7 +43,7 @@ namespace mainsystem
             foodBRdbt.Checked = false;
 
             // insert image in PictureBox
-            DisplayPictureBox.Image = System.Drawing.Image.FromFile(@"C:\Users\Mica\source\repos\DSAL\mainsystem\Images\FoodBundleA.jpeg");
+            //DisplayPictureBox.Image = System.Drawing.Image.FromFile(@"C:\Users\Mica\source\repos\DSAL\mainsystem\Images\FoodBundleA.jpeg");
 
             // check bundle A checkboxes
             A_CokeCheckBox.Checked = true;

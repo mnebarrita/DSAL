@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace mainsystem
 {
@@ -15,43 +16,6 @@ namespace mainsystem
         private double currentItemLastAmount = 0.0;
         private int currentItemLastQuantity = 0;
 
-        // Handle add/remove checkbox item
-        public void HandleCheckBox(CheckBox chk, double price,
-                                   ListBox displayListbox,
-                                   TextBox priceTxtBox,
-                                   TextBox discountTxtbox,
-                                   TextBox totalBillsTxtbox,
-                                   TextBox totalQtyTxtbox)
-        {
-            if (chk.Checked)
-            {
-                priceTxtBox.Text = price.ToString("N2");
-                discountTxtbox.Text = "0.00";
-                displayListbox.Items.Add(chk.Text + " " + price.ToString("N2"));
-
-                total_amount += price;
-                total_qty += 1;
-            }
-            else
-            {
-                total_amount -= price;
-                total_qty -= 1;
-
-                // Remove from listbox
-                for (int i = displayListbox.Items.Count - 1; i >= 0; i--)
-                {
-                    if (displayListbox.Items[i].ToString().StartsWith(chk.Text))
-                    {
-                        displayListbox.Items.RemoveAt(i);
-                        break;
-                    }
-                }
-            }
-
-            // update totals
-            totalBillsTxtbox.Text = total_amount.ToString("N2");
-            totalQtyTxtbox.Text = total_qty.ToString();
-        }
 
         // Handle quantity change
         public void UpdateQuantity(TextBox qtyTxtbox,

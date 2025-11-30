@@ -58,6 +58,12 @@ namespace mainsystem
 
         private void EXAM_Load(object sender, EventArgs e)
         {
+
+            //pos_select_cashier1();
+            //posdb_connect.pos_cmd();
+            //posdb_connect.pos_sqladapterSelect();
+            //posdb_connect.pos_sqldatasetSELECT();
+
             CenterPanel();
             this.Resize += (s, ev) => CenterPanel();
 

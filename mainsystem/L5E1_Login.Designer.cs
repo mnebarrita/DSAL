@@ -28,15 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(L5E1_Login));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.passwordTxtbox = new System.Windows.Forms.TextBox();
+            this.usernameTxtbox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.usernameTxtbox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.passwordTxtbox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelMain.SuspendLayout();
             this.SuspendLayout();
@@ -45,7 +44,6 @@
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(177, 4);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
@@ -70,6 +68,27 @@
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(626, 558);
             this.panelMain.TabIndex = 3;
+            // 
+            // passwordTxtbox
+            // 
+            this.passwordTxtbox.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.passwordTxtbox.Location = new System.Drawing.Point(232, 388);
+            this.passwordTxtbox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.passwordTxtbox.Name = "passwordTxtbox";
+            this.passwordTxtbox.Size = new System.Drawing.Size(196, 30);
+            this.passwordTxtbox.TabIndex = 1;
+            this.passwordTxtbox.UseSystemPasswordChar = true;
+            this.passwordTxtbox.TextChanged += new System.EventHandler(this.passwordTxtbox_TextChanged);
+            // 
+            // usernameTxtbox
+            // 
+            this.usernameTxtbox.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.usernameTxtbox.Location = new System.Drawing.Point(232, 328);
+            this.usernameTxtbox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.usernameTxtbox.Name = "usernameTxtbox";
+            this.usernameTxtbox.Size = new System.Drawing.Size(196, 30);
+            this.usernameTxtbox.TabIndex = 1;
+            this.usernameTxtbox.TextChanged += new System.EventHandler(this.usernameTxtbox_TextChanged);
             // 
             // label2
             // 
@@ -104,16 +123,6 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // usernameTxtbox
-            // 
-            this.usernameTxtbox.Font = new System.Drawing.Font("Segoe UI", 10.2F);
-            this.usernameTxtbox.Location = new System.Drawing.Point(232, 328);
-            this.usernameTxtbox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.usernameTxtbox.Name = "usernameTxtbox";
-            this.usernameTxtbox.Size = new System.Drawing.Size(196, 30);
-            this.usernameTxtbox.TabIndex = 1;
-            this.usernameTxtbox.TextChanged += new System.EventHandler(this.usernameTxtbox_TextChanged);
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.Control;
@@ -126,17 +135,6 @@
             this.button1.Text = "Login";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // passwordTxtbox
-            // 
-            this.passwordTxtbox.Font = new System.Drawing.Font("Segoe UI", 10.2F);
-            this.passwordTxtbox.Location = new System.Drawing.Point(232, 388);
-            this.passwordTxtbox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.passwordTxtbox.Name = "passwordTxtbox";
-            this.passwordTxtbox.Size = new System.Drawing.Size(196, 30);
-            this.passwordTxtbox.TabIndex = 1;
-            this.passwordTxtbox.UseSystemPasswordChar = true;
-            this.passwordTxtbox.TextChanged += new System.EventHandler(this.passwordTxtbox_TextChanged);
             // 
             // L5E1_Login
             // 

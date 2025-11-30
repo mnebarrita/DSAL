@@ -111,8 +111,8 @@
             this.A_FriedChickencheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.DisplayPictureBox = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.DisplayPictureBox = new System.Windows.Forms.PictureBox();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
@@ -276,7 +276,6 @@
             // 
             // pictureBox17
             // 
-            this.pictureBox17.Image = global::mainsystem.Properties.Resources.amanos;
             this.pictureBox17.Location = new System.Drawing.Point(588, 577);
             this.pictureBox17.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox17.Name = "pictureBox17";
@@ -288,7 +287,6 @@
             // 
             // pictureBox18
             // 
-            this.pictureBox18.Image = global::mainsystem.Properties.Resources.pizza_9;
             this.pictureBox18.Location = new System.Drawing.Point(442, 577);
             this.pictureBox18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox18.Name = "pictureBox18";
@@ -300,7 +298,6 @@
             // 
             // pictureBox19
             // 
-            this.pictureBox19.Image = global::mainsystem.Properties.Resources.pizza_8;
             this.pictureBox19.Location = new System.Drawing.Point(297, 577);
             this.pictureBox19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox19.Name = "pictureBox19";
@@ -312,7 +309,6 @@
             // 
             // pictureBox20
             // 
-            this.pictureBox20.Image = global::mainsystem.Properties.Resources.pizza_7;
             this.pictureBox20.Location = new System.Drawing.Point(152, 577);
             this.pictureBox20.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox20.Name = "pictureBox20";
@@ -324,7 +320,6 @@
             // 
             // pictureBox21
             // 
-            this.pictureBox21.Image = global::mainsystem.Properties.Resources.pizza_6;
             this.pictureBox21.Location = new System.Drawing.Point(6, 577);
             this.pictureBox21.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox21.Name = "pictureBox21";
@@ -396,7 +391,6 @@
             // 
             // pictureBox12
             // 
-            this.pictureBox12.Image = global::mainsystem.Properties.Resources.pizza_5;
             this.pictureBox12.Location = new System.Drawing.Point(588, 395);
             this.pictureBox12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox12.Name = "pictureBox12";
@@ -408,7 +402,6 @@
             // 
             // pictureBox13
             // 
-            this.pictureBox13.Image = global::mainsystem.Properties.Resources.pizza_4;
             this.pictureBox13.Location = new System.Drawing.Point(442, 395);
             this.pictureBox13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox13.Name = "pictureBox13";
@@ -420,7 +413,6 @@
             // 
             // pictureBox14
             // 
-            this.pictureBox14.Image = global::mainsystem.Properties.Resources.pizza_3;
             this.pictureBox14.Location = new System.Drawing.Point(297, 395);
             this.pictureBox14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox14.Name = "pictureBox14";
@@ -432,7 +424,6 @@
             // 
             // pictureBox15
             // 
-            this.pictureBox15.Image = global::mainsystem.Properties.Resources.pizza_2;
             this.pictureBox15.Location = new System.Drawing.Point(152, 395);
             this.pictureBox15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox15.Name = "pictureBox15";
@@ -444,7 +435,6 @@
             // 
             // pictureBox16
             // 
-            this.pictureBox16.Image = global::mainsystem.Properties.Resources.pizza_1;
             this.pictureBox16.Location = new System.Drawing.Point(6, 395);
             this.pictureBox16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox16.Name = "pictureBox16";
@@ -516,7 +506,6 @@
             // 
             // pictureBox7
             // 
-            this.pictureBox7.Image = global::mainsystem.Properties.Resources.pizza_barbeque;
             this.pictureBox7.Location = new System.Drawing.Point(588, 218);
             this.pictureBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox7.Name = "pictureBox7";
@@ -528,7 +517,6 @@
             // 
             // pictureBox8
             // 
-            this.pictureBox8.Image = global::mainsystem.Properties.Resources.pizza_special_d;
             this.pictureBox8.Location = new System.Drawing.Point(442, 218);
             this.pictureBox8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox8.Name = "pictureBox8";
@@ -540,7 +528,6 @@
             // 
             // pictureBox9
             // 
-            this.pictureBox9.Image = global::mainsystem.Properties.Resources.pizza_special_c;
             this.pictureBox9.Location = new System.Drawing.Point(297, 218);
             this.pictureBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox9.Name = "pictureBox9";
@@ -552,7 +539,6 @@
             // 
             // pictureBox10
             // 
-            this.pictureBox10.Image = global::mainsystem.Properties.Resources.pizza_special_b;
             this.pictureBox10.Location = new System.Drawing.Point(152, 218);
             this.pictureBox10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox10.Name = "pictureBox10";
@@ -564,7 +550,6 @@
             // 
             // pictureBox11
             // 
-            this.pictureBox11.Image = global::mainsystem.Properties.Resources.pizza_special_a;
             this.pictureBox11.Location = new System.Drawing.Point(6, 218);
             this.pictureBox11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox11.Name = "pictureBox11";
@@ -636,7 +621,6 @@
             // 
             // pictureBox6
             // 
-            this.pictureBox6.Image = global::mainsystem.Properties.Resources.dominos;
             this.pictureBox6.Location = new System.Drawing.Point(588, 26);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox6.Name = "pictureBox6";
@@ -647,7 +631,6 @@
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Image = global::mainsystem.Properties.Resources.cauliflower_crust;
             this.pictureBox5.Location = new System.Drawing.Point(442, 26);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox5.Name = "pictureBox5";
@@ -658,7 +641,6 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = global::mainsystem.Properties.Resources.pepperoni;
             this.pictureBox4.Location = new System.Drawing.Point(297, 26);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox4.Name = "pictureBox4";
@@ -669,7 +651,6 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::mainsystem.Properties.Resources.NYPizza;
             this.pictureBox3.Location = new System.Drawing.Point(152, 26);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox3.Name = "pictureBox3";
@@ -680,7 +661,6 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::mainsystem.Properties.Resources.hawaii;
             this.pictureBox2.Location = new System.Drawing.Point(6, 26);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
@@ -1135,21 +1115,11 @@
             this.panelMain.Controls.Add(this.groupBox1);
             this.panelMain.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.panelMain.Location = new System.Drawing.Point(0, 0);
-            this.panelMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelMain.Margin = new System.Windows.Forms.Padding(4);
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(1430, 908);
             this.panelMain.TabIndex = 36;
             this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
-            // 
-            // DisplayPictureBox
-            // 
-            this.DisplayPictureBox.Location = new System.Drawing.Point(405, 610);
-            this.DisplayPictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.DisplayPictureBox.Name = "DisplayPictureBox";
-            this.DisplayPictureBox.Size = new System.Drawing.Size(276, 258);
-            this.DisplayPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.DisplayPictureBox.TabIndex = 26;
-            this.DisplayPictureBox.TabStop = false;
             // 
             // label1
             // 
@@ -1160,6 +1130,16 @@
             this.label1.Size = new System.Drawing.Size(577, 72);
             this.label1.TabIndex = 36;
             this.label1.Text = "MIFLO FOOD ORDERING APPLICATION";
+            // 
+            // DisplayPictureBox
+            // 
+            this.DisplayPictureBox.Location = new System.Drawing.Point(405, 610);
+            this.DisplayPictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DisplayPictureBox.Name = "DisplayPictureBox";
+            this.DisplayPictureBox.Size = new System.Drawing.Size(276, 258);
+            this.DisplayPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.DisplayPictureBox.TabIndex = 26;
+            this.DisplayPictureBox.TabStop = false;
             // 
             // POS2_FunctionForm
             // 

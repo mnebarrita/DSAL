@@ -21,6 +21,7 @@ namespace mainsystem
 
         private string picpath;
         private Image pic;
+
         public POS_Admin()
         {
             posdb_connect.pos_connString();
@@ -190,9 +191,6 @@ namespace mainsystem
                 DataSet dset = new DataSet();
                 adapter.Fill(dset, "pos_nameTb1");
 
-                DataTable original = dset.Tables[0];  // your original data
-                DataTable transposed = TransposeDataTable(original);
-                dataGridView1.DataSource = transposed;
 
 
 

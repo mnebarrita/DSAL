@@ -13,10 +13,16 @@ namespace mainsystem
 {
     public partial class Quiz1 : Form
     {
+        // Existing variables...
         private int totalUnits = 0;
         private double totalTuition = 0;
         private double totalMisc = 0;
         private double totalAllFees = 0;
+
+        // --- ADD THESE NEW VARIABLES BELOW ---
+        private double totalCompLab = 0;
+        private double totalCiscoLab = 0;
+        private double totalExamBooklet = 0;
 
         public Quiz1()
         {
@@ -67,7 +73,13 @@ namespace mainsystem
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            CenterPanel();
+            this.Resize += (s, ev) => CenterPanel();
+        }
+        private void CenterPanel()
+        {
+            panelMain.Left = (this.ClientSize.Width - panelMain.Width) / 2;
+            panelMain.Top = (this.ClientSize.Height - panelMain.Height) / 2;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -119,6 +131,7 @@ namespace mainsystem
 
         private void button2_Click(object sender, EventArgs e)
         {
+            
             listBox1.Items.Add(txtCourseNumber.Text);
             listBox2.Items.Add(txtCourseCode.Text);
             listBox3.Items.Add(txtCourseDesc.Text);
@@ -128,28 +141,68 @@ namespace mainsystem
             listBox7.Items.Add(txtTime.Text);
             listBox8.Items.Add(txtDay.Text);
 
-            // Example: also update totals (if you have summary textboxes)
-            txtTotalUnits1.Text = txtCreditUnits.Text;
-            txtTotalTuitionFee.Text = txtTuitionFee.Text;
-            txtMiscFee.Text = txtTotalMiscFee.Text;
+            
+            // Parse Main Fees
+            int currentUnits = int.Parse(txtCreditUnits.Text);
+            double currentTuition = double.Parse(txtTuitionFee.Text);
+            double currentMisc = double.Parse(txtMiscFee.Text);
+            double currentTotal = double.Parse(txtTotalTuitionandFee1.Text);
+
+            // Parse Specific Lab Fees
+            double currentCompLab = string.IsNullOrWhiteSpace(txtCompLab1.Text) ? 0 : double.Parse(txtCompLab1.Text);
+            double currentCiscoLab = string.IsNullOrWhiteSpace(txtCiscoLab1.Text) ? 0 : double.Parse(txtCiscoLab1.Text);
+            double currentExamBooklet = string.IsNullOrWhiteSpace(txtExamBooklet1.Text) ? 0 : double.Parse(txtExamBooklet1.Text);
+
+            
+            // 1. Add Main Totals
+            totalUnits += currentUnits;
+            totalTuition += currentTuition;
+            totalMisc += currentMisc;
+            totalAllFees += currentTotal;
+
+            // 2. Add Specific Lab Totals
+            totalCompLab += currentCompLab;
+            totalCiscoLab += currentCiscoLab;
+            totalExamBooklet += currentExamBooklet;
+
+            
+            // Update Main Summaries
+            txtTotalNumUnits.Text = totalUnits.ToString();
+            txtTotalTuitionFee.Text = totalTuition.ToString("n");
+            txtTotalMiscFee.Text = totalMisc.ToString("n");
+            txtTotalTuitionandFee2.Text = totalAllFees.ToString("n");
+
+            // Update Specific Lab Summaries
+            txtCompLab2.Text = totalCompLab.ToString("n");
+            txtCiscoLab2.Text = totalCiscoLab.ToString("n");
+            txtExamBooklet2.Text = totalExamBooklet.ToString("n");
+
+            // Update "Total Other School Fees" (Usually same as Total Misc)
+            txtTotalOtherFee.Text = totalMisc.ToString("n");
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            foreach (Control c in this.Controls)
-            {
-                if (c is TextBox)
-                {
-                    ((TextBox)c).Clear();
-                }
-                else if (c is ListBox)
-                {
-                    ((ListBox)c).Items.Clear();
-                }
-            }
+            // --- 1. CLEAR THE INPUT TEXTBOXES ONLY ---
+            // These textboxes are used for the data of the new subject
+            txtCourseNumber.Clear();
+            txtCourseCode.Clear();
+            txtCourseDesc.Clear();
+            txtUnitLec.Clear();
+            txtUnitLab.Clear();
+            txtTime.Clear();
+            txtDay.Clear();
 
-            comboBox1.SelectedIndex = -1;
-            pictureBox1.Image = null;
+            // Clear the calculated fields for this subject
+            txtCreditUnits.Clear();
+            txtTuitionFee.Clear();
+            txtMiscFee.Clear();
+            txtTotalTuitionandFee1.Clear();
+
+            // Clear the miscellaneous fee inputs for the next subject
+            txtCompLab1.Clear();
+            txtCiscoLab1.Clear();
+            txtExamBooklet1.Clear();
 
         }
 
@@ -160,52 +213,38 @@ namespace mainsystem
 
         private void button5_Click(object sender, EventArgs e)
         {
-            try
+            //try
             {
-                // Get lecture + lab units
+                // 1. Calculate Credit Units
                 int lecUnits = int.Parse(txtUnitLec.Text);
                 int labUnits = int.Parse(txtUnitLab.Text);
                 int creditUnits = lecUnits + labUnits;
-                txtCreditUnits.Text = creditUnits.ToString();
+                txtCreditUnits.Text = creditUnits.ToString(); // Display it only
 
-                // Tuition fee = credit units × 1500
+                // 2. Calculate Tuition
                 double tuitionFee = creditUnits * 1500;
                 txtTuitionFee.Text = tuitionFee.ToString("n");
 
-                // Misc fee = comp lab + cisco lab + exam booklet
+                // 3. Calculate Misc
                 double compLab = string.IsNullOrWhiteSpace(txtCompLab1.Text) ? 0 : double.Parse(txtCompLab1.Text);
                 double ciscoLab = string.IsNullOrWhiteSpace(txtCiscoLab1.Text) ? 0 : double.Parse(txtCiscoLab1.Text);
                 double examBooklet = string.IsNullOrWhiteSpace(txtExamBooklet1.Text) ? 0 : double.Parse(txtExamBooklet1.Text);
+
                 double miscFee = compLab + ciscoLab + examBooklet;
                 txtMiscFee.Text = miscFee.ToString("n");
 
-                // Total tuition and fee for this entry
+                // 4. Total for THIS subject only
                 double totalForThisSubject = tuitionFee + miscFee;
                 txtTotalTuitionandFee1.Text = totalForThisSubject.ToString("n");
 
-                // Accumulate totals
-                totalUnits += creditUnits;
-                totalTuition += tuitionFee;
-                totalMisc += miscFee;
-                totalAllFees += totalForThisSubject;
-
-                // Update summary boxes
-                txtTotalNumUnits.Text = totalUnits.ToString();
-                txtTotalTuitionFee.Text = totalTuition.ToString("n");
-                txtTotalMiscFee.Text = totalMisc.ToString("n");
-                txtTotalOtherFee.Text = totalMisc.ToString("n");
-                txtTotalTuitionandFee2.Text = totalAllFees.ToString("n");
-                txtCompLab2.Text = txtCompLab1.Text;
-                txtExamBooklet2.Text = txtExamBooklet1.Text;
-                txtCiscoLab2.Text = txtCiscoLab1.Text;
-                txtTotalTuitionandFee1.Text = txtTotalTuitionandFee2.Text;
-
-                
+                // DELETE THE ACCUMULATION CODE FROM HERE (totalUnits += ...)
+                // We will move it to Button 2
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "Calculation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Check your inputs!");
+            //}
         }
 
         private void textBox18_TextChanged(object sender, EventArgs e)
@@ -229,6 +268,11 @@ namespace mainsystem
         }
 
         private void txtTotalTuitionandFee2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
