@@ -322,7 +322,7 @@
     <None Include="Resources\background1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="NewFolder1\" />
+    <Folder Include="Pictures\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\download %284%29.jpg" />
