@@ -195,6 +195,20 @@
     <Compile Include="SampleLongMethod.Designer.cs">
       <DependentUpon>SampleLongMethod.cs</DependentUpon>
     </Compile>
+    <Compile Include="SQLPOS1CClass.cs" />
+    <Compile Include="SQLPOS1Class.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SQLPOS1Class.Designer.cs">
+      <DependentUpon>SQLPOS1Class.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SQLPOS2CClass.cs" />
+    <Compile Include="SQLPOS2Class.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SQLPOS2Class.Designer.cs">
+      <DependentUpon>SQLPOS2Class.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransparentPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -267,6 +281,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SampleLongMethod.resx">
       <DependentUpon>SampleLongMethod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SQLPOS1Class.resx">
+      <DependentUpon>SQLPOS1Class.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SQLPOS2Class.resx">
+      <DependentUpon>SQLPOS2Class.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="Properties\Settings.settings">
