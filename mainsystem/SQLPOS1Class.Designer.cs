@@ -244,6 +244,7 @@
             this.changeTxtbox.Size = new System.Drawing.Size(216, 111);
             this.changeTxtbox.TabIndex = 1;
             this.changeTxtbox.Text = "";
+            this.changeTxtbox.TextChanged += new System.EventHandler(this.changeTxtbox_TextChanged);
             // 
             // cash_renderedtxtbox
             // 
@@ -255,6 +256,7 @@
             this.cash_renderedtxtbox.Size = new System.Drawing.Size(216, 111);
             this.cash_renderedtxtbox.TabIndex = 0;
             this.cash_renderedtxtbox.Text = "";
+            this.cash_renderedtxtbox.TextChanged += new System.EventHandler(this.cash_renderedtxtbox_TextChanged);
             // 
             // label1
             // 
@@ -305,6 +307,7 @@
             this.button12.Tag = "keypad";
             this.button12.Text = "0";
             this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.Keypad_Click);
             // 
             // button11
             // 
@@ -317,6 +320,7 @@
             this.button11.Tag = "keypad";
             this.button11.Text = "2";
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.Keypad_Click);
             // 
             // button20
             // 
@@ -329,6 +333,7 @@
             this.button20.Tag = "keypad";
             this.button20.Text = "1";
             this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.Keypad_Click);
             // 
             // button19
             // 
@@ -342,6 +347,7 @@
             this.button19.Tag = "keypad";
             this.button19.Text = ".";
             this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.Keypad_Click);
             // 
             // button18
             // 
@@ -354,6 +360,7 @@
             this.button18.Tag = "keypad";
             this.button18.Text = "5";
             this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.Keypad_Click);
             // 
             // button17
             // 
@@ -366,6 +373,7 @@
             this.button17.Tag = "keypad";
             this.button17.Text = "4";
             this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.Keypad_Click);
             // 
             // button16
             // 
@@ -378,6 +386,7 @@
             this.button16.Tag = "keypad";
             this.button16.Text = "3";
             this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.Keypad_Click);
             // 
             // button15
             // 
@@ -390,6 +399,7 @@
             this.button15.Tag = "keypad";
             this.button15.Text = "9";
             this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.Keypad_Click);
             // 
             // button14
             // 
@@ -402,6 +412,7 @@
             this.button14.Tag = "keypad";
             this.button14.Text = "8";
             this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.Keypad_Click);
             // 
             // button13
             // 
@@ -414,6 +425,7 @@
             this.button13.Tag = "keypad";
             this.button13.Text = "7";
             this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.Keypad_Click);
             // 
             // button10
             // 
@@ -426,6 +438,7 @@
             this.button10.Tag = "keypad";
             this.button10.Text = "6";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.Keypad_Click);
             // 
             // button9
             // 
@@ -439,6 +452,7 @@
             this.button9.Tag = "keypad";
             this.button9.Text = "+";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.Keypad_Click);
             // 
             // button8
             // 
@@ -452,6 +466,7 @@
             this.button8.Tag = "keypad";
             this.button8.Text = "-";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.Keypad_Click);
             // 
             // button7
             // 
@@ -465,6 +480,7 @@
             this.button7.Tag = "keypad";
             this.button7.Text = "*";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.Keypad_Click);
             // 
             // button6
             // 
@@ -478,6 +494,7 @@
             this.button6.Tag = "keypad";
             this.button6.Text = "/";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.Keypad_Click);
             // 
             // enter
             // 
@@ -491,6 +508,7 @@
             this.enter.TabIndex = 6;
             this.enter.Text = "ENTER";
             this.enter.UseVisualStyleBackColor = false;
+            this.enter.Click += new System.EventHandler(this.Keypad_Click);
             // 
             // pictureBox1
             // 
@@ -963,7 +981,6 @@
             this.CALCULATE.Size = new System.Drawing.Size(113, 32);
             this.CALCULATE.TabIndex = 3;
             this.CALCULATE.Text = "CALCULATE";
-            this.CALCULATE.UseVisualStyleBackColor = true;
             this.CALCULATE.Click += new System.EventHandler(this.CALCULATE_Click);
             // 
             // NEW
