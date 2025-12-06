@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace mainsystem
+namespace mainsystem.L14_Classes
 {
-    internal class employee_dbconnection
+    public class employee_dbconnection
     {
         // declaration of variables for database connections and queries to access from one form to another
         public String employee_connectionString = null;
