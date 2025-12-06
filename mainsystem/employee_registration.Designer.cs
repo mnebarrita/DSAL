@@ -32,7 +32,7 @@
             this.emp_status = new System.Windows.Forms.ComboBox();
             this.emp_gender = new System.Windows.Forms.ComboBox();
             this.emp_age = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.searchBtn = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -124,7 +124,7 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.addBtn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.position = new System.Windows.Forms.TextBox();
@@ -153,7 +153,7 @@
             this.groupBox1.Controls.Add(this.emp_status);
             this.groupBox1.Controls.Add(this.emp_gender);
             this.groupBox1.Controls.Add(this.emp_age);
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.searchBtn);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label12);
@@ -208,14 +208,15 @@
             this.emp_age.Size = new System.Drawing.Size(167, 26);
             this.emp_age.TabIndex = 4;
             // 
-            // button2
+            // searchBtn
             // 
-            this.button2.Location = new System.Drawing.Point(328, 300);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(84, 25);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Search";
-            this.button2.UseVisualStyleBackColor = true;
+            this.searchBtn.Location = new System.Drawing.Point(328, 300);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(84, 25);
+            this.searchBtn.TabIndex = 6;
+            this.searchBtn.Text = "Search";
+            this.searchBtn.UseVisualStyleBackColor = true;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
             // label13
             // 
@@ -410,6 +411,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(30, 35);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(346, 236);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -974,7 +976,7 @@
             this.panelMain.Controls.Add(this.button6);
             this.panelMain.Controls.Add(this.button5);
             this.panelMain.Controls.Add(this.button4);
-            this.panelMain.Controls.Add(this.button3);
+            this.panelMain.Controls.Add(this.addBtn);
             this.panelMain.Controls.Add(this.dataGridView1);
             this.panelMain.Controls.Add(this.groupBox3);
             this.panelMain.Controls.Add(this.groupBox2);
@@ -1032,14 +1034,15 @@
             this.button4.Text = "Edit";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // addBtn
             // 
-            this.button3.Location = new System.Drawing.Point(1315, 697);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(89, 50);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "Add";
-            this.button3.UseVisualStyleBackColor = true;
+            this.addBtn.Location = new System.Drawing.Point(1315, 697);
+            this.addBtn.Name = "addBtn";
+            this.addBtn.Size = new System.Drawing.Size(89, 50);
+            this.addBtn.TabIndex = 13;
+            this.addBtn.Text = "Add";
+            this.addBtn.UseVisualStyleBackColor = true;
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
             // dataGridView1
             // 
@@ -1211,7 +1214,7 @@
         private System.Windows.Forms.ComboBox emp_status;
         private System.Windows.Forms.ComboBox emp_gender;
         private System.Windows.Forms.ComboBox emp_age;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button searchBtn;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label12;
@@ -1315,7 +1318,7 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button addBtn;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.TextBox others;
