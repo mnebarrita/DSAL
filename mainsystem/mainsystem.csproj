@@ -53,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="L14_Classes\employee_dbconnection.cs" />
     <Compile Include="L14_Classes\loginDb_dbconnections.cs" />
     <Compile Include="POS\Payroll_ClassForm.cs">
@@ -195,18 +201,18 @@
     <Compile Include="SampleLongMethod.Designer.cs">
       <DependentUpon>SampleLongMethod.cs</DependentUpon>
     </Compile>
-    <Compile Include="SQLPOS1CClass.cs" />
-    <Compile Include="SQLPOS1Class.cs">
+    <Compile Include="SQLPOS\SQLPOS1CClass.cs" />
+    <Compile Include="SQLPOS\SQLPOS1Class.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SQLPOS1Class.Designer.cs">
+    <Compile Include="SQLPOS\SQLPOS1Class.Designer.cs">
       <DependentUpon>SQLPOS1Class.cs</DependentUpon>
     </Compile>
-    <Compile Include="SQLPOS2CClass.cs" />
-    <Compile Include="SQLPOS2Class.cs">
+    <Compile Include="SQLPOS\SQLPOS2CClass.cs" />
+    <Compile Include="SQLPOS\SQLPOS2Class.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SQLPOS2Class.Designer.cs">
+    <Compile Include="SQLPOS\SQLPOS2Class.Designer.cs">
       <DependentUpon>SQLPOS2Class.cs</DependentUpon>
     </Compile>
     <Compile Include="TransparentPanel.cs">
@@ -214,6 +220,9 @@
     </Compile>
     <Compile Include="L14_Classes\useraccount_db_connection.cs" />
     <Compile Include="Variables.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="POS\Payroll_ClassForm.resx">
       <DependentUpon>Payroll_ClassForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -282,10 +291,10 @@
     <EmbeddedResource Include="SampleLongMethod.resx">
       <DependentUpon>SampleLongMethod.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SQLPOS1Class.resx">
+    <EmbeddedResource Include="SQLPOS\SQLPOS1Class.resx">
       <DependentUpon>SQLPOS1Class.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SQLPOS2Class.resx">
+    <EmbeddedResource Include="SQLPOS\SQLPOS2Class.resx">
       <DependentUpon>SQLPOS2Class.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
