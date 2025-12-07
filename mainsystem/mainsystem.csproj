@@ -53,11 +53,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="employee_registration.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="employee_registration.Designer.cs">
+      <DependentUpon>employee_registration.cs</DependentUpon>
     </Compile>
     <Compile Include="L14_Classes\employee_dbconnection.cs" />
     <Compile Include="L14_Classes\loginDb_dbconnections.cs" />
@@ -220,8 +220,8 @@
     </Compile>
     <Compile Include="L14_Classes\useraccount_db_connection.cs" />
     <Compile Include="Variables.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="employee_registration.resx">
+      <DependentUpon>employee_registration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="POS\Payroll_ClassForm.resx">
       <DependentUpon>Payroll_ClassForm.cs</DependentUpon>

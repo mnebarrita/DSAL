@@ -67,6 +67,8 @@ namespace mainsystem
             // Close
             if (emp_db.employee_sql_connection.State == ConnectionState.Open)
                 emp_db.employee_sql_connection.Close();
+
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
         private void ClearAllFields()
@@ -165,7 +167,7 @@ namespace mainsystem
 
                 // 2. SQL String
                 // We skip 'name_id' because the database auto-generates it.
-                string sql = "INSERT INTO pos_empRegTbl (" +
+                string sql = "INSERT INTO pos_empRegTb1 (" +
                     "emp_id, emp_fname, emp_mname, emp_surname, emp_age, emp_gender, " +
                     "emp_sss_no, emp_tin_no, emp_philhealth_no, emp_pagibig_no, emp_status, " +
                     "emp_height, emp_weight, add_yrs_stay, add_house_no, add_sub_name, " +
@@ -200,7 +202,7 @@ namespace mainsystem
                     add_barangay.Text + "', '" +
                     add_municipality.Text + "', '" +
                     add_city.Text + "', '" +
-                    add_state_province.Text + ", '" +
+                    add_state_province.Text + "', '" +
                     add_country.Text + "', '" +
                     add_zipcode.Text + "', '" +
                     // Elementary
@@ -211,7 +213,7 @@ namespace mainsystem
                     // Junior High
                     junior_high_name.Text + "', '" +        
                     junior_high_address.Text + "', '" +
-                    junior_high_yr_grad.Value.ToString("yyyy-MM-dd") + ", '" +
+                    junior_high_yr_grad.Value.ToString("yyyy-MM-dd") + "', '" +
                     junior_high_award.Text + "', '" +
                     // Senior High & Track
                     senior_high_name.Text + "', '" +
@@ -265,7 +267,7 @@ namespace mainsystem
                 emp_db.employee_connString();
 
                 // 2. Search Query (Using the 'emp_id' textbox to find the match)
-                emp_db.employee_sql = "SELECT * FROM pos_empRegTbl WHERE emp_id = '" + emp_id.Text + "'";
+                emp_db.employee_sql = "SELECT * FROM pos_empRegTb1 WHERE emp_id = '" + emp_id.Text + "'";
 
                 // 3. Execute Search
                 emp_db.employee_cmd();
@@ -377,5 +379,150 @@ namespace mainsystem
                 MessageBox.Show("Search Error: " + ex.Message);
             }
         }
+
+        private void editBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // 1. Connect
+                emp_db.employee_connString();
+
+                // 2. The MASSIVE Update Query
+                // This now includes Address, Education, Awards, EVERYTHING.
+                string sql = "UPDATE pos_empRegTb1 SET " +
+                    "emp_fname = '" + emp_fname.Text + "', " +
+                    "emp_mname = '" + emp_mname.Text + "', " +
+                    "emp_surname = '" + emp_surname.Text + "', " +
+                    "emp_age = '" + emp_age.Text + "', " +
+                    "emp_gender = '" + emp_gender.Text + "', " +
+                    "emp_status = '" + emp_status.Text + "', " +
+
+                    // Govt IDs
+                    "emp_sss_no = '" + emp_sss_no.Text + "', " +
+                    "emp_tin_no = '" + emp_tin_no.Text + "', " +
+                    "emp_philhealth_no = '" + emp_philhealth_no.Text + "', " +
+                    "emp_pagibig_no = '" + emp_pagibig_no.Text + "', " +
+
+                    // Physical & Address
+                    "emp_height = '" + emp_height.Text + "', " +
+                    "emp_weight = '" + emp_weight.Text + "', " +
+                    "add_yrs_stay = '" + add_yrs_stay.Text + "', " +
+                    "add_house_no = '" + add_house_no.Text + "', " +
+                    "add_sub_name = '" + add_sub_name.Text + "', " +
+                    "add_phase_no = '" + add_phase_no.Text + "', " +
+                    "add_street = '" + add_street.Text + "', " +
+                    "add_barangay = '" + add_barangay.Text + "', " +
+                    "add_municipality = '" + add_municipality.Text + "', " +
+                    "add_city = '" + add_city.Text + "', " +
+                    "add_state_province = '" + add_state_province.Text + "', " +
+                    "add_country = '" + add_country.Text + "', " +
+                    "add_zipcode = '" + add_zipcode.Text + "', " +
+
+                    // Elementary
+                    "elem_name = '" + elem_name.Text + "', " +
+                    "elem_address = '" + elem_address.Text + "', " +
+                    "elem_yr_grad = '" + elem_yr_grad.Value.ToString("yyyy-MM-dd") + "', " +
+                    "elem_award = '" + elem_award.Text + "', " +
+
+                    // Junior High
+                    "junior_high_name = '" + junior_high_name.Text + "', " +
+                    "junior_high_address = '" + junior_high_address.Text + "', " +
+                    "junior_high_yr_grad = '" + junior_high_yr_grad.Value.ToString("yyyy-MM-dd") + "', " +
+                    "junior_high_award = '" + junior_high_award.Text + "', " +
+
+                    // Senior High & Track
+                    "senior_high_name = '" + senior_high_name.Text + "', " +
+                    "senior_high_address = '" + senior_high_address.Text + "', " +
+                    "senior_high_yr_grad = '" + senior_high_yr_grad.Value.ToString("yyyy-MM-dd") + "', " +
+                    "senior_high_award = '" + senior_high_award.Text + "', " +
+                    "track = '" + track.Text + "', " +
+
+                    // College
+                    "college_school_name = '" + college_school_name.Text + "', " +
+                    "college_address = '" + college_address.Text + "', " +
+                    "college_yr_grad = '" + college_yr_grad.Value.ToString("yyyy-MM-dd") + "', " +
+                    "college_award = '" + college_award.Text + "', " +
+                    "college_course = '" + college_course.Text + "', " +
+
+                    // Work Info
+                    "others = '" + others.Text + "', " +
+                    "position = '" + position.Text + "', " +
+                    "emp_work_status = '" + emp_work_status.Text + "', " +
+                    "emp_date_hired = '" + emp_date_hired.Value.ToString("yyyy-MM-dd") + "', " +
+                    "emp_department = '" + emp_department.Text + "', " +
+                    "emp_no_of_dependents = '" + emp_no_of_dependents.Text + "', " +
+
+                    // Image
+                    "picpath = '" + picpath.Text.Replace("\\", "\\\\") + "' " +
+
+                    "WHERE emp_id = '" + emp_id.Text + "'";
+
+                emp_db.employee_sql = sql;
+                emp_db.employee_cmd();
+
+                // Execute Update
+                // Note: Using Insert/Update/Delete adapter usually works the same if they just run ExecuteNonQuery
+                emp_db.employee_sqladapterInsert();
+
+                if (emp_db.employee_sql_connection.State == ConnectionState.Open)
+                    emp_db.employee_sql_connection.Close();
+
+                MessageBox.Show("Record Updated Successfully!");
+                RefreshGrid();
+                ClearAllFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Update Error: " + ex.Message);
+            }
+        }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Are you sure you want to delete this record?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    emp_db.employee_connString();
+
+                    // SQL Delete Command
+                    string sql = "DELETE FROM pos_empRegTb1 WHERE emp_id = '" + emp_id.Text + "'";
+                    emp_db.employee_sql = sql;
+
+                    emp_db.employee_cmd();
+                    emp_db.employee_sqladapterInsert(); // ExecuteNonQuery
+
+                    if (emp_db.employee_sql_connection.State == ConnectionState.Open)
+                        emp_db.employee_sql_connection.Close();
+
+                    MessageBox.Show("Record Deleted Successfully.");
+                    RefreshGrid();   // Update the table
+                    ClearAllFields(); // Clear the textboxes
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Delete Error: " + ex.Message);
+            }
+        }
+
+        private void exitBtn_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to close?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+
+        private void newBtn_Click(object sender, EventArgs e)
+        {
+            ClearAllFields();
+        }
+
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+            ClearAllFields();
+        }
     }
+
 }
