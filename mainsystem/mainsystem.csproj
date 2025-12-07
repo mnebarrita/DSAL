@@ -53,14 +53,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="employee_registration.cs">
+    <Compile Include="Employee\employee_registration.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="employee_registration.Designer.cs">
+    <Compile Include="Employee\employee_registration.Designer.cs">
       <DependentUpon>employee_registration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="employee_reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="employee_reports.Designer.cs">
+      <DependentUpon>employee_reports.cs</DependentUpon>
     </Compile>
     <Compile Include="L14_Classes\employee_dbconnection.cs" />
     <Compile Include="L14_Classes\loginDb_dbconnections.cs" />
+    <Compile Include="payrol_report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="payrol_report.Designer.cs">
+      <DependentUpon>payrol_report.cs</DependentUpon>
+    </Compile>
     <Compile Include="POS\Payroll_ClassForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,10 +113,10 @@
     <Compile Include="POS\POS2_FunctionForm.Designer.cs">
       <DependentUpon>POS2_FunctionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Prelim\employee_payrol.cs">
+    <Compile Include="Employee\employee_payrol.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Prelim\employee_payrol.Designer.cs">
+    <Compile Include="Employee\employee_payrol.Designer.cs">
       <DependentUpon>employee_payrol.cs</DependentUpon>
     </Compile>
     <Compile Include="Prelim\L3Activity3_Cashier.cs">
@@ -226,8 +238,14 @@
     </Compile>
     <Compile Include="L14_Classes\useraccount_db_connection.cs" />
     <Compile Include="Variables.cs" />
-    <EmbeddedResource Include="employee_registration.resx">
+    <EmbeddedResource Include="Employee\employee_registration.resx">
       <DependentUpon>employee_registration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="employee_reports.resx">
+      <DependentUpon>employee_reports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="payrol_report.resx">
+      <DependentUpon>payrol_report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="POS\Payroll_ClassForm.resx">
       <DependentUpon>Payroll_ClassForm.cs</DependentUpon>
@@ -247,7 +265,7 @@
     <EmbeddedResource Include="POS\POS2_FunctionForm.resx">
       <DependentUpon>POS2_FunctionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Prelim\employee_payrol.resx">
+    <EmbeddedResource Include="Employee\employee_payrol.resx">
       <DependentUpon>employee_payrol.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Prelim\L3Activity3_Cashier.resx">

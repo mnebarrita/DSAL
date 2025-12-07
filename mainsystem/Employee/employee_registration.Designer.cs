@@ -190,6 +190,12 @@
             // emp_status
             // 
             this.emp_status.FormattingEnabled = true;
+            this.emp_status.Items.AddRange(new object[] {
+            "Single",
+            "Taken",
+            "Married",
+            "Widowed",
+            "Separated"});
             this.emp_status.Location = new System.Drawing.Point(148, 805);
             this.emp_status.Name = "emp_status";
             this.emp_status.Size = new System.Drawing.Size(149, 21);
@@ -198,6 +204,10 @@
             // emp_gender
             // 
             this.emp_gender.FormattingEnabled = true;
+            this.emp_gender.Items.AddRange(new object[] {
+            "Female",
+            "Male",
+            "Prefer not to say"});
             this.emp_gender.Location = new System.Drawing.Point(148, 651);
             this.emp_gender.Name = "emp_gender";
             this.emp_gender.Size = new System.Drawing.Size(149, 21);
@@ -206,6 +216,13 @@
             // emp_age
             // 
             this.emp_age.FormattingEnabled = true;
+            this.emp_age.Items.AddRange(new object[] {
+            "0-18",
+            "19-36",
+            "37-54",
+            "55-72",
+            "73-90",
+            "90+"});
             this.emp_age.Location = new System.Drawing.Point(148, 619);
             this.emp_age.Name = "emp_age";
             this.emp_age.Size = new System.Drawing.Size(149, 21);
@@ -228,9 +245,9 @@
             this.label13.Font = new System.Drawing.Font("MS UI Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(15, 870);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(51, 13);
+            this.label13.Size = new System.Drawing.Size(97, 13);
             this.label13.TabIndex = 5;
-            this.label13.Text = "Weight";
+            this.label13.Text = "Weight (in kg)";
             // 
             // label8
             // 
@@ -248,9 +265,9 @@
             this.label12.Font = new System.Drawing.Font("MS UI Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(15, 839);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(49, 13);
+            this.label12.Size = new System.Drawing.Size(100, 13);
             this.label12.TabIndex = 5;
-            this.label12.Text = "Height";
+            this.label12.Text = "Height (in cm)";
             // 
             // label11
             // 
