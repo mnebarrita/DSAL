@@ -85,20 +85,22 @@ namespace mainsystem
 
             if (optionCombo.Text == "employee_number")
             {
-                // Ambiguous column fix: specify table name
-                condition = "WHERE payrolTb1.emp_id = '" + search + "'";
+                // Use LIKE for partial matches (e.g., typing '1' finds '1001')
+                condition = "WHERE payrolTb1.emp_id LIKE '%" + search + "%'";
             }
             else if (optionCombo.Text == "gross_income")
             {
-                condition = "WHERE payrolTb1.gross_income = '" + search + "'";
+                // Finds '15000' inside '15000.00'
+                condition = "WHERE payrolTb1.gross_income LIKE '%" + search + "%'";
             }
             else if (optionCombo.Text == "net_income")
             {
-                condition = "WHERE payrolTb1.net_income = '" + search + "'";
+                condition = "WHERE payrolTb1.net_income LIKE '%" + search + "%'";
             }
             else if (optionCombo.Text == "pay_date")
             {
-                condition = "WHERE payrolTb1.pay_date = '" + search + "'";
+                // Dates usually need exact matches, but LIKE works for years too (e.g., '2025')
+                condition = "WHERE payrolTb1.pay_date LIKE '%" + search + "%'";
             }
             else
             {

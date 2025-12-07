@@ -59,18 +59,18 @@
     <Compile Include="Employee\employee_registration.Designer.cs">
       <DependentUpon>employee_registration.cs</DependentUpon>
     </Compile>
-    <Compile Include="employee_reports.cs">
+    <Compile Include="Employee\employee_reports.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="employee_reports.Designer.cs">
+    <Compile Include="Employee\employee_reports.Designer.cs">
       <DependentUpon>employee_reports.cs</DependentUpon>
     </Compile>
     <Compile Include="L14_Classes\employee_dbconnection.cs" />
     <Compile Include="L14_Classes\loginDb_dbconnections.cs" />
-    <Compile Include="payrol_report.cs">
+    <Compile Include="Employee\payrol_report.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="payrol_report.Designer.cs">
+    <Compile Include="Employee\payrol_report.Designer.cs">
       <DependentUpon>payrol_report.cs</DependentUpon>
     </Compile>
     <Compile Include="POS\Payroll_ClassForm.cs">
@@ -241,10 +241,10 @@
     <EmbeddedResource Include="Employee\employee_registration.resx">
       <DependentUpon>employee_registration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="employee_reports.resx">
+    <EmbeddedResource Include="Employee\employee_reports.resx">
       <DependentUpon>employee_reports.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="payrol_report.resx">
+    <EmbeddedResource Include="Employee\payrol_report.resx">
       <DependentUpon>payrol_report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="POS\Payroll_ClassForm.resx">
