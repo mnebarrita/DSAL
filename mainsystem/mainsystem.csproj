@@ -213,6 +213,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Employee\sales_reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\sales_reports.Designer.cs">
+      <DependentUpon>sales_reports.cs</DependentUpon>
+    </Compile>
     <Compile Include="SampleLongMethod.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,6 +243,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="L14_Classes\useraccount_db_connection.cs" />
+    <Compile Include="user_account.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="user_account.Designer.cs">
+      <DependentUpon>user_account.cs</DependentUpon>
+    </Compile>
     <Compile Include="Variables.cs" />
     <EmbeddedResource Include="Employee\employee_registration.resx">
       <DependentUpon>employee_registration.cs</DependentUpon>
@@ -315,6 +327,9 @@
     <EmbeddedResource Include="Prelim\L3Transfer.resx">
       <DependentUpon>L3Transfer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Employee\sales_reports.resx">
+      <DependentUpon>sales_reports.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SampleLongMethod.resx">
       <DependentUpon>SampleLongMethod.cs</DependentUpon>
     </EmbeddedResource>
@@ -323,6 +338,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SQLPOS\SQLPOS2Class.resx">
       <DependentUpon>SQLPOS2Class.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user_account.resx">
+      <DependentUpon>user_account.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="Properties\Settings.settings">
