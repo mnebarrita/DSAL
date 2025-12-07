@@ -101,6 +101,12 @@
     <Compile Include="POS\POS2_FunctionForm.Designer.cs">
       <DependentUpon>POS2_FunctionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Prelim\employee_payrol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prelim\employee_payrol.Designer.cs">
+      <DependentUpon>employee_payrol.cs</DependentUpon>
+    </Compile>
     <Compile Include="Prelim\L3Activity3_Cashier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -240,6 +246,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="POS\POS2_FunctionForm.resx">
       <DependentUpon>POS2_FunctionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prelim\employee_payrol.resx">
+      <DependentUpon>employee_payrol.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Prelim\L3Activity3_Cashier.resx">
       <DependentUpon>L3Activity3_Cashier.cs</DependentUpon>
@@ -505,6 +514,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Sad-Cat-Meme-Download-PNG-Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot %28973%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nopfp.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -383,6 +383,16 @@ namespace mainsystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap nopfp {
+            get {
+                object obj = ResourceManager.GetObject("nopfp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap NYPizza {
             get {
                 object obj = ResourceManager.GetObject("NYPizza", resourceCulture);
@@ -636,6 +646,16 @@ namespace mainsystem.Properties {
         internal static System.Drawing.Bitmap Sad_Cat_Meme_Download_PNG_Image {
             get {
                 object obj = ResourceManager.GetObject("Sad-Cat-Meme-Download-PNG-Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot__973_ {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot (973)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
