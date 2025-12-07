@@ -19,7 +19,15 @@ namespace mainsystem.Prelim
 
         private void employee_payrol_Load(object sender, EventArgs e)
         {
+            //Center panel (UI logic) ---
+            CenterPanel();
+            this.Resize += (s, ev) => CenterPanel();
+        }
 
+        private void CenterPanel()
+        {
+            panelMain.Left = (this.ClientSize.Width - panelMain.Width) / 2;
+            panelMain.Top = (this.ClientSize.Height - panelMain.Height) / 2;
         }
     }
 }
