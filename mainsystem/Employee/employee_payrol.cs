@@ -64,6 +64,18 @@ namespace mainsystem.Prelim
                     departmentTxtBox.Text = row["emp_department"].ToString();
                     numDependentsTxtBox.Text = row["emp_no_of_dependents"].ToString();
                     emp_statusTxtBox.Text = row["emp_work_status"].ToString();
+
+                    string imgPath = row["picpath"].ToString();
+
+                    if (System.IO.File.Exists(imgPath))
+                    {
+                        
+                        pictureBox2.Image = Image.FromFile(imgPath);
+                    }
+                    else
+                    {
+                        pictureBox2.Image = null; // Clear if no image found
+                    }
                 }
                 else
                 {

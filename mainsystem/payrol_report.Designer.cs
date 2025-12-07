@@ -73,13 +73,12 @@
             this.optionCombo.FormattingEnabled = true;
             this.optionCombo.Items.AddRange(new object[] {
             "employee_number",
-            "surname",
-            "firstname",
-            "department",
-            "designation",
-            "zipcode",
-            "province",
-            "city"});
+            "",
+            "gross_income",
+            "",
+            "net_income",
+            "",
+            "pay_date"});
             this.optionCombo.Location = new System.Drawing.Point(229, 25);
             this.optionCombo.Name = "optionCombo";
             this.optionCombo.Size = new System.Drawing.Size(219, 24);
@@ -106,6 +105,7 @@
             this.backBtn.TabIndex = 3;
             this.backBtn.Text = "Back";
             this.backBtn.UseVisualStyleBackColor = true;
+            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
             // searchBtn
             // 
@@ -115,6 +115,7 @@
             this.searchBtn.TabIndex = 3;
             this.searchBtn.Text = "Search";
             this.searchBtn.UseVisualStyleBackColor = true;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
             // payrol_report
             // 
