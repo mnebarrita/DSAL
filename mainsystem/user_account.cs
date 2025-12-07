@@ -167,6 +167,11 @@ namespace mainsystem
         {
             try
             {
+                if (passwordTxtBox.Text != confirmPassTxtBox.Text)
+                {
+                    MessageBox.Show("Passwords do not match!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return; // STOP here. Do not save.
+                }
                 OpenUserConnection();
 
                 string sql = "UPDATE useraccountTb1 SET " +
