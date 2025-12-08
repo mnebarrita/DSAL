@@ -126,6 +126,7 @@
             this.Controls.Add(this.panelMain);
             this.Name = "employee_reports";
             this.Text = "employee_reports";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.employee_reports_Load);
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();

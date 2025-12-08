@@ -41,6 +41,10 @@ namespace mainsystem
 
         private void user_account_Load(object sender, EventArgs e)
         {
+            //Center panel (UI logic) ---
+            CenterPanel();
+            this.Resize += (s, ev) => CenterPanel();
+
             LoadGrid(); // Show existing accounts
 
             // --- Names Placeholders ---
@@ -67,6 +71,12 @@ namespace mainsystem
             mnameTxtBox.Enabled = false;
             surnameTxtBox.Enabled = false;
             designationTxtBox.Enabled = false;
+        }
+
+        private void CenterPanel()
+        {
+            panelMain.Left = (this.ClientSize.Width - panelMain.Width) / 2;
+            panelMain.Top = (this.ClientSize.Height - panelMain.Height) / 2;
         }
 
         private void searchBtn_Click(object sender, EventArgs e)

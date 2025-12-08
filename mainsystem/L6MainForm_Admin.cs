@@ -177,17 +177,6 @@ namespace mainsystem
             this.Close();
         }
 
-        private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-            statusStrip1.Items.Add("Welcome, Admin");
-            statusStrip1.Items.Add(DateTime.Now.ToString("f"));
-        }
-
-        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
         private void pOS1ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             POS1_FunctionForm newMDIChild = new POS1_FunctionForm();

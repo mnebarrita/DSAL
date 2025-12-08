@@ -93,25 +93,5 @@ namespace mainsystem
             }
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-            
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void usernameTxtbox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void passwordTxtbox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

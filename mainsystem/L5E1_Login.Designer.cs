@@ -53,7 +53,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panelMain
             // 
@@ -112,7 +111,6 @@
             this.usernameTxtbox.Name = "usernameTxtbox";
             this.usernameTxtbox.Size = new System.Drawing.Size(196, 30);
             this.usernameTxtbox.TabIndex = 1;
-            this.usernameTxtbox.TextChanged += new System.EventHandler(this.usernameTxtbox_TextChanged);
             // 
             // button1
             // 
@@ -136,7 +134,6 @@
             this.passwordTxtbox.Size = new System.Drawing.Size(196, 30);
             this.passwordTxtbox.TabIndex = 1;
             this.passwordTxtbox.UseSystemPasswordChar = true;
-            this.passwordTxtbox.TextChanged += new System.EventHandler(this.passwordTxtbox_TextChanged);
             // 
             // L5E1_Login
             // 

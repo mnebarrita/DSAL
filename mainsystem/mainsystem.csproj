@@ -73,6 +73,12 @@
     <Compile Include="Employee\payrol_report.Designer.cs">
       <DependentUpon>payrol_report.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginFrm_Database.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginFrm_Database.Designer.cs">
+      <DependentUpon>LoginFrm_Database.cs</DependentUpon>
+    </Compile>
     <Compile Include="POS\Payroll_ClassForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,10 +249,16 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="L14_Classes\useraccount_db_connection.cs" />
-    <Compile Include="user_account.cs">
+    <Compile Include="Employee\useraccount_report.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="user_account.Designer.cs">
+    <Compile Include="Employee\useraccount_report.Designer.cs">
+      <DependentUpon>useraccount_report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\user_account.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\user_account.Designer.cs">
       <DependentUpon>user_account.cs</DependentUpon>
     </Compile>
     <Compile Include="Variables.cs" />
@@ -258,6 +270,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Employee\payrol_report.resx">
       <DependentUpon>payrol_report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginFrm_Database.resx">
+      <DependentUpon>LoginFrm_Database.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="POS\Payroll_ClassForm.resx">
       <DependentUpon>Payroll_ClassForm.cs</DependentUpon>
@@ -339,7 +354,10 @@
     <EmbeddedResource Include="SQLPOS\SQLPOS2Class.resx">
       <DependentUpon>SQLPOS2Class.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="user_account.resx">
+    <EmbeddedResource Include="Employee\useraccount_report.resx">
+      <DependentUpon>useraccount_report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\user_account.resx">
       <DependentUpon>user_account.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
