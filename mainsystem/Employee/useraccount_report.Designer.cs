@@ -100,15 +100,10 @@
             this.optionCombo.FormattingEnabled = true;
             this.optionCombo.Items.AddRange(new object[] {
             "user_id",
-            "",
             "employee_number",
-            "",
             "surname",
-            "",
             "firstname",
-            "",
             "active",
-            "",
             "deactivate"});
             this.optionCombo.Location = new System.Drawing.Point(286, 31);
             this.optionCombo.Margin = new System.Windows.Forms.Padding(4);

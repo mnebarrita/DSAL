@@ -46,7 +46,7 @@ namespace mainsystem
                 if (pos_db.pos_sql_dataset.Tables.Count > 0)
                 {
                     dataGridView1.DataSource = pos_db.pos_sql_dataset.Tables[0];
-                    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 }
 
                 // 6. Close Connection
@@ -62,7 +62,23 @@ namespace mainsystem
             CenterPanel();
             this.Resize += (s, ev) => CenterPanel();
 
-            LoadGrid("SELECT * FROM salesTb1");
+            string customSql = "SELECT " +
+                       "transaction_id AS [TRX ID], " +
+                       "product_name AS [Product], " +
+                       "product_price AS [Price], " +
+                       "product_quantity_per_transaction AS [Qty], " +
+                       "discount_option AS [Discount Type], " +
+                       "discount_amount_per_transaction AS [Item Disc Amt], " +
+                       "discounted_amount_per_transaction AS [Item Net Price], " +
+                       "summary_total_quantity AS [Total Qty], " +
+                       "summary_total_disc_given AS [Total Disc Given], " +
+                       "summary_total_discounted_amount AS [Grand Total], " +
+                       "terminal_no AS [Terminal], " +
+                       "time_date AS [Date], " +
+                       "emp_id AS [Employee ID] " +
+                       "FROM salesTb1";
+
+            LoadGrid(customSql);
         }
 
         private void searchBtn_Click(object sender, EventArgs e)
@@ -111,6 +127,11 @@ namespace mainsystem
             optionInputTxtbox.Clear();
             optionCombo.SelectedIndex = -1;
             LoadGrid("SELECT * FROM salesTb1");
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

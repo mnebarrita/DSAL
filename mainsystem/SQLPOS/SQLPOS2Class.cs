@@ -16,5 +16,10 @@ namespace mainsystem
         {
             InitializeComponent();
         }
+
+        private void SQLPOS2Class_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

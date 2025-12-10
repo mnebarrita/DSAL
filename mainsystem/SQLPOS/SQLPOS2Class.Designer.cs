@@ -1116,6 +1116,7 @@
             this.Controls.Add(this.panelMain);
             this.Name = "SQLPOS2Class";
             this.Text = "SQLPOS2Class";
+            this.Load += new System.EventHandler(this.SQLPOS2Class_Load);
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();
             this.groupBox5.ResumeLayout(false);

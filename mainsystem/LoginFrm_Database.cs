@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using mainsystem.L14_Classes;
+using mainsystem.Prelim;
 
 namespace mainsystem
 {
@@ -38,19 +39,15 @@ namespace mainsystem
         {
             try
             {
-                // 1. Basic Validation
                 if (string.IsNullOrWhiteSpace(usernameTxtBox.Text) || string.IsNullOrWhiteSpace(passwordTxtBox.Text))
                 {
                     MessageBox.Show("Please enter both Username and Password.");
                     return;
                 }
 
-                // 2. Open Connection
-                // Your helper class creates a NEW connection and opens it here
                 login_db.login_connString();
 
-                // 3. SQL Query
-                // We check: Username match + Password match + Status is Active
+                // Check Username, Password AND if Active
                 string sql = "SELECT * FROM useraccountTb1 WHERE username = '" + usernameTxtBox.Text + "' " +
                              "AND password = '" + passwordTxtBox.Text + "' " +
                              "AND user_status = 'Active'";
@@ -58,30 +55,91 @@ namespace mainsystem
                 login_db.login_sql = sql;
                 login_db.login_cmd();
                 login_db.login_sqladapterSelect();
-                login_db.login_sqldatasetSELECT(); // Fills the dataset
+                login_db.login_sqldatasetSELECT();
 
-                // 4. Check results
-                // We use Tables[0] because your helper class might name the table "pos_empRegTb1" 
-                // inside the dataset, even though we queried useraccountTb1.
+                // CHECK IF USER EXISTS
                 if (login_db.login_sql_dataset.Tables[0].Rows.Count > 0)
                 {
-                    MessageBox.Show("Login Successful! Welcome.");
+                    // GET THE ACCOUNT TYPE FROM DATABASE
+                    DataRow row = login_db.login_sql_dataset.Tables[0].Rows[0];
+                    string accountType = row["account_type"].ToString();
 
-                    // 5. OPEN MAIN MENU
-                    // REPLACE 'employee_registration' WITH THE NAME OF YOUR MAIN DASHBOARD FORM
-                    // Example: L6MainForm_Admin dashboard = new L6MainForm_Admin();
+                    MessageBox.Show("Login Successful! Welcome, " + accountType);
+                    this.Hide();
 
-                    employee_registration dashboard = new employee_registration();
-                    dashboard.Show();
+                    switch (accountType)
+                    {
+                        case "Administrator":
+                            L6MainForm_Admin adminForm = new L6MainForm_Admin();
 
-                    this.Hide(); // Hide the login screen
+                            // [THE FIX] When adminForm closes, show the Login form again
+                            adminForm.FormClosed += (s, args) => this.Show();
+
+                            adminForm.Show();
+                            this.Hide();
+                            break;
+
+                        case "Cashier 1":
+                            Activity1 cashier1Form = new Activity1();
+
+                            // [THE FIX]
+                            cashier1Form.FormClosed += (s, args) => this.Show();
+
+                            cashier1Form.Show();
+                            this.Hide();
+                            break;
+
+                        case "Cashier 2":
+                            Activity2 cashier2Form = new Activity2();
+
+                            // [THE FIX]
+                            cashier2Form.FormClosed += (s, args) => this.Show();
+
+                            cashier2Form.Show();
+                            this.Hide();
+                            break;
+
+                        case "Accounting Staff":
+                            EXAM_Cashier accountingForm = new EXAM_Cashier();
+
+                            // [THE FIX]
+                            accountingForm.FormClosed += (s, args) => this.Show();
+
+                            accountingForm.Show();
+                            this.Hide();
+                            break;
+
+                        case "HR Staff":
+                            employee_registration hrForm = new employee_registration();
+
+                            // [THE FIX]
+                            hrForm.FormClosed += (s, args) => this.Show();
+
+                            hrForm.Show();
+                            this.Hide();
+                            break;
+
+                        case "IT Staff":
+                            user_account itForm = new user_account();
+
+                            itForm.FormClosed += (s, args) => this.Show();
+
+                            itForm.Show();
+                            this.Hide();
+                            break;
+
+                        default:
+                            MessageBox.Show("Role recognized but no form assigned yet.");
+                            break;
+                    }
+
+
                 }
                 else
                 {
-                    MessageBox.Show("Invalid Username or Password, or Account is Inactive.");
+                    MessageBox.Show("Invalid Username, Password, or Account is Inactive.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
-                // 6. Close Connection
                 if (login_db.login_sql_connection.State == ConnectionState.Open)
                     login_db.login_sql_connection.Close();
             }
