@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using mainsystem.L14_Classes;
 
 namespace mainsystem
 {
@@ -33,28 +35,71 @@ namespace mainsystem
             btnSearch.Top = 455;
             pnlSearchContainer.Left = (panelMain.Width - rtbSearch.Width) / 2;
             pnlSearchContainer.Top = 450;
-            panel1.BackColor = Color.FromArgb(100, 0, 0, 0);
+            panelMain.BackColor = Color.FromArgb(100, 0, 0, 0);
+            timer1.Start();
+            LoadLiveStats();
+        }
 
+        void LoadLiveStats()
+        {
+            try 
+    {
+        posdb_connect db = new posdb_connect();
+        db.pos_connString();
+        db.posdb_open();
 
+        string today = DateTime.Now.ToString("yyyy-MM-dd");
+
+                // --- 1. GET TOTAL SALES (The Money) ---
+                string sqlSales = "SELECT SUM(CAST(summary_total_discounted_amount AS decimal(18,2))) FROM salesTb1 WHERE time_date = '" + today + "'";
+                db.pos_sql = sqlSales;
+        db.pos_cmd();
+        object salesResult = db.pos_sql_command.ExecuteScalar();
+
+        if (salesResult != DBNull.Value && salesResult != null)
+        {
+            double total = Convert.ToDouble(salesResult);
+            lblTotalSales.Text = "₱ " + total.ToString("N2");
+        }
+        else
+        {
+            lblTotalSales.Text = "₱ 0.00";
+        }
+
+        // --- 2. GET TOTAL TRANSACTIONS (The Count) ---
+        // We use COUNT(*) to count how many rows (sales) happened today
+        string sqlCount = "SELECT COUNT(*) FROM salesTb1 WHERE time_date = '" + today + "'";
+        db.pos_sql = sqlCount;
+        db.pos_cmd();
+        object countResult = db.pos_sql_command.ExecuteScalar();
+
+        if (countResult != DBNull.Value && countResult != null)
+        {
+            lblTotalTransactions.Text = countResult.ToString();
+        }
+        else
+        {
+            lblTotalTransactions.Text = "0";
+        }
+
+        db.posdb_close();
+    }
+    catch (Exception ex)
+    {
+        // Helpful for debugging if something breaks
+        MessageBox.Show("Stats Error: " + ex.Message);
+    }
         }
 
         private void rtbSearch_KeyDown(object sender, KeyEventArgs e)
         {
-            // Check if the key pressed was ENTER
             if (e.KeyCode == Keys.Enter)
             {
-                // 1. Stop the "Ding" sound and the new line
-                e.SuppressKeyPress = true;
-
-                // 2. Click the Search button automatically
-                btnSearch.PerformClick();
+                e.SuppressKeyPress = true; // Stop the "Ding" and new line
+                btnSearch.PerformClick();  // Click the button
             }
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
@@ -102,6 +147,8 @@ namespace mainsystem
                 // Show results
                 gridSearchResults.DataSource = dt;
                 gridSearchResults.Visible = true; // Reveal the table!
+                gridSearchResults.DataSource = dt;
+                gridSearchResults.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
                 db.posdb_close();
             }
@@ -113,7 +160,9 @@ namespace mainsystem
 
         private void timer1_Tick_1(object sender, EventArgs e)
         {
-            timer1.Text = DateTime.Now.ToString("hh:mm:ss tt");
+            lblClock.Text = DateTime.Now.ToString("hh:mm:ss tt");
+            lblDate.Text = DateTime.Now.ToString("dddd, MMMM dd, yyyy");
         }
+
     }
 }
