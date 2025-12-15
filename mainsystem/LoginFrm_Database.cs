@@ -25,6 +25,8 @@ namespace mainsystem
             //Center panel (UI logic) ---
             CenterPanel();
             this.Resize += (s, ev) => CenterPanel();
+            this.BackgroundImage = Properties.Resources.login;
+            this.BackgroundImageLayout = ImageLayout.Stretch;
 
             passwordTxtBox.UseSystemPasswordChar = true;
         }

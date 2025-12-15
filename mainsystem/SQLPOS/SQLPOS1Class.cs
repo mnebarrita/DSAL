@@ -26,6 +26,8 @@ namespace mainsystem
 
         private void SQLPOS1Class_Load(object sender, EventArgs e)
         {
+            this.BackgroundImage = Properties.Resources.background2;
+            this.BackgroundImageLayout = ImageLayout.Stretch;
             CenterPanel();
             this.Resize += (s, ev) => CenterPanel();
             isLoading = true;
