@@ -18,7 +18,7 @@ namespace mainsystem
             //Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new sales_reports());
+            Application.Run(new SQLPOS1Class());
         }
     }
 }
