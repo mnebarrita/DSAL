@@ -1,4 +1,5 @@
-﻿using System;
+﻿using mainsystem.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -61,6 +62,9 @@ namespace mainsystem
 
         private void EXAM_Load(object sender, EventArgs e)
         {
+
+            this.DisplayPictureBox.Image = Resources.clear1;
+            this.DisplayPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             CenterPanel();
             this.Resize += (s, ev) => CenterPanel();
 

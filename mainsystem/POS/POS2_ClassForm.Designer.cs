@@ -60,7 +60,6 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.checkBox6 = new System.Windows.Forms.CheckBox();
             this.checkBox7 = new System.Windows.Forms.CheckBox();
@@ -68,6 +67,7 @@
             this.checkBox9 = new System.Windows.Forms.CheckBox();
             this.checkBox10 = new System.Windows.Forms.CheckBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -127,9 +127,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -238,7 +238,6 @@
             this.groupBox5.Controls.Add(this.pictureBox7);
             this.groupBox5.Controls.Add(this.pictureBox8);
             this.groupBox5.Controls.Add(this.pictureBox9);
-            this.groupBox5.Controls.Add(this.pictureBox10);
             this.groupBox5.Controls.Add(this.pictureBox11);
             this.groupBox5.Controls.Add(this.checkBox6);
             this.groupBox5.Controls.Add(this.checkBox7);
@@ -246,6 +245,7 @@
             this.groupBox5.Controls.Add(this.checkBox9);
             this.groupBox5.Controls.Add(this.checkBox10);
             this.groupBox5.Controls.Add(this.pictureBox6);
+            this.groupBox5.Controls.Add(this.pictureBox10);
             this.groupBox5.Controls.Add(this.pictureBox5);
             this.groupBox5.Controls.Add(this.pictureBox4);
             this.groupBox5.Controls.Add(this.pictureBox3);
@@ -331,7 +331,7 @@
             this.checkBox16.Location = new System.Drawing.Point(588, 714);
             this.checkBox16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox16.Name = "checkBox16";
-            this.checkBox16.Size = new System.Drawing.Size(184, 34);
+            this.checkBox16.Size = new System.Drawing.Size(123, 24);
             this.checkBox16.TabIndex = 42;
             this.checkBox16.Text = "Amanos Pizza";
             this.checkBox16.UseVisualStyleBackColor = true;
@@ -343,7 +343,7 @@
             this.checkBox17.Location = new System.Drawing.Point(480, 714);
             this.checkBox17.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox17.Name = "checkBox17";
-            this.checkBox17.Size = new System.Drawing.Size(116, 34);
+            this.checkBox17.Size = new System.Drawing.Size(77, 24);
             this.checkBox17.TabIndex = 43;
             this.checkBox17.Text = "Pizza 9";
             this.checkBox17.UseVisualStyleBackColor = true;
@@ -355,7 +355,7 @@
             this.checkBox18.Location = new System.Drawing.Point(338, 714);
             this.checkBox18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox18.Name = "checkBox18";
-            this.checkBox18.Size = new System.Drawing.Size(116, 34);
+            this.checkBox18.Size = new System.Drawing.Size(77, 24);
             this.checkBox18.TabIndex = 44;
             this.checkBox18.Text = "Pizza 8";
             this.checkBox18.UseVisualStyleBackColor = true;
@@ -367,7 +367,7 @@
             this.checkBox19.Location = new System.Drawing.Point(186, 714);
             this.checkBox19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox19.Name = "checkBox19";
-            this.checkBox19.Size = new System.Drawing.Size(116, 34);
+            this.checkBox19.Size = new System.Drawing.Size(77, 24);
             this.checkBox19.TabIndex = 45;
             this.checkBox19.Text = "Pizza 7";
             this.checkBox19.UseVisualStyleBackColor = true;
@@ -379,7 +379,7 @@
             this.checkBox20.Location = new System.Drawing.Point(39, 714);
             this.checkBox20.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox20.Name = "checkBox20";
-            this.checkBox20.Size = new System.Drawing.Size(116, 34);
+            this.checkBox20.Size = new System.Drawing.Size(77, 24);
             this.checkBox20.TabIndex = 46;
             this.checkBox20.Text = "Pizza 6";
             this.checkBox20.UseVisualStyleBackColor = true;
@@ -451,7 +451,7 @@
             this.checkBox11.Location = new System.Drawing.Point(627, 532);
             this.checkBox11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox11.Name = "checkBox11";
-            this.checkBox11.Size = new System.Drawing.Size(116, 34);
+            this.checkBox11.Size = new System.Drawing.Size(77, 24);
             this.checkBox11.TabIndex = 32;
             this.checkBox11.Text = "Pizza 5";
             this.checkBox11.UseVisualStyleBackColor = true;
@@ -463,7 +463,7 @@
             this.checkBox12.Location = new System.Drawing.Point(480, 532);
             this.checkBox12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox12.Name = "checkBox12";
-            this.checkBox12.Size = new System.Drawing.Size(116, 34);
+            this.checkBox12.Size = new System.Drawing.Size(77, 24);
             this.checkBox12.TabIndex = 33;
             this.checkBox12.Text = "Pizza 4";
             this.checkBox12.UseVisualStyleBackColor = true;
@@ -475,7 +475,7 @@
             this.checkBox13.Location = new System.Drawing.Point(338, 532);
             this.checkBox13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox13.Name = "checkBox13";
-            this.checkBox13.Size = new System.Drawing.Size(116, 34);
+            this.checkBox13.Size = new System.Drawing.Size(77, 24);
             this.checkBox13.TabIndex = 34;
             this.checkBox13.Text = "Pizza 3";
             this.checkBox13.UseVisualStyleBackColor = true;
@@ -487,7 +487,7 @@
             this.checkBox14.Location = new System.Drawing.Point(186, 532);
             this.checkBox14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox14.Name = "checkBox14";
-            this.checkBox14.Size = new System.Drawing.Size(116, 34);
+            this.checkBox14.Size = new System.Drawing.Size(77, 24);
             this.checkBox14.TabIndex = 35;
             this.checkBox14.Text = "Pizza 2";
             this.checkBox14.UseVisualStyleBackColor = true;
@@ -499,7 +499,7 @@
             this.checkBox15.Location = new System.Drawing.Point(39, 532);
             this.checkBox15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox15.Name = "checkBox15";
-            this.checkBox15.Size = new System.Drawing.Size(116, 34);
+            this.checkBox15.Size = new System.Drawing.Size(77, 24);
             this.checkBox15.TabIndex = 36;
             this.checkBox15.Text = "Pizza 1";
             this.checkBox15.UseVisualStyleBackColor = true;
@@ -541,18 +541,6 @@
             this.pictureBox9.TabStop = false;
             this.pictureBox9.WaitOnLoad = true;
             // 
-            // pictureBox10
-            // 
-            this.pictureBox10.Image = global::mainsystem.Properties.Resources.pizza_special_b;
-            this.pictureBox10.Location = new System.Drawing.Point(152, 218);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(138, 130);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox10.TabIndex = 30;
-            this.pictureBox10.TabStop = false;
-            this.pictureBox10.WaitOnLoad = true;
-            // 
             // pictureBox11
             // 
             this.pictureBox11.Image = global::mainsystem.Properties.Resources.pizza_special_a;
@@ -571,7 +559,7 @@
             this.checkBox6.Location = new System.Drawing.Point(588, 358);
             this.checkBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(199, 34);
+            this.checkBox6.Size = new System.Drawing.Size(133, 24);
             this.checkBox6.TabIndex = 22;
             this.checkBox6.Text = "Pizza Barbeque";
             this.checkBox6.UseVisualStyleBackColor = true;
@@ -583,7 +571,7 @@
             this.checkBox7.Location = new System.Drawing.Point(442, 358);
             this.checkBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(198, 34);
+            this.checkBox7.Size = new System.Drawing.Size(132, 24);
             this.checkBox7.TabIndex = 23;
             this.checkBox7.Text = "Pizza Special D";
             this.checkBox7.UseVisualStyleBackColor = true;
@@ -595,7 +583,7 @@
             this.checkBox8.Location = new System.Drawing.Point(298, 358);
             this.checkBox8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(195, 34);
+            this.checkBox8.Size = new System.Drawing.Size(130, 24);
             this.checkBox8.TabIndex = 24;
             this.checkBox8.Text = "Pizza Special C";
             this.checkBox8.UseVisualStyleBackColor = true;
@@ -607,7 +595,7 @@
             this.checkBox9.Location = new System.Drawing.Point(152, 358);
             this.checkBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox9.Name = "checkBox9";
-            this.checkBox9.Size = new System.Drawing.Size(195, 34);
+            this.checkBox9.Size = new System.Drawing.Size(130, 24);
             this.checkBox9.TabIndex = 25;
             this.checkBox9.Text = "Pizza Special B";
             this.checkBox9.UseVisualStyleBackColor = true;
@@ -619,7 +607,7 @@
             this.checkBox10.Location = new System.Drawing.Point(8, 358);
             this.checkBox10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox10.Name = "checkBox10";
-            this.checkBox10.Size = new System.Drawing.Size(197, 34);
+            this.checkBox10.Size = new System.Drawing.Size(131, 24);
             this.checkBox10.TabIndex = 26;
             this.checkBox10.Text = "Pizza Special A";
             this.checkBox10.UseVisualStyleBackColor = true;
@@ -636,10 +624,21 @@
             this.pictureBox6.TabIndex = 21;
             this.pictureBox6.TabStop = false;
             // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Image = global::mainsystem.Properties.Resources.pizza_special_b;
+            this.pictureBox10.Location = new System.Drawing.Point(152, 218);
+            this.pictureBox10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(138, 130);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox10.TabIndex = 21;
+            this.pictureBox10.TabStop = false;
+            // 
             // pictureBox5
             // 
             this.pictureBox5.Image = global::mainsystem.Properties.Resources.cauliflower_crust;
-            this.pictureBox5.Location = new System.Drawing.Point(442, 26);
+            this.pictureBox5.Location = new System.Drawing.Point(442, 24);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(138, 130);
@@ -649,8 +648,8 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = global::mainsystem.Properties.Resources.pepperoni;
-            this.pictureBox4.Location = new System.Drawing.Point(297, 26);
+            this.pictureBox4.Image = global::mainsystem.Properties.Resources.pepperoni1;
+            this.pictureBox4.Location = new System.Drawing.Point(298, 24);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(138, 130);
@@ -686,7 +685,7 @@
             this.checkBox5.Location = new System.Drawing.Point(613, 163);
             this.checkBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(136, 34);
+            this.checkBox5.Size = new System.Drawing.Size(91, 24);
             this.checkBox5.TabIndex = 1;
             this.checkBox5.Text = "Dominos";
             this.checkBox5.UseVisualStyleBackColor = true;
@@ -698,7 +697,7 @@
             this.checkBox4.Location = new System.Drawing.Point(442, 163);
             this.checkBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(215, 34);
+            this.checkBox4.Size = new System.Drawing.Size(143, 24);
             this.checkBox4.TabIndex = 1;
             this.checkBox4.Text = "Cauliflower Crust";
             this.checkBox4.UseVisualStyleBackColor = true;
@@ -710,7 +709,7 @@
             this.checkBox3.Location = new System.Drawing.Point(314, 163);
             this.checkBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(147, 34);
+            this.checkBox3.Size = new System.Drawing.Size(98, 24);
             this.checkBox3.TabIndex = 1;
             this.checkBox3.Text = "Pepperoni";
             this.checkBox3.UseVisualStyleBackColor = true;
@@ -722,7 +721,7 @@
             this.checkBox2.Location = new System.Drawing.Point(156, 163);
             this.checkBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(194, 34);
+            this.checkBox2.Size = new System.Drawing.Size(129, 24);
             this.checkBox2.TabIndex = 1;
             this.checkBox2.Text = "New York Style";
             this.checkBox2.UseVisualStyleBackColor = true;
@@ -734,7 +733,7 @@
             this.checkBox1.Location = new System.Drawing.Point(22, 163);
             this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(140, 34);
+            this.checkBox1.Size = new System.Drawing.Size(93, 24);
             this.checkBox1.TabIndex = 1;
             this.checkBox1.Text = "Hawaiian";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -834,7 +833,7 @@
             this.foodBRdbt.Location = new System.Drawing.Point(19, 53);
             this.foodBRdbt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.foodBRdbt.Name = "foodBRdbt";
-            this.foodBRdbt.Size = new System.Drawing.Size(190, 34);
+            this.foodBRdbt.Size = new System.Drawing.Size(127, 24);
             this.foodBRdbt.TabIndex = 0;
             this.foodBRdbt.TabStop = true;
             this.foodBRdbt.Text = "Food Bundle B";
@@ -847,7 +846,7 @@
             this.foodARdbt.Location = new System.Drawing.Point(19, 24);
             this.foodARdbt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.foodARdbt.Name = "foodARdbt";
-            this.foodARdbt.Size = new System.Drawing.Size(192, 34);
+            this.foodARdbt.Size = new System.Drawing.Size(128, 24);
             this.foodARdbt.TabIndex = 0;
             this.foodARdbt.TabStop = true;
             this.foodARdbt.Text = "Food Bundle A";
@@ -869,7 +868,7 @@
             this.B_HawaiiancheckBox.Location = new System.Drawing.Point(46, 217);
             this.B_HawaiiancheckBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.B_HawaiiancheckBox.Name = "B_HawaiiancheckBox";
-            this.B_HawaiiancheckBox.Size = new System.Drawing.Size(303, 34);
+            this.B_HawaiiancheckBox.Size = new System.Drawing.Size(202, 24);
             this.B_HawaiiancheckBox.TabIndex = 7;
             this.B_HawaiiancheckBox.Text = "1 Medium Hawaiian Pizza";
             this.B_HawaiiancheckBox.UseVisualStyleBackColor = true;
@@ -880,7 +879,7 @@
             this.B_FriescheckBox.Location = new System.Drawing.Point(46, 169);
             this.B_FriescheckBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.B_FriescheckBox.Name = "B_FriescheckBox";
-            this.B_FriescheckBox.Size = new System.Drawing.Size(228, 34);
+            this.B_FriescheckBox.Size = new System.Drawing.Size(152, 24);
             this.B_FriescheckBox.TabIndex = 6;
             this.B_FriescheckBox.Text = "1 Family Pack Fries";
             this.B_FriescheckBox.UseVisualStyleBackColor = true;
@@ -891,7 +890,7 @@
             this.B_carbonaracheckBox.Location = new System.Drawing.Point(46, 124);
             this.B_carbonaracheckBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.B_carbonaracheckBox.Name = "B_carbonaracheckBox";
-            this.B_carbonaracheckBox.Size = new System.Drawing.Size(287, 34);
+            this.B_carbonaracheckBox.Size = new System.Drawing.Size(191, 24);
             this.B_carbonaracheckBox.TabIndex = 5;
             this.B_carbonaracheckBox.Text = "1 Family Pack Carbonara";
             this.B_carbonaracheckBox.UseVisualStyleBackColor = true;
@@ -918,7 +917,7 @@
             this.B_ChickencheckBox.Location = new System.Drawing.Point(46, 76);
             this.B_ChickencheckBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.B_ChickencheckBox.Name = "B_ChickencheckBox";
-            this.B_ChickencheckBox.Size = new System.Drawing.Size(338, 34);
+            this.B_ChickencheckBox.Size = new System.Drawing.Size(225, 24);
             this.B_ChickencheckBox.TabIndex = 5;
             this.B_ChickencheckBox.Text = "6 pcs. Delicious Fried Chicken";
             this.B_ChickencheckBox.UseVisualStyleBackColor = true;
@@ -929,7 +928,7 @@
             this.B_halohalocheckBox.Location = new System.Drawing.Point(46, 32);
             this.B_halohalocheckBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.B_halohalocheckBox.Name = "B_halohalocheckBox";
-            this.B_halohalocheckBox.Size = new System.Drawing.Size(378, 34);
+            this.B_halohalocheckBox.Size = new System.Drawing.Size(252, 24);
             this.B_halohalocheckBox.TabIndex = 5;
             this.B_halohalocheckBox.Text = "4 cups Special Halo Halo Regular";
             this.B_halohalocheckBox.UseVisualStyleBackColor = true;
@@ -977,7 +976,6 @@
             this.totalQtyTxtbox.Name = "totalQtyTxtbox";
             this.totalQtyTxtbox.Size = new System.Drawing.Size(156, 27);
             this.totalQtyTxtbox.TabIndex = 21;
-            this.totalQtyTxtbox.TextChanged += new System.EventHandler(this.totalQtyTxtbox_TextChanged);
             // 
             // totalBillsTxtbox
             // 
@@ -987,7 +985,6 @@
             this.totalBillsTxtbox.Name = "totalBillsTxtbox";
             this.totalBillsTxtbox.Size = new System.Drawing.Size(156, 27);
             this.totalBillsTxtbox.TabIndex = 20;
-            this.totalBillsTxtbox.TextChanged += new System.EventHandler(this.totalBillsTxtbox_TextChanged);
             // 
             // label14
             // 
@@ -1022,7 +1019,6 @@
             this.groupBox3.TabIndex = 29;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Food Bundle A";
-            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // A_SpecialPizaCheckbox
             // 
@@ -1030,7 +1026,7 @@
             this.A_SpecialPizaCheckbox.Location = new System.Drawing.Point(46, 217);
             this.A_SpecialPizaCheckbox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.A_SpecialPizaCheckbox.Name = "A_SpecialPizaCheckbox";
-            this.A_SpecialPizaCheckbox.Size = new System.Drawing.Size(264, 34);
+            this.A_SpecialPizaCheckbox.Size = new System.Drawing.Size(176, 24);
             this.A_SpecialPizaCheckbox.TabIndex = 7;
             this.A_SpecialPizaCheckbox.Text = "Special Pizza Delights";
             this.A_SpecialPizaCheckbox.UseVisualStyleBackColor = true;
@@ -1041,7 +1037,7 @@
             this.A_sideDishCheckbox.Location = new System.Drawing.Point(46, 169);
             this.A_sideDishCheckbox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.A_sideDishCheckbox.Name = "A_sideDishCheckbox";
-            this.A_sideDishCheckbox.Size = new System.Drawing.Size(179, 34);
+            this.A_sideDishCheckbox.Size = new System.Drawing.Size(119, 24);
             this.A_sideDishCheckbox.TabIndex = 6;
             this.A_sideDishCheckbox.Text = "4 Side Dishes";
             this.A_sideDishCheckbox.UseVisualStyleBackColor = true;
@@ -1052,7 +1048,7 @@
             this.A_CokeCheckBox.Location = new System.Drawing.Point(46, 124);
             this.A_CokeCheckBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.A_CokeCheckBox.Name = "A_CokeCheckBox";
-            this.A_CokeCheckBox.Size = new System.Drawing.Size(130, 34);
+            this.A_CokeCheckBox.Size = new System.Drawing.Size(87, 24);
             this.A_CokeCheckBox.TabIndex = 5;
             this.A_CokeCheckBox.Text = "1.5 Coke";
             this.A_CokeCheckBox.UseVisualStyleBackColor = true;
@@ -1063,7 +1059,7 @@
             this.A_FriescheckBox.Location = new System.Drawing.Point(46, 76);
             this.A_FriescheckBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.A_FriescheckBox.Name = "A_FriescheckBox";
-            this.A_FriescheckBox.Size = new System.Drawing.Size(171, 34);
+            this.A_FriescheckBox.Size = new System.Drawing.Size(114, 24);
             this.A_FriescheckBox.TabIndex = 5;
             this.A_FriescheckBox.Text = "2 Large Fries";
             this.A_FriescheckBox.UseVisualStyleBackColor = true;
@@ -1074,7 +1070,7 @@
             this.A_FriedChickencheckBox.Location = new System.Drawing.Point(46, 32);
             this.A_FriedChickencheckBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.A_FriedChickencheckBox.Name = "A_FriedChickencheckBox";
-            this.A_FriedChickencheckBox.Size = new System.Drawing.Size(350, 34);
+            this.A_FriedChickencheckBox.Size = new System.Drawing.Size(233, 24);
             this.A_FriedChickencheckBox.TabIndex = 5;
             this.A_FriedChickencheckBox.Text = "10 pcs. Delicious Fried Chicken";
             this.A_FriedChickencheckBox.UseVisualStyleBackColor = true;
@@ -1145,11 +1141,10 @@
             this.panelMain.Controls.Add(this.groupBox1);
             this.panelMain.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.panelMain.Location = new System.Drawing.Point(0, 0);
-            this.panelMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelMain.Margin = new System.Windows.Forms.Padding(4);
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(1430, 908);
             this.panelMain.TabIndex = 36;
-            this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
             // 
             // DisplayPictureBox
             // 
@@ -1171,7 +1166,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "POS2_ClassForm";
-            this.Text = "EXAM";
+            this.Text = "POS2Class";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.EXAM_Load);
             this.groupBox5.ResumeLayout(false);
@@ -1189,9 +1184,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -1245,7 +1240,6 @@
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.CheckBox checkBox6;
         private System.Windows.Forms.CheckBox checkBox7;
@@ -1253,8 +1247,6 @@
         private System.Windows.Forms.CheckBox checkBox9;
         private System.Windows.Forms.CheckBox checkBox10;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.CheckBox checkBox5;
@@ -1298,5 +1290,8 @@
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.TextBox discountedTxtbox;
         private System.Windows.Forms.TextBox discountTxtbox;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }

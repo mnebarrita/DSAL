@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using mainsystem.Properties;
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace mainsystem
 {
@@ -58,6 +51,8 @@ namespace mainsystem
 
         private void EXAM_Load(object sender, EventArgs e)
         {
+            this.DisplayPictureBox.Image = Resources.clear1;
+            this.DisplayPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             this.BackgroundImage = Properties.Resources.POS2wallpaper;
             this.BackgroundImageLayout = ImageLayout.Stretch;
 
@@ -83,9 +78,6 @@ namespace mainsystem
             B_FriescheckBox.Checked = false;
             B_halohalocheckBox.Checked = false;
             B_HawaiiancheckBox.Checked = false;
-
-            
-
         }
 
         private void CenterPanel()
@@ -360,11 +352,6 @@ namespace mainsystem
         {
             this.Close();
         }
-        private void totalBillsTxtbox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             HandleCheckBoxClick(checkBox1, 275.50);
@@ -465,29 +452,10 @@ namespace mainsystem
             HandleCheckBoxClick(checkBox16, 225.35);
         }
 
-        private void totalQtyTxtbox_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void qtyTxtbox_TextChanged_1(object sender, EventArgs e)
         {
             pos2.UpdateQuantity(qtyTxtbox, priceTxtBox, discountTxtbox, discountedTxtbox, totalBillsTxtbox, totalQtyTxtbox);
         }
 
-        private void discountTxtbox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox3_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelMain_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

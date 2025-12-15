@@ -148,8 +148,11 @@
   <data name="NYPizza" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images_Pizza\NYPizza.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pizza 7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images_Pizza\pizza 7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="POS2wallpaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\POS2wallpaper.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pizza 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images_Pizza\pizza 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pizza 4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images_Pizza\pizza 4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -210,9 +213,6 @@
   </data>
   <data name="splashx-valorant-skins-1024x576" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\splashx-valorant-skins-1024x576.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="0ff6826e-4429-4892-8b5d-e5fa75f4f18e" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\0ff6826e-4429-4892-8b5d-e5fa75f4f18e.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Nocturnum-skins-1024x576" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Nocturnum-skins-1024x576.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -298,8 +298,8 @@
   <data name="Sad-Cat-Meme-Download-PNG-Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sad-Cat-Meme-Download-PNG-Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="POS2wallpaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\POS2wallpaper.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="login" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pizza 8" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images_Pizza\pizza 8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -310,8 +310,11 @@
   <data name="protocol" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\protocol.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pizza 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images_Pizza\pizza 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="0ff6826e-4429-4892-8b5d-e5fa75f4f18e" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\0ff6826e-4429-4892-8b5d-e5fa75f4f18e.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pizza 7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images_Pizza\pizza 7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="download" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\download.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -322,7 +325,7 @@
   <data name="download (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\download (2).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="login" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pepperoni1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pepperoni.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

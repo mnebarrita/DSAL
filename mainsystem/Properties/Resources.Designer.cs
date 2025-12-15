@@ -453,6 +453,16 @@ namespace mainsystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pepperoni1 {
+            get {
+                object obj = ResourceManager.GetObject("pepperoni1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pizza_1 {
             get {
                 object obj = ResourceManager.GetObject("pizza 1", resourceCulture);
