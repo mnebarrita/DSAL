@@ -31,61 +31,76 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.pOSAdministratorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.pOSCASHIERToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.payrollToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.payrolApplicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.otherWorksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.studentRegistrationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tileVerticalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tileHorizontalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cascadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.payrolApplicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.payrollToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.example1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.example2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.example3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.example21ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.example31ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.samplesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.simplePOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cashier2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cashier1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pOS1ToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.pOS2ToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.payrollToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.pOSClassToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.sQLPOS1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sQLPOS2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pOSAdminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.humanResourcesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.emplToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.userAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.userAccountToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.employeeReportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.payrolReportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salesReportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.userAccountReportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pOSFunctionClassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.payrollClassFormToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.payrollFunctionFormToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pOS1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pOS1ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.pOS2ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.payrollToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.pOSFunctionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pOS2ClassFormToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pOS2FunctionFormToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lesson1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.l1E1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.l1E2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.l1E3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lesson2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.l2A2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.l2A3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.l3QuizToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.l5A5ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.payslipToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.adminLoungeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
+            this.menuStrip1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pOSAdministratorToolStripMenuItem,
-            this.pOSCASHIERToolStripMenuItem,
-            this.samplesToolStripMenuItem,
             this.payrollToolStripMenuItem,
+            this.humanResourcesToolStripMenuItem,
+            this.userAccountToolStripMenuItem,
+            this.reportsToolStripMenuItem,
             this.otherWorksToolStripMenuItem,
             this.windowToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1924, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1920, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // pOSAdministratorToolStripMenuItem
             // 
             this.pOSAdministratorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pOSFunctionToolStripMenuItem1,
-            this.pOSClassToolStripMenuItem1,
+            this.adminLoungeToolStripMenuItem,
+            this.sQLPOS1ToolStripMenuItem,
+            this.sQLPOS2ToolStripMenuItem,
+            this.pOSAdminToolStripMenuItem,
             this.logoutToolStripMenuItem1});
             this.pOSAdministratorToolStripMenuItem.Name = "pOSAdministratorToolStripMenuItem";
-            this.pOSAdministratorToolStripMenuItem.Size = new System.Drawing.Size(145, 24);
-            this.pOSAdministratorToolStripMenuItem.Text = "POS Administrator";
+            this.pOSAdministratorToolStripMenuItem.Size = new System.Drawing.Size(50, 24);
+            this.pOSAdministratorToolStripMenuItem.Text = "POS";
             // 
             // logoutToolStripMenuItem1
             // 
@@ -94,30 +109,32 @@
             this.logoutToolStripMenuItem1.Text = "Logout";
             this.logoutToolStripMenuItem1.Click += new System.EventHandler(this.logoutToolStripMenuItem1_Click);
             // 
-            // pOSCASHIERToolStripMenuItem
+            // payrollToolStripMenuItem
             // 
-            this.pOSCASHIERToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cashier1ToolStripMenuItem,
-            this.cashier2ToolStripMenuItem,
-            this.simplePOSToolStripMenuItem});
-            this.pOSCASHIERToolStripMenuItem.Name = "pOSCASHIERToolStripMenuItem";
-            this.pOSCASHIERToolStripMenuItem.Size = new System.Drawing.Size(102, 24);
-            this.pOSCASHIERToolStripMenuItem.Text = "POS Cashier";
+            this.payrollToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.payrolApplicationToolStripMenuItem});
+            this.payrollToolStripMenuItem.Name = "payrollToolStripMenuItem";
+            this.payrollToolStripMenuItem.Size = new System.Drawing.Size(63, 24);
+            this.payrollToolStripMenuItem.Text = "Payrol";
+            this.payrollToolStripMenuItem.Click += new System.EventHandler(this.payrollToolStripMenuItem_Click);
+            // 
+            // payrolApplicationToolStripMenuItem
+            // 
+            this.payrolApplicationToolStripMenuItem.Name = "payrolApplicationToolStripMenuItem";
+            this.payrolApplicationToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.payrolApplicationToolStripMenuItem.Text = "Employee Payrol";
+            this.payrolApplicationToolStripMenuItem.Click += new System.EventHandler(this.payrolApplicationToolStripMenuItem_Click);
             // 
             // otherWorksToolStripMenuItem
             // 
             this.otherWorksToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.studentRegistrationToolStripMenuItem});
+            this.pOSFunctionClassToolStripMenuItem,
+            this.lesson1ToolStripMenuItem,
+            this.lesson2ToolStripMenuItem,
+            this.payslipToolStripMenuItem});
             this.otherWorksToolStripMenuItem.Name = "otherWorksToolStripMenuItem";
-            this.otherWorksToolStripMenuItem.Size = new System.Drawing.Size(104, 24);
-            this.otherWorksToolStripMenuItem.Text = "Other Works";
-            // 
-            // studentRegistrationToolStripMenuItem
-            // 
-            this.studentRegistrationToolStripMenuItem.Name = "studentRegistrationToolStripMenuItem";
-            this.studentRegistrationToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
-            this.studentRegistrationToolStripMenuItem.Text = "Student Registration";
-            this.studentRegistrationToolStripMenuItem.Click += new System.EventHandler(this.studentRegistrationToolStripMenuItem_Click);
+            this.otherWorksToolStripMenuItem.Size = new System.Drawing.Size(124, 24);
+            this.otherWorksToolStripMenuItem.Text = "Other Activities";
             // 
             // windowToolStripMenuItem
             // 
@@ -132,176 +149,260 @@
             // tileVerticalToolStripMenuItem
             // 
             this.tileVerticalToolStripMenuItem.Name = "tileVerticalToolStripMenuItem";
-            this.tileVerticalToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.tileVerticalToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
             this.tileVerticalToolStripMenuItem.Text = "Tile Vertical";
             this.tileVerticalToolStripMenuItem.Click += new System.EventHandler(this.tileVerticalToolStripMenuItem_Click);
             // 
             // tileHorizontalToolStripMenuItem
             // 
             this.tileHorizontalToolStripMenuItem.Name = "tileHorizontalToolStripMenuItem";
-            this.tileHorizontalToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.tileHorizontalToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
             this.tileHorizontalToolStripMenuItem.Text = "Tile Horizontal";
             this.tileHorizontalToolStripMenuItem.Click += new System.EventHandler(this.tileHorizontalToolStripMenuItem_Click);
             // 
             // cascadeToolStripMenuItem
             // 
             this.cascadeToolStripMenuItem.Name = "cascadeToolStripMenuItem";
-            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
             this.cascadeToolStripMenuItem.Text = "Cascade";
             this.cascadeToolStripMenuItem.Click += new System.EventHandler(this.cascadeToolStripMenuItem_Click);
             // 
-            // payrolApplicationToolStripMenuItem
+            // sQLPOS1ToolStripMenuItem
             // 
-            this.payrolApplicationToolStripMenuItem.Name = "payrolApplicationToolStripMenuItem";
-            this.payrolApplicationToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.payrolApplicationToolStripMenuItem.Text = "Payrol Application";
-            this.payrolApplicationToolStripMenuItem.Click += new System.EventHandler(this.payrolApplicationToolStripMenuItem_Click);
+            this.sQLPOS1ToolStripMenuItem.Name = "sQLPOS1ToolStripMenuItem";
+            this.sQLPOS1ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.sQLPOS1ToolStripMenuItem.Text = "SQLPOS1";
+            this.sQLPOS1ToolStripMenuItem.Click += new System.EventHandler(this.sQLPOS1ToolStripMenuItem_Click);
             // 
-            // payrollToolStripMenuItem
+            // sQLPOS2ToolStripMenuItem
             // 
-            this.payrollToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.payrolApplicationToolStripMenuItem});
-            this.payrollToolStripMenuItem.Name = "payrollToolStripMenuItem";
-            this.payrollToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
-            this.payrollToolStripMenuItem.Text = "Payroll";
-            this.payrollToolStripMenuItem.Click += new System.EventHandler(this.payrollToolStripMenuItem_Click);
+            this.sQLPOS2ToolStripMenuItem.Name = "sQLPOS2ToolStripMenuItem";
+            this.sQLPOS2ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.sQLPOS2ToolStripMenuItem.Text = "SQLPOS2";
+            this.sQLPOS2ToolStripMenuItem.Click += new System.EventHandler(this.sQLPOS2ToolStripMenuItem_Click);
             // 
-            // example1ToolStripMenuItem
+            // pOSAdminToolStripMenuItem
             // 
-            this.example1ToolStripMenuItem.Name = "example1ToolStripMenuItem";
-            this.example1ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.example1ToolStripMenuItem.Text = "Example 1.1";
-            this.example1ToolStripMenuItem.Click += new System.EventHandler(this.example1ToolStripMenuItem_Click);
+            this.pOSAdminToolStripMenuItem.Name = "pOSAdminToolStripMenuItem";
+            this.pOSAdminToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.pOSAdminToolStripMenuItem.Text = "POS Admin";
+            this.pOSAdminToolStripMenuItem.Click += new System.EventHandler(this.pOSAdminToolStripMenuItem_Click);
             // 
-            // example2ToolStripMenuItem
+            // humanResourcesToolStripMenuItem
             // 
-            this.example2ToolStripMenuItem.Name = "example2ToolStripMenuItem";
-            this.example2ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.example2ToolStripMenuItem.Text = "Example 1.2";
-            this.example2ToolStripMenuItem.Click += new System.EventHandler(this.example2ToolStripMenuItem_Click);
+            this.humanResourcesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.emplToolStripMenuItem});
+            this.humanResourcesToolStripMenuItem.Name = "humanResourcesToolStripMenuItem";
+            this.humanResourcesToolStripMenuItem.Size = new System.Drawing.Size(141, 24);
+            this.humanResourcesToolStripMenuItem.Text = "Human Resources";
             // 
-            // example3ToolStripMenuItem
+            // emplToolStripMenuItem
             // 
-            this.example3ToolStripMenuItem.Name = "example3ToolStripMenuItem";
-            this.example3ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.example3ToolStripMenuItem.Text = "Example 1.3";
-            this.example3ToolStripMenuItem.Click += new System.EventHandler(this.example3ToolStripMenuItem_Click);
+            this.emplToolStripMenuItem.Name = "emplToolStripMenuItem";
+            this.emplToolStripMenuItem.Size = new System.Drawing.Size(242, 26);
+            this.emplToolStripMenuItem.Text = "Employee Registration";
+            this.emplToolStripMenuItem.Click += new System.EventHandler(this.emplToolStripMenuItem_Click);
             // 
-            // example21ToolStripMenuItem
+            // userAccountToolStripMenuItem
             // 
-            this.example21ToolStripMenuItem.Name = "example21ToolStripMenuItem";
-            this.example21ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.example21ToolStripMenuItem.Text = "Example 2.1";
-            this.example21ToolStripMenuItem.Click += new System.EventHandler(this.example21ToolStripMenuItem_Click);
+            this.userAccountToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.userAccountToolStripMenuItem1});
+            this.userAccountToolStripMenuItem.Name = "userAccountToolStripMenuItem";
+            this.userAccountToolStripMenuItem.Size = new System.Drawing.Size(110, 24);
+            this.userAccountToolStripMenuItem.Text = "User Account";
             // 
-            // example31ToolStripMenuItem
+            // userAccountToolStripMenuItem1
             // 
-            this.example31ToolStripMenuItem.Name = "example31ToolStripMenuItem";
-            this.example31ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.example31ToolStripMenuItem.Text = "Example 3.1";
-            this.example31ToolStripMenuItem.Click += new System.EventHandler(this.example31ToolStripMenuItem_Click);
+            this.userAccountToolStripMenuItem1.Name = "userAccountToolStripMenuItem1";
+            this.userAccountToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.userAccountToolStripMenuItem1.Text = "User Account";
+            this.userAccountToolStripMenuItem1.Click += new System.EventHandler(this.userAccountToolStripMenuItem1_Click);
             // 
-            // samplesToolStripMenuItem
+            // reportsToolStripMenuItem
             // 
-            this.samplesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.example1ToolStripMenuItem,
-            this.example2ToolStripMenuItem,
-            this.example3ToolStripMenuItem,
-            this.example21ToolStripMenuItem,
-            this.example31ToolStripMenuItem});
-            this.samplesToolStripMenuItem.Name = "samplesToolStripMenuItem";
-            this.samplesToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
-            this.samplesToolStripMenuItem.Text = "Samples";
+            this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.employeeReportsToolStripMenuItem,
+            this.payrolReportsToolStripMenuItem,
+            this.salesReportsToolStripMenuItem,
+            this.userAccountReportsToolStripMenuItem});
+            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
+            this.reportsToolStripMenuItem.Text = "Reports";
             // 
-            // simplePOSToolStripMenuItem
+            // employeeReportsToolStripMenuItem
             // 
-            this.simplePOSToolStripMenuItem.Name = "simplePOSToolStripMenuItem";
-            this.simplePOSToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.simplePOSToolStripMenuItem.Text = "Simple POS";
-            this.simplePOSToolStripMenuItem.Click += new System.EventHandler(this.simplePOSToolStripMenuItem_Click);
+            this.employeeReportsToolStripMenuItem.Name = "employeeReportsToolStripMenuItem";
+            this.employeeReportsToolStripMenuItem.Size = new System.Drawing.Size(234, 26);
+            this.employeeReportsToolStripMenuItem.Text = "Employee Reports";
+            this.employeeReportsToolStripMenuItem.Click += new System.EventHandler(this.employeeReportsToolStripMenuItem_Click);
             // 
-            // cashier2ToolStripMenuItem
+            // payrolReportsToolStripMenuItem
             // 
-            this.cashier2ToolStripMenuItem.Name = "cashier2ToolStripMenuItem";
-            this.cashier2ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.cashier2ToolStripMenuItem.Text = "Cashier2";
-            this.cashier2ToolStripMenuItem.Click += new System.EventHandler(this.cashier2ToolStripMenuItem_Click);
+            this.payrolReportsToolStripMenuItem.Name = "payrolReportsToolStripMenuItem";
+            this.payrolReportsToolStripMenuItem.Size = new System.Drawing.Size(234, 26);
+            this.payrolReportsToolStripMenuItem.Text = "Payrol Reports";
+            this.payrolReportsToolStripMenuItem.Click += new System.EventHandler(this.payrolReportsToolStripMenuItem_Click);
             // 
-            // cashier1ToolStripMenuItem
+            // salesReportsToolStripMenuItem
             // 
-            this.cashier1ToolStripMenuItem.Name = "cashier1ToolStripMenuItem";
-            this.cashier1ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.cashier1ToolStripMenuItem.Text = "Cashier1";
-            this.cashier1ToolStripMenuItem.Click += new System.EventHandler(this.cashier1ToolStripMenuItem_Click);
+            this.salesReportsToolStripMenuItem.Name = "salesReportsToolStripMenuItem";
+            this.salesReportsToolStripMenuItem.Size = new System.Drawing.Size(234, 26);
+            this.salesReportsToolStripMenuItem.Text = "Sales Reports";
+            this.salesReportsToolStripMenuItem.Click += new System.EventHandler(this.salesReportsToolStripMenuItem_Click);
             // 
-            // pOS1ToolStripMenuItem2
+            // userAccountReportsToolStripMenuItem
             // 
-            this.pOS1ToolStripMenuItem2.Name = "pOS1ToolStripMenuItem2";
-            this.pOS1ToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
-            this.pOS1ToolStripMenuItem2.Text = "POS 1";
-            this.pOS1ToolStripMenuItem2.Click += new System.EventHandler(this.pOS1ToolStripMenuItem2_Click);
+            this.userAccountReportsToolStripMenuItem.Name = "userAccountReportsToolStripMenuItem";
+            this.userAccountReportsToolStripMenuItem.Size = new System.Drawing.Size(234, 26);
+            this.userAccountReportsToolStripMenuItem.Text = "User Account Reports";
+            this.userAccountReportsToolStripMenuItem.Click += new System.EventHandler(this.userAccountReportsToolStripMenuItem_Click);
             // 
-            // pOS2ToolStripMenuItem2
+            // pOSFunctionClassToolStripMenuItem
             // 
-            this.pOS2ToolStripMenuItem2.Name = "pOS2ToolStripMenuItem2";
-            this.pOS2ToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
-            this.pOS2ToolStripMenuItem2.Text = "POS 2";
-            this.pOS2ToolStripMenuItem2.Click += new System.EventHandler(this.pOS2ToolStripMenuItem2_Click);
+            this.pOSFunctionClassToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.payrollClassFormToolStripMenuItem,
+            this.payrollFunctionFormToolStripMenuItem,
+            this.pOS1ToolStripMenuItem,
+            this.pOS1ToolStripMenuItem1,
+            this.pOS2ClassFormToolStripMenuItem,
+            this.pOS2FunctionFormToolStripMenuItem});
+            this.pOSFunctionClassToolStripMenuItem.Name = "pOSFunctionClassToolStripMenuItem";
+            this.pOSFunctionClassToolStripMenuItem.Size = new System.Drawing.Size(245, 26);
+            this.pOSFunctionClassToolStripMenuItem.Text = "POS Function and Class";
             // 
-            // payrollToolStripMenuItem2
+            // payrollClassFormToolStripMenuItem
             // 
-            this.payrollToolStripMenuItem2.Name = "payrollToolStripMenuItem2";
-            this.payrollToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
-            this.payrollToolStripMenuItem2.Text = "Payroll";
-            this.payrollToolStripMenuItem2.Click += new System.EventHandler(this.payrollToolStripMenuItem2_Click);
+            this.payrollClassFormToolStripMenuItem.Name = "payrollClassFormToolStripMenuItem";
+            this.payrollClassFormToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
+            this.payrollClassFormToolStripMenuItem.Text = "Payroll_ClassForm";
+            this.payrollClassFormToolStripMenuItem.Click += new System.EventHandler(this.payrollClassFormToolStripMenuItem_Click);
             // 
-            // pOSClassToolStripMenuItem1
+            // payrollFunctionFormToolStripMenuItem
             // 
-            this.pOSClassToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pOS1ToolStripMenuItem2,
-            this.pOS2ToolStripMenuItem2,
-            this.payrollToolStripMenuItem2});
-            this.pOSClassToolStripMenuItem1.Name = "pOSClassToolStripMenuItem1";
-            this.pOSClassToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
-            this.pOSClassToolStripMenuItem1.Text = "POS Class";
+            this.payrollFunctionFormToolStripMenuItem.Name = "payrollFunctionFormToolStripMenuItem";
+            this.payrollFunctionFormToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
+            this.payrollFunctionFormToolStripMenuItem.Text = "Payroll_FunctionForm";
+            this.payrollFunctionFormToolStripMenuItem.Click += new System.EventHandler(this.payrollFunctionFormToolStripMenuItem_Click);
+            // 
+            // pOS1ToolStripMenuItem
+            // 
+            this.pOS1ToolStripMenuItem.Name = "pOS1ToolStripMenuItem";
+            this.pOS1ToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
+            this.pOS1ToolStripMenuItem.Text = "POS1_ClassForm";
+            this.pOS1ToolStripMenuItem.Click += new System.EventHandler(this.pOS1ToolStripMenuItem_Click);
             // 
             // pOS1ToolStripMenuItem1
             // 
             this.pOS1ToolStripMenuItem1.Name = "pOS1ToolStripMenuItem1";
-            this.pOS1ToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
-            this.pOS1ToolStripMenuItem1.Text = "POS 1";
-            this.pOS1ToolStripMenuItem1.Click += new System.EventHandler(this.pOS1ToolStripMenuItem1_Click);
+            this.pOS1ToolStripMenuItem1.Size = new System.Drawing.Size(232, 26);
+            this.pOS1ToolStripMenuItem1.Text = "POS1_FunctionForm";
+            this.pOS1ToolStripMenuItem1.Click += new System.EventHandler(this.pOS1ToolStripMenuItem1_Click_1);
             // 
-            // pOS2ToolStripMenuItem1
+            // pOS2ClassFormToolStripMenuItem
             // 
-            this.pOS2ToolStripMenuItem1.Name = "pOS2ToolStripMenuItem1";
-            this.pOS2ToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
-            this.pOS2ToolStripMenuItem1.Text = "POS 2";
-            this.pOS2ToolStripMenuItem1.Click += new System.EventHandler(this.pOS2ToolStripMenuItem1_Click);
+            this.pOS2ClassFormToolStripMenuItem.Name = "pOS2ClassFormToolStripMenuItem";
+            this.pOS2ClassFormToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
+            this.pOS2ClassFormToolStripMenuItem.Text = "POS2_ClassForm";
+            this.pOS2ClassFormToolStripMenuItem.Click += new System.EventHandler(this.pOS2ClassFormToolStripMenuItem_Click);
             // 
-            // payrollToolStripMenuItem1
+            // pOS2FunctionFormToolStripMenuItem
             // 
-            this.payrollToolStripMenuItem1.Name = "payrollToolStripMenuItem1";
-            this.payrollToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
-            this.payrollToolStripMenuItem1.Text = "Payroll";
-            this.payrollToolStripMenuItem1.Click += new System.EventHandler(this.payrollToolStripMenuItem1_Click);
+            this.pOS2FunctionFormToolStripMenuItem.Name = "pOS2FunctionFormToolStripMenuItem";
+            this.pOS2FunctionFormToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
+            this.pOS2FunctionFormToolStripMenuItem.Text = "POS2_FunctionForm";
+            this.pOS2FunctionFormToolStripMenuItem.Click += new System.EventHandler(this.pOS2FunctionFormToolStripMenuItem_Click);
             // 
-            // pOSFunctionToolStripMenuItem1
+            // lesson1ToolStripMenuItem
             // 
-            this.pOSFunctionToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pOS1ToolStripMenuItem1,
-            this.pOS2ToolStripMenuItem1,
-            this.payrollToolStripMenuItem1});
-            this.pOSFunctionToolStripMenuItem1.Name = "pOSFunctionToolStripMenuItem1";
-            this.pOSFunctionToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
-            this.pOSFunctionToolStripMenuItem1.Text = "POS Function";
+            this.lesson1ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.l1E1ToolStripMenuItem,
+            this.l1E2ToolStripMenuItem,
+            this.l1E3ToolStripMenuItem});
+            this.lesson1ToolStripMenuItem.Name = "lesson1ToolStripMenuItem";
+            this.lesson1ToolStripMenuItem.Size = new System.Drawing.Size(245, 26);
+            this.lesson1ToolStripMenuItem.Text = "Lesson 1";
+            // 
+            // l1E1ToolStripMenuItem
+            // 
+            this.l1E1ToolStripMenuItem.Name = "l1E1ToolStripMenuItem";
+            this.l1E1ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.l1E1ToolStripMenuItem.Text = "L1E1";
+            this.l1E1ToolStripMenuItem.Click += new System.EventHandler(this.l1E1ToolStripMenuItem_Click);
+            // 
+            // l1E2ToolStripMenuItem
+            // 
+            this.l1E2ToolStripMenuItem.Name = "l1E2ToolStripMenuItem";
+            this.l1E2ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.l1E2ToolStripMenuItem.Text = "L1E2";
+            this.l1E2ToolStripMenuItem.Click += new System.EventHandler(this.l1E2ToolStripMenuItem_Click);
+            // 
+            // l1E3ToolStripMenuItem
+            // 
+            this.l1E3ToolStripMenuItem.Name = "l1E3ToolStripMenuItem";
+            this.l1E3ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.l1E3ToolStripMenuItem.Text = "L1E3";
+            this.l1E3ToolStripMenuItem.Click += new System.EventHandler(this.l1E3ToolStripMenuItem_Click);
+            // 
+            // lesson2ToolStripMenuItem
+            // 
+            this.lesson2ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.l2A2ToolStripMenuItem,
+            this.l2A3ToolStripMenuItem,
+            this.l3QuizToolStripMenuItem,
+            this.l5A5ToolStripMenuItem});
+            this.lesson2ToolStripMenuItem.Name = "lesson2ToolStripMenuItem";
+            this.lesson2ToolStripMenuItem.Size = new System.Drawing.Size(245, 26);
+            this.lesson2ToolStripMenuItem.Text = "Lesson 2,3,4,5";
+            // 
+            // l2A2ToolStripMenuItem
+            // 
+            this.l2A2ToolStripMenuItem.Name = "l2A2ToolStripMenuItem";
+            this.l2A2ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.l2A2ToolStripMenuItem.Text = "L2A2";
+            this.l2A2ToolStripMenuItem.Click += new System.EventHandler(this.l2A2ToolStripMenuItem_Click);
+            // 
+            // l2A3ToolStripMenuItem
+            // 
+            this.l2A3ToolStripMenuItem.Name = "l2A3ToolStripMenuItem";
+            this.l2A3ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.l2A3ToolStripMenuItem.Text = "L3A3";
+            this.l2A3ToolStripMenuItem.Click += new System.EventHandler(this.l2A3ToolStripMenuItem_Click);
+            // 
+            // l3QuizToolStripMenuItem
+            // 
+            this.l3QuizToolStripMenuItem.Name = "l3QuizToolStripMenuItem";
+            this.l3QuizToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.l3QuizToolStripMenuItem.Text = "L3Quiz";
+            this.l3QuizToolStripMenuItem.Click += new System.EventHandler(this.l3QuizToolStripMenuItem_Click);
+            // 
+            // l5A5ToolStripMenuItem
+            // 
+            this.l5A5ToolStripMenuItem.Name = "l5A5ToolStripMenuItem";
+            this.l5A5ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.l5A5ToolStripMenuItem.Text = "L5A5";
+            this.l5A5ToolStripMenuItem.Click += new System.EventHandler(this.l5A5ToolStripMenuItem_Click);
+            // 
+            // payslipToolStripMenuItem
+            // 
+            this.payslipToolStripMenuItem.Name = "payslipToolStripMenuItem";
+            this.payslipToolStripMenuItem.Size = new System.Drawing.Size(245, 26);
+            this.payslipToolStripMenuItem.Text = "Sample Long Method";
+            this.payslipToolStripMenuItem.Click += new System.EventHandler(this.payslipToolStripMenuItem_Click);
+            // 
+            // adminLoungeToolStripMenuItem
+            // 
+            this.adminLoungeToolStripMenuItem.Name = "adminLoungeToolStripMenuItem";
+            this.adminLoungeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.adminLoungeToolStripMenuItem.Text = "Admin Lounge";
+            this.adminLoungeToolStripMenuItem.Click += new System.EventHandler(this.adminLoungeToolStripMenuItem_Click);
             // 
             // L6MainForm_Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -319,33 +420,44 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem pOSCASHIERToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pOSAdministratorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem windowToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tileVerticalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tileHorizontalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cascadeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem otherWorksToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem studentRegistrationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem pOSFunctionToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem pOS1ToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem pOS2ToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem payrollToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem pOSClassToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem pOS1ToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem pOS2ToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem payrollToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem cashier1ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cashier2ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem simplePOSToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem samplesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem example1ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem example2ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem example3ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem example21ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem example31ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem payrollToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem payrolApplicationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sQLPOS1ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sQLPOS2ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pOSAdminToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem humanResourcesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem emplToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem userAccountToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem userAccountToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem employeeReportsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem payrolReportsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salesReportsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem userAccountReportsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pOSFunctionClassToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem payrollClassFormToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem payrollFunctionFormToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pOS1ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pOS1ToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem pOS2ClassFormToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pOS2FunctionFormToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lesson1ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem l1E1ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem l1E2ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem l1E3ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lesson2ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem l2A2ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem l2A3ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem l3QuizToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem l5A5ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem payslipToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem adminLoungeToolStripMenuItem;
     }
 }

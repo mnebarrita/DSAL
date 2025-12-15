@@ -47,8 +47,9 @@
             this.panelMain.Controls.Add(this.backBtn);
             this.panelMain.Controls.Add(this.optionCombo);
             this.panelMain.Controls.Add(this.searchBtn);
+            this.panelMain.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelMain.Location = new System.Drawing.Point(17, 17);
-            this.panelMain.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panelMain.Margin = new System.Windows.Forms.Padding(6);
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(1798, 943);
             this.panelMain.TabIndex = 7;
@@ -59,7 +60,7 @@
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(22, 102);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(7);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -69,7 +70,7 @@
             // optionInputTxtbox
             // 
             this.optionInputTxtbox.Location = new System.Drawing.Point(795, 45);
-            this.optionInputTxtbox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.optionInputTxtbox.Margin = new System.Windows.Forms.Padding(6);
             this.optionInputTxtbox.Name = "optionInputTxtbox";
             this.optionInputTxtbox.Size = new System.Drawing.Size(381, 34);
             this.optionInputTxtbox.TabIndex = 2;
@@ -80,14 +81,14 @@
             this.label1.Location = new System.Drawing.Point(195, 55);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(186, 29);
+            this.label1.Size = new System.Drawing.Size(161, 26);
             this.label1.TabIndex = 1;
             this.label1.Text = "Select an option";
             // 
             // backBtn
             // 
             this.backBtn.Location = new System.Drawing.Point(1330, 44);
-            this.backBtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.backBtn.Margin = new System.Windows.Forms.Padding(6);
             this.backBtn.Name = "backBtn";
             this.backBtn.Size = new System.Drawing.Size(132, 44);
             this.backBtn.TabIndex = 3;
@@ -106,15 +107,15 @@
             "active",
             "deactivate"});
             this.optionCombo.Location = new System.Drawing.Point(400, 45);
-            this.optionCombo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.optionCombo.Margin = new System.Windows.Forms.Padding(6);
             this.optionCombo.Name = "optionCombo";
-            this.optionCombo.Size = new System.Drawing.Size(381, 37);
+            this.optionCombo.Size = new System.Drawing.Size(381, 34);
             this.optionCombo.TabIndex = 0;
             // 
             // searchBtn
             // 
             this.searchBtn.Location = new System.Drawing.Point(1189, 42);
-            this.searchBtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.searchBtn.Margin = new System.Windows.Forms.Padding(6);
             this.searchBtn.Name = "searchBtn";
             this.searchBtn.Size = new System.Drawing.Size(132, 44);
             this.searchBtn.TabIndex = 3;
@@ -129,7 +130,7 @@
             this.ClientSize = new System.Drawing.Size(1827, 974);
             this.Controls.Add(this.panelMain);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "useraccount_report";
             this.Text = "useraccount_report";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

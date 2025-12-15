@@ -52,7 +52,7 @@
             "province",
             "city"});
             this.optionCombo.Location = new System.Drawing.Point(401, 45);
-            this.optionCombo.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.optionCombo.Margin = new System.Windows.Forms.Padding(5);
             this.optionCombo.Name = "optionCombo";
             this.optionCombo.Size = new System.Drawing.Size(380, 37);
             this.optionCombo.TabIndex = 0;
@@ -70,7 +70,7 @@
             // optionInputTxtbox
             // 
             this.optionInputTxtbox.Location = new System.Drawing.Point(794, 45);
-            this.optionInputTxtbox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.optionInputTxtbox.Margin = new System.Windows.Forms.Padding(5);
             this.optionInputTxtbox.Name = "optionInputTxtbox";
             this.optionInputTxtbox.Size = new System.Drawing.Size(380, 34);
             this.optionInputTxtbox.TabIndex = 2;
@@ -84,7 +84,7 @@
             this.panelMain.Controls.Add(this.optionCombo);
             this.panelMain.Controls.Add(this.searchBtn);
             this.panelMain.Location = new System.Drawing.Point(0, 0);
-            this.panelMain.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panelMain.Margin = new System.Windows.Forms.Padding(5);
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(1797, 942);
             this.panelMain.TabIndex = 4;
@@ -95,7 +95,7 @@
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(23, 102);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(7);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -105,7 +105,7 @@
             // backBtn
             // 
             this.backBtn.Location = new System.Drawing.Point(1330, 44);
-            this.backBtn.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.backBtn.Margin = new System.Windows.Forms.Padding(5);
             this.backBtn.Name = "backBtn";
             this.backBtn.Size = new System.Drawing.Size(131, 44);
             this.backBtn.TabIndex = 3;
@@ -116,7 +116,7 @@
             // searchBtn
             // 
             this.searchBtn.Location = new System.Drawing.Point(1188, 42);
-            this.searchBtn.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.searchBtn.Margin = new System.Windows.Forms.Padding(5);
             this.searchBtn.Name = "searchBtn";
             this.searchBtn.Size = new System.Drawing.Size(131, 44);
             this.searchBtn.TabIndex = 3;
@@ -131,7 +131,7 @@
             this.ClientSize = new System.Drawing.Size(1799, 946);
             this.Controls.Add(this.panelMain);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "employee_reports";
             this.Text = "employee_reports";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

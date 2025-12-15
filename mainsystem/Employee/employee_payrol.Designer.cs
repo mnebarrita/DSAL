@@ -153,7 +153,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("MS UI Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(1087, 26);
+            this.label12.Location = new System.Drawing.Point(1084, 26);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(458, 40);
@@ -249,7 +249,7 @@
             this.groupBox1.Controls.Add(this.label39);
             this.groupBox1.Controls.Add(this.label24);
             this.groupBox1.Controls.Add(this.label37);
-            this.groupBox1.Font = new System.Drawing.Font("MS UI Gothic", 8.3F);
+            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(11, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(898, 977);
@@ -266,20 +266,19 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 102;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(507, 381);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 14);
+            this.label6.Size = new System.Drawing.Size(89, 19);
             this.label6.TabIndex = 101;
             this.label6.Text = "Department";
             // 
             // calculateBtn
             // 
-            this.calculateBtn.Font = new System.Drawing.Font("MS UI Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.calculateBtn.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.calculateBtn.Location = new System.Drawing.Point(27, 843);
             this.calculateBtn.Margin = new System.Windows.Forms.Padding(4);
             this.calculateBtn.Name = "calculateBtn";
@@ -299,7 +298,7 @@
             // 
             // exitBtn
             // 
-            this.exitBtn.Font = new System.Drawing.Font("MS UI Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitBtn.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exitBtn.Location = new System.Drawing.Point(330, 843);
             this.exitBtn.Margin = new System.Windows.Forms.Padding(4);
             this.exitBtn.Name = "exitBtn";
@@ -311,7 +310,7 @@
             // 
             // newBtn
             // 
-            this.newBtn.Font = new System.Drawing.Font("MS UI Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newBtn.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newBtn.Location = new System.Drawing.Point(177, 843);
             this.newBtn.Margin = new System.Windows.Forms.Padding(4);
             this.newBtn.Name = "newBtn";
@@ -326,13 +325,13 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(508, 303);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(76, 14);
+            this.label10.Size = new System.Drawing.Size(89, 19);
             this.label10.TabIndex = 98;
             this.label10.Text = "Dependents";
             // 
             // saveBtn
             // 
-            this.saveBtn.Font = new System.Drawing.Font("MS UI Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveBtn.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveBtn.Location = new System.Drawing.Point(27, 914);
             this.saveBtn.Margin = new System.Windows.Forms.Padding(4);
             this.saveBtn.Name = "saveBtn";
@@ -344,7 +343,7 @@
             // 
             // deleteBtn
             // 
-            this.deleteBtn.Font = new System.Drawing.Font("MS UI Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteBtn.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deleteBtn.Location = new System.Drawing.Point(330, 914);
             this.deleteBtn.Margin = new System.Windows.Forms.Padding(4);
             this.deleteBtn.Name = "deleteBtn";
@@ -359,13 +358,13 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(508, 283);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(67, 14);
+            this.label11.Size = new System.Drawing.Size(83, 19);
             this.label11.TabIndex = 99;
             this.label11.Text = "Number of";
             // 
             // editBtn
             // 
-            this.editBtn.Font = new System.Drawing.Font("MS UI Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editBtn.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editBtn.Location = new System.Drawing.Point(177, 914);
             this.editBtn.Margin = new System.Windows.Forms.Padding(4);
             this.editBtn.Name = "editBtn";
@@ -401,19 +400,19 @@
             this.paydateDatePicker.Location = new System.Drawing.Point(613, 239);
             this.paydateDatePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.paydateDatePicker.Name = "paydateDatePicker";
-            this.paydateDatePicker.Size = new System.Drawing.Size(244, 21);
+            this.paydateDatePicker.Size = new System.Drawing.Size(244, 27);
             this.paydateDatePicker.TabIndex = 93;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("MS UI Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(28, 36);
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(27, 38);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(122, 13);
+            this.label2.Size = new System.Drawing.Size(137, 19);
             this.label2.TabIndex = 51;
-            this.label2.Text = "Employee Number";
+            this.label2.Text = "EMPLOYEE NO.";
             // 
             // label1
             // 
@@ -421,7 +420,7 @@
             this.label1.Location = new System.Drawing.Point(28, 68);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 14);
+            this.label1.Size = new System.Drawing.Size(61, 19);
             this.label1.TabIndex = 51;
             this.label1.Text = "First N.";
             // 
@@ -431,7 +430,7 @@
             this.label3.Location = new System.Drawing.Point(28, 104);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 14);
+            this.label3.Size = new System.Drawing.Size(78, 19);
             this.label3.TabIndex = 50;
             this.label3.Text = "Middle N.";
             // 
@@ -441,7 +440,7 @@
             this.label4.Location = new System.Drawing.Point(28, 140);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 14);
+            this.label4.Size = new System.Drawing.Size(68, 19);
             this.label4.TabIndex = 31;
             this.label4.Text = "Surname";
             // 
@@ -451,7 +450,7 @@
             this.label5.Location = new System.Drawing.Point(28, 176);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 14);
+            this.label5.Size = new System.Drawing.Size(87, 19);
             this.label5.TabIndex = 32;
             this.label5.Text = "Civil Status";
             // 
@@ -461,7 +460,7 @@
             this.label7.Location = new System.Drawing.Point(508, 244);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(62, 14);
+            this.label7.Size = new System.Drawing.Size(70, 19);
             this.label7.TabIndex = 36;
             this.label7.Text = "Pay Date";
             // 
@@ -471,7 +470,7 @@
             this.label8.Location = new System.Drawing.Point(507, 345);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(64, 14);
+            this.label8.Size = new System.Drawing.Size(74, 19);
             this.label8.TabIndex = 37;
             this.label8.Text = "Emp Stat.";
             // 
@@ -481,7 +480,7 @@
             this.label9.Location = new System.Drawing.Point(28, 210);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(74, 14);
+            this.label9.Size = new System.Drawing.Size(91, 19);
             this.label9.TabIndex = 38;
             this.label9.Text = "Designation";
             // 
@@ -491,16 +490,16 @@
             this.label17.Location = new System.Drawing.Point(27, 281);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(90, 14);
+            this.label17.Size = new System.Drawing.Size(105, 19);
             this.label17.TabIndex = 40;
             this.label17.Text = "Rate per Hour";
             // 
             // others_loanTxtbox
             // 
-            this.others_loanTxtbox.Location = new System.Drawing.Point(654, 840);
+            this.others_loanTxtbox.Location = new System.Drawing.Point(645, 840);
             this.others_loanTxtbox.Margin = new System.Windows.Forms.Padding(4);
             this.others_loanTxtbox.Name = "others_loanTxtbox";
-            this.others_loanTxtbox.Size = new System.Drawing.Size(203, 21);
+            this.others_loanTxtbox.Size = new System.Drawing.Size(203, 27);
             this.others_loanTxtbox.TabIndex = 56;
             // 
             // label18
@@ -509,16 +508,16 @@
             this.label18.Location = new System.Drawing.Point(26, 474);
             this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(90, 14);
+            this.label18.Size = new System.Drawing.Size(108, 19);
             this.label18.TabIndex = 49;
             this.label18.Text = "No. of Hours /";
             // 
             // FS_loanTxtbox
             // 
-            this.FS_loanTxtbox.Location = new System.Drawing.Point(654, 761);
+            this.FS_loanTxtbox.Location = new System.Drawing.Point(645, 761);
             this.FS_loanTxtbox.Margin = new System.Windows.Forms.Padding(4);
             this.FS_loanTxtbox.Name = "FS_loanTxtbox";
-            this.FS_loanTxtbox.Size = new System.Drawing.Size(203, 21);
+            this.FS_loanTxtbox.Size = new System.Drawing.Size(203, 27);
             this.FS_loanTxtbox.TabIndex = 57;
             // 
             // label26
@@ -527,16 +526,16 @@
             this.label26.Location = new System.Drawing.Point(27, 318);
             this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(90, 14);
+            this.label26.Size = new System.Drawing.Size(108, 19);
             this.label26.TabIndex = 41;
             this.label26.Text = "No. of Hours /";
             // 
             // sal_loanTxtbox
             // 
-            this.sal_loanTxtbox.Location = new System.Drawing.Point(654, 804);
+            this.sal_loanTxtbox.Location = new System.Drawing.Point(645, 804);
             this.sal_loanTxtbox.Margin = new System.Windows.Forms.Padding(4);
             this.sal_loanTxtbox.Name = "sal_loanTxtbox";
-            this.sal_loanTxtbox.Size = new System.Drawing.Size(203, 21);
+            this.sal_loanTxtbox.Size = new System.Drawing.Size(203, 27);
             this.sal_loanTxtbox.TabIndex = 58;
             // 
             // label29
@@ -545,16 +544,16 @@
             this.label29.Location = new System.Drawing.Point(26, 640);
             this.label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(90, 14);
+            this.label29.Size = new System.Drawing.Size(108, 19);
             this.label29.TabIndex = 42;
             this.label29.Text = "No. of Hours /";
             // 
             // FSD_depositTxtbox
             // 
-            this.FSD_depositTxtbox.Location = new System.Drawing.Point(654, 717);
+            this.FSD_depositTxtbox.Location = new System.Drawing.Point(645, 717);
             this.FSD_depositTxtbox.Margin = new System.Windows.Forms.Padding(4);
             this.FSD_depositTxtbox.Name = "FSD_depositTxtbox";
-            this.FSD_depositTxtbox.Size = new System.Drawing.Size(203, 21);
+            this.FSD_depositTxtbox.Size = new System.Drawing.Size(203, 27);
             this.FSD_depositTxtbox.TabIndex = 59;
             // 
             // label47
@@ -563,17 +562,17 @@
             this.label47.Location = new System.Drawing.Point(26, 492);
             this.label47.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(53, 14);
+            this.label47.Size = new System.Drawing.Size(63, 19);
             this.label47.TabIndex = 43;
             this.label47.Text = "Cut-Off";
             // 
             // tax_contribTxtbox
             // 
-            this.tax_contribTxtbox.Location = new System.Drawing.Point(654, 559);
+            this.tax_contribTxtbox.Location = new System.Drawing.Point(645, 559);
             this.tax_contribTxtbox.Margin = new System.Windows.Forms.Padding(4);
             this.tax_contribTxtbox.Name = "tax_contribTxtbox";
             this.tax_contribTxtbox.ReadOnly = true;
-            this.tax_contribTxtbox.Size = new System.Drawing.Size(203, 21);
+            this.tax_contribTxtbox.Size = new System.Drawing.Size(203, 27);
             this.tax_contribTxtbox.TabIndex = 60;
             // 
             // label49
@@ -582,16 +581,16 @@
             this.label49.Location = new System.Drawing.Point(27, 656);
             this.label49.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(53, 14);
+            this.label49.Size = new System.Drawing.Size(63, 19);
             this.label49.TabIndex = 44;
             this.label49.Text = "Cut-Off";
             // 
             // pagibig_loanTxtbox
             // 
-            this.pagibig_loanTxtbox.Location = new System.Drawing.Point(654, 672);
+            this.pagibig_loanTxtbox.Location = new System.Drawing.Point(645, 672);
             this.pagibig_loanTxtbox.Margin = new System.Windows.Forms.Padding(4);
             this.pagibig_loanTxtbox.Name = "pagibig_loanTxtbox";
-            this.pagibig_loanTxtbox.Size = new System.Drawing.Size(203, 21);
+            this.pagibig_loanTxtbox.Size = new System.Drawing.Size(203, 27);
             this.pagibig_loanTxtbox.TabIndex = 61;
             // 
             // label27
@@ -600,17 +599,17 @@
             this.label27.Location = new System.Drawing.Point(27, 336);
             this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(53, 14);
+            this.label27.Size = new System.Drawing.Size(63, 19);
             this.label27.TabIndex = 45;
             this.label27.Text = "Cut-Off";
             // 
             // pagibig_contribTxtbox
             // 
-            this.pagibig_contribTxtbox.Location = new System.Drawing.Point(654, 523);
+            this.pagibig_contribTxtbox.Location = new System.Drawing.Point(645, 523);
             this.pagibig_contribTxtbox.Margin = new System.Windows.Forms.Padding(4);
             this.pagibig_contribTxtbox.Name = "pagibig_contribTxtbox";
             this.pagibig_contribTxtbox.ReadOnly = true;
-            this.pagibig_contribTxtbox.Size = new System.Drawing.Size(203, 21);
+            this.pagibig_contribTxtbox.Size = new System.Drawing.Size(203, 27);
             this.pagibig_contribTxtbox.TabIndex = 62;
             // 
             // label25
@@ -619,26 +618,26 @@
             this.label25.Location = new System.Drawing.Point(26, 438);
             this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(78, 14);
+            this.label25.Size = new System.Drawing.Size(88, 19);
             this.label25.TabIndex = 46;
             this.label25.Text = "Rate / Hour";
             // 
             // philhealth_contribTxtbox
             // 
-            this.philhealth_contribTxtbox.Location = new System.Drawing.Point(654, 487);
+            this.philhealth_contribTxtbox.Location = new System.Drawing.Point(645, 487);
             this.philhealth_contribTxtbox.Margin = new System.Windows.Forms.Padding(4);
             this.philhealth_contribTxtbox.Name = "philhealth_contribTxtbox";
             this.philhealth_contribTxtbox.ReadOnly = true;
-            this.philhealth_contribTxtbox.Size = new System.Drawing.Size(203, 21);
+            this.philhealth_contribTxtbox.Size = new System.Drawing.Size(203, 27);
             this.philhealth_contribTxtbox.TabIndex = 63;
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(513, 455);
+            this.label21.Location = new System.Drawing.Point(509, 454);
             this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(64, 14);
+            this.label21.Size = new System.Drawing.Size(74, 19);
             this.label21.TabIndex = 47;
             this.label21.Text = "SSS Ctrb.";
             // 
@@ -648,7 +647,7 @@
             this.other_netincomeTxtbox.Margin = new System.Windows.Forms.Padding(4);
             this.other_netincomeTxtbox.Name = "other_netincomeTxtbox";
             this.other_netincomeTxtbox.ReadOnly = true;
-            this.other_netincomeTxtbox.Size = new System.Drawing.Size(194, 21);
+            this.other_netincomeTxtbox.Size = new System.Drawing.Size(194, 27);
             this.other_netincomeTxtbox.TabIndex = 68;
             // 
             // label30
@@ -657,7 +656,7 @@
             this.label30.Location = new System.Drawing.Point(26, 604);
             this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(78, 14);
+            this.label30.Size = new System.Drawing.Size(88, 19);
             this.label30.TabIndex = 48;
             this.label30.Text = "Rate / Hour";
             // 
@@ -667,16 +666,16 @@
             this.hono_netincomeTxtbox.Margin = new System.Windows.Forms.Padding(4);
             this.hono_netincomeTxtbox.Name = "hono_netincomeTxtbox";
             this.hono_netincomeTxtbox.ReadOnly = true;
-            this.hono_netincomeTxtbox.Size = new System.Drawing.Size(194, 21);
+            this.hono_netincomeTxtbox.Size = new System.Drawing.Size(194, 27);
             this.hono_netincomeTxtbox.TabIndex = 64;
             // 
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(513, 642);
+            this.label33.Location = new System.Drawing.Point(517, 642);
             this.label33.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(64, 14);
+            this.label33.Size = new System.Drawing.Size(74, 19);
             this.label33.TabIndex = 30;
             this.label33.Text = "SSS Loan";
             // 
@@ -686,7 +685,7 @@
             this.net_incomeTxtbox.Margin = new System.Windows.Forms.Padding(4);
             this.net_incomeTxtbox.Name = "net_incomeTxtbox";
             this.net_incomeTxtbox.ReadOnly = true;
-            this.net_incomeTxtbox.Size = new System.Drawing.Size(194, 21);
+            this.net_incomeTxtbox.Size = new System.Drawing.Size(194, 27);
             this.net_incomeTxtbox.TabIndex = 65;
             // 
             // label40
@@ -695,7 +694,7 @@
             this.label40.Location = new System.Drawing.Point(27, 757);
             this.label40.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(86, 14);
+            this.label40.Size = new System.Drawing.Size(105, 19);
             this.label40.TabIndex = 39;
             this.label40.Text = "Gross Income";
             // 
@@ -704,16 +703,16 @@
             this.other_numhrsTxtbox.Location = new System.Drawing.Point(176, 642);
             this.other_numhrsTxtbox.Margin = new System.Windows.Forms.Padding(4);
             this.other_numhrsTxtbox.Name = "other_numhrsTxtbox";
-            this.other_numhrsTxtbox.Size = new System.Drawing.Size(194, 21);
+            this.other_numhrsTxtbox.Size = new System.Drawing.Size(194, 27);
             this.other_numhrsTxtbox.TabIndex = 66;
             // 
             // label43
             // 
             this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(513, 934);
+            this.label43.Location = new System.Drawing.Point(504, 934);
             this.label43.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(106, 14);
+            this.label43.Size = new System.Drawing.Size(125, 19);
             this.label43.TabIndex = 29;
             this.label43.Text = "Total Deductions";
             // 
@@ -723,7 +722,7 @@
             this.basic_netincomeTxtbox.Margin = new System.Windows.Forms.Padding(4);
             this.basic_netincomeTxtbox.Name = "basic_netincomeTxtbox";
             this.basic_netincomeTxtbox.ReadOnly = true;
-            this.basic_netincomeTxtbox.Size = new System.Drawing.Size(194, 21);
+            this.basic_netincomeTxtbox.Size = new System.Drawing.Size(194, 27);
             this.basic_netincomeTxtbox.TabIndex = 67;
             // 
             // label19
@@ -732,7 +731,7 @@
             this.label19.Location = new System.Drawing.Point(26, 523);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(109, 14);
+            this.label19.Size = new System.Drawing.Size(127, 19);
             this.label19.TabIndex = 17;
             this.label19.Text = "Income / Cut-Off";
             // 
@@ -741,7 +740,7 @@
             this.hono_numhrsTxtbox.Location = new System.Drawing.Point(176, 479);
             this.hono_numhrsTxtbox.Margin = new System.Windows.Forms.Padding(4);
             this.hono_numhrsTxtbox.Name = "hono_numhrsTxtbox";
-            this.hono_numhrsTxtbox.Size = new System.Drawing.Size(194, 21);
+            this.hono_numhrsTxtbox.Size = new System.Drawing.Size(194, 27);
             this.hono_numhrsTxtbox.TabIndex = 72;
             // 
             // label48
@@ -750,7 +749,7 @@
             this.label48.Location = new System.Drawing.Point(27, 365);
             this.label48.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(109, 14);
+            this.label48.Size = new System.Drawing.Size(127, 19);
             this.label48.TabIndex = 9;
             this.label48.Text = "Income / Cut-Off";
             // 
@@ -760,7 +759,7 @@
             this.gross_incomeTxtbox.Margin = new System.Windows.Forms.Padding(4);
             this.gross_incomeTxtbox.Name = "gross_incomeTxtbox";
             this.gross_incomeTxtbox.ReadOnly = true;
-            this.gross_incomeTxtbox.Size = new System.Drawing.Size(194, 21);
+            this.gross_incomeTxtbox.Size = new System.Drawing.Size(194, 27);
             this.gross_incomeTxtbox.TabIndex = 69;
             // 
             // label31
@@ -769,35 +768,35 @@
             this.label31.Location = new System.Drawing.Point(26, 687);
             this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(109, 14);
+            this.label31.Size = new System.Drawing.Size(127, 19);
             this.label31.TabIndex = 10;
             this.label31.Text = "Income / Cut-Off";
             // 
             // total_deducTxtbox
             // 
-            this.total_deducTxtbox.Location = new System.Drawing.Point(654, 931);
+            this.total_deducTxtbox.Location = new System.Drawing.Point(645, 931);
             this.total_deducTxtbox.Margin = new System.Windows.Forms.Padding(4);
             this.total_deducTxtbox.Name = "total_deducTxtbox";
             this.total_deducTxtbox.ReadOnly = true;
-            this.total_deducTxtbox.Size = new System.Drawing.Size(203, 21);
+            this.total_deducTxtbox.Size = new System.Drawing.Size(203, 27);
             this.total_deducTxtbox.TabIndex = 83;
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(513, 491);
+            this.label22.Location = new System.Drawing.Point(509, 492);
             this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(100, 14);
+            this.label22.Size = new System.Drawing.Size(120, 19);
             this.label22.TabIndex = 11;
             this.label22.Text = "PhilHealth Ctrb.";
             // 
             // sss_loanTxtbox
             // 
-            this.sss_loanTxtbox.Location = new System.Drawing.Point(654, 636);
+            this.sss_loanTxtbox.Location = new System.Drawing.Point(645, 636);
             this.sss_loanTxtbox.Margin = new System.Windows.Forms.Padding(4);
             this.sss_loanTxtbox.Name = "sss_loanTxtbox";
-            this.sss_loanTxtbox.Size = new System.Drawing.Size(203, 21);
+            this.sss_loanTxtbox.Size = new System.Drawing.Size(203, 27);
             this.sss_loanTxtbox.TabIndex = 82;
             // 
             // label41
@@ -806,7 +805,7 @@
             this.label41.Location = new System.Drawing.Point(27, 793);
             this.label41.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(73, 14);
+            this.label41.Size = new System.Drawing.Size(89, 19);
             this.label41.TabIndex = 12;
             this.label41.Text = "Net Income";
             // 
@@ -815,36 +814,36 @@
             this.other_rateTxtbox.Location = new System.Drawing.Point(176, 598);
             this.other_rateTxtbox.Margin = new System.Windows.Forms.Padding(4);
             this.other_rateTxtbox.Name = "other_rateTxtbox";
-            this.other_rateTxtbox.Size = new System.Drawing.Size(194, 21);
+            this.other_rateTxtbox.Size = new System.Drawing.Size(194, 27);
             this.other_rateTxtbox.TabIndex = 81;
             // 
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(513, 678);
+            this.label34.Location = new System.Drawing.Point(517, 678);
             this.label34.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(88, 14);
+            this.label34.Size = new System.Drawing.Size(104, 19);
             this.label34.TabIndex = 13;
             this.label34.Text = "Pag-Ibig Loan";
             // 
             // sss_contribTxtbox
             // 
-            this.sss_contribTxtbox.Location = new System.Drawing.Point(654, 451);
+            this.sss_contribTxtbox.Location = new System.Drawing.Point(645, 451);
             this.sss_contribTxtbox.Margin = new System.Windows.Forms.Padding(4);
             this.sss_contribTxtbox.Name = "sss_contribTxtbox";
             this.sss_contribTxtbox.ReadOnly = true;
-            this.sss_contribTxtbox.Size = new System.Drawing.Size(203, 21);
+            this.sss_contribTxtbox.Size = new System.Drawing.Size(203, 27);
             this.sss_contribTxtbox.TabIndex = 80;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(27, 247);
+            this.label13.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(26, 254);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(87, 17);
+            this.label13.Size = new System.Drawing.Size(93, 19);
             this.label13.TabIndex = 14;
             this.label13.Text = "BASIC PAY";
             // 
@@ -853,16 +852,16 @@
             this.hono_rateTxtbox.Location = new System.Drawing.Point(176, 435);
             this.hono_rateTxtbox.Margin = new System.Windows.Forms.Padding(4);
             this.hono_rateTxtbox.Name = "hono_rateTxtbox";
-            this.hono_rateTxtbox.Size = new System.Drawing.Size(194, 21);
+            this.hono_rateTxtbox.Size = new System.Drawing.Size(194, 27);
             this.hono_rateTxtbox.TabIndex = 79;
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(513, 527);
+            this.label23.Location = new System.Drawing.Point(509, 528);
             this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(88, 14);
+            this.label23.Size = new System.Drawing.Size(104, 19);
             this.label23.TabIndex = 15;
             this.label23.Text = "Pag-Ibig Ctrb.";
             // 
@@ -871,17 +870,17 @@
             this.basic_numhrsTxtbox.Location = new System.Drawing.Point(177, 319);
             this.basic_numhrsTxtbox.Margin = new System.Windows.Forms.Padding(4);
             this.basic_numhrsTxtbox.Name = "basic_numhrsTxtbox";
-            this.basic_numhrsTxtbox.Size = new System.Drawing.Size(194, 21);
+            this.basic_numhrsTxtbox.Size = new System.Drawing.Size(194, 27);
             this.basic_numhrsTxtbox.TabIndex = 78;
             // 
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(27, 412);
+            this.label28.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(26, 412);
             this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(177, 17);
+            this.label28.Size = new System.Drawing.Size(203, 19);
             this.label28.TabIndex = 16;
             this.label28.Text = "HONORARIUM INCOME";
             // 
@@ -890,16 +889,16 @@
             this.basic_rateTxtbox.Location = new System.Drawing.Point(177, 275);
             this.basic_rateTxtbox.Margin = new System.Windows.Forms.Padding(4);
             this.basic_rateTxtbox.Name = "basic_rateTxtbox";
-            this.basic_rateTxtbox.Size = new System.Drawing.Size(194, 21);
+            this.basic_rateTxtbox.Size = new System.Drawing.Size(194, 27);
             this.basic_rateTxtbox.TabIndex = 84;
             // 
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(513, 714);
+            this.label35.Location = new System.Drawing.Point(517, 714);
             this.label35.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(99, 14);
+            this.label35.Size = new System.Drawing.Size(114, 19);
             this.label35.TabIndex = 18;
             this.label35.Text = "Faculty Savings";
             // 
@@ -908,17 +907,17 @@
             this.designationTxtBox.Location = new System.Drawing.Point(128, 204);
             this.designationTxtBox.Margin = new System.Windows.Forms.Padding(4);
             this.designationTxtBox.Name = "designationTxtBox";
-            this.designationTxtBox.Size = new System.Drawing.Size(244, 21);
+            this.designationTxtBox.Size = new System.Drawing.Size(244, 27);
             this.designationTxtBox.TabIndex = 76;
             // 
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(26, 576);
+            this.label32.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(25, 576);
             this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(126, 17);
+            this.label32.Size = new System.Drawing.Size(142, 19);
             this.label32.TabIndex = 27;
             this.label32.Text = "OTHER INCOME";
             // 
@@ -927,7 +926,7 @@
             this.departmentTxtBox.Location = new System.Drawing.Point(613, 379);
             this.departmentTxtBox.Margin = new System.Windows.Forms.Padding(4);
             this.departmentTxtBox.Name = "departmentTxtBox";
-            this.departmentTxtBox.Size = new System.Drawing.Size(244, 21);
+            this.departmentTxtBox.Size = new System.Drawing.Size(244, 27);
             this.departmentTxtBox.TabIndex = 75;
             // 
             // emp_statusTxtBox
@@ -935,16 +934,16 @@
             this.emp_statusTxtBox.Location = new System.Drawing.Point(613, 346);
             this.emp_statusTxtBox.Margin = new System.Windows.Forms.Padding(4);
             this.emp_statusTxtBox.Name = "emp_statusTxtBox";
-            this.emp_statusTxtBox.Size = new System.Drawing.Size(244, 21);
+            this.emp_statusTxtBox.Size = new System.Drawing.Size(244, 27);
             this.emp_statusTxtBox.TabIndex = 75;
             // 
             // label45
             // 
             this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(513, 732);
+            this.label45.Location = new System.Drawing.Point(517, 732);
             this.label45.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(51, 14);
+            this.label45.Size = new System.Drawing.Size(63, 19);
             this.label45.TabIndex = 19;
             this.label45.Text = "Deposit";
             // 
@@ -953,16 +952,16 @@
             this.empNumberTxtBox.Location = new System.Drawing.Point(172, 33);
             this.empNumberTxtBox.Margin = new System.Windows.Forms.Padding(4);
             this.empNumberTxtBox.Name = "empNumberTxtBox";
-            this.empNumberTxtBox.Size = new System.Drawing.Size(111, 21);
+            this.empNumberTxtBox.Size = new System.Drawing.Size(111, 27);
             this.empNumberTxtBox.TabIndex = 74;
             // 
             // label46
             // 
             this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(513, 776);
+            this.label46.Location = new System.Drawing.Point(517, 776);
             this.label46.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(36, 14);
+            this.label46.Size = new System.Drawing.Size(43, 19);
             this.label46.TabIndex = 20;
             this.label46.Text = "Loan";
             // 
@@ -971,16 +970,16 @@
             this.civilStatusTxtBox.Location = new System.Drawing.Point(128, 172);
             this.civilStatusTxtBox.Margin = new System.Windows.Forms.Padding(4);
             this.civilStatusTxtBox.Name = "civilStatusTxtBox";
-            this.civilStatusTxtBox.Size = new System.Drawing.Size(244, 21);
+            this.civilStatusTxtBox.Size = new System.Drawing.Size(244, 27);
             this.civilStatusTxtBox.TabIndex = 73;
             // 
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(513, 807);
+            this.label38.Location = new System.Drawing.Point(517, 807);
             this.label38.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(77, 14);
+            this.label38.Size = new System.Drawing.Size(89, 19);
             this.label38.TabIndex = 21;
             this.label38.Text = "Salary Loan";
             // 
@@ -989,17 +988,17 @@
             this.surnameTxtBox.Location = new System.Drawing.Point(128, 136);
             this.surnameTxtBox.Margin = new System.Windows.Forms.Padding(4);
             this.surnameTxtBox.Name = "surnameTxtBox";
-            this.surnameTxtBox.Size = new System.Drawing.Size(244, 21);
+            this.surnameTxtBox.Size = new System.Drawing.Size(244, 27);
             this.surnameTxtBox.TabIndex = 77;
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(496, 426);
+            this.label20.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(508, 428);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(187, 17);
+            this.label20.Size = new System.Drawing.Size(205, 19);
             this.label20.TabIndex = 22;
             this.label20.Text = "REGULAR DEDUCTIONS";
             // 
@@ -1008,17 +1007,17 @@
             this.MNameTxtbox.Location = new System.Drawing.Point(128, 100);
             this.MNameTxtbox.Margin = new System.Windows.Forms.Padding(4);
             this.MNameTxtbox.Name = "MNameTxtbox";
-            this.MNameTxtbox.Size = new System.Drawing.Size(155, 21);
+            this.MNameTxtbox.Size = new System.Drawing.Size(155, 27);
             this.MNameTxtbox.TabIndex = 71;
             // 
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(496, 610);
+            this.label36.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.Location = new System.Drawing.Point(505, 608);
             this.label36.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(167, 17);
+            this.label36.Size = new System.Drawing.Size(181, 19);
             this.label36.TabIndex = 23;
             this.label36.Text = "OTHER DEDUCTIONS";
             // 
@@ -1027,64 +1026,64 @@
             this.firstnameTxtbox.Location = new System.Drawing.Point(128, 64);
             this.firstnameTxtbox.Margin = new System.Windows.Forms.Padding(4);
             this.firstnameTxtbox.Name = "firstnameTxtbox";
-            this.firstnameTxtbox.Size = new System.Drawing.Size(155, 21);
+            this.firstnameTxtbox.Size = new System.Drawing.Size(155, 27);
             this.firstnameTxtbox.TabIndex = 70;
             // 
             // label44
             // 
             this.label44.AutoSize = true;
-            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label44.Location = new System.Drawing.Point(496, 903);
+            this.label44.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.Location = new System.Drawing.Point(487, 903);
             this.label44.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(179, 17);
+            this.label44.Size = new System.Drawing.Size(199, 19);
             this.label44.TabIndex = 24;
             this.label44.Text = "DEDUCTION SUMMARY";
             // 
             // label42
             // 
             this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label42.Location = new System.Drawing.Point(27, 724);
             this.label42.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(148, 17);
+            this.label42.Size = new System.Drawing.Size(169, 19);
             this.label42.TabIndex = 25;
             this.label42.Text = "INCOME SUMMARY";
             // 
             // label39
             // 
             this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(513, 843);
+            this.label39.Location = new System.Drawing.Point(517, 843);
             this.label39.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(80, 14);
+            this.label39.Size = new System.Drawing.Size(93, 19);
             this.label39.TabIndex = 53;
             this.label39.Text = "Other Loans";
             // 
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(513, 563);
+            this.label24.Location = new System.Drawing.Point(509, 562);
             this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(106, 14);
+            this.label24.Size = new System.Drawing.Size(125, 19);
             this.label24.TabIndex = 26;
             this.label24.Text = "Income Tax Ctrb.";
             // 
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(513, 758);
+            this.label37.Location = new System.Drawing.Point(517, 758);
             this.label37.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(99, 14);
+            this.label37.Size = new System.Drawing.Size(114, 19);
             this.label37.TabIndex = 8;
             this.label37.Text = "Faculty Savings";
             // 
             // button4
             // 
-            this.button4.Font = new System.Drawing.Font("MS UI Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Location = new System.Drawing.Point(941, 928);
             this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
@@ -1096,7 +1095,7 @@
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("MS UI Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(1500, 928);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";

@@ -53,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminLoungeFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminLoungeFrm.Designer.cs">
+      <DependentUpon>AdminLoungeFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Employee\employee_registration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +70,12 @@
     </Compile>
     <Compile Include="Employee\employee_reports.Designer.cs">
       <DependentUpon>employee_reports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="L14_Classes\employee_dbconnection.cs" />
     <Compile Include="L14_Classes\loginDb_dbconnections.cs" />
@@ -260,6 +272,9 @@
       <DependentUpon>user_account.cs</DependentUpon>
     </Compile>
     <Compile Include="Variables.cs" />
+    <EmbeddedResource Include="AdminLoungeFrm.resx">
+      <DependentUpon>AdminLoungeFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Employee\employee_registration.resx">
       <DependentUpon>employee_registration.cs</DependentUpon>
     </EmbeddedResource>
@@ -268,6 +283,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Employee\payrol_report.resx">
       <DependentUpon>payrol_report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginFrm_Database.resx">
       <DependentUpon>LoginFrm_Database.cs</DependentUpon>
@@ -587,6 +605,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pepperoni.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -26,7 +26,7 @@ namespace mainsystem
 
         private void SQLPOS1Class_Load(object sender, EventArgs e)
         {
-            this.BackgroundImage = Properties.Resources.background2;
+            this.BackgroundImage = Properties.Resources.background3;
             this.BackgroundImageLayout = ImageLayout.Stretch;
             CenterPanel();
             this.Resize += (s, ev) => CenterPanel();
@@ -70,7 +70,7 @@ namespace mainsystem
                 pos_db.pos_sql = "SELECT * FROM pos_nameTb1 " +
                                  "INNER JOIN pos_picTb1 ON pos_nameTb1.pos_id = pos_picTb1.pos_id " +
                                  "INNER JOIN pos_priceTb1 ON pos_picTb1.pos_id = pos_priceTb1.pos_id " +
-                                 "WHERE pos_nameTb1.pos_id = 1"; // CHANGE THIS TO '2' FOR CASHIER 2
+                                 "WHERE pos_nameTb1.pos_id = 2"; // CHANGE THIS TO '2' FOR CASHIER 2
 
                 pos_db.pos_cmd();
                 pos_db.pos_sqladapterSelect();
@@ -106,7 +106,7 @@ namespace mainsystem
                             // 2. SET SIZE & FONT (Big Mode!)
                             prodBtn.Width = 200;
                             prodBtn.Height = 200;
-                            prodBtn.Font = new Font("MS UI Gothic", 10, FontStyle.Bold);
+                            prodBtn.Font = new Font("MS UI Gothic", 11, FontStyle.Bold);
 
                             // 3. Set Text & Styling
                             prodBtn.Text = name + "\n" + price.ToString("N0");
@@ -363,5 +363,6 @@ namespace mainsystem
                 cash_renderedtxtbox.Text = "";
             }
         }
+
     }
 }
