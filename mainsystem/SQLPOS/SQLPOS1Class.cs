@@ -199,6 +199,15 @@ namespace mainsystem
 
             try
             {
+                string myTerminal = "Terminal-1";
+                string myEmpID = Program.CurrentEmpID;
+
+                if (string.IsNullOrEmpty(myEmpID))
+                {
+                    myTerminal = "Terminal-0";  // <--- YOUR REQUEST
+                    myEmpID = "0000-DEV";       // A placeholder ID for testing
+                }
+
                 pos_db.pos_connString();
                 pos_db.posdb_open();
 
@@ -224,7 +233,7 @@ namespace mainsystem
                     "time_date, " +                          // 11
                     "emp_id" +                               // 12
                     ") VALUES (" +
-                    "'Terminal-1', " +                       // 1 (Value for terminal_no)
+                    "'" + myTerminal + "', " +                       // 1 (Value for terminal_no)
                     "'" + itemnameTxtbox.Text + "', " +      // 2 (Value for product_name)
                     "'" + priceTxtbox.Text + "', " +         // 3
                     "'" + qtyTxtbox.Text + "', " +           // 4
@@ -235,7 +244,7 @@ namespace mainsystem
                     "'" + discountTotalTxtbox.Text + "', " + // 9
                     "'" + discountedTotalTxtbox.Text + "', " + // 10
                     "'" + DateTime.Now.ToString("yyyy-MM-dd") + "', " + // 11
-                    "'1001'" +                               // 12
+                    "'" + myEmpID + "'" +                               // 12
                     ")";
 
                 pos_db.pos_sql = sql;

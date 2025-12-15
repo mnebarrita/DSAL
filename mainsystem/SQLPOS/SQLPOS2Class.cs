@@ -251,6 +251,9 @@ namespace mainsystem
 
         private void button4_Click(object sender, EventArgs e)
         {
+
+            this.DisplayPictureBox.Image = Resources.clear1;
+            this.DisplayPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             // Uncheck Radio Buttons
             foodARdbt.Checked = false;
             foodBRdbt.Checked = false;
@@ -304,8 +307,7 @@ namespace mainsystem
             foodARdbt.Enabled = true;
             foodBRdbt.Enabled = true;
 
-            DisplayPictureBox.Image = null;
-            this.BackColor = SystemColors.Control;
+            
             displayListbox.Items.Clear();
 
             // Clear all textboxes
@@ -349,6 +351,8 @@ namespace mainsystem
                 priceTxtBox.Text = bundlePrice.ToString("N2");
                 discountTxtbox.Text = bundleDiscount.ToString("N2");
                 qtyTxtbox.Text = "1";
+
+                discountedTxtbox.Text = netAmount.ToString("N2");
 
                 // --- AUTO-CHECK THE BUNDLE ITEMS (Left Side) ---
                 // Make sure these match your actual checkbox names!
@@ -397,8 +401,8 @@ namespace mainsystem
         {
             // Calculate the NET amount for Bundle B
             double priceRaw = 1299.00;
-            double discountRaw = priceRaw * 0.15; // 194.85
-            double netPrice = priceRaw - discountRaw; // 1104.15
+            double discountRaw = priceRaw * 0.15;
+            double netPrice = priceRaw - discountRaw;
 
             if (foodBRdbt.Checked)
             {
@@ -425,6 +429,8 @@ namespace mainsystem
                 // Display visuals
                 priceTxtBox.Text = priceRaw.ToString("N2");
                 discountTxtbox.Text = discountRaw.ToString("N2");
+
+                discountedTxtbox.Text = netPrice.ToString("N2");
 
                 // --- 2. ADD TO THE RUNNING TOTAL ---
                 total_amount += netPrice;
@@ -647,6 +653,113 @@ namespace mainsystem
         private void checkBox16_CheckedChanged(object sender, EventArgs e)
         {
             ProcessCheckbox(checkBox16);
+        }
+
+        private void submitBtn_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(changeTxtbox.Text) || total_amount <= 0)
+            {
+                MessageBox.Show("Please calculate the payment/transaction first.");
+                return;
+            }
+
+            try
+            {
+                string myTerminal = "Terminal-2";
+                string myEmpID = Program.CurrentEmpID;
+                
+                if (string.IsNullOrEmpty(myEmpID))
+                {
+                    myTerminal = "Terminal-0";  // <--- YOUR REQUEST
+                    myEmpID = "0000-DEV";       // A placeholder ID for testing
+                }
+
+                pos_db.pos_connString();
+                pos_db.posdb_open();
+
+                // 2. CHECK: IS IT A BUNDLE OR CUSTOM?
+                if (foodARdbt.Checked || foodBRdbt.Checked)
+                {
+                    // ============================================
+                    // LOGIC A: SAVE AS BUNDLE (Single ROW)
+                    // ============================================
+                    string prodName = foodARdbt.Checked ? "Food Bundle A" : "Food Bundle B";
+                    string discOption = "Bundle Discount";
+
+                    // We use the textboxes because the math is already there
+                    string sql = "INSERT INTO salesTb1 (" +
+                        "terminal_no, product_name, product_price, product_quantity_per_transaction, " +
+                        "discount_option, discount_amount_per_transaction, discounted_amount_per_transaction, " +
+                        "summary_total_quantity, summary_total_disc_given, summary_total_discounted_amount, " +
+                        "time_date, emp_id) VALUES (" +
+                        "'" + myTerminal + "', " +
+                        "'" + prodName + "', " +
+                        "'" + priceTxtBox.Text + "', " +
+                        "'" + qtyTxtbox.Text + "', " +
+                        "'" + discOption + "', " +
+                        "'" + discountTxtbox.Text + "', " +
+                        "'" + discountedTxtbox.Text + "', " +
+                        "'" + totalQtyTxtbox.Text + "', " +
+                        "'" + discountTxtbox.Text + "', " +
+                        "'" + totalBillsTxtbox.Text + "', " +
+                        "'" + DateTime.Now.ToString("yyyy-MM-dd") + "', " +
+                        "'" + myEmpID + "'" +
+                        ")";
+
+                    pos_db.pos_sql = sql;
+                    pos_db.pos_cmd();
+                    pos_db.pos_sqladapterInsert();
+                }
+                else
+                {
+                    // ============================================
+                    // LOGIC B: SAVE AS CUSTOM (Loop through Listbox)
+                    // ============================================
+                    // We iterate through every item in the "Cart" (ListBox)
+                    foreach (var item in displayListbox.Items)
+                    {
+                        string fullText = item.ToString(); // e.g., "Hawaiian 199.75"
+
+                        // PARSE THE NAME AND PRICE
+                        // We assume the format is "Name Price" (split by last space)
+                        int lastSpaceIndex = fullText.LastIndexOf(' ');
+                        string pName = fullText.Substring(0, lastSpaceIndex); // "Hawaiian"
+                        string pPrice = fullText.Substring(lastSpaceIndex + 1); // "199.75"
+
+                        string sql = "INSERT INTO salesTb1 (" +
+                            "terminal_no, product_name, product_price, product_quantity_per_transaction, " +
+                            "discount_option, discount_amount_per_transaction, discounted_amount_per_transaction, " +
+                            "summary_total_quantity, summary_total_disc_given, summary_total_discounted_amount, " +
+                            "time_date, emp_id) VALUES (" +
+                            "'" + myTerminal + "', " +
+                            "'" + pName + "', " +        // Name from Listbox
+                            "'" + pPrice + "', " +       // Price from Listbox
+                            "'1', " +                    // Qty is always 1 per line item in custom
+                            "'Regular Price', " +        // No discount for custom
+                            "'0.00', " +                 // No discount amount
+                            "'" + pPrice + "', " +       // Net price is same as original
+                            "'1', " +              // Qty is just 1 for this specific row
+                            "'0.00', " +           // Discount is 0
+                            "'" + pPrice + "', " +
+                            "'" + DateTime.Now.ToString("yyyy-MM-dd") + "', " +
+                            "'" + myEmpID + "'" +         
+                            ")";
+
+                        pos_db.pos_sql = sql;
+                        pos_db.pos_cmd();
+                        pos_db.pos_sqladapterInsert();
+                    }
+                }
+
+                pos_db.posdb_close();
+                MessageBox.Show("Transaction Saved Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                button4.PerformClick(); // Clear Inputs
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error saving: " + ex.Message);
+                if (pos_db.pos_sql_connection.State == ConnectionState.Open) pos_db.posdb_close();
+            }
         }
     }
 }

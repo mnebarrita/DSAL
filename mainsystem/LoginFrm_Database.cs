@@ -62,10 +62,11 @@ namespace mainsystem
                 // CHECK IF USER EXISTS
                 if (login_db.login_sql_dataset.Tables[0].Rows.Count > 0)
                 {
+
                     // GET THE ACCOUNT TYPE FROM DATABASE
                     DataRow row = login_db.login_sql_dataset.Tables[0].Rows[0];
                     string accountType = row["account_type"].ToString();
-
+                    Program.CurrentEmpID = usernameTxtBox.Text;
                     MessageBox.Show("Login Successful! Welcome, " + accountType);
                     this.Hide();
 
