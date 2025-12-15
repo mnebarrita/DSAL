@@ -277,6 +277,8 @@ namespace mainsystem
         }
         private void button4_Click(object sender, EventArgs e)
         {
+            this.DisplayPictureBox.Image = Resources.clear1;
+            this.DisplayPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             // Uncheck Radio Buttons
             foodARdbt.Checked = false;
             foodBRdbt.Checked = false;
@@ -330,8 +332,6 @@ namespace mainsystem
             foodARdbt.Enabled = true;
             foodBRdbt.Enabled = true;
 
-            DisplayPictureBox.Image = null;
-            this.BackColor = SystemColors.Control;
             displayListbox.Items.Clear();
 
             // Clear all textboxes
