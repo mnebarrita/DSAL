@@ -68,7 +68,7 @@ namespace mainsystem
                 pos_db.pos_sql = "SELECT * FROM pos_nameTb1 " +
                                  "INNER JOIN pos_picTb1 ON pos_nameTb1.pos_id = pos_picTb1.pos_id " +
                                  "INNER JOIN pos_priceTb1 ON pos_picTb1.pos_id = pos_priceTb1.pos_id " +
-                                 "WHERE pos_nameTb1.pos_id = 2"; // CHANGE THIS TO '2' FOR CASHIER 2
+                                 "WHERE pos_nameTb1.pos_id = 1"; // CHANGE THIS TO '2' FOR CASHIER 2
 
                 pos_db.pos_cmd();
                 pos_db.pos_sqladapterSelect();
@@ -102,8 +102,8 @@ namespace mainsystem
                             Button prodBtn = new Button();
 
                             // 2. SET SIZE & FONT (Big Mode!)
-                            prodBtn.Width = 180;
-                            prodBtn.Height = 180;
+                            prodBtn.Width = 200;
+                            prodBtn.Height = 200;
                             prodBtn.Font = new Font("MS UI Gothic", 10, FontStyle.Bold);
 
                             // 3. Set Text & Styling

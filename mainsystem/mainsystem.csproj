@@ -349,14 +349,14 @@
     <EmbeddedResource Include="SQLPOS\SQLPOS1Class.resx">
       <DependentUpon>SQLPOS1Class.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SQLPOS\SQLPOS2Class.resx">
-      <DependentUpon>SQLPOS2Class.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Employee\useraccount_report.resx">
       <DependentUpon>useraccount_report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Employee\user_account.resx">
       <DependentUpon>user_account.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SQLPOS\SQLPOS2Class.resx">
+      <DependentUpon>SQLPOS2Class.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="Properties\Settings.settings">
@@ -572,6 +572,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\nopfp.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clear.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
