@@ -40,6 +40,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.picpath = new System.Windows.Forms.TextBox();
             this.browseBtn = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -139,13 +140,12 @@
             this.label48 = new System.Windows.Forms.Label();
             this.label46 = new System.Windows.Forms.Label();
             this.label47 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelMain.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -307,6 +307,16 @@
             this.browseBtn.UseVisualStyleBackColor = true;
             this.browseBtn.Click += new System.EventHandler(this.browseBtn_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox1.Location = new System.Drawing.Point(18, 69);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(360, 304);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -461,7 +471,7 @@
             // 
             this.senior_high_yr_grad.Location = new System.Drawing.Point(139, 899);
             this.senior_high_yr_grad.Name = "senior_high_yr_grad";
-            this.senior_high_yr_grad.Size = new System.Drawing.Size(230, 21);
+            this.senior_high_yr_grad.Size = new System.Drawing.Size(274, 21);
             this.senior_high_yr_grad.TabIndex = 8;
             // 
             // label30
@@ -488,14 +498,14 @@
             // 
             this.track.Location = new System.Drawing.Point(139, 831);
             this.track.Name = "track";
-            this.track.Size = new System.Drawing.Size(230, 21);
+            this.track.Size = new System.Drawing.Size(274, 21);
             this.track.TabIndex = 6;
             // 
             // senior_high_award
             // 
             this.senior_high_award.Location = new System.Drawing.Point(139, 862);
             this.senior_high_award.Name = "senior_high_award";
-            this.senior_high_award.Size = new System.Drawing.Size(230, 21);
+            this.senior_high_award.Size = new System.Drawing.Size(274, 21);
             this.senior_high_award.TabIndex = 7;
             // 
             // label28
@@ -523,7 +533,7 @@
             this.panelMain.Font = new System.Drawing.Font("MS UI Gothic", 8F);
             this.panelMain.Location = new System.Drawing.Point(12, 13);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(1554, 979);
+            this.panelMain.Size = new System.Drawing.Size(1608, 979);
             this.panelMain.TabIndex = 0;
             // 
             // groupBox2
@@ -578,7 +588,7 @@
             this.groupBox2.Controls.Add(this.add_house_no);
             this.groupBox2.Location = new System.Drawing.Point(421, 13);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(381, 946);
+            this.groupBox2.Size = new System.Drawing.Size(429, 946);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Educational Attainment and Address";
@@ -587,14 +597,14 @@
             // 
             this.junior_high_yr_grad.Location = new System.Drawing.Point(139, 665);
             this.junior_high_yr_grad.Name = "junior_high_yr_grad";
-            this.junior_high_yr_grad.Size = new System.Drawing.Size(230, 21);
+            this.junior_high_yr_grad.Size = new System.Drawing.Size(274, 21);
             this.junior_high_yr_grad.TabIndex = 24;
             // 
             // senior_high_address
             // 
             this.senior_high_address.Location = new System.Drawing.Point(139, 758);
             this.senior_high_address.Name = "senior_high_address";
-            this.senior_high_address.Size = new System.Drawing.Size(230, 68);
+            this.senior_high_address.Size = new System.Drawing.Size(274, 68);
             this.senior_high_address.TabIndex = 25;
             this.senior_high_address.Text = "";
             // 
@@ -622,14 +632,14 @@
             // 
             this.junior_high_award.Location = new System.Drawing.Point(139, 698);
             this.junior_high_award.Name = "junior_high_award";
-            this.junior_high_award.Size = new System.Drawing.Size(230, 21);
+            this.junior_high_award.Size = new System.Drawing.Size(274, 21);
             this.junior_high_award.TabIndex = 22;
             // 
             // senior_high_name
             // 
             this.senior_high_name.Location = new System.Drawing.Point(139, 726);
             this.senior_high_name.Name = "senior_high_name";
-            this.senior_high_name.Size = new System.Drawing.Size(230, 21);
+            this.senior_high_name.Size = new System.Drawing.Size(274, 21);
             this.senior_high_name.TabIndex = 23;
             // 
             // label38
@@ -656,14 +666,14 @@
             // 
             this.elem_yr_grad.Location = new System.Drawing.Point(139, 492);
             this.elem_yr_grad.Name = "elem_yr_grad";
-            this.elem_yr_grad.Size = new System.Drawing.Size(230, 21);
+            this.elem_yr_grad.Size = new System.Drawing.Size(274, 21);
             this.elem_yr_grad.TabIndex = 5;
             // 
             // junior_high_address
             // 
             this.junior_high_address.Location = new System.Drawing.Point(139, 584);
             this.junior_high_address.Name = "junior_high_address";
-            this.junior_high_address.Size = new System.Drawing.Size(230, 68);
+            this.junior_high_address.Size = new System.Drawing.Size(274, 68);
             this.junior_high_address.TabIndex = 5;
             this.junior_high_address.Text = "";
             // 
@@ -671,7 +681,7 @@
             // 
             this.elem_address.Location = new System.Drawing.Point(139, 415);
             this.elem_address.Name = "elem_address";
-            this.elem_address.Size = new System.Drawing.Size(230, 68);
+            this.elem_address.Size = new System.Drawing.Size(274, 68);
             this.elem_address.TabIndex = 5;
             this.elem_address.Text = "";
             // 
@@ -856,35 +866,35 @@
             // 
             this.add_country.Location = new System.Drawing.Point(139, 295);
             this.add_country.Name = "add_country";
-            this.add_country.Size = new System.Drawing.Size(230, 21);
+            this.add_country.Size = new System.Drawing.Size(274, 21);
             this.add_country.TabIndex = 4;
             // 
             // junior_high_name
             // 
             this.junior_high_name.Location = new System.Drawing.Point(139, 555);
             this.junior_high_name.Name = "junior_high_name";
-            this.junior_high_name.Size = new System.Drawing.Size(230, 21);
+            this.junior_high_name.Size = new System.Drawing.Size(274, 21);
             this.junior_high_name.TabIndex = 4;
             // 
             // add_city
             // 
             this.add_city.Location = new System.Drawing.Point(139, 268);
             this.add_city.Name = "add_city";
-            this.add_city.Size = new System.Drawing.Size(230, 21);
+            this.add_city.Size = new System.Drawing.Size(274, 21);
             this.add_city.TabIndex = 4;
             // 
             // elem_award
             // 
             this.elem_award.Location = new System.Drawing.Point(139, 525);
             this.elem_award.Name = "elem_award";
-            this.elem_award.Size = new System.Drawing.Size(230, 21);
+            this.elem_award.Size = new System.Drawing.Size(274, 21);
             this.elem_award.TabIndex = 4;
             // 
             // elem_name
             // 
             this.elem_name.Location = new System.Drawing.Point(139, 387);
             this.elem_name.Name = "elem_name";
-            this.elem_name.Size = new System.Drawing.Size(230, 21);
+            this.elem_name.Size = new System.Drawing.Size(274, 21);
             this.elem_name.TabIndex = 4;
             // 
             // add_zipcode
@@ -898,42 +908,42 @@
             // 
             this.add_municipality.Location = new System.Drawing.Point(139, 234);
             this.add_municipality.Name = "add_municipality";
-            this.add_municipality.Size = new System.Drawing.Size(230, 21);
+            this.add_municipality.Size = new System.Drawing.Size(274, 21);
             this.add_municipality.TabIndex = 4;
             // 
             // add_barangay
             // 
             this.add_barangay.Location = new System.Drawing.Point(139, 206);
             this.add_barangay.Name = "add_barangay";
-            this.add_barangay.Size = new System.Drawing.Size(230, 21);
+            this.add_barangay.Size = new System.Drawing.Size(274, 21);
             this.add_barangay.TabIndex = 4;
             // 
             // add_phase_no
             // 
             this.add_phase_no.Location = new System.Drawing.Point(139, 141);
             this.add_phase_no.Name = "add_phase_no";
-            this.add_phase_no.Size = new System.Drawing.Size(230, 21);
+            this.add_phase_no.Size = new System.Drawing.Size(274, 21);
             this.add_phase_no.TabIndex = 4;
             // 
             // add_street
             // 
             this.add_street.Location = new System.Drawing.Point(139, 172);
             this.add_street.Name = "add_street";
-            this.add_street.Size = new System.Drawing.Size(230, 21);
+            this.add_street.Size = new System.Drawing.Size(274, 21);
             this.add_street.TabIndex = 4;
             // 
             // add_state_province
             // 
             this.add_state_province.Location = new System.Drawing.Point(139, 327);
             this.add_state_province.Name = "add_state_province";
-            this.add_state_province.Size = new System.Drawing.Size(230, 21);
+            this.add_state_province.Size = new System.Drawing.Size(274, 21);
             this.add_state_province.TabIndex = 4;
             // 
             // add_sub_name
             // 
             this.add_sub_name.Location = new System.Drawing.Point(139, 107);
             this.add_sub_name.Name = "add_sub_name";
-            this.add_sub_name.Size = new System.Drawing.Size(230, 21);
+            this.add_sub_name.Size = new System.Drawing.Size(274, 21);
             this.add_sub_name.TabIndex = 4;
             // 
             // add_house_no
@@ -946,7 +956,7 @@
             // exitBtn
             // 
             this.exitBtn.Font = new System.Drawing.Font("MS UI Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitBtn.Location = new System.Drawing.Point(1432, 899);
+            this.exitBtn.Location = new System.Drawing.Point(1484, 899);
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.Size = new System.Drawing.Size(118, 61);
             this.exitBtn.TabIndex = 13;
@@ -957,7 +967,7 @@
             // cancelBtn
             // 
             this.cancelBtn.Font = new System.Drawing.Font("MS UI Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelBtn.Location = new System.Drawing.Point(1308, 899);
+            this.cancelBtn.Location = new System.Drawing.Point(1360, 899);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(118, 61);
             this.cancelBtn.TabIndex = 13;
@@ -968,7 +978,7 @@
             // newBtn
             // 
             this.newBtn.Font = new System.Drawing.Font("MS UI Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newBtn.Location = new System.Drawing.Point(1184, 899);
+            this.newBtn.Location = new System.Drawing.Point(1236, 899);
             this.newBtn.Name = "newBtn";
             this.newBtn.Size = new System.Drawing.Size(118, 61);
             this.newBtn.TabIndex = 13;
@@ -979,7 +989,7 @@
             // deleteBtn
             // 
             this.deleteBtn.Font = new System.Drawing.Font("MS UI Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteBtn.Location = new System.Drawing.Point(1062, 899);
+            this.deleteBtn.Location = new System.Drawing.Point(1114, 899);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(118, 61);
             this.deleteBtn.TabIndex = 13;
@@ -990,7 +1000,7 @@
             // editBtn
             // 
             this.editBtn.Font = new System.Drawing.Font("MS UI Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editBtn.Location = new System.Drawing.Point(938, 900);
+            this.editBtn.Location = new System.Drawing.Point(990, 900);
             this.editBtn.Name = "editBtn";
             this.editBtn.Size = new System.Drawing.Size(118, 61);
             this.editBtn.TabIndex = 13;
@@ -1001,7 +1011,7 @@
             // addBtn
             // 
             this.addBtn.Font = new System.Drawing.Font("MS UI Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addBtn.Location = new System.Drawing.Point(814, 899);
+            this.addBtn.Location = new System.Drawing.Point(866, 899);
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(118, 61);
             this.addBtn.TabIndex = 13;
@@ -1014,7 +1024,7 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(814, 317);
+            this.dataGridView1.Location = new System.Drawing.Point(869, 312);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -1047,7 +1057,7 @@
             this.groupBox3.Controls.Add(this.label48);
             this.groupBox3.Controls.Add(this.label46);
             this.groupBox3.Controls.Add(this.label47);
-            this.groupBox3.Location = new System.Drawing.Point(814, 16);
+            this.groupBox3.Location = new System.Drawing.Point(869, 11);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(730, 269);
             this.groupBox3.TabIndex = 5;
@@ -1253,21 +1263,11 @@
             this.label47.TabIndex = 10;
             this.label47.Text = "Date Hired";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Location = new System.Drawing.Point(18, 69);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(360, 304);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // employee_registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1569, 997);
+            this.ClientSize = new System.Drawing.Size(1624, 997);
             this.Controls.Add(this.panelMain);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
             this.Name = "employee_registration";
@@ -1276,13 +1276,13 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelMain.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

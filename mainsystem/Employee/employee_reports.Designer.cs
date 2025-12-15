@@ -51,25 +51,28 @@
             "zipcode",
             "province",
             "city"});
-            this.optionCombo.Location = new System.Drawing.Point(229, 25);
+            this.optionCombo.Location = new System.Drawing.Point(401, 45);
+            this.optionCombo.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.optionCombo.Name = "optionCombo";
-            this.optionCombo.Size = new System.Drawing.Size(219, 24);
+            this.optionCombo.Size = new System.Drawing.Size(380, 37);
             this.optionCombo.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(111, 30);
+            this.label1.Location = new System.Drawing.Point(194, 54);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 16);
+            this.label1.Size = new System.Drawing.Size(186, 29);
             this.label1.TabIndex = 1;
             this.label1.Text = "Select an option";
             // 
             // optionInputTxtbox
             // 
-            this.optionInputTxtbox.Location = new System.Drawing.Point(454, 25);
+            this.optionInputTxtbox.Location = new System.Drawing.Point(794, 45);
+            this.optionInputTxtbox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.optionInputTxtbox.Name = "optionInputTxtbox";
-            this.optionInputTxtbox.Size = new System.Drawing.Size(219, 22);
+            this.optionInputTxtbox.Size = new System.Drawing.Size(380, 34);
             this.optionInputTxtbox.TabIndex = 2;
             // 
             // panelMain
@@ -81,8 +84,9 @@
             this.panelMain.Controls.Add(this.optionCombo);
             this.panelMain.Controls.Add(this.searchBtn);
             this.panelMain.Location = new System.Drawing.Point(0, 0);
+            this.panelMain.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(1027, 520);
+            this.panelMain.Size = new System.Drawing.Size(1797, 942);
             this.panelMain.TabIndex = 4;
             // 
             // dataGridView1
@@ -90,19 +94,20 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 56);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Location = new System.Drawing.Point(23, 102);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1002, 453);
+            this.dataGridView1.Size = new System.Drawing.Size(1754, 821);
             this.dataGridView1.TabIndex = 12;
             // 
             // backBtn
             // 
-            this.backBtn.Location = new System.Drawing.Point(760, 24);
+            this.backBtn.Location = new System.Drawing.Point(1330, 44);
+            this.backBtn.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.backBtn.Name = "backBtn";
-            this.backBtn.Size = new System.Drawing.Size(75, 24);
+            this.backBtn.Size = new System.Drawing.Size(131, 44);
             this.backBtn.TabIndex = 3;
             this.backBtn.Text = "Back";
             this.backBtn.UseVisualStyleBackColor = true;
@@ -110,9 +115,10 @@
             // 
             // searchBtn
             // 
-            this.searchBtn.Location = new System.Drawing.Point(679, 23);
+            this.searchBtn.Location = new System.Drawing.Point(1188, 42);
+            this.searchBtn.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.searchBtn.Name = "searchBtn";
-            this.searchBtn.Size = new System.Drawing.Size(75, 24);
+            this.searchBtn.Size = new System.Drawing.Size(131, 44);
             this.searchBtn.TabIndex = 3;
             this.searchBtn.Text = "Search";
             this.searchBtn.UseVisualStyleBackColor = true;
@@ -120,10 +126,12 @@
             // 
             // employee_reports
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1028, 522);
+            this.ClientSize = new System.Drawing.Size(1799, 946);
             this.Controls.Add(this.panelMain);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "employee_reports";
             this.Text = "employee_reports";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

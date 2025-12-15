@@ -80,7 +80,7 @@ namespace mainsystem
                             break;
 
                         case "Cashier 1":
-                            Activity1 cashier1Form = new Activity1();
+                            SQLPOS1Class cashier1Form = new SQLPOS1Class();
 
                             // [THE FIX]
                             cashier1Form.FormClosed += (s, args) => this.Show();
@@ -90,7 +90,7 @@ namespace mainsystem
                             break;
 
                         case "Cashier 2":
-                            Activity2 cashier2Form = new Activity2();
+                            SQLPOS2Class cashier2Form = new SQLPOS2Class();
 
                             // [THE FIX]
                             cashier2Form.FormClosed += (s, args) => this.Show();
@@ -100,7 +100,7 @@ namespace mainsystem
                             break;
 
                         case "Accounting Staff":
-                            EXAM_Cashier accountingForm = new EXAM_Cashier();
+                            employee_payrol accountingForm = new employee_payrol();
 
                             // [THE FIX]
                             accountingForm.FormClosed += (s, args) => this.Show();

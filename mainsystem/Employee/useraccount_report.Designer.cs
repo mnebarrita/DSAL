@@ -47,10 +47,10 @@
             this.panelMain.Controls.Add(this.backBtn);
             this.panelMain.Controls.Add(this.optionCombo);
             this.panelMain.Controls.Add(this.searchBtn);
-            this.panelMain.Location = new System.Drawing.Point(12, 12);
-            this.panelMain.Margin = new System.Windows.Forms.Padding(4);
+            this.panelMain.Location = new System.Drawing.Point(17, 17);
+            this.panelMain.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(1284, 650);
+            this.panelMain.Size = new System.Drawing.Size(1798, 943);
             this.panelMain.TabIndex = 7;
             // 
             // dataGridView1
@@ -58,38 +58,38 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 70);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(5);
+            this.dataGridView1.Location = new System.Drawing.Point(22, 102);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1252, 566);
+            this.dataGridView1.Size = new System.Drawing.Size(1753, 821);
             this.dataGridView1.TabIndex = 12;
             // 
             // optionInputTxtbox
             // 
-            this.optionInputTxtbox.Location = new System.Drawing.Point(568, 31);
-            this.optionInputTxtbox.Margin = new System.Windows.Forms.Padding(4);
+            this.optionInputTxtbox.Location = new System.Drawing.Point(795, 45);
+            this.optionInputTxtbox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.optionInputTxtbox.Name = "optionInputTxtbox";
-            this.optionInputTxtbox.Size = new System.Drawing.Size(273, 26);
+            this.optionInputTxtbox.Size = new System.Drawing.Size(381, 34);
             this.optionInputTxtbox.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(139, 38);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(195, 55);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 20);
+            this.label1.Size = new System.Drawing.Size(186, 29);
             this.label1.TabIndex = 1;
             this.label1.Text = "Select an option";
             // 
             // backBtn
             // 
-            this.backBtn.Location = new System.Drawing.Point(950, 30);
-            this.backBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.backBtn.Location = new System.Drawing.Point(1330, 44);
+            this.backBtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.backBtn.Name = "backBtn";
-            this.backBtn.Size = new System.Drawing.Size(94, 30);
+            this.backBtn.Size = new System.Drawing.Size(132, 44);
             this.backBtn.TabIndex = 3;
             this.backBtn.Text = "Back";
             this.backBtn.UseVisualStyleBackColor = true;
@@ -105,18 +105,18 @@
             "firstname",
             "active",
             "deactivate"});
-            this.optionCombo.Location = new System.Drawing.Point(286, 31);
-            this.optionCombo.Margin = new System.Windows.Forms.Padding(4);
+            this.optionCombo.Location = new System.Drawing.Point(400, 45);
+            this.optionCombo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.optionCombo.Name = "optionCombo";
-            this.optionCombo.Size = new System.Drawing.Size(273, 28);
+            this.optionCombo.Size = new System.Drawing.Size(381, 37);
             this.optionCombo.TabIndex = 0;
             // 
             // searchBtn
             // 
-            this.searchBtn.Location = new System.Drawing.Point(849, 29);
-            this.searchBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.searchBtn.Location = new System.Drawing.Point(1189, 42);
+            this.searchBtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.searchBtn.Name = "searchBtn";
-            this.searchBtn.Size = new System.Drawing.Size(94, 30);
+            this.searchBtn.Size = new System.Drawing.Size(132, 44);
             this.searchBtn.TabIndex = 3;
             this.searchBtn.Text = "Search";
             this.searchBtn.UseVisualStyleBackColor = true;
@@ -124,12 +124,12 @@
             // 
             // useraccount_report
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1305, 672);
+            this.ClientSize = new System.Drawing.Size(1827, 974);
             this.Controls.Add(this.panelMain);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "useraccount_report";
             this.Text = "useraccount_report";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

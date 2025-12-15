@@ -58,6 +58,9 @@ namespace mainsystem
 
         private void EXAM_Load(object sender, EventArgs e)
         {
+            this.BackgroundImage = Properties.Resources.POS2wallpaper;
+            this.BackgroundImageLayout = ImageLayout.Stretch;
+
             CenterPanel();
             this.Resize += (s, ev) => CenterPanel();
 
@@ -81,8 +84,7 @@ namespace mainsystem
             B_halohalocheckBox.Checked = false;
             B_HawaiiancheckBox.Checked = false;
 
-            this.BackgroundImage = Properties.Resources.POS2wallpaper;
-            this.BackgroundImageLayout = ImageLayout.Stretch;
+            
 
         }
 
@@ -93,89 +95,132 @@ namespace mainsystem
         }
         private void foodARdbt_CheckedChanged(object sender, EventArgs e)
         {
+            double netPrice = 800.00;
+
             if (foodARdbt.Checked)
             {
-                displayListbox.Items.Clear();
-                double price = 1000.00;   // given bundle price
-                double discount = 200.00; // given discount
+                this.BackgroundImage = null;
+                this.BackColor = Color.LightCyan;
 
-                // insert image in PictureBox
+                double price = 1000.00;
+                double discount = 200.00;
+
                 DisplayPictureBox.Image = Properties.Resources.FoodBundleA;
 
-                // check bundle A checkboxes
+                // Check Bundle A items
                 A_CokeCheckBox.Checked = true;
                 A_FriedChickencheckBox.Checked = true;
                 A_FriescheckBox.Checked = true;
                 A_sideDishCheckbox.Checked = true;
                 A_SpecialPizaCheckbox.Checked = true;
 
-                // uncheck bundle B checkboxes
+                // Uncheck Bundle B items
                 B_carbonaracheckBox.Checked = false;
                 B_ChickencheckBox.Checked = false;
                 B_FriescheckBox.Checked = false;
                 B_halohalocheckBox.Checked = false;
                 B_HawaiiancheckBox.Checked = false;
 
-                // display data in textboxes
-                priceTxtBox.Enabled = false;      // Price
-                discountedTxtbox.Enabled = false;  // Discounted Amount
-                discountTxtbox.Enabled = false;  // Discount Amount
+                // Display visuals
+                priceTxtBox.Text = price.ToString("N2");
+                discountTxtbox.Text = discount.ToString("N2");
 
-                priceTxtBox.Text = price.ToString("N2");         // Price textbox
-                discountTxtbox.Text = discount.ToString("N2");  // Discount Amount
+                // --- 2. ADD TO THE RUNNING TOTAL ---
+                total_amount += netPrice;
+                total_qty += 1;
 
-                // Add to ListBox
-                displayListbox.Items.Add(foodARdbt.Text + " " + priceTxtBox.Text);
-                displayListbox.Items.Add("         Discount Amount: " + discountTxtbox.Text);
+                displayListbox.Items.Add("Bundle A (Discounted): " + netPrice.ToString("N2"));
 
-                // Reset quantity
                 qtyTxtbox.Text = "1";
                 qtyTxtbox.Focus();
             }
+            else
+            {
+                this.BackgroundImage = Properties.Resources.POS2wallpaper;
+                this.BackgroundImageLayout = ImageLayout.Stretch;
+
+                // --- 3. SUBTRACT IF UNCHECKED (Switching to Bundle B or Reset) ---
+                total_amount -= netPrice;
+                total_qty -= 1;
+
+                // Remove Bundle A from the listbox
+                for (int i = displayListbox.Items.Count - 1; i >= 0; i--)
+                {
+                    if (displayListbox.Items[i].ToString().Contains("Bundle A"))
+                    {
+                        displayListbox.Items.RemoveAt(i);
+                    }
+                }
+            }
+
+            // --- 4. UPDATE THE TOTAL BILL BOX ---
+            totalBillsTxtbox.Text = total_amount.ToString("N2");
+            totalQtyTxtbox.Text = total_qty.ToString();
         }
 
         private void foodBRdbt_CheckedChanged(object sender, EventArgs e)
         {
+            // Calculate the NET amount for Bundle B
+            double priceRaw = 1299.00;
+            double discountRaw = priceRaw * 0.15; // 194.85
+            double netPrice = priceRaw - discountRaw; // 1104.15
+
             if (foodBRdbt.Checked)
             {
-                displayListbox.Items.Clear();
-                double price = 1299.00;                  // given bundle price
-                double discount = price * 0.15;          // 15% discount
+                this.BackgroundImage = null;
+                this.BackColor = Color.LightBlue;
+                // --- 1. REMOVED 'displayListbox.Items.Clear();' ---
 
-                // insert image in PictureBox
                 DisplayPictureBox.Image = Properties.Resources.FoodBundleB;
 
-                // check bundle A checkboxes
+                // Uncheck Bundle A items
                 A_CokeCheckBox.Checked = false;
                 A_FriedChickencheckBox.Checked = false;
                 A_FriescheckBox.Checked = false;
                 A_sideDishCheckbox.Checked = false;
                 A_SpecialPizaCheckbox.Checked = false;
 
-                // uncheck bundle B checkboxes
+                // Check Bundle B items
                 B_carbonaracheckBox.Checked = true;
                 B_ChickencheckBox.Checked = true;
                 B_FriescheckBox.Checked = true;
                 B_halohalocheckBox.Checked = true;
                 B_HawaiiancheckBox.Checked = true;
 
-                // Disable textboxes 1–5
-                priceTxtBox.Enabled = false;      // Price
-                discountedTxtbox.Enabled = false;  // Discounted Amount
-                discountTxtbox.Enabled = false;  // Discount Amount
+                // Display visuals
+                priceTxtBox.Text = priceRaw.ToString("N2");
+                discountTxtbox.Text = discountRaw.ToString("N2");
 
-                // Fill values
-                priceTxtBox.Text = price.ToString("N2");        // Price textbox
-                discountTxtbox.Text = discount.ToString("N2"); // Discount Amount
+                // --- 2. ADD TO THE RUNNING TOTAL ---
+                total_amount += netPrice;
+                total_qty += 1;
 
-                // Add to ListBox
-                displayListbox.Items.Add(foodBRdbt.Text + " " + priceTxtBox.Text);
-                displayListbox.Items.Add("         Discount Amount: " + discountTxtbox.Text);
+                displayListbox.Items.Add("Bundle B (Discounted): " + netPrice.ToString("N2"));
 
-                // Reset quantity
                 qtyTxtbox.Text = "1";
                 qtyTxtbox.Focus();
             }
+            else
+            {
+                this.BackgroundImage = Properties.Resources.POS2wallpaper;
+                this.BackgroundImageLayout = ImageLayout.Stretch;
+                // --- 3. SUBTRACT IF UNCHECKED ---
+                total_amount -= netPrice;
+                total_qty -= 1;
+
+                // Remove Bundle B from the listbox
+                for (int i = displayListbox.Items.Count - 1; i >= 0; i--)
+                {
+                    if (displayListbox.Items[i].ToString().Contains("Bundle B"))
+                    {
+                        displayListbox.Items.RemoveAt(i);
+                    }
+                }
+            }
+
+            // --- 4. UPDATE THE TOTAL BILL BOX ---
+            totalBillsTxtbox.Text = total_amount.ToString("N2");
+            totalQtyTxtbox.Text = total_qty.ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -207,38 +252,57 @@ namespace mainsystem
 
         private void button3_Click(object sender, EventArgs e)
         {
-            pos2.Reset(discountedTxtbox, totalBillsTxtbox, totalQtyTxtbox, displayListbox);
+            if (displayListbox.SelectedIndex != -1)
+            {
+                // 2. Get the text of the selected item (e.g., "Fries 145.90")
+                string itemText = displayListbox.SelectedItem.ToString();
+
+                // 3. Extract the Price from the string
+                // We split the string by spaces and take the last part, assuming format is "Name Price"
+                string[] parts = itemText.Split(' ');
+                if (parts.Length > 0)
+                {
+                    string priceString = parts[parts.Length - 1]; // Get the last word (the price)
+                    if (double.TryParse(priceString, out double priceToRemove))
+                    {
+                        // 4. Subtract from totals
+                        total_amount -= priceToRemove;
+                        total_qty -= 1;
+                    }
+                }
+
+                // 5. Remove the item from the list
+                displayListbox.Items.RemoveAt(displayListbox.SelectedIndex);
+
+                // 6. Update the displays
+                totalBillsTxtbox.Text = total_amount.ToString("N2");
+                totalQtyTxtbox.Text = total_qty.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Please select an item to remove.", "Remove Order", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
         private void button4_Click(object sender, EventArgs e)
         {
-
-            total_amount = 0;
-            total_qty = 0;
-            currentItemLastAmount = 0.0;
-            currentItemLastQuantity = 0;
-            totalBillsTxtbox.Text = "0.00";
-            totalQtyTxtbox.Text = "0";
-
+            // Uncheck Radio Buttons
             foodARdbt.Checked = false;
             foodBRdbt.Checked = false;
 
-            foodARdbt.Enabled = true;
-            foodBRdbt.Enabled = true;
-
-            DisplayPictureBox.Image = null;
-            this.BackColor = SystemColors.Control;
-
-            // reset all checkboxes
+            // Uncheck Bundle Items
             A_CokeCheckBox.Checked = false;
             A_FriedChickencheckBox.Checked = false;
             A_FriescheckBox.Checked = false;
             A_sideDishCheckbox.Checked = false;
             A_SpecialPizaCheckbox.Checked = false;
+
             B_carbonaracheckBox.Checked = false;
             B_ChickencheckBox.Checked = false;
             B_FriescheckBox.Checked = false;
             B_halohalocheckBox.Checked = false;
             B_HawaiiancheckBox.Checked = false;
+
+            // Uncheck Pizza/Extra CheckBoxes
             checkBox1.Checked = false;
             checkBox2.Checked = false;
             checkBox3.Checked = false;
@@ -259,14 +323,34 @@ namespace mainsystem
             checkBox18.Checked = false;
             checkBox19.Checked = false;
             checkBox20.Checked = false;
+
+            // ---------------------------------------------------------
+            // STEP 2: FORCE RESET VARIABLES (Clean up any negatives)
+            // ---------------------------------------------------------
+            total_amount = 0;
+            total_qty = 0;
+            currentItemLastAmount = 0.0;
+            currentItemLastQuantity = 0;
+
+            // ---------------------------------------------------------
+            // STEP 3: RESET UI ELEMENTS
+            // ---------------------------------------------------------
+            foodARdbt.Enabled = true;
+            foodBRdbt.Enabled = true;
+
+            DisplayPictureBox.Image = null;
+            this.BackColor = SystemColors.Control;
             displayListbox.Items.Clear();
 
+            // Clear all textboxes
             priceTxtBox.Text = "";
             qtyTxtbox.Text = "0";
             discountTxtbox.Text = "";
             discountedTxtbox.Text = "";
-            totalBillsTxtbox.Text = "";
-            totalQtyTxtbox.Text = "";
+
+            totalBillsTxtbox.Text = "0.00";
+            totalQtyTxtbox.Text = "0";
+
             cashTxtbox.Text = "";
             changeTxtbox.Text = "";
 

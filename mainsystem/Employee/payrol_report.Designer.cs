@@ -44,27 +44,29 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 56);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Location = new System.Drawing.Point(23, 102);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1002, 453);
+            this.dataGridView1.Size = new System.Drawing.Size(1754, 821);
             this.dataGridView1.TabIndex = 12;
             // 
             // optionInputTxtbox
             // 
-            this.optionInputTxtbox.Location = new System.Drawing.Point(454, 25);
+            this.optionInputTxtbox.Location = new System.Drawing.Point(794, 45);
+            this.optionInputTxtbox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.optionInputTxtbox.Name = "optionInputTxtbox";
-            this.optionInputTxtbox.Size = new System.Drawing.Size(219, 22);
+            this.optionInputTxtbox.Size = new System.Drawing.Size(381, 34);
             this.optionInputTxtbox.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(111, 30);
+            this.label1.Location = new System.Drawing.Point(195, 54);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 16);
+            this.label1.Size = new System.Drawing.Size(186, 29);
             this.label1.TabIndex = 1;
             this.label1.Text = "Select an option";
             // 
@@ -79,9 +81,10 @@
             "net_income",
             "",
             "pay_date"});
-            this.optionCombo.Location = new System.Drawing.Point(229, 25);
+            this.optionCombo.Location = new System.Drawing.Point(401, 45);
+            this.optionCombo.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.optionCombo.Name = "optionCombo";
-            this.optionCombo.Size = new System.Drawing.Size(219, 24);
+            this.optionCombo.Size = new System.Drawing.Size(381, 37);
             this.optionCombo.TabIndex = 0;
             // 
             // panelMain
@@ -92,16 +95,18 @@
             this.panelMain.Controls.Add(this.backBtn);
             this.panelMain.Controls.Add(this.optionCombo);
             this.panelMain.Controls.Add(this.searchBtn);
-            this.panelMain.Location = new System.Drawing.Point(12, 12);
+            this.panelMain.Location = new System.Drawing.Point(21, 21);
+            this.panelMain.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(1027, 520);
+            this.panelMain.Size = new System.Drawing.Size(1797, 942);
             this.panelMain.TabIndex = 5;
             // 
             // backBtn
             // 
-            this.backBtn.Location = new System.Drawing.Point(760, 24);
+            this.backBtn.Location = new System.Drawing.Point(1330, 44);
+            this.backBtn.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.backBtn.Name = "backBtn";
-            this.backBtn.Size = new System.Drawing.Size(75, 24);
+            this.backBtn.Size = new System.Drawing.Size(131, 44);
             this.backBtn.TabIndex = 3;
             this.backBtn.Text = "Back";
             this.backBtn.UseVisualStyleBackColor = true;
@@ -109,9 +114,10 @@
             // 
             // searchBtn
             // 
-            this.searchBtn.Location = new System.Drawing.Point(679, 23);
+            this.searchBtn.Location = new System.Drawing.Point(1189, 42);
+            this.searchBtn.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.searchBtn.Name = "searchBtn";
-            this.searchBtn.Size = new System.Drawing.Size(75, 24);
+            this.searchBtn.Size = new System.Drawing.Size(131, 44);
             this.searchBtn.TabIndex = 3;
             this.searchBtn.Text = "Search";
             this.searchBtn.UseVisualStyleBackColor = true;
@@ -119,10 +125,12 @@
             // 
             // payrol_report
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1043, 541);
+            this.ClientSize = new System.Drawing.Size(1418, 805);
             this.Controls.Add(this.panelMain);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "payrol_report";
             this.Text = "payrol_report";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

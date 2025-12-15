@@ -63,7 +63,6 @@ namespace mainsystem
                 if (user_db.useraccount_sql_dataset.Tables["ReportTable"].Rows.Count > 0)
                 {
                     dataGridView1.DataSource = user_db.useraccount_sql_dataset.Tables["ReportTable"];
-                    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 }
                 else
                 {

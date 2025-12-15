@@ -345,5 +345,10 @@ namespace mainsystem.Prelim
                 MessageBox.Show("Calculation Error: Please enter valid numbers.\n" + ex.Message);
             }
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

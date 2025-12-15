@@ -262,6 +262,18 @@ namespace mainsystem
 
                     statusComboBox.Text = row["user_status"].ToString();
                     accountTypeComboBox.Text = row["account_type"].ToString();
+
+                    string imgPath = row["picpath"].ToString();
+
+                    if (System.IO.File.Exists(imgPath))
+                    {
+
+                        pictureBox1.Image = Image.FromFile(imgPath);
+                    }
+                    else
+                    {
+                        pictureBox1.Image = null; // Clear if no image found
+                    }
                 }
                 else
                 {
