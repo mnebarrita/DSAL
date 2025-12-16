@@ -32,7 +32,6 @@ namespace mainsystem
             this.Resize += (s, ev) => CenterPanel();
             isLoading = true;
 
-            // Setup UI (Read-only textboxes)
             itemnameTxtbox.ReadOnly = true;
             priceTxtbox.ReadOnly = true;
             discountedTxtbox.ReadOnly = true;
@@ -43,9 +42,8 @@ namespace mainsystem
             discountTxtbox.ReadOnly = true;
 
             noTaxRdbtn.Checked = true;
-            this.AcceptButton = enterBtn; // Ensures Enter key works if button1 is 'Compute'
+            this.AcceptButton = enterBtn; 
 
-            // GENERATE THE MENU DYNAMICALLY
             GenerateMenuFromHorizontalDB();
 
             isLoading = false;
@@ -66,11 +64,10 @@ namespace mainsystem
                 pos_db.pos_connString();
                 pos_db.posdb_open();
 
-                // QUERY: Get the SINGLE ROW that contains all 20 items for POS ID 1
                 pos_db.pos_sql = "SELECT * FROM pos_nameTb1 " +
                                  "INNER JOIN pos_picTb1 ON pos_nameTb1.pos_id = pos_picTb1.pos_id " +
                                  "INNER JOIN pos_priceTb1 ON pos_picTb1.pos_id = pos_priceTb1.pos_id " +
-                                 "WHERE pos_nameTb1.pos_id = 2"; // CHANGE THIS TO '2' FOR CASHIER 2
+                                 "WHERE pos_nameTb1.pos_id = 3"; // CHANGE THIS TO '2' FOR CASHIER 2
 
                 pos_db.pos_cmd();
                 pos_db.pos_sqladapterSelect();
@@ -78,21 +75,18 @@ namespace mainsystem
                 pos_db.pos_sql_dataset = new DataSet();
                 pos_db.pos_sql_dataadapter.Fill(pos_db.pos_sql_dataset, "MenuTable");
 
-                // Clear the FlowLayoutPanel to avoid duplicates
                 menuFlowPanel.Controls.Clear();
 
                 if (pos_db.pos_sql_dataset.Tables["MenuTable"].Rows.Count > 0)
                 {
                     DataRow row = pos_db.pos_sql_dataset.Tables["MenuTable"].Rows[0];
 
-                    // Loop from 1 to 20 to read columns: name1, name2 ... name20
                     for (int i = 1; i <= 20; i++)
                     {
                         string nameCol = "name" + i;
                         string priceCol = "price" + i;
                         string picCol = "pic" + i;
 
-                        // Check if the column exists and has data
                         if (row.Table.Columns.Contains(nameCol) && !string.IsNullOrEmpty(row[nameCol].ToString()))
                         {
                             string name = row[nameCol].ToString();
@@ -100,21 +94,17 @@ namespace mainsystem
                             double.TryParse(row[priceCol].ToString(), out price);
                             string imgPath = row[picCol].ToString();
 
-                            // 1. Create Button
                             Button prodBtn = new Button();
 
-                            // 2. SET SIZE & FONT (Big Mode!)
                             prodBtn.Width = 200;
                             prodBtn.Height = 200;
                             prodBtn.Font = new Font("MS UI Gothic", 11, FontStyle.Bold);
 
-                            // 3. Set Text & Styling
                             prodBtn.Text = name + "\n" + price.ToString("N0");
                             prodBtn.TextAlign = ContentAlignment.BottomCenter;
                             prodBtn.ForeColor = Color.Black;
                             prodBtn.Tag = price;
 
-                            // 4. Load Image
                             if (File.Exists(imgPath))
                             {
                                 prodBtn.BackgroundImage = Image.FromFile(imgPath);
@@ -125,10 +115,8 @@ namespace mainsystem
                                 prodBtn.BackColor = Color.LightGray;
                             }
 
-                            // 5. Add Click Event
                             prodBtn.Click += (s, args) => SelectItem(name, price);
 
-                            // 6. Add to the Panel
                             menuFlowPanel.Controls.Add(prodBtn);
                         }
                     }
@@ -153,13 +141,10 @@ namespace mainsystem
 
         private void calculateBtn_Click(object sender, EventArgs e)
         {
-            // 1. Check validity
             if (posFunctions.ConvertQuantityPrice(qtyTxtbox, priceTxtbox))
             {
-                // 2. Compute the CURRENT item's discount/net price
                 posFunctions.Compute(qtyTxtbox, priceTxtbox, discountTxtbox, discountedTxtbox);
 
-                // 3. Cash Validation
                 string cashText = cash_renderedtxtbox.Text.Replace(",", "");
                 if (!double.TryParse(cashText, out double cash))
                 {
@@ -167,19 +152,15 @@ namespace mainsystem
                     return;
                 }
 
-                // 4. Calculate Change
                 double change = cash - posFunctions.discounted_amt;
                 if (change < 0)
                 {
                     MessageBox.Show("Insufficient cash!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     changeTxtbox.Text = "0.00";
-                    return; // Stop here so we don't add to totals if they can't pay!
+                    return; 
                 }
 
                 changeTxtbox.Text = change.ToString("N2");
-
-                // 5. UPDATE SUMMARY (Accumulate this sale into the Grand Totals)
-                // This adds the current qty/discount to the running variables in your class
                 posFunctions.UpdateTotals(qtyTotalTxtbox, discountTotalTxtbox, discountedTotalTxtbox);
             }
             else
@@ -190,7 +171,6 @@ namespace mainsystem
 
         private void enterBtn_Click(object sender, EventArgs e)
         {
-            // 1. Validate: Ensure a valid calculation happened
             if (string.IsNullOrEmpty(changeTxtbox.Text))
             {
                 MessageBox.Show("Please calculate the transaction first.");
@@ -204,21 +184,18 @@ namespace mainsystem
 
                 if (string.IsNullOrEmpty(myEmpID))
                 {
-                    myTerminal = "Terminal-0";  // <--- YOUR REQUEST
-                    myEmpID = "0000-DEV";       // A placeholder ID for testing
+                    myTerminal = "Terminal-0";  
+                    myEmpID = "0000-DEV";       
                 }
 
                 pos_db.pos_connString();
                 pos_db.posdb_open();
 
-                // 2. Determine Discount Option String
                 string discOption = "No Discount";
                 if (senrRdbtn.Checked) discOption = "Senior Citizen";
                 else if (regularRdbtn.Checked) discOption = "Discount Card";
                 else if (EmployeeRdbtn.Checked) discOption = "Employee Disc";
 
-                // 3. BUILD THE QUERY (Vertically Aligned for Safety)
-                // I have lined up the Columns and Values 1-to-1 so you can see they match.
                 string sql = "INSERT INTO salesTb1 (" +
                     "terminal_no, " +                        // 1
                     "product_name, " +                       // 2
@@ -278,11 +255,7 @@ namespace mainsystem
             senrRdbtn.Checked = false;
             regularRdbtn.Checked = false;
             EmployeeRdbtn.Checked = false;
-            noTaxRdbtn.Checked = true; // Default back to No Tax
-
-            // NOTE: We do NOT clear qtyTotalTxtbox, discountTotalTxtbox, etc.
-            // They will keep the running total of the session.
-
+            noTaxRdbtn.Checked = true; 
             qtyTxtbox.Focus();
         }
 
@@ -348,17 +321,12 @@ namespace mainsystem
 
         private void qtyTxtbox_TextChanged(object sender, EventArgs e)
         {
-            // The 'isLoading' check prevents this event from firing when the form first opens.
             if (isLoading) return;
 
-            // Check if the input is a valid number, and if an item is selected
             if (posFunctions.ConvertQuantityPrice(qtyTxtbox, priceTxtbox))
             {
-                // Re-run the core computation using the existing discount rate (30%, 10%, or 0%)
-                // The results update discountTxtbox and discountedTxtbox instantly.
                 posFunctions.Compute(qtyTxtbox, priceTxtbox, discountTxtbox, discountedTxtbox);
 
-                // Clear the cash/change boxes so the cashier knows to re-enter cash for the new total
                 changeTxtbox.Text = "";
                 cash_renderedtxtbox.Text = "";
             }

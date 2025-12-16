@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.IO; // Used for file operations, like checking if an image exists
+using System.IO; 
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,7 +41,7 @@ namespace mainsystem
         {
             try
             {
-                // Load the default image (adjust path if necessary)
+                
                 string defaultImagePath = @"C:\Users\Mica\Downloads\download (8).jpg";
                 if (File.Exists(defaultImagePath))
                 {
@@ -52,7 +52,7 @@ namespace mainsystem
                     pic = null;
                 }
 
-                // Clear picpath textboxes (1..20)
+                
                 picpathTxtbox1.Clear(); picpathTxtbox2.Clear(); picpathTxtbox3.Clear();
                 picpathTxtbox4.Clear(); picpathTxtbox5.Clear(); picpathTxtbox6.Clear();
                 picpathTxtbox7.Clear(); picpathTxtbox8.Clear(); picpathTxtbox9.Clear();
@@ -61,7 +61,6 @@ namespace mainsystem
                 picpathTxtbox16.Clear(); picpathTxtbox17.Clear(); picpathTxtbox18.Clear();
                 picpathTxtbox19.Clear(); picpathTxtbox20.Clear();
 
-                // Clear price textboxes (1..20)
                 priceTxtbox1.Clear(); priceTxtbox2.Clear(); priceTxtbox3.Clear();
                 priceTxtbox4.Clear(); priceTxtbox5.Clear(); priceTxtbox6.Clear();
                 priceTxtbox7.Clear(); priceTxtbox8.Clear(); priceTxtbox9.Clear();
@@ -70,7 +69,6 @@ namespace mainsystem
                 priceTxtbox16.Clear(); priceTxtbox17.Clear(); priceTxtbox18.Clear();
                 priceTxtbox19.Clear(); priceTxtbox20.Clear();
 
-                // Clear name textboxes (1..20)
                 nameTxtbox1.Clear(); nameTxtbox2.Clear(); nameTxtbox3.Clear();
                 nameTxtbox4.Clear(); nameTxtbox5.Clear(); nameTxtbox6.Clear();
                 nameTxtbox7.Clear(); nameTxtbox8.Clear(); nameTxtbox9.Clear();
@@ -79,7 +77,6 @@ namespace mainsystem
                 nameTxtbox16.Clear(); nameTxtbox17.Clear(); nameTxtbox18.Clear();
                 nameTxtbox19.Clear(); nameTxtbox20.Clear();
 
-                // Reset all picture boxes to default image (1..20) if default exists
                 if (pic != null)
                 {
                     pictureBox1.Image = pic; pictureBox2.Image = pic; pictureBox3.Image = pic; pictureBox4.Image = pic;
@@ -90,7 +87,6 @@ namespace mainsystem
                 }
                 else
                 {
-                    // If default image not found, set image to null to avoid exceptions
                     pictureBox1.Image = null; pictureBox2.Image = null; pictureBox3.Image = null; pictureBox4.Image = null;
                     pictureBox5.Image = null; pictureBox6.Image = null; pictureBox7.Image = null; pictureBox8.Image = null;
                     pictureBox9.Image = null; pictureBox10.Image = null; pictureBox11.Image = null; pictureBox12.Image = null;
@@ -119,12 +115,10 @@ namespace mainsystem
         {
             DataTable transposed = new DataTable();
 
-            // Create columns based on original rows
             transposed.Columns.Add("Column");
             foreach (DataRow row in dt.Rows)
                 transposed.Columns.Add(row[0].ToString());
 
-            // Fill rows based on original columns
             for (int i = 0; i < dt.Columns.Count; i++)
             {
                 DataRow newRow = transposed.NewRow();
@@ -143,12 +137,11 @@ namespace mainsystem
         {
             try
             {
-                posdb_connect.pos_connString(); // setup connection string
-                posdb_connect.posdb_open(); // open connection
+                posdb_connect.pos_connString();
+                posdb_connect.posdb_open(); 
 
-                comboBox1.Items.Clear(); // Clear existing items
+                comboBox1.Items.Clear();
 
-                // Use a clean, parameterized SQL query
                 string query = "SELECT pos_id FROM pos_nameTb1 ORDER BY pos_id ASC";
 
                 using (SqlCommand cmd = new SqlCommand(query, posdb_connect.pos_sql_connection))
@@ -201,7 +194,7 @@ namespace mainsystem
                 DataSet dset = new DataSet();
                 adapter.Fill(dset, "pos_nameTb1");
 
-                DataTable original = dset.Tables[0];  // your original data
+                DataTable original = dset.Tables[0]; 
                 DataTable transposed = TransposeDataTable(original);
                 dataGridView1.DataSource = transposed;
 
@@ -251,9 +244,9 @@ namespace mainsystem
                     posdb_connect.pos_sqladapterSelect();
                     posdb_connect.pos_sqldatasetSELECT();
 
-                    DataTable original = posdb_connect.pos_sql_dataset.Tables[0];  // original search result
-                    DataTable transposed = TransposeDataTable(original);            // transpose rows ↔ columns
-                    dataGridView1.DataSource = transposed;                          // bind to DataGridView
+                    DataTable original = posdb_connect.pos_sql_dataset.Tables[0];
+                    DataTable transposed = TransposeDataTable(original);
+                    dataGridView1.DataSource = transposed;
 
                     // Name TextBoxes
                     nameTxtbox1.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][2] == DBNull.Value ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][2].ToString();
@@ -278,7 +271,6 @@ namespace mainsystem
                     nameTxtbox20.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][21] == DBNull.Value ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][21].ToString();
 
 
-                    // PictureBoxes (null + file check)
                     picpathTxtbox1.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][24].ToString();
                     if (File.Exists(picpathTxtbox1.Text)) pictureBox1.Image = Image.FromFile(picpathTxtbox1.Text); else pictureBox1.Image = null;
 
@@ -340,7 +332,6 @@ namespace mainsystem
                     if (File.Exists(picpathTxtbox20.Text)) pictureBox20.Image = Image.FromFile(picpathTxtbox20.Text); else pictureBox20.Image = null;
 
 
-                    // Prices (null-safe)
                     priceTxtbox1.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0].IsNull(46) ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][46].ToString();
                     priceTxtbox2.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0].IsNull(47) ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][47].ToString();
                     priceTxtbox3.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0].IsNull(48) ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][48].ToString();
@@ -382,7 +373,6 @@ namespace mainsystem
                 posdb_connect.posdb_open();
 
 
-                // Insert into pos_nameTb1
                 posdb_connect.pos_sql = "INSERT INTO pos_nameTb1 (pos_id, name1, name2, name3, name4, name5, name6, name7, name8, name9, name10, name11, name12, name13, name14, name15, name16, name17, name18, name19, name20) " +
                     "VALUES ('" + comboBox1.Text + "', '" +
                     nameTxtbox1.Text + "', '" + nameTxtbox2.Text + "', '" + nameTxtbox3.Text + "', '" + nameTxtbox4.Text + "', '" + nameTxtbox5.Text + "', '" +
@@ -392,7 +382,6 @@ namespace mainsystem
                 posdb_connect.pos_cmd();
                 posdb_connect.pos_sqladapterInsert();
 
-                //  Insert into pos_priceTb1
                 posdb_connect.pos_sql = "INSERT INTO pos_priceTb1 (pos_id, price1, price2, price3, price4, price5, price6, price7, price8, price9, price10, price11, price12, price13, price14, price15, price16, price17, price18, price19, price20) " +
                     "VALUES ('" + comboBox1.Text + "', '" +
                     priceTxtbox1.Text + "', '" + priceTxtbox2.Text + "', '" + priceTxtbox3.Text + "', '" + priceTxtbox4.Text + "', '" + priceTxtbox5.Text + "', '" +
@@ -402,7 +391,6 @@ namespace mainsystem
                 posdb_connect.pos_cmd();
                 posdb_connect.pos_sqladapterInsert();
 
-                // Insert into pos_picTb1
                 posdb_connect.pos_sql = "INSERT INTO pos_picTb1 (pos_id, pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8, pic9, pic10, pic11, pic12, pic13, pic14, pic15, pic16, pic17, pic18, pic19, pic20) " +
                     "VALUES ('" + comboBox1.Text + "', '" +
                     picpathTxtbox1.Text + "', '" + picpathTxtbox2.Text + "', '" + picpathTxtbox3.Text + "', '" + picpathTxtbox4.Text + "', '" + picpathTxtbox5.Text + "', '" +
@@ -412,16 +400,15 @@ namespace mainsystem
                 posdb_connect.pos_cmd();
                 posdb_connect.pos_sqladapterInsert();
 
-                // Refresh grid and dataset
                 posdb_connect.pos_select();
                 posdb_connect.pos_cmd();
                 posdb_connect.pos_sqladapterSelect();
                 posdb_connect.pos_sqldatasetSELECT();
                 if (posdb_connect.pos_sql_dataset != null && posdb_connect.pos_sql_dataset.Tables.Count > 0)
                 {
-                    DataTable original = posdb_connect.pos_sql_dataset.Tables[0];  // original search result
-                    DataTable transposed = TransposeDataTable(original);            // transpose rows ↔ columns
-                    dataGridView1.DataSource = transposed;                          // bind to DataGridView
+                    DataTable original = posdb_connect.pos_sql_dataset.Tables[0];  
+                    DataTable transposed = TransposeDataTable(original);            
+                    dataGridView1.DataSource = transposed;                          
 
                 }
 
@@ -503,9 +490,9 @@ namespace mainsystem
                     posdb_connect.pos_sqldatasetSELECT();
                     if (posdb_connect.pos_sql_dataset != null && posdb_connect.pos_sql_dataset.Tables.Count > 0)
                     {
-                        DataTable original = posdb_connect.pos_sql_dataset.Tables[0];  // original search result
-                        DataTable transposed = TransposeDataTable(original);            // transpose rows ↔ columns
-                        dataGridView1.DataSource = transposed;                          // bind to DataGridView
+                        DataTable original = posdb_connect.pos_sql_dataset.Tables[0];  
+                        DataTable transposed = TransposeDataTable(original);            
+                        dataGridView1.DataSource = transposed;                          
 
                     }
                     MessageBox.Show("Record successfully updated!", "Update Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -562,9 +549,9 @@ namespace mainsystem
                     posdb_connect.pos_sqldatasetSELECT();
                     if (posdb_connect.pos_sql_dataset != null && posdb_connect.pos_sql_dataset.Tables.Count > 0)
                     {
-                        DataTable original = posdb_connect.pos_sql_dataset.Tables[0];  // original search result
-                        DataTable transposed = TransposeDataTable(original);            // transpose rows ↔ columns
-                        dataGridView1.DataSource = transposed;                          // bind to DataGridView
+                        DataTable original = posdb_connect.pos_sql_dataset.Tables[0];  
+                        DataTable transposed = TransposeDataTable(original);            
+                        dataGridView1.DataSource = transposed;                          
 
                     }
 

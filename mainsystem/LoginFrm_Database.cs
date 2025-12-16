@@ -85,7 +85,6 @@ namespace mainsystem
                         case "Administrator":
                             L6MainForm_Admin adminForm = new L6MainForm_Admin();
 
-                            // [THE FIX] When adminForm closes, show the Login form again
                             adminForm.FormClosed += (s, args) => this.Show();
 
                             adminForm.Show();
@@ -95,7 +94,6 @@ namespace mainsystem
                         case "Cashier 1":
                             SQLPOS1Class cashier1Form = new SQLPOS1Class();
 
-                            // [THE FIX]
                             cashier1Form.FormClosed += (s, args) => this.Show();
 
                             cashier1Form.Show();
@@ -105,7 +103,6 @@ namespace mainsystem
                         case "Cashier 2":
                             SQLPOS2Class cashier2Form = new SQLPOS2Class();
 
-                            // [THE FIX]
                             cashier2Form.FormClosed += (s, args) => this.Show();
 
                             cashier2Form.Show();
@@ -115,7 +112,6 @@ namespace mainsystem
                         case "Accounting Staff":
                             employee_payrol accountingForm = new employee_payrol();
 
-                            // [THE FIX]
                             accountingForm.FormClosed += (s, args) => this.Show();
 
                             accountingForm.Show();
@@ -125,7 +121,6 @@ namespace mainsystem
                         case "HR Staff":
                             employee_registration hrForm = new employee_registration();
 
-                            // [THE FIX]
                             hrForm.FormClosed += (s, args) => this.Show();
 
                             hrForm.Show();

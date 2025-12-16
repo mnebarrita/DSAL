@@ -32,8 +32,13 @@
             this.lblWelcome = new System.Windows.Forms.Label();
             this.panelMain = new System.Windows.Forms.Panel();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.lblTotalTransactions = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.rtbSearch = new System.Windows.Forms.TextBox();
+            this.lblGrandTotalTransactions = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblGrandTotal = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.lblTotalSales = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
@@ -41,11 +46,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pnlSearchContainer = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.lblTotalTransactions = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblGrandTotal = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lblGrandTotalTransactions = new System.Windows.Forms.Label();
             this.panelMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,7 +95,18 @@
             this.btnSearch.TabIndex = 4;
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            this.btnSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnSearch_KeyDown);
+            // 
+            // lblTotalTransactions
+            // 
+            this.lblTotalTransactions.AutoSize = true;
+            this.lblTotalTransactions.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotalTransactions.Font = new System.Drawing.Font("Times New Roman", 30F);
+            this.lblTotalTransactions.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblTotalTransactions.Location = new System.Drawing.Point(444, 825);
+            this.lblTotalTransactions.Name = "lblTotalTransactions";
+            this.lblTotalTransactions.Size = new System.Drawing.Size(391, 57);
+            this.lblTotalTransactions.TabIndex = 0;
+            this.lblTotalTransactions.Text = "Total Transactions";
             // 
             // label2
             // 
@@ -116,6 +127,54 @@
             this.rtbSearch.Size = new System.Drawing.Size(898, 22);
             this.rtbSearch.TabIndex = 12;
             this.rtbSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rtbSearch_KeyDown);
+            // 
+            // lblGrandTotalTransactions
+            // 
+            this.lblGrandTotalTransactions.AutoSize = true;
+            this.lblGrandTotalTransactions.BackColor = System.Drawing.Color.Transparent;
+            this.lblGrandTotalTransactions.Font = new System.Drawing.Font("Times New Roman", 30F);
+            this.lblGrandTotalTransactions.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblGrandTotalTransactions.Location = new System.Drawing.Point(1124, 825);
+            this.lblGrandTotalTransactions.Name = "lblGrandTotalTransactions";
+            this.lblGrandTotalTransactions.Size = new System.Drawing.Size(380, 57);
+            this.lblGrandTotalTransactions.TabIndex = 0;
+            this.lblGrandTotalTransactions.Text = "Total Sales Today";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 30F);
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label5.Location = new System.Drawing.Point(1124, 762);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(527, 57);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Grand Total Transactions";
+            // 
+            // lblGrandTotal
+            // 
+            this.lblGrandTotal.AutoSize = true;
+            this.lblGrandTotal.BackColor = System.Drawing.Color.Transparent;
+            this.lblGrandTotal.Font = new System.Drawing.Font("Times New Roman", 30F);
+            this.lblGrandTotal.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblGrandTotal.Location = new System.Drawing.Point(1124, 660);
+            this.lblGrandTotal.Name = "lblGrandTotal";
+            this.lblGrandTotal.Size = new System.Drawing.Size(380, 57);
+            this.lblGrandTotal.TabIndex = 0;
+            this.lblGrandTotal.Text = "Total Sales Today";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 30F);
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label4.Location = new System.Drawing.Point(1124, 597);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(380, 57);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Grand Total Sales";
             // 
             // lblTotalSales
             // 
@@ -188,66 +247,6 @@
             // 
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
-            // 
-            // lblTotalTransactions
-            // 
-            this.lblTotalTransactions.AutoSize = true;
-            this.lblTotalTransactions.BackColor = System.Drawing.Color.Transparent;
-            this.lblTotalTransactions.Font = new System.Drawing.Font("Times New Roman", 30F);
-            this.lblTotalTransactions.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblTotalTransactions.Location = new System.Drawing.Point(444, 825);
-            this.lblTotalTransactions.Name = "lblTotalTransactions";
-            this.lblTotalTransactions.Size = new System.Drawing.Size(391, 57);
-            this.lblTotalTransactions.TabIndex = 0;
-            this.lblTotalTransactions.Text = "Total Transactions";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 30F);
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label4.Location = new System.Drawing.Point(1124, 597);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(380, 57);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Grand Total Sales";
-            // 
-            // lblGrandTotal
-            // 
-            this.lblGrandTotal.AutoSize = true;
-            this.lblGrandTotal.BackColor = System.Drawing.Color.Transparent;
-            this.lblGrandTotal.Font = new System.Drawing.Font("Times New Roman", 30F);
-            this.lblGrandTotal.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblGrandTotal.Location = new System.Drawing.Point(1124, 660);
-            this.lblGrandTotal.Name = "lblGrandTotal";
-            this.lblGrandTotal.Size = new System.Drawing.Size(380, 57);
-            this.lblGrandTotal.TabIndex = 0;
-            this.lblGrandTotal.Text = "Total Sales Today";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 30F);
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label5.Location = new System.Drawing.Point(1124, 762);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(527, 57);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Grand Total Transactions";
-            // 
-            // lblGrandTotalTransactions
-            // 
-            this.lblGrandTotalTransactions.AutoSize = true;
-            this.lblGrandTotalTransactions.BackColor = System.Drawing.Color.Transparent;
-            this.lblGrandTotalTransactions.Font = new System.Drawing.Font("Times New Roman", 30F);
-            this.lblGrandTotalTransactions.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblGrandTotalTransactions.Location = new System.Drawing.Point(1124, 825);
-            this.lblGrandTotalTransactions.Name = "lblGrandTotalTransactions";
-            this.lblGrandTotalTransactions.Size = new System.Drawing.Size(380, 57);
-            this.lblGrandTotalTransactions.TabIndex = 0;
-            this.lblGrandTotalTransactions.Text = "Total Sales Today";
             // 
             // AdminLoungeFrm
             // 

@@ -23,15 +23,7 @@ namespace mainsystem
             panelMain.BackColor = Color.FromArgb(100, 0, 0, 0);
         }
 
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams cp = base.CreateParams;
-                cp.ExStyle |= 0x02000000;  // Turn on Double Buffering at the OS level
-                return cp;
-            }
-        }
+        
         private void AdminLoungeFrm_Load(object sender, EventArgs e)
         {
             this.BackgroundImage = Properties.Resources.background1;
@@ -59,7 +51,6 @@ namespace mainsystem
 
             AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
 
-            // --- 1. MAIN APPLICATIONS ---
             collection.Add("Payroll Application");
             collection.Add("SQL POS Terminal 1");
             collection.Add("SQL POS Terminal 2");
@@ -67,13 +58,11 @@ namespace mainsystem
             collection.Add("Employee Registration");
             collection.Add("User Accounts");
 
-            // --- 2. REPORTS ---
             collection.Add("Employee Reports");
             collection.Add("Payroll Reports");
             collection.Add("Sales Reports");
             collection.Add("User Account Reports");
 
-            // --- 3. CLASS & FUNCTION FORMS (Dev Tools) ---
             collection.Add("Payroll Class Form");
             collection.Add("Payroll Function Form");
             collection.Add("POS 1 Class Form");
@@ -81,7 +70,6 @@ namespace mainsystem
             collection.Add("POS 2 Class Form");
             collection.Add("POS 2 Function Form");
 
-            // --- 4. ACTIVITIES & QUIZZES ---
             collection.Add("Activity 1");
             collection.Add("Activity 2");
             collection.Add("Activity 3");
@@ -91,23 +79,18 @@ namespace mainsystem
             collection.Add("Quiz 1");
             collection.Add("Payslip Sample Method");
 
-            // Load the collection into your TextBox
             rtbSearch.AutoCompleteCustomSource = collection;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            string keyword = rtbSearch.Text.Trim(); // Using 'rtbSearch' (Standard TextBox)
+            string keyword = rtbSearch.Text.Trim(); 
             if (string.IsNullOrEmpty(keyword)) return;
 
             Form formToOpen = null;
 
-            // =========================================================
-            // 🔀 THE UNIVERSAL SWITCH: Map Name -> Form
-            // =========================================================
             switch (keyword)
             {
-                // --- MAIN APPLICATIONS ---
                 case "Payroll Application": formToOpen = new employee_payrol(); break;
                 case "SQL POS Terminal 1": formToOpen = new SQLPOS1Class(); break;
                 case "SQL POS Terminal 2": formToOpen = new SQLPOS2Class(); break;
@@ -115,13 +98,11 @@ namespace mainsystem
                 case "Employee Registration": formToOpen = new employee_registration(); break;
                 case "User Accounts": formToOpen = new user_account(); break;
 
-                // --- REPORTS ---
                 case "Employee Reports": formToOpen = new employee_reports(); break;
                 case "Payroll Reports": formToOpen = new payrol_report(); break;
                 case "Sales Reports": formToOpen = new sales_reports(); break;
                 case "User Account Reports": formToOpen = new useraccount_report(); break;
 
-                // --- CLASS & FUNCTION FORMS ---
                 case "Payroll Class Form": formToOpen = new Payroll_ClassForm(); break;
                 case "Payroll Function Form": formToOpen = new Payroll_FunctionForm(); break;
                 case "POS 1 Class Form": formToOpen = new POS1_ClassForm(); break;
@@ -129,7 +110,6 @@ namespace mainsystem
                 case "POS 2 Class Form": formToOpen = new POS2_ClassForm(); break;
                 case "POS 2 Function Form": formToOpen = new POS2_FunctionForm(); break;
 
-                // --- ACTIVITIES & QUIZZES ---
                 case "Activity 1": formToOpen = new Activity1(); break;
                 case "Activity 2": formToOpen = new Activity2(); break;
                 case "Activity 3": formToOpen = new Activity3(); break;
@@ -139,7 +119,6 @@ namespace mainsystem
                 case "Quiz 1": formToOpen = new Quiz1(); break;
                 case "Payslip Sample Method": formToOpen = new SampleLongMethod(); break;
 
-                // --- SMART GUESSING (If they type partial words) ---
                 default:
                     string lowerKey = keyword.ToLower();
                     if (lowerKey.Contains("sale")) formToOpen = new sales_reports();
@@ -154,10 +133,8 @@ namespace mainsystem
                     break;
             }
 
-            // --- OPEN THE FORM (MDI LOGIC) ---
             if (formToOpen != null)
             {
-                // Check if we have a parent container (The Gray Background)
                 if (this.MdiParent != null)
                 {
                     formToOpen.MdiParent = this.MdiParent;
@@ -166,11 +143,10 @@ namespace mainsystem
                 }
                 else
                 {
-                    // Fallback: Open as a normal window if not inside the main system
                     formToOpen.Show();
                 }
 
-                rtbSearch.Clear(); // Reset the search bar
+                rtbSearch.Clear(); 
             }
         }
 
@@ -184,9 +160,6 @@ namespace mainsystem
 
             string today = DateTime.Now.ToString("yyyy-MM-dd");
 
-                // ==========================================
-                // 💰 SECTION 1: MONEY STATS
-                // ==========================================
 
                 // 1. DAILY SALES (Today)
                 string sqlSalesToday = "SELECT SUM(CAST(REPLACE(REPLACE(summary_total_discounted_amount, ',', ''), '₱', '') AS decimal(18,2))) FROM salesTb1 WHERE time_date = '" + today + "'";
@@ -199,7 +172,7 @@ namespace mainsystem
                 else
                     lblTotalSales.Text = "₱ 0.00";
 
-                // 2. GRAND TOTAL SALES (Lifetime)
+                // 2. GRAND TOTAL SALES 
                 string sqlGrandTotal = "SELECT SUM(CAST(REPLACE(REPLACE(summary_total_discounted_amount, ',', ''), '₱', '') AS decimal(18,2))) FROM salesTb1";
                 db.pos_sql = sqlGrandTotal;
                 db.pos_cmd();
@@ -209,10 +182,6 @@ namespace mainsystem
                     lblGrandTotal.Text = "₱ " + Convert.ToDouble(resultGrand).ToString("N2");
                 else
                     lblGrandTotal.Text = "₱ 0.00";
-
-                // ==========================================
-                // 🧾 SECTION 2: TRANSACTION COUNTS
-                // ==========================================
 
                 // 3. TRANSACTIONS TODAY
                 string sqlCountToday = "SELECT COUNT(*) FROM salesTb1 WHERE time_date = '" + today + "'";
@@ -225,7 +194,7 @@ namespace mainsystem
                 else
                     lblTotalTransactions.Text = "0";
 
-                // 4. GRAND TOTAL TRANSACTIONS (Lifetime) -- NEW!
+                // 4. GRAND TOTAL TRANSACTIONS 
                 string sqlCountLife = "SELECT COUNT(*) FROM salesTb1";
                 db.pos_sql = sqlCountLife;
                 db.pos_cmd();
@@ -240,8 +209,7 @@ namespace mainsystem
             }
             catch (Exception ex)
             {
-                // Silent fail or message box, up to you
-                // MessageBox.Show("Stats Error: " + ex.Message);
+                MessageBox.Show("Stats Error: " + ex.Message);
             }
         }
 
@@ -252,17 +220,12 @@ namespace mainsystem
             lblDate.Text = DateTime.Now.ToString("dddd, MMMM dd, yyyy");
         }
 
-        private void btnSearch_KeyDown(object sender, KeyEventArgs e)
-        {
-            
-        }
-
         private void rtbSearch_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                e.SuppressKeyPress = true; // Stop the "Ding" sound
-                btnSearch.PerformClick();  // Trigger the search
+                e.SuppressKeyPress = true; 
+                btnSearch.PerformClick();  
             }
         }
     }
