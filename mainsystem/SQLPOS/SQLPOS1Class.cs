@@ -24,13 +24,23 @@ namespace mainsystem
         {
             InitializeComponent();
         }
-
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;  // Turn on Double Buffering at the OS level
+                return cp;
+            }
+        }
         private void SQLPOS1Class_Load(object sender, EventArgs e)
         {
             this.BackgroundImage = Properties.Resources.background3;
             this.BackgroundImageLayout = ImageLayout.Stretch;
+
             CenterPanel();
             this.Resize += (s, ev) => CenterPanel();
+
             isLoading = true;
 
             itemnameTxtbox.ReadOnly = true;
@@ -47,6 +57,7 @@ namespace mainsystem
 
             GenerateMenuFromHorizontalDB();
             LoadHeaderInformation();
+            LoadCategoryIDs();
 
             isLoading = false;
             qtyTxtbox.Focus();
@@ -115,6 +126,42 @@ namespace mainsystem
             panelMain.Top = (this.ClientSize.Height - panelMain.Height) / 2;
         }
 
+        private void LoadCategoryIDs()
+        {
+            try
+            {
+                pos_db.pos_connString();
+                pos_db.posdb_open();
+
+                comboBox1.Items.Clear();
+
+                // distinct ensures we don't get duplicates if you have multiple rows with same ID (unlikely but safe)
+                string query = "SELECT DISTINCT pos_id FROM pos_nameTb1 ORDER BY pos_id ASC";
+
+                using (SqlCommand cmd = new SqlCommand(query, pos_db.pos_sql_connection))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            comboBox1.Items.Add(reader["pos_id"].ToString());
+                        }
+                    }
+                }
+
+                // Default to the first item if available
+                if (comboBox1.Items.Count > 0)
+                {
+                    comboBox1.SelectedIndex = 0;
+                }
+
+                pos_db.posdb_close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading categories: " + ex.Message);
+            }
+        }
         private void GenerateMenuFromHorizontalDB()
         {
             try
@@ -123,9 +170,9 @@ namespace mainsystem
                 pos_db.posdb_open();
 
                 pos_db.pos_sql = "SELECT * FROM pos_nameTb1 " +
-                                 "INNER JOIN pos_picTb1 ON pos_nameTb1.pos_id = pos_picTb1.pos_id " +
-                                 "INNER JOIN pos_priceTb1 ON pos_picTb1.pos_id = pos_priceTb1.pos_id " +
-                                 "WHERE pos_nameTb1.pos_id = 1"; // CHANGE THIS TO '2' FOR CASHIER 2
+                         "INNER JOIN pos_picTb1 ON pos_nameTb1.pos_id = pos_picTb1.pos_id " +
+                         "INNER JOIN pos_priceTb1 ON pos_picTb1.pos_id = pos_priceTb1.pos_id " +
+                         "WHERE pos_nameTb1.pos_id = '" + comboBox1.Text + "'";
 
                 pos_db.pos_cmd();
                 pos_db.pos_sqladapterSelect();
@@ -138,48 +185,49 @@ namespace mainsystem
                 if (pos_db.pos_sql_dataset.Tables["MenuTable"].Rows.Count > 0)
                 {
                     DataRow row = pos_db.pos_sql_dataset.Tables["MenuTable"].Rows[0];
-
                     for (int i = 1; i <= 20; i++)
                     {
-                        string nameCol = "name" + i;
-                        string priceCol = "price" + i;
-                        string picCol = "pic" + i;
-
-                        if (row.Table.Columns.Contains(nameCol) && !string.IsNullOrEmpty(row[nameCol].ToString()))
                         {
-                            string name = row[nameCol].ToString();
-                            double price = 0;
-                            double.TryParse(row[priceCol].ToString(), out price);
-                            string imgPath = row[picCol].ToString();
+                            string nameCol = "name" + i;
+                            string priceCol = "price" + i;
+                            string picCol = "pic" + i;
 
-                            Button prodBtn = new Button();
-
-                            prodBtn.Width = 200;
-                            prodBtn.Height = 200;
-                            prodBtn.Font = new Font("MS UI Gothic", 11, FontStyle.Bold);
-
-                            prodBtn.Text = name + "\n" + price.ToString("N0");
-                            prodBtn.TextAlign = ContentAlignment.BottomCenter;
-                            prodBtn.ForeColor = Color.Black;
-                            prodBtn.Tag = price;
-
-                            if (File.Exists(imgPath))
+                            if (row.Table.Columns.Contains(nameCol) && !string.IsNullOrEmpty(row[nameCol].ToString()))
                             {
-                                prodBtn.BackgroundImage = Image.FromFile(imgPath);
-                                prodBtn.BackgroundImageLayout = ImageLayout.Zoom;
-                            }
-                            else
-                            {
-                                prodBtn.BackColor = Color.LightGray;
-                            }
+                                string name = row[nameCol].ToString();
+                                double price = 0;
+                                double.TryParse(row[priceCol].ToString(), out price);
+                                string imgPath = row[picCol].ToString();
 
-                            prodBtn.Click += (s, args) => SelectItem(name, price);
+                                System.Windows.Forms.Button prodBtn = new System.Windows.Forms.Button();
 
-                            menuFlowPanel.Controls.Add(prodBtn);
+                                prodBtn.Width = 200;
+                                prodBtn.Height = 200;
+                                prodBtn.Font = new Font("MS UI Gothic", 11, FontStyle.Bold);
+
+                                prodBtn.Text = name + "\n" + price.ToString("N0");
+                                prodBtn.TextAlign = ContentAlignment.BottomCenter;
+                                prodBtn.ForeColor = Color.Black;
+                                prodBtn.Tag = price;
+
+                                if (File.Exists(imgPath))
+                                {
+                                    prodBtn.BackgroundImage = Image.FromFile(imgPath);
+                                    prodBtn.BackgroundImageLayout = ImageLayout.Zoom;
+                                }
+                                else
+                                {
+                                    prodBtn.BackColor = Color.LightGray;
+                                }
+
+                                prodBtn.Click += (s, args) => SelectItem(name, price);
+
+                                menuFlowPanel.Controls.Add(prodBtn);
+                            }
                         }
                     }
+                    pos_db.posdb_close();
                 }
-                pos_db.posdb_close();
             }
             catch (Exception ex)
             {
@@ -390,5 +438,10 @@ namespace mainsystem
             }
         }
 
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GenerateMenuFromHorizontalDB();
+            ClearInputsOnly();
+        }
     }
 }

@@ -135,6 +135,16 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.foodBRdbt = new System.Windows.Forms.RadioButton();
             this.foodARdbt = new System.Windows.Forms.RadioButton();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.lblHeaderTerminal = new System.Windows.Forms.Label();
+            this.lblHeaderName = new System.Windows.Forms.Label();
+            this.lblHeaderEmpID = new System.Windows.Forms.Label();
+            this.lblHeaderDate = new System.Windows.Forms.Label();
             this.panelMain.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
@@ -167,6 +177,16 @@
             // panelMain
             // 
             this.panelMain.BackColor = System.Drawing.Color.Transparent;
+            this.panelMain.Controls.Add(this.label16);
+            this.panelMain.Controls.Add(this.label7);
+            this.panelMain.Controls.Add(this.label8);
+            this.panelMain.Controls.Add(this.label18);
+            this.panelMain.Controls.Add(this.lblHeaderTerminal);
+            this.panelMain.Controls.Add(this.lblHeaderName);
+            this.panelMain.Controls.Add(this.lblHeaderEmpID);
+            this.panelMain.Controls.Add(this.lblHeaderDate);
+            this.panelMain.Controls.Add(this.comboBox1);
+            this.panelMain.Controls.Add(this.label17);
             this.panelMain.Controls.Add(this.submitBtn);
             this.panelMain.Controls.Add(this.label1);
             this.panelMain.Controls.Add(this.groupBox5);
@@ -193,9 +213,9 @@
             // submitBtn
             // 
             this.submitBtn.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.submitBtn.Location = new System.Drawing.Point(477, 844);
+            this.submitBtn.Location = new System.Drawing.Point(272, 689);
             this.submitBtn.Name = "submitBtn";
-            this.submitBtn.Size = new System.Drawing.Size(213, 55);
+            this.submitBtn.Size = new System.Drawing.Size(132, 210);
             this.submitBtn.TabIndex = 37;
             this.submitBtn.Text = "SUBMIT";
             this.submitBtn.UseVisualStyleBackColor = true;
@@ -204,12 +224,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("MS UI Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(184, 6);
+            this.label1.Font = new System.Drawing.Font("MS UI Gothic", 30F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(749, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1085, 60);
+            this.label1.Size = new System.Drawing.Size(499, 50);
             this.label1.TabIndex = 36;
-            this.label1.Text = "MIFLO FOOD ORDERING APPLICATION";
+            this.label1.Text = "MIFLO APPLICATION";
             // 
             // groupBox5
             // 
@@ -281,7 +301,7 @@
             this.groupBox5.Size = new System.Drawing.Size(735, 758);
             this.groupBox5.TabIndex = 30;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "PIZZA CHOICES";
+            this.groupBox5.Text = "Menu";
             // 
             // pricelbl20
             // 
@@ -922,7 +942,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(403, 864);
+            this.label2.Location = new System.Drawing.Point(334, 655);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 19);
             this.label2.TabIndex = 22;
@@ -932,7 +952,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(403, 844);
+            this.label15.Location = new System.Drawing.Point(288, 655);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(49, 19);
             this.label15.TabIndex = 22;
@@ -959,7 +979,7 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(12, 191);
+            this.groupBox2.Location = new System.Drawing.Point(12, 232);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1143,7 +1163,7 @@
             this.groupBox3.Controls.Add(this.A_FriescheckBox);
             this.groupBox3.Controls.Add(this.A_FriedChickencheckBox);
             this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(306, 72);
+            this.groupBox3.Location = new System.Drawing.Point(306, 113);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1224,10 +1244,10 @@
             this.displayListbox.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.displayListbox.FormattingEnabled = true;
             this.displayListbox.ItemHeight = 19;
-            this.displayListbox.Location = new System.Drawing.Point(12, 610);
+            this.displayListbox.Location = new System.Drawing.Point(12, 648);
             this.displayListbox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.displayListbox.Name = "displayListbox";
-            this.displayListbox.Size = new System.Drawing.Size(385, 251);
+            this.displayListbox.Size = new System.Drawing.Size(254, 251);
             this.displayListbox.TabIndex = 24;
             // 
             // button3
@@ -1250,7 +1270,7 @@
             this.groupBox4.Controls.Add(this.B_ChickencheckBox);
             this.groupBox4.Controls.Add(this.B_halohalocheckBox);
             this.groupBox4.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(306, 341);
+            this.groupBox4.Location = new System.Drawing.Point(306, 382);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1329,10 +1349,10 @@
             // DisplayPictureBox
             // 
             this.DisplayPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.DisplayPictureBox.Location = new System.Drawing.Point(405, 610);
+            this.DisplayPictureBox.Location = new System.Drawing.Point(410, 648);
             this.DisplayPictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DisplayPictureBox.Name = "DisplayPictureBox";
-            this.DisplayPictureBox.Size = new System.Drawing.Size(276, 226);
+            this.DisplayPictureBox.Size = new System.Drawing.Size(273, 251);
             this.DisplayPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.DisplayPictureBox.TabIndex = 26;
             this.DisplayPictureBox.TabStop = false;
@@ -1354,7 +1374,7 @@
             this.groupBox1.Controls.Add(this.foodBRdbt);
             this.groupBox1.Controls.Add(this.foodARdbt);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 72);
+            this.groupBox1.Location = new System.Drawing.Point(12, 113);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1388,6 +1408,105 @@
             this.foodARdbt.Text = "Food Bundle A";
             this.foodARdbt.UseVisualStyleBackColor = true;
             this.foodARdbt.CheckedChanged += new System.EventHandler(this.foodARdbt_CheckedChanged);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(1352, 49);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(71, 28);
+            this.comboBox1.TabIndex = 73;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(1355, 19);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(68, 19);
+            this.label17.TabIndex = 72;
+            this.label17.Text = "POS ID.";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(547, 34);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(132, 19);
+            this.label16.TabIndex = 74;
+            this.label16.Text = "PC Terminal No.";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(394, 34);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(128, 19);
+            this.label7.TabIndex = 75;
+            this.label7.Text = "Employee Name";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(261, 34);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(108, 19);
+            this.label8.TabIndex = 76;
+            this.label8.Text = "Employee ID.";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(14, 34);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(43, 19);
+            this.label18.TabIndex = 77;
+            this.label18.Text = "Date";
+            // 
+            // lblHeaderTerminal
+            // 
+            this.lblHeaderTerminal.AutoSize = true;
+            this.lblHeaderTerminal.Location = new System.Drawing.Point(551, 74);
+            this.lblHeaderTerminal.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblHeaderTerminal.Name = "lblHeaderTerminal";
+            this.lblHeaderTerminal.Size = new System.Drawing.Size(39, 20);
+            this.lblHeaderTerminal.TabIndex = 78;
+            this.lblHeaderTerminal.Text = "Item";
+            // 
+            // lblHeaderName
+            // 
+            this.lblHeaderName.AutoSize = true;
+            this.lblHeaderName.Location = new System.Drawing.Point(396, 74);
+            this.lblHeaderName.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblHeaderName.Name = "lblHeaderName";
+            this.lblHeaderName.Size = new System.Drawing.Size(39, 20);
+            this.lblHeaderName.TabIndex = 79;
+            this.lblHeaderName.Text = "Item";
+            // 
+            // lblHeaderEmpID
+            // 
+            this.lblHeaderEmpID.AutoSize = true;
+            this.lblHeaderEmpID.Location = new System.Drawing.Point(261, 74);
+            this.lblHeaderEmpID.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblHeaderEmpID.Name = "lblHeaderEmpID";
+            this.lblHeaderEmpID.Size = new System.Drawing.Size(39, 20);
+            this.lblHeaderEmpID.TabIndex = 80;
+            this.lblHeaderEmpID.Text = "Item";
+            // 
+            // lblHeaderDate
+            // 
+            this.lblHeaderDate.AutoSize = true;
+            this.lblHeaderDate.Location = new System.Drawing.Point(14, 74);
+            this.lblHeaderDate.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblHeaderDate.Name = "lblHeaderDate";
+            this.lblHeaderDate.Size = new System.Drawing.Size(39, 20);
+            this.lblHeaderDate.TabIndex = 81;
+            this.lblHeaderDate.Text = "Item";
             // 
             // SQLPOS2Class
             // 
@@ -1545,5 +1664,15 @@
         private System.Windows.Forms.Label pricelbl6;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button submitBtn;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label lblHeaderTerminal;
+        private System.Windows.Forms.Label lblHeaderName;
+        private System.Windows.Forms.Label lblHeaderEmpID;
+        private System.Windows.Forms.Label lblHeaderDate;
     }
 }

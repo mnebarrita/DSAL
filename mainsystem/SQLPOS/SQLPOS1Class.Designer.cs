@@ -79,14 +79,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.lblHeaderDate = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.lblHeaderEmpID = new System.Windows.Forms.Label();
-            this.lblHeaderName = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.lblHeaderTerminal = new System.Windows.Forms.Label();
+            this.lblHeaderName = new System.Windows.Forms.Label();
+            this.lblHeaderEmpID = new System.Windows.Forms.Label();
+            this.lblHeaderDate = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -738,9 +740,11 @@
             // panelMain
             // 
             this.panelMain.BackColor = System.Drawing.Color.Transparent;
+            this.panelMain.Controls.Add(this.comboBox1);
             this.panelMain.Controls.Add(this.label16);
             this.panelMain.Controls.Add(this.label15);
             this.panelMain.Controls.Add(this.label14);
+            this.panelMain.Controls.Add(this.label17);
             this.panelMain.Controls.Add(this.label12);
             this.panelMain.Controls.Add(this.groupBox3);
             this.panelMain.Controls.Add(this.label1);
@@ -760,35 +764,15 @@
             this.panelMain.Size = new System.Drawing.Size(1795, 1035);
             this.panelMain.TabIndex = 91;
             // 
-            // label12
+            // label16
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(12, 69);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(43, 19);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Date";
-            // 
-            // lblHeaderDate
-            // 
-            this.lblHeaderDate.AutoSize = true;
-            this.lblHeaderDate.Location = new System.Drawing.Point(12, 109);
-            this.lblHeaderDate.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblHeaderDate.Name = "lblHeaderDate";
-            this.lblHeaderDate.Size = new System.Drawing.Size(40, 19);
-            this.lblHeaderDate.TabIndex = 4;
-            this.lblHeaderDate.Text = "Item";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(266, 69);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(108, 19);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "Employee ID.";
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(552, 69);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(132, 19);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "PC Terminal No.";
             // 
             // label15
             // 
@@ -800,25 +784,35 @@
             this.label15.TabIndex = 0;
             this.label15.Text = "Employee Name";
             // 
-            // label16
+            // label14
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(552, 69);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(132, 19);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "PC Terminal No.";
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(266, 69);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(108, 19);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Employee ID.";
             // 
-            // lblHeaderEmpID
+            // label12
             // 
-            this.lblHeaderEmpID.AutoSize = true;
-            this.lblHeaderEmpID.Location = new System.Drawing.Point(266, 109);
-            this.lblHeaderEmpID.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblHeaderEmpID.Name = "lblHeaderEmpID";
-            this.lblHeaderEmpID.Size = new System.Drawing.Size(40, 19);
-            this.lblHeaderEmpID.TabIndex = 4;
-            this.lblHeaderEmpID.Text = "Item";
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(12, 69);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(43, 19);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Date";
+            // 
+            // lblHeaderTerminal
+            // 
+            this.lblHeaderTerminal.AutoSize = true;
+            this.lblHeaderTerminal.Location = new System.Drawing.Point(556, 109);
+            this.lblHeaderTerminal.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblHeaderTerminal.Name = "lblHeaderTerminal";
+            this.lblHeaderTerminal.Size = new System.Drawing.Size(40, 19);
+            this.lblHeaderTerminal.TabIndex = 4;
+            this.lblHeaderTerminal.Text = "Item";
             // 
             // lblHeaderName
             // 
@@ -830,15 +824,44 @@
             this.lblHeaderName.TabIndex = 4;
             this.lblHeaderName.Text = "Item";
             // 
-            // lblHeaderTerminal
+            // lblHeaderEmpID
             // 
-            this.lblHeaderTerminal.AutoSize = true;
-            this.lblHeaderTerminal.Location = new System.Drawing.Point(556, 109);
-            this.lblHeaderTerminal.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblHeaderTerminal.Name = "lblHeaderTerminal";
-            this.lblHeaderTerminal.Size = new System.Drawing.Size(40, 19);
-            this.lblHeaderTerminal.TabIndex = 4;
-            this.lblHeaderTerminal.Text = "Item";
+            this.lblHeaderEmpID.AutoSize = true;
+            this.lblHeaderEmpID.Location = new System.Drawing.Point(266, 109);
+            this.lblHeaderEmpID.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblHeaderEmpID.Name = "lblHeaderEmpID";
+            this.lblHeaderEmpID.Size = new System.Drawing.Size(40, 19);
+            this.lblHeaderEmpID.TabIndex = 4;
+            this.lblHeaderEmpID.Text = "Item";
+            // 
+            // lblHeaderDate
+            // 
+            this.lblHeaderDate.AutoSize = true;
+            this.lblHeaderDate.Location = new System.Drawing.Point(12, 109);
+            this.lblHeaderDate.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblHeaderDate.Name = "lblHeaderDate";
+            this.lblHeaderDate.Size = new System.Drawing.Size(40, 19);
+            this.lblHeaderDate.TabIndex = 4;
+            this.lblHeaderDate.Text = "Item";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(1656, 99);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(71, 27);
+            this.comboBox1.TabIndex = 71;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(1659, 69);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(68, 19);
+            this.label17.TabIndex = 0;
+            this.label17.Text = "POS ID.";
             // 
             // SQLPOS1Class
             // 
@@ -926,5 +949,7 @@
         private System.Windows.Forms.Label lblHeaderName;
         private System.Windows.Forms.Label lblHeaderEmpID;
         private System.Windows.Forms.Label lblHeaderDate;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label17;
     }
 }

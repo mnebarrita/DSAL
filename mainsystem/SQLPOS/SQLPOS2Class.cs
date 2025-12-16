@@ -1,14 +1,15 @@
-﻿using System;
+﻿using mainsystem.L14_Classes;
+using mainsystem.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using mainsystem.L14_Classes;
-using mainsystem.Properties;
 
 namespace mainsystem
 {
@@ -23,11 +24,20 @@ namespace mainsystem
         {
             InitializeComponent();
         }
-
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;  // Turn on Double Buffering at the OS level
+                return cp;
+            }
+        }
         private void SQLPOS2Class_Load(object sender, EventArgs e)
         {
             try
             {
+                // --- VISUAL SETUP ---
                 this.BackgroundImage = Properties.Resources.background11;
                 this.BackgroundImageLayout = ImageLayout.Stretch;
                 this.DisplayPictureBox.Image = Resources.clear1;
@@ -36,7 +46,9 @@ namespace mainsystem
                 CenterPanel();
                 this.Resize += (s, ev) => CenterPanel();
 
-                // DISABLING TEXTBOXES
+                LoadHeaderInformation();
+
+                // --- DISABLE CONTROLS ---
                 priceTxtBox.Enabled = false;
                 changeTxtbox.Enabled = false;
                 totalBillsTxtbox.Enabled = false;
@@ -44,146 +56,184 @@ namespace mainsystem
                 totalQtyTxtbox.Enabled = false;
                 discountedTxtbox.Enabled = false;
 
-                // DISABLING CHECKBOXES
-                A_CokeCheckBox.Checked = false;
-                A_FriedChickencheckBox.Checked = false;
-                A_FriescheckBox.Checked = false;
-                A_sideDishCheckbox.Checked = false;
-                A_SpecialPizaCheckbox.Checked = false;
-                B_carbonaracheckBox.Checked = false;
-                B_ChickencheckBox.Checked = false;
-                B_FriescheckBox.Checked = false;
-                B_halohalocheckBox.Checked = false;
-                B_HawaiiancheckBox.Checked = false;
+                ResetCheckboxes();
 
+                // --- LOAD CATEGORIES (The Dropdown) ---
+                LoadCategoryIDs();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading POS 2: " + ex.Message);
+            }
+        }
+
+        private void LoadHeaderInformation()
+        {
+            try
+            {
+                // 1. DATE & TERMINAL
+                if (lblHeaderDate != null)
+                    lblHeaderDate.Text = DateTime.Now.ToString("dddd, MMMM dd, yyyy");
+
+                if (lblHeaderTerminal != null)
+                    lblHeaderTerminal.Text = "PC Terminal 2"; // Unique to this form
+
+                // 2. GET USERNAME
+                string currentUsername = Program.CurrentEmpID;
+                if (string.IsNullOrEmpty(currentUsername)) currentUsername = "0000-DEV";
+
+                // 3. FETCH REAL ID & NAME
+                pos_db.pos_connString();
+                pos_db.posdb_open();
+
+                string sql = "SELECT pos_empRegTb1.emp_id, pos_empRegTb1.emp_fname, pos_empRegTb1.emp_surname " +
+                             "FROM useraccountTb1 " +
+                             "INNER JOIN pos_empRegTb1 ON useraccountTb1.emp_id = pos_empRegTb1.emp_id " +
+                             "WHERE useraccountTb1.username = '" + currentUsername + "'";
+
+                pos_db.pos_sql = sql;
+                pos_db.pos_cmd();
+                SqlDataReader dr = pos_db.pos_sql_command.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    string realEmpID = dr["emp_id"].ToString();
+                    string fname = dr["emp_fname"].ToString();
+                    string lname = dr["emp_surname"].ToString();
+
+                    if (lblHeaderEmpID != null) lblHeaderEmpID.Text = realEmpID;
+                    if (lblHeaderName != null) lblHeaderName.Text = fname + " " + lname;
+                }
+                else
+                {
+                    // Fallback
+                    if (lblHeaderEmpID != null) lblHeaderEmpID.Text = currentUsername;
+                    if (lblHeaderName != null) lblHeaderName.Text = "Unknown User";
+                }
+                pos_db.posdb_close();
+            }
+            catch (Exception) { /* Safe fail */ }
+        }
+
+        private void LoadCategoryIDs()
+        {
+            try
+            {
+                pos_db.pos_connString();
+                pos_db.posdb_open();
+
+                comboBox1.Items.Clear(); // Make sure you added comboBox1 in Designer!
+
+                string query = "SELECT DISTINCT pos_id FROM pos_nameTb1 ORDER BY pos_id ASC";
+                using (SqlCommand cmd = new SqlCommand(query, pos_db.pos_sql_connection))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            comboBox1.Items.Add(reader["pos_id"].ToString());
+                        }
+                    }
+                }
+
+                // Default to ID 3 (Fast Food) if available, otherwise pick the first one
+                if (comboBox1.Items.Contains("3"))
+                    comboBox1.SelectedItem = "3";
+                else if (comboBox1.Items.Count > 0)
+                    comboBox1.SelectedIndex = 0;
+
+                pos_db.posdb_close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading categories: " + ex.Message);
+            }
+        }
+
+        private void LoadMenuButtons(string categoryID)
+        {
+            try
+            {
                 pos_db.pos_connString();
                 pos_db.posdb_open();
 
                 pos_db.pos_sql = "SELECT * FROM pos_nameTb1 " +
-                                     "INNER JOIN pos_picTb1 ON pos_nameTb1.pos_id = pos_picTb1.pos_id " +
-                                     "INNER JOIN pos_priceTb1 ON pos_picTb1.pos_id = pos_priceTb1.pos_id " +
-                                     "WHERE pos_nameTb1.pos_id = 3";
+                                 "INNER JOIN pos_picTb1 ON pos_nameTb1.pos_id = pos_picTb1.pos_id " +
+                                 "INNER JOIN pos_priceTb1 ON pos_picTb1.pos_id = pos_priceTb1.pos_id " +
+                                 "WHERE pos_nameTb1.pos_id = " + categoryID;
 
                 pos_db.pos_cmd();
                 pos_db.pos_sqladapterSelect();
                 pos_db.pos_sql_dataset = new DataSet();
                 pos_db.pos_sql_dataadapter.Fill(pos_db.pos_sql_dataset, "MenuTable");
-  
+
                 if (pos_db.pos_sql_dataset.Tables["MenuTable"].Rows.Count > 0)
                 {
                     DataRow row = pos_db.pos_sql_dataset.Tables["MenuTable"].Rows[0];
 
-                    checkBox1.Text = row["name1"].ToString();
-                    checkBox2.Text = row["name2"].ToString();
-                    checkBox3.Text = row["name3"].ToString();
-                    checkBox4.Text = row["name4"].ToString();
-                    checkBox5.Text = row["name5"].ToString();
-                    checkBox6.Text = row["name6"].ToString();
-                    checkBox7.Text = row["name7"].ToString();
-                    checkBox8.Text = row["name8"].ToString();
-                    checkBox9.Text = row["name9"].ToString();
-                    checkBox10.Text = row["name10"].ToString();
-                    checkBox11.Text = row["name11"].ToString();
-                    checkBox12.Text = row["name12"].ToString();
-                    checkBox13.Text = row["name13"].ToString();
-                    checkBox14.Text = row["name14"].ToString();
-                    checkBox15.Text = row["name15"].ToString();
-                    checkBox16.Text = row["name16"].ToString();
-                    checkBox17.Text = row["name17"].ToString();
-                    checkBox18.Text = row["name18"].ToString();
-                    checkBox19.Text = row["name19"].ToString();
-                    checkBox20.Text = row["name20"].ToString();
+                    // Loop through 1 to 20 to set text/prices dynamically
+                    for (int i = 1; i <= 20; i++)
+                    {
+                        // FIND THE CONTROLS AUTOMATICALLY
+                        Control[] chk = this.Controls.Find("checkBox" + i, true);
+                        Control[] lbl = this.Controls.Find("pricelbl" + i, true);
 
-                    pricelbl1.Text = row["price1"].ToString();
-                    pricelbl2.Text = row["price2"].ToString();
-                    pricelbl3.Text = row["price3"].ToString();
-                    pricelbl4.Text = row["price4"].ToString();
-                    pricelbl5.Text = row["price5"].ToString();
-                    pricelbl10.Text = row["price6"].ToString();
-                    pricelbl9.Text = row["price7"].ToString();
-                    pricelbl8.Text = row["price8"].ToString();
-                    pricelbl7.Text = row["price9"].ToString();
-                    pricelbl6.Text = row["price10"].ToString();
-                    pricelbl15.Text = row["price11"].ToString();
-                    pricelbl14.Text = row["price12"].ToString();
-                    pricelbl13.Text = row["price13"].ToString();
-                    pricelbl12.Text = row["price14"].ToString();
-                    pricelbl11.Text = row["price15"].ToString();
-                    pricelbl20.Text = row["price16"].ToString();
-                    pricelbl19.Text = row["price17"].ToString();
-                    pricelbl18.Text = row["price18"].ToString();
-                    pricelbl17.Text = row["price19"].ToString();
-                    pricelbl16.Text = row["price20"].ToString();
+                        // NOTE: Your pictures in POS2 seem to map differently (checkBox1 might map to pictureBox2?)
+                        // If your naming is consistent (checkBox1 -> pictureBox1), change +1 to +0 below.
+                        Control[] pic = this.Controls.Find("pictureBox" + (i + 1), true);
 
-                    checkBox1.Tag = row["price1"].ToString();
-                    checkBox2.Tag = row["price2"].ToString();
-                    checkBox3.Tag = row["price3"].ToString();
-                    checkBox4.Tag = row["price4"].ToString();
-                    checkBox5.Tag = row["price5"].ToString();
-                    checkBox6.Tag = row["price6"].ToString();
-                    checkBox7.Tag = row["price7"].ToString();
-                    checkBox8.Tag = row["price8"].ToString();
-                    checkBox9.Tag = row["price9"].ToString();
-                    checkBox10.Tag = row["price10"].ToString();
-                    checkBox11.Tag = row["price11"].ToString();
-                    checkBox12.Tag = row["price12"].ToString();
-                    checkBox13.Tag = row["price13"].ToString();
-                    checkBox14.Tag = row["price14"].ToString();
-                    checkBox15.Tag = row["price15"].ToString();
-                    checkBox16.Tag = row["price16"].ToString();
-                    checkBox17.Tag = row["price17"].ToString();
-                    checkBox18.Tag = row["price18"].ToString();
-                    checkBox19.Tag = row["price19"].ToString();
-                    checkBox20.Tag = row["price20"].ToString();
+                        // SET CHECKBOX TEXT & TAG
+                        if (chk.Length > 0 && chk[0] is CheckBox checkBox)
+                        {
+                            string name = row["name" + i].ToString();
+                            string price = row["price" + i].ToString();
 
-                    string path1 = row["pic1"].ToString();
-                    if (System.IO.File.Exists(path1)) pictureBox2.Image = Image.FromFile(path1);
-                    string path2 = row["pic2"].ToString();
-                    if (System.IO.File.Exists(path2)) pictureBox3.Image = Image.FromFile(path2);
-                    string path3 = row["pic3"].ToString();
-                    if (System.IO.File.Exists(path3)) pictureBox4.Image = Image.FromFile(path3);
-                    string path4 = row["pic4"].ToString();
-                    if (System.IO.File.Exists(path4)) pictureBox5.Image = Image.FromFile(path4);
-                    string path5 = row["pic5"].ToString();
-                    if (System.IO.File.Exists(path5)) pictureBox6.Image = Image.FromFile(path5);
-                    string path6 = row["pic6"].ToString();
-                    if (System.IO.File.Exists(path6)) pictureBox7.Image = Image.FromFile(path6);
-                    string path7 = row["pic7"].ToString();
-                    if (System.IO.File.Exists(path7)) pictureBox8.Image = Image.FromFile(path7);
-                    string path8 = row["pic8"].ToString();
-                    if (System.IO.File.Exists(path8)) pictureBox9.Image = Image.FromFile(path8);
-                    string path9 = row["pic9"].ToString();
-                    if (System.IO.File.Exists(path9)) pictureBox10.Image = Image.FromFile(path9);
-                    string path10 = row["pic10"].ToString();
-                    if (System.IO.File.Exists(path10)) pictureBox11.Image = Image.FromFile(path10);
-                    string path11 = row["pic11"].ToString();
-                    if (System.IO.File.Exists(path11)) pictureBox12.Image = Image.FromFile(path11);
-                    string path12 = row["pic12"].ToString();
-                    if (System.IO.File.Exists(path12)) pictureBox13.Image = Image.FromFile(path12);
-                    string path13 = row["pic13"].ToString();
-                    if (System.IO.File.Exists(path13)) pictureBox14.Image = Image.FromFile(path13);
-                    string path14 = row["pic14"].ToString();
-                    if (System.IO.File.Exists(path14)) pictureBox15.Image = Image.FromFile(path14);
-                    string path15 = row["pic15"].ToString();
-                    if (System.IO.File.Exists(path15)) pictureBox16.Image = Image.FromFile(path15);
-                    string path16 = row["pic16"].ToString();
-                    if (System.IO.File.Exists(path16)) pictureBox17.Image = Image.FromFile(path16);
-                    string path17 = row["pic17"].ToString();
-                    if (System.IO.File.Exists(path17)) pictureBox18.Image = Image.FromFile(path17);
-                    string path18 = row["pic18"].ToString();
-                    if (System.IO.File.Exists(path18)) pictureBox19.Image = Image.FromFile(path18);
-                    string path19 = row["pic19"].ToString();
-                    if (System.IO.File.Exists(path19)) pictureBox20.Image = Image.FromFile(path19);
-                    string path20 = row["pic20"].ToString();
-                    if (System.IO.File.Exists(path20)) pictureBox21.Image = Image.FromFile(path20);
+                            checkBox.Text = string.IsNullOrEmpty(name) ? "Item " + i : name;
+                            checkBox.Tag = price; // Important for calculations!
+
+                            // Hide checkbox if no item exists? Optional.
+                            // checkBox.Visible = !string.IsNullOrEmpty(name); 
+                        }
+
+                        // SET PRICE LABEL
+                        if (lbl.Length > 0)
+                            lbl[0].Text = row["price" + i].ToString();
+
+                        // SET IMAGE
+                        if (pic.Length > 0 && pic[0] is PictureBox pictureBox)
+                        {
+                            string path = row["pic" + i].ToString();
+                            if (System.IO.File.Exists(path))
+                                pictureBox.Image = Image.FromFile(path);
+                            else
+                                pictureBox.Image = null; // Clear if no image
+                        }
+                    }
                 }
                 pos_db.posdb_close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error loading menu: " + ex.Message);
+                MessageBox.Show("Menu Load Error: " + ex.Message);
             }
         }
+
+        private void ResetCheckboxes()
+        {
+            // Clear Bundle Checks
+            A_CokeCheckBox.Checked = false; A_FriedChickencheckBox.Checked = false; A_FriescheckBox.Checked = false;
+            A_sideDishCheckbox.Checked = false; A_SpecialPizaCheckbox.Checked = false;
+            B_carbonaracheckBox.Checked = false; B_ChickencheckBox.Checked = false; B_FriescheckBox.Checked = false;
+            B_halohalocheckBox.Checked = false; B_HawaiiancheckBox.Checked = false;
+
+            // Clear Menu Checks (1-20)
+            for (int i = 1; i <= 20; i++)
+            {
+                Control[] c = this.Controls.Find("checkBox" + i, true);
+                if (c.Length > 0 && c[0] is CheckBox chk) chk.Checked = false;
+            }
+        }
+
         private void CenterPanel()
         {
             panelMain.Left = (this.ClientSize.Width - panelMain.Width) / 2;
@@ -204,39 +254,7 @@ namespace mainsystem
 
             foodARdbt.Checked = false;
             foodBRdbt.Checked = false;
-
-            A_CokeCheckBox.Checked = false;
-            A_FriedChickencheckBox.Checked = false;
-            A_FriescheckBox.Checked = false;
-            A_sideDishCheckbox.Checked = false;
-            A_SpecialPizaCheckbox.Checked = false;
-
-            B_carbonaracheckBox.Checked = false;
-            B_ChickencheckBox.Checked = false;
-            B_FriescheckBox.Checked = false;
-            B_halohalocheckBox.Checked = false;
-            B_HawaiiancheckBox.Checked = false;
-
-            checkBox1.Checked = false;
-            checkBox2.Checked = false;
-            checkBox3.Checked = false;
-            checkBox4.Checked = false;
-            checkBox5.Checked = false;
-            checkBox6.Checked = false;
-            checkBox7.Checked = false;
-            checkBox8.Checked = false;
-            checkBox9.Checked = false;
-            checkBox10.Checked = false;
-            checkBox11.Checked = false;
-            checkBox12.Checked = false;
-            checkBox13.Checked = false;
-            checkBox14.Checked = false;
-            checkBox15.Checked = false;
-            checkBox16.Checked = false;
-            checkBox17.Checked = false;
-            checkBox18.Checked = false;
-            checkBox19.Checked = false;
-            checkBox20.Checked = false;
+            ResetCheckboxes();
 
             total_amount = 0;
             total_qty = 0;
@@ -244,10 +262,8 @@ namespace mainsystem
             foodARdbt.Enabled = true;
             foodBRdbt.Enabled = true;
 
-            
             displayListbox.Items.Clear();
 
-            // Clear all textboxes
             priceTxtBox.Text = "";
             qtyTxtbox.Text = "0";
             discountTxtbox.Text = "";
@@ -572,16 +588,12 @@ namespace mainsystem
             {
                 string myTerminal = "Terminal-2";
                 string myEmpID = Program.CurrentEmpID;
-                
-                if (string.IsNullOrEmpty(myEmpID))
-                {
-                    myTerminal = "Terminal-0";  
-                    myEmpID = "0000-DEV";       
-                }
+                if (string.IsNullOrEmpty(myEmpID)) myEmpID = "0000-DEV";
 
                 pos_db.pos_connString();
                 pos_db.posdb_open();
 
+                // 1. Check if it's a Bundle Sale
                 if (foodARdbt.Checked || foodBRdbt.Checked)
                 {
                     string prodName = foodARdbt.Checked ? "Food Bundle A" : "Food Bundle B";
@@ -612,13 +624,21 @@ namespace mainsystem
                 }
                 else
                 {
+                    // 2. Or Individual Items from Listbox
                     foreach (var item in displayListbox.Items)
                     {
+                        // Clean up string to get Name and Price
                         string fullText = item.ToString();
-
                         int lastSpaceIndex = fullText.LastIndexOf(' ');
-                        string pName = fullText.Substring(0, lastSpaceIndex); 
-                        string pPrice = fullText.Substring(lastSpaceIndex + 1); 
+
+                        string pName = fullText;
+                        string pPrice = "0.00";
+
+                        if (lastSpaceIndex > 0)
+                        {
+                            pName = fullText.Substring(0, lastSpaceIndex);
+                            pPrice = fullText.Substring(lastSpaceIndex + 1);
+                        }
 
                         string sql = "INSERT INTO salesTb1 (" +
                             "terminal_no, product_name, product_price, product_quantity_per_transaction, " +
@@ -626,17 +646,17 @@ namespace mainsystem
                             "summary_total_quantity, summary_total_disc_given, summary_total_discounted_amount, " +
                             "time_date, emp_id) VALUES (" +
                             "'" + myTerminal + "', " +
-                            "'" + pName + "', " +        
-                            "'" + pPrice + "', " +       
-                            "'1', " +                    
-                            "'Regular Price', " +        
-                            "'0.00', " +                 
-                            "'" + pPrice + "', " +       
-                            "'1', " +              
-                            "'0.00', " +           
+                            "'" + pName + "', " +
+                            "'" + pPrice + "', " +
+                            "'1', " +
+                            "'Regular Price', " +
+                            "'0.00', " +
+                            "'" + pPrice + "', " +
+                            "'1', " +
+                            "'0.00', " +
                             "'" + pPrice + "', " +
                             "'" + DateTime.Now.ToString("yyyy-MM-dd") + "', " +
-                            "'" + myEmpID + "'" +         
+                            "'" + myEmpID + "'" +
                             ")";
 
                         pos_db.pos_sql = sql;
@@ -653,6 +673,15 @@ namespace mainsystem
             {
                 MessageBox.Show("Error saving: " + ex.Message);
                 if (pos_db.pos_sql_connection.State == ConnectionState.Open) pos_db.posdb_close();
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(comboBox1.Text))
+            {
+                button4.PerformClick();
+                LoadMenuButtons(comboBox1.Text);
             }
         }
     }
