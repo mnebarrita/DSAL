@@ -26,6 +26,17 @@ namespace mainsystem
             posdb_connect.pos_connString();
             InitializeComponent();
         }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;  // Turn on Double Buffering at the OS level
+                return cp;
+            }
+        }
+
         private void cleartextboxes()
         {
             try

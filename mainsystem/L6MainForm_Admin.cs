@@ -18,6 +18,15 @@ namespace mainsystem
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterParent;
         }
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;  // Turn on Double Buffering at the OS level
+                return cp;
+            }
+        }
 
         private void payrolApplicationToolStripMenuItem_Click(object sender, EventArgs e)
         {

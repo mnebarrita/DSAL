@@ -26,6 +26,17 @@ namespace mainsystem
         {
             InitializeComponent();
         }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;  // Turn on Double Buffering at the OS level
+                return cp;
+            }
+        }
+
         private void HandleCheckBoxClick(System.Windows.Forms.CheckBox chk, double price)
         {
             // If checkbox is checked, add item to total; if unchecked, subtract it
