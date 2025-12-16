@@ -130,7 +130,6 @@
             this.label1.Size = new System.Drawing.Size(63, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "First N.";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // FN
             // 
@@ -140,7 +139,6 @@
             this.FN.Name = "FN";
             this.FN.Size = new System.Drawing.Size(217, 30);
             this.FN.TabIndex = 1;
-            this.FN.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button1
             // 
@@ -336,7 +334,6 @@
             this.label12.Size = new System.Drawing.Size(420, 54);
             this.label12.TabIndex = 5;
             this.label12.Text = "MiFlo\'s Choice Payroll";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // label13
             // 
@@ -398,7 +395,6 @@
             this.rph_bi.Name = "rph_bi";
             this.rph_bi.Size = new System.Drawing.Size(173, 30);
             this.rph_bi.TabIndex = 10;
-            this.rph_bi.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
             // numhrspercutoff_bi
             // 
@@ -408,7 +404,6 @@
             this.numhrspercutoff_bi.Name = "numhrspercutoff_bi";
             this.numhrspercutoff_bi.Size = new System.Drawing.Size(173, 30);
             this.numhrspercutoff_bi.TabIndex = 11;
-            this.numhrspercutoff_bi.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
             // incomepercutoff_bi
             // 
@@ -418,7 +413,6 @@
             this.incomepercutoff_bi.ReadOnly = true;
             this.incomepercutoff_bi.Size = new System.Drawing.Size(173, 30);
             this.incomepercutoff_bi.TabIndex = 1;
-            this.incomepercutoff_bi.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
             // label18
             // 
@@ -489,7 +483,6 @@
             this.SSSctrb.ReadOnly = true;
             this.SSSctrb.Size = new System.Drawing.Size(181, 30);
             this.SSSctrb.TabIndex = 1;
-            this.SSSctrb.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
             // phctrb
             // 
@@ -499,7 +492,6 @@
             this.phctrb.ReadOnly = true;
             this.phctrb.Size = new System.Drawing.Size(181, 30);
             this.phctrb.TabIndex = 1;
-            this.phctrb.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
             // pagibigctrb
             // 
@@ -509,7 +501,6 @@
             this.pagibigctrb.ReadOnly = true;
             this.pagibigctrb.Size = new System.Drawing.Size(181, 30);
             this.pagibigctrb.TabIndex = 1;
-            this.pagibigctrb.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
             // label24
             // 
@@ -529,7 +520,6 @@
             this.incometaxctrb.ReadOnly = true;
             this.incometaxctrb.Size = new System.Drawing.Size(181, 30);
             this.incometaxctrb.TabIndex = 1;
-            this.incometaxctrb.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
             // label25
             // 
@@ -560,7 +550,6 @@
             this.rph_hi.Name = "rph_hi";
             this.rph_hi.Size = new System.Drawing.Size(173, 30);
             this.rph_hi.TabIndex = 12;
-            this.rph_hi.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
             // numhrspercutoff_hi
             // 
@@ -570,7 +559,6 @@
             this.numhrspercutoff_hi.Name = "numhrspercutoff_hi";
             this.numhrspercutoff_hi.Size = new System.Drawing.Size(173, 30);
             this.numhrspercutoff_hi.TabIndex = 13;
-            this.numhrspercutoff_hi.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
             // incomepercutoff_hi
             // 
@@ -580,7 +568,6 @@
             this.incomepercutoff_hi.ReadOnly = true;
             this.incomepercutoff_hi.Size = new System.Drawing.Size(173, 30);
             this.incomepercutoff_hi.TabIndex = 1;
-            this.incomepercutoff_hi.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
             // label33
             // 
@@ -641,7 +628,6 @@
             this.sssloan.Name = "sssloan";
             this.sssloan.Size = new System.Drawing.Size(181, 30);
             this.sssloan.TabIndex = 16;
-            this.sssloan.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
             // pagibigloan
             // 
@@ -651,7 +637,6 @@
             this.pagibigloan.Name = "pagibigloan";
             this.pagibigloan.Size = new System.Drawing.Size(181, 30);
             this.pagibigloan.TabIndex = 17;
-            this.pagibigloan.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
             // FSD
             // 
@@ -661,7 +646,6 @@
             this.FSD.Name = "FSD";
             this.FSD.Size = new System.Drawing.Size(181, 30);
             this.FSD.TabIndex = 18;
-            this.FSD.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
             // FSL
             // 
@@ -671,7 +655,6 @@
             this.FSL.Name = "FSL";
             this.FSL.Size = new System.Drawing.Size(181, 30);
             this.FSL.TabIndex = 19;
-            this.FSL.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
             // label38
             // 
@@ -701,7 +684,6 @@
             this.salaryloan.Name = "salaryloan";
             this.salaryloan.Size = new System.Drawing.Size(181, 30);
             this.salaryloan.TabIndex = 20;
-            this.salaryloan.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
             // otherloans
             // 
@@ -711,7 +693,6 @@
             this.otherloans.Name = "otherloans";
             this.otherloans.Size = new System.Drawing.Size(181, 30);
             this.otherloans.TabIndex = 21;
-            this.otherloans.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
             // label40
             // 
@@ -752,7 +733,6 @@
             this.grossincome.ReadOnly = true;
             this.grossincome.Size = new System.Drawing.Size(173, 30);
             this.grossincome.TabIndex = 1;
-            this.grossincome.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
             // netincome
             // 
@@ -762,7 +742,6 @@
             this.netincome.ReadOnly = true;
             this.netincome.Size = new System.Drawing.Size(173, 30);
             this.netincome.TabIndex = 1;
-            this.netincome.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
             // label43
             // 
@@ -793,7 +772,6 @@
             this.totaldeductions.ReadOnly = true;
             this.totaldeductions.Size = new System.Drawing.Size(181, 30);
             this.totaldeductions.TabIndex = 1;
-            this.totaldeductions.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
             // button2
             // 
@@ -826,7 +804,6 @@
             this.button4.TabIndex = 33;
             this.button4.Text = "Update";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -948,7 +925,6 @@
             this.rph_oi.Name = "rph_oi";
             this.rph_oi.Size = new System.Drawing.Size(173, 30);
             this.rph_oi.TabIndex = 14;
-            this.rph_oi.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
             // numhrspercutoff_oi
             // 
@@ -958,7 +934,6 @@
             this.numhrspercutoff_oi.Name = "numhrspercutoff_oi";
             this.numhrspercutoff_oi.Size = new System.Drawing.Size(173, 30);
             this.numhrspercutoff_oi.TabIndex = 15;
-            this.numhrspercutoff_oi.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
             // incomepercutoff_oi
             // 
@@ -968,7 +943,6 @@
             this.incomepercutoff_oi.ReadOnly = true;
             this.incomepercutoff_oi.Size = new System.Drawing.Size(173, 30);
             this.incomepercutoff_oi.TabIndex = 1;
-            this.incomepercutoff_oi.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
             // label49
             // 
@@ -1085,7 +1059,6 @@
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(808, 927);
             this.panelMain.TabIndex = 8;
-            this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // button6
             // 

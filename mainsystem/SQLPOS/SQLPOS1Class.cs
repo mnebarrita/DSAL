@@ -1,14 +1,15 @@
-﻿using System;
+﻿using mainsystem.L14_Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
-using mainsystem.L14_Classes;
 
 namespace mainsystem
 {
@@ -45,11 +46,68 @@ namespace mainsystem
             this.AcceptButton = enterBtn; 
 
             GenerateMenuFromHorizontalDB();
+            LoadHeaderInformation();
 
             isLoading = false;
             qtyTxtbox.Focus();
         }
 
+        private void LoadHeaderInformation()
+        {
+            try
+            {
+                // 1. SET DATE & TERMINAL
+                if (lblHeaderDate != null)
+                    lblHeaderDate.Text = DateTime.Now.ToString("dddd, MMMM dd, yyyy");
+
+                if (lblHeaderTerminal != null)
+                    lblHeaderTerminal.Text = "PC Terminal 1";
+
+                // 2. GET THE LOGGED-IN USERNAME
+                string currentUsername = Program.CurrentEmpID;
+                if (string.IsNullOrEmpty(currentUsername)) currentUsername = "0000-DEV";
+
+                // 3. FETCH REAL ID & NAME FROM DATABASE
+                pos_db.pos_connString();
+                pos_db.posdb_open();
+
+                // STEP A: We first look up the 'emp_id' using the username from the User Account Table
+                // Then we JOIN it with the Employee Registration Table to get the Name.
+                string sql = "SELECT pos_empRegTb1.emp_id, pos_empRegTb1.emp_fname, pos_empRegTb1.emp_surname " +
+                             "FROM useraccountTb1 " +
+                             "INNER JOIN pos_empRegTb1 ON useraccountTb1.emp_id = pos_empRegTb1.emp_id " +
+                             "WHERE useraccountTb1.username = '" + currentUsername + "'";
+
+                pos_db.pos_sql = sql;
+                pos_db.pos_cmd();
+
+                SqlDataReader dr = pos_db.pos_sql_command.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    // FOUND IT!
+                    string realEmpID = dr["emp_id"].ToString();
+                    string fname = dr["emp_fname"].ToString();
+                    string lname = dr["emp_surname"].ToString();
+
+                    // Update Labels with CORRECT Info
+                    if (lblHeaderEmpID != null) lblHeaderEmpID.Text = realEmpID; // Shows "2023203112"
+                    if (lblHeaderName != null) lblHeaderName.Text = fname + " " + lname; // Shows "Mica Barrita"
+                }
+                else
+                {
+                    // Fallback if not found
+                    if (lblHeaderEmpID != null) lblHeaderEmpID.Text = currentUsername;
+                    if (lblHeaderName != null) lblHeaderName.Text = "Unknown User";
+                }
+
+                pos_db.posdb_close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Header Error: " + ex.Message);
+            }
+        }
 
         private void CenterPanel()
         {
@@ -67,7 +125,7 @@ namespace mainsystem
                 pos_db.pos_sql = "SELECT * FROM pos_nameTb1 " +
                                  "INNER JOIN pos_picTb1 ON pos_nameTb1.pos_id = pos_picTb1.pos_id " +
                                  "INNER JOIN pos_priceTb1 ON pos_picTb1.pos_id = pos_priceTb1.pos_id " +
-                                 "WHERE pos_nameTb1.pos_id = 2"; // CHANGE THIS TO '2' FOR CASHIER 2
+                                 "WHERE pos_nameTb1.pos_id = 1"; // CHANGE THIS TO '2' FOR CASHIER 2
 
                 pos_db.pos_cmd();
                 pos_db.pos_sqladapterSelect();

@@ -123,26 +123,6 @@ namespace mainsystem
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox11_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             CenterPanel();
@@ -269,10 +249,6 @@ namespace mainsystem
             btnCompute_Click(sender, e);
         }
 
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -315,13 +291,7 @@ namespace mainsystem
             // Show the Payslip window
             payslip.Show();
         }
-        // ================================
-        // HELPER FUNCTIONS (SSS, PHILHEALTH, TAX)
-        // ================================
-
-        // ------------------------
-        // SSS Computation
-        // ------------------------
+    
         private double GetSSSContribution(double income)
         {
             for (int i = 0; i < sssRanges.Length; i++)
@@ -363,10 +333,6 @@ namespace mainsystem
                 return 33541.80 + (income - 166667) * 0.30;
             else
                 return 183541.80 + (income - 666667) * 0.35;
-        }
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void button6_Click(object sender, EventArgs e)

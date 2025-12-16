@@ -16,6 +16,32 @@ namespace mainsystem.Prelim
     {
         payrol_dbconnection payrol_db = new payrol_dbconnection();
         employee_dbconnection emp_db = new employee_dbconnection();
+
+        // --- PhilHealth Table ---
+        private readonly double[] philRanges = {
+            10000, 11000, 12000, 13000, 14000, 15000, 16000, 17000, 18000, 19000, 20000,
+            21000, 22000, 23000, 24000, 25000, 26000, 27000, 28000, 29000, 30000,
+            31000, 32000, 33000, 34000, 35000, 36000, 37000, 38000, 39000
+        };
+        private readonly double[] philAmounts = {
+            137.50, 151.25, 165.00, 178.75, 192.50, 206.25, 220.00, 233.75, 247.50, 261.25,
+            275.25, 288.75, 302.50, 316.25, 330.00, 343.75, 357.50, 371.25, 385.00, 398.75,
+            412.50, 426.25, 440.00, 453.75, 467.50, 481.25, 495.00, 508.75, 522.50, 536.25
+        };
+
+        // --- SSS Table ---
+        private readonly double[] sssRanges = {
+            1000, 1249.99, 1749.99, 2249.99, 2749.99, 3249.99, 3749.99, 4249.99,
+            4749.99, 5249.99, 5749.99, 6249.99, 6749.99, 7249.99, 7749.99, 8249.99,
+            8749.99, 9249.99, 9749.99, 10249.99, 10749.99, 11249.99, 11749.99, 12249.99,
+            12749.99, 13249.99, 13749.99, 14249.99, 14749.99, 15249.99, 15749.99, 16249.99
+        };
+        private readonly double[] sssAmounts = {
+            0.00, 36.30, 54.50, 72.70, 90.80, 109.00, 127.20, 145.30,
+            163.50, 181.70, 199.80, 218.00, 236.20, 254.30, 272.50, 290.70,
+            308.80, 327.00, 345.20, 363.30, 381.50, 399.70, 417.80, 436.00,
+            454.20, 472.30, 490.50, 508.70, 526.80, 545.00, 563.20, 581.30
+        };
         public employee_payrol()
         {
             InitializeComponent();
@@ -29,6 +55,35 @@ namespace mainsystem.Prelim
                 cp.ExStyle |= 0x02000000;  // Turn on Double Buffering at the OS level
                 return cp;
             }
+        }
+        private double GetSSSContribution(double income)
+        {
+            for (int i = 0; i < sssRanges.Length; i++)
+            {
+                if (income <= sssRanges[i])
+                    return sssAmounts[i];
+            }
+            return sssAmounts[sssAmounts.Length - 1];
+        }
+
+        private double GetPhilHealth(double income)
+        {
+            for (int i = 0; i < philRanges.Length; i++)
+            {
+                if (income <= philRanges[i])
+                    return philAmounts[i];
+            }
+            return philAmounts[philAmounts.Length - 1];
+        }
+
+        private double GetWithholdingTax(double income)
+        {
+            if (income <= 20833) return 0;
+            else if (income <= 33333) return (income - 20833) * 0.15;
+            else if (income <= 66667) return 1875 + (income - 33333) * 0.20;
+            else if (income <= 166667) return 8541.80 + (income - 66667) * 0.25;
+            else if (income <= 666667) return 33541.80 + (income - 166667) * 0.30;
+            else return 183541.80 + (income - 666667) * 0.35;
         }
         private string GetCurrentRole()
         {
@@ -326,11 +381,7 @@ namespace mainsystem.Prelim
         {
             try
             {
-                // Helper function to safely convert text to number
-                double GetVal(string text)
-                {
-                    return string.IsNullOrWhiteSpace(text) ? 0 : Convert.ToDouble(text);
-                }
+                double GetVal(string text) => string.IsNullOrWhiteSpace(text) ? 0 : Convert.ToDouble(text);
 
                 // --- 1. Basic Pay ---
                 double basicRate = GetVal(basic_rateTxtbox.Text);
@@ -354,28 +405,40 @@ namespace mainsystem.Prelim
                 double gross = basicIncome + honoIncome + otherIncome;
                 gross_incomeTxtbox.Text = gross.ToString("0.00");
 
-                // --- 5. Total Deductions ---
-                double ded1 = GetVal(sss_contribTxtbox.Text);
-                double ded2 = GetVal(philhealth_contribTxtbox.Text);
-                double ded3 = GetVal(pagibig_contribTxtbox.Text);
-                double ded4 = GetVal(tax_contribTxtbox.Text);
-                double ded5 = GetVal(sss_loanTxtbox.Text);
-                double ded6 = GetVal(pagibig_loanTxtbox.Text);
-                double ded7 = GetVal(FSD_depositTxtbox.Text);
-                double ded8 = GetVal(FS_loanTxtbox.Text);
-                double ded9 = GetVal(sal_loanTxtbox.Text);
-                double ded10 = GetVal(others_loanTxtbox.Text);
+                // --- 5. AUTOMATIC DEDUCTIONS (Using Tables) ---
+                // We calculate these based on the Gross Income we just found
+                double sss = GetSSSContribution(gross);
+                double philHealth = GetPhilHealth(gross);
+                double pagibig = 200.00; // Standard fixed rate
+                double tax = GetWithholdingTax(gross);
 
-                double totalDeductions = ded1 + ded2 + ded3 + ded4 + ded5 + ded6 + ded7 + ded8 + ded9 + ded10;
+                // Display the calculated values in the textboxes
+                sss_contribTxtbox.Text = sss.ToString("0.00");
+                philhealth_contribTxtbox.Text = philHealth.ToString("0.00");
+                pagibig_contribTxtbox.Text = pagibig.ToString("0.00");
+                tax_contribTxtbox.Text = tax.ToString("0.00");
+
+                // --- 6. Total Deductions ---
+                // Now we sum up the AUTO values + the MANUAL loans
+                double dedLoan1 = GetVal(sss_loanTxtbox.Text);
+                double dedLoan2 = GetVal(pagibig_loanTxtbox.Text);
+                double dedLoan3 = GetVal(FSD_depositTxtbox.Text);
+                double dedLoan4 = GetVal(FS_loanTxtbox.Text);
+                double dedLoan5 = GetVal(sal_loanTxtbox.Text);
+                double dedLoan6 = GetVal(others_loanTxtbox.Text);
+
+                double totalDeductions = sss + philHealth + pagibig + tax +
+                                         dedLoan1 + dedLoan2 + dedLoan3 + dedLoan4 + dedLoan5 + dedLoan6;
+
                 total_deducTxtbox.Text = totalDeductions.ToString("0.00");
 
-                // --- 6. Net Income ---
+                // --- 7. Net Income ---
                 double net = gross - totalDeductions;
                 net_incomeTxtbox.Text = net.ToString("0.00");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Calculation Error: Please enter valid numbers.\n" + ex.Message);
+                MessageBox.Show("Calculation Error: " + ex.Message);
             }
         }
 

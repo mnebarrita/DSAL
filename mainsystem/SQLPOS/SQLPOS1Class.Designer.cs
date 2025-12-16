@@ -79,6 +79,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lblHeaderDate = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.lblHeaderEmpID = new System.Windows.Forms.Label();
+            this.lblHeaderName = new System.Windows.Forms.Label();
+            this.lblHeaderTerminal = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -95,7 +103,7 @@
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.qtyTotalTxtbox);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(13, 331);
+            this.groupBox2.Location = new System.Drawing.Point(5, 401);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(5);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(5);
@@ -194,7 +202,7 @@
             this.groupBox1.Controls.Add(this.discountTxtbox);
             this.groupBox1.Controls.Add(this.discountedTxtbox);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(13, 53);
+            this.groupBox1.Location = new System.Drawing.Point(5, 133);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(5);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(5);
@@ -424,11 +432,11 @@
             this.groupBox4.Controls.Add(this.button6);
             this.groupBox4.Controls.Add(this.enterBtn);
             this.groupBox4.Font = new System.Drawing.Font("MS UI Gothic", 12F);
-            this.groupBox4.Location = new System.Drawing.Point(13, 719);
+            this.groupBox4.Location = new System.Drawing.Point(5, 767);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(5);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(5);
-            this.groupBox4.Size = new System.Drawing.Size(680, 282);
+            this.groupBox4.Size = new System.Drawing.Size(680, 250);
             this.groupBox4.TabIndex = 69;
             this.groupBox4.TabStop = false;
             // 
@@ -436,7 +444,7 @@
             // 
             this.button12.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button12.Location = new System.Drawing.Point(199, 199);
+            this.button12.Location = new System.Drawing.Point(198, 182);
             this.button12.Margin = new System.Windows.Forms.Padding(5);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(238, 55);
@@ -450,7 +458,7 @@
             // 
             this.button11.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button11.Location = new System.Drawing.Point(199, 144);
+            this.button11.Location = new System.Drawing.Point(198, 127);
             this.button11.Margin = new System.Windows.Forms.Padding(5);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(119, 55);
@@ -464,7 +472,7 @@
             // 
             this.button20.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button20.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button20.Location = new System.Drawing.Point(556, 199);
+            this.button20.Location = new System.Drawing.Point(555, 182);
             this.button20.Margin = new System.Windows.Forms.Padding(5);
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(119, 55);
@@ -478,7 +486,7 @@
             // 
             this.button19.Font = new System.Drawing.Font("Trebuchet MS", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button19.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button19.Location = new System.Drawing.Point(437, 199);
+            this.button19.Location = new System.Drawing.Point(436, 182);
             this.button19.Margin = new System.Windows.Forms.Padding(5);
             this.button19.Name = "button19";
             this.button19.Size = new System.Drawing.Size(119, 55);
@@ -492,7 +500,7 @@
             // 
             this.button18.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button18.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button18.Location = new System.Drawing.Point(556, 144);
+            this.button18.Location = new System.Drawing.Point(555, 127);
             this.button18.Margin = new System.Windows.Forms.Padding(5);
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(119, 55);
@@ -506,7 +514,7 @@
             // 
             this.button17.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button17.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button17.Location = new System.Drawing.Point(437, 144);
+            this.button17.Location = new System.Drawing.Point(436, 127);
             this.button17.Margin = new System.Windows.Forms.Padding(5);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(119, 55);
@@ -520,7 +528,7 @@
             // 
             this.button16.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button16.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button16.Location = new System.Drawing.Point(318, 144);
+            this.button16.Location = new System.Drawing.Point(317, 127);
             this.button16.Margin = new System.Windows.Forms.Padding(5);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(119, 55);
@@ -534,7 +542,7 @@
             // 
             this.button15.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button15.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button15.Location = new System.Drawing.Point(556, 89);
+            this.button15.Location = new System.Drawing.Point(555, 72);
             this.button15.Margin = new System.Windows.Forms.Padding(5);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(119, 55);
@@ -548,7 +556,7 @@
             // 
             this.button14.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button14.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button14.Location = new System.Drawing.Point(437, 89);
+            this.button14.Location = new System.Drawing.Point(436, 72);
             this.button14.Margin = new System.Windows.Forms.Padding(5);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(119, 55);
@@ -562,7 +570,7 @@
             // 
             this.button13.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button13.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button13.Location = new System.Drawing.Point(318, 89);
+            this.button13.Location = new System.Drawing.Point(317, 72);
             this.button13.Margin = new System.Windows.Forms.Padding(5);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(119, 55);
@@ -576,7 +584,7 @@
             // 
             this.button10.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button10.Location = new System.Drawing.Point(199, 89);
+            this.button10.Location = new System.Drawing.Point(198, 72);
             this.button10.Margin = new System.Windows.Forms.Padding(5);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(119, 55);
@@ -590,7 +598,7 @@
             // 
             this.button9.Font = new System.Drawing.Font("Trebuchet MS", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button9.Location = new System.Drawing.Point(556, 34);
+            this.button9.Location = new System.Drawing.Point(555, 17);
             this.button9.Margin = new System.Windows.Forms.Padding(5);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(119, 55);
@@ -604,7 +612,7 @@
             // 
             this.button8.Font = new System.Drawing.Font("Trebuchet MS", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button8.Location = new System.Drawing.Point(437, 34);
+            this.button8.Location = new System.Drawing.Point(436, 17);
             this.button8.Margin = new System.Windows.Forms.Padding(5);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(119, 55);
@@ -619,7 +627,7 @@
             this.button7.Font = new System.Drawing.Font("Trebuchet MS", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button7.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button7.Location = new System.Drawing.Point(318, 34);
+            this.button7.Location = new System.Drawing.Point(317, 17);
             this.button7.Margin = new System.Windows.Forms.Padding(5);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(119, 55);
@@ -633,7 +641,7 @@
             // 
             this.button6.Font = new System.Drawing.Font("Trebuchet MS", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button6.Location = new System.Drawing.Point(199, 34);
+            this.button6.Location = new System.Drawing.Point(198, 17);
             this.button6.Margin = new System.Windows.Forms.Padding(5);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(119, 55);
@@ -648,7 +656,7 @@
             this.enterBtn.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.enterBtn.Font = new System.Drawing.Font("Trebuchet MS", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.enterBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.enterBtn.Location = new System.Drawing.Point(15, 34);
+            this.enterBtn.Location = new System.Drawing.Point(14, 17);
             this.enterBtn.Margin = new System.Windows.Forms.Padding(5);
             this.enterBtn.Name = "enterBtn";
             this.enterBtn.Size = new System.Drawing.Size(185, 218);
@@ -663,7 +671,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("MS PGothic", 30F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(703, 70);
+            this.label1.Location = new System.Drawing.Point(703, 69);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(610, 50);
@@ -676,7 +684,7 @@
             this.groupBox3.Controls.Add(this.cash_renderedtxtbox);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Location = new System.Drawing.Point(13, 514);
+            this.groupBox3.Location = new System.Drawing.Point(5, 573);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(5);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(5);
@@ -730,12 +738,20 @@
             // panelMain
             // 
             this.panelMain.BackColor = System.Drawing.Color.Transparent;
+            this.panelMain.Controls.Add(this.label16);
+            this.panelMain.Controls.Add(this.label15);
+            this.panelMain.Controls.Add(this.label14);
+            this.panelMain.Controls.Add(this.label12);
             this.panelMain.Controls.Add(this.groupBox3);
             this.panelMain.Controls.Add(this.label1);
             this.panelMain.Controls.Add(this.groupBox4);
             this.panelMain.Controls.Add(this.groupBox1);
             this.panelMain.Controls.Add(this.groupBox2);
             this.panelMain.Controls.Add(this.menuFlowPanel);
+            this.panelMain.Controls.Add(this.lblHeaderTerminal);
+            this.panelMain.Controls.Add(this.lblHeaderName);
+            this.panelMain.Controls.Add(this.lblHeaderEmpID);
+            this.panelMain.Controls.Add(this.lblHeaderDate);
             this.panelMain.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelMain.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panelMain.Location = new System.Drawing.Point(16, 16);
@@ -743,6 +759,86 @@
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(1795, 1035);
             this.panelMain.TabIndex = 91;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(12, 69);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(43, 19);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Date";
+            // 
+            // lblHeaderDate
+            // 
+            this.lblHeaderDate.AutoSize = true;
+            this.lblHeaderDate.Location = new System.Drawing.Point(12, 109);
+            this.lblHeaderDate.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblHeaderDate.Name = "lblHeaderDate";
+            this.lblHeaderDate.Size = new System.Drawing.Size(40, 19);
+            this.lblHeaderDate.TabIndex = 4;
+            this.lblHeaderDate.Text = "Item";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(266, 69);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(108, 19);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Employee ID.";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(399, 69);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(128, 19);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "Employee Name";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(552, 69);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(132, 19);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "PC Terminal No.";
+            // 
+            // lblHeaderEmpID
+            // 
+            this.lblHeaderEmpID.AutoSize = true;
+            this.lblHeaderEmpID.Location = new System.Drawing.Point(266, 109);
+            this.lblHeaderEmpID.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblHeaderEmpID.Name = "lblHeaderEmpID";
+            this.lblHeaderEmpID.Size = new System.Drawing.Size(40, 19);
+            this.lblHeaderEmpID.TabIndex = 4;
+            this.lblHeaderEmpID.Text = "Item";
+            // 
+            // lblHeaderName
+            // 
+            this.lblHeaderName.AutoSize = true;
+            this.lblHeaderName.Location = new System.Drawing.Point(401, 109);
+            this.lblHeaderName.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblHeaderName.Name = "lblHeaderName";
+            this.lblHeaderName.Size = new System.Drawing.Size(40, 19);
+            this.lblHeaderName.TabIndex = 4;
+            this.lblHeaderName.Text = "Item";
+            // 
+            // lblHeaderTerminal
+            // 
+            this.lblHeaderTerminal.AutoSize = true;
+            this.lblHeaderTerminal.Location = new System.Drawing.Point(556, 109);
+            this.lblHeaderTerminal.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblHeaderTerminal.Name = "lblHeaderTerminal";
+            this.lblHeaderTerminal.Size = new System.Drawing.Size(40, 19);
+            this.lblHeaderTerminal.TabIndex = 4;
+            this.lblHeaderTerminal.Text = "Item";
             // 
             // SQLPOS1Class
             // 
@@ -822,5 +918,13 @@
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblHeaderTerminal;
+        private System.Windows.Forms.Label lblHeaderName;
+        private System.Windows.Forms.Label lblHeaderEmpID;
+        private System.Windows.Forms.Label lblHeaderDate;
     }
 }
