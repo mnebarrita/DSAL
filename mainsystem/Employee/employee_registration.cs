@@ -29,9 +29,39 @@ namespace mainsystem
                 return cp;
             }
         }
+        private string GetCurrentRole()
+        {
+            string role = "";
+            try
+            {
+                posdb_connect db = new posdb_connect();
+                db.pos_connString();
+                db.posdb_open();
 
+                // Get account_type based on the Global ID
+                string sql = "SELECT account_type FROM useraccountTb1 WHERE username = '" + Program.CurrentEmpID + "'";
+                // Note: If CurrentEmpID stores the 'ID Number' (e.g. 202301), change 'username' to 'emp_id' or whatever column matches!
+
+                db.pos_sql = sql;
+                db.pos_cmd();
+
+                object result = db.pos_sql_command.ExecuteScalar();
+                if (result != null)
+                {
+                    role = result.ToString();
+                }
+
+                db.posdb_close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Security Check Error: " + ex.Message);
+            }
+            return role;
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
+            ApplySecurityRestrictions();
             //Center panel (UI logic) ---
             CenterPanel();
             this.Resize += (s, ev) => CenterPanel();
@@ -44,6 +74,18 @@ namespace mainsystem
             catch (Exception ex)
             {
                 MessageBox.Show("Error Loading System: " + ex.Message);
+            }
+        }
+
+        private void ApplySecurityRestrictions()
+        {
+            string role = GetCurrentRole();
+
+            // HR STAFF RESTRICTIONS
+            if (role == "HR Staff")
+            {
+                // "delete is not enabled"
+                if (deleteBtn != null) deleteBtn.Enabled = false;
             }
         }
 

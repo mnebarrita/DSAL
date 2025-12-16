@@ -62,7 +62,7 @@ namespace mainsystem
                 pos_db.pos_sql = "SELECT * FROM pos_nameTb1 " +
                                      "INNER JOIN pos_picTb1 ON pos_nameTb1.pos_id = pos_picTb1.pos_id " +
                                      "INNER JOIN pos_priceTb1 ON pos_picTb1.pos_id = pos_priceTb1.pos_id " +
-                                     "WHERE pos_nameTb1.pos_id = 3";
+                                     "WHERE pos_nameTb1.pos_id = 2";
 
                 pos_db.pos_cmd();
                 pos_db.pos_sqladapterSelect();

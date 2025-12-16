@@ -30,12 +30,70 @@ namespace mainsystem.Prelim
                 return cp;
             }
         }
+        private string GetCurrentRole()
+        {
+            string role = "";
+            try
+            {
+                posdb_connect db = new posdb_connect();
+                db.pos_connString();
+                db.posdb_open();
 
+                // Check CurrentEmpID against username column
+                string sql = "SELECT account_type FROM useraccountTb1 WHERE username = '" + Program.CurrentEmpID + "'";
+
+                db.pos_sql = sql;
+                db.pos_cmd();
+                object result = db.pos_sql_command.ExecuteScalar();
+                if (result != null) role = result.ToString();
+
+                db.posdb_close();
+            }
+            catch (Exception) { }
+            return role;
+        }
+
+        private void ApplySecurityRestrictions()
+        {
+            string role = GetCurrentRole();
+
+            // ACCOUNTING STAFF RESTRICTIONS
+            if (role == "Accounting Staff")
+            {
+                // Disable Action Buttons
+                if (editBtn != null) editBtn.Enabled = false;
+                if (deleteBtn != null) deleteBtn.Enabled = false;
+
+                firstnameTxtbox.ReadOnly = true;
+                MNameTxtbox.ReadOnly = true;
+                surnameTxtBox.ReadOnly = true;
+                civilStatusTxtBox.ReadOnly = true;
+                designationTxtBox.ReadOnly = true;
+                departmentTxtBox.ReadOnly = true;
+                emp_statusTxtBox.ReadOnly = true;
+
+                basic_netincomeTxtbox.ReadOnly = true;
+                hono_netincomeTxtbox.ReadOnly = true;
+                other_netincomeTxtbox.ReadOnly = true;
+
+                gross_incomeTxtbox.ReadOnly = true;
+                total_deducTxtbox.ReadOnly = true;
+                net_incomeTxtbox.ReadOnly = true;
+
+                sss_contribTxtbox.ReadOnly = true;
+                philhealth_contribTxtbox.ReadOnly = true;
+                pagibig_contribTxtbox.ReadOnly = true;
+                tax_contribTxtbox.ReadOnly = true;
+                numDependentsTxtBox.ReadOnly = true;
+
+                if (numDependentsTxtBox != null) numDependentsTxtBox.ReadOnly = true;
+            }
+        }
         private void employee_payrol_Load(object sender, EventArgs e)
         {
-            //Center panel (UI logic) ---
             CenterPanel();
             this.Resize += (s, ev) => CenterPanel();
+            ApplySecurityRestrictions();
         }
 
         private void CenterPanel()
@@ -48,10 +106,7 @@ namespace mainsystem.Prelim
         {
             try
             {
-                // Open Connection to Employee DB
                 emp_db.employee_connString();
-
-                // Search Query
                 emp_db.employee_sql = "SELECT * FROM pos_empRegTb1 WHERE emp_id = '" + empNumberTxtBox.Text + "'";
 
                 emp_db.employee_cmd();
@@ -62,7 +117,6 @@ namespace mainsystem.Prelim
                 {
                     DataRow row = emp_db.employee_sql_dataset.Tables[0].Rows[0];
 
-                    // Fill the Read-Only Grey Boxes
                     firstnameTxtbox.Text = row["emp_fname"].ToString();
                     MNameTxtbox.Text = row["emp_mname"].ToString();
                     surnameTxtBox.Text = row["emp_surname"].ToString();
@@ -75,21 +129,15 @@ namespace mainsystem.Prelim
                     string imgPath = row["picpath"].ToString();
 
                     if (System.IO.File.Exists(imgPath))
-                    {
-                        
                         pictureBox2.Image = Image.FromFile(imgPath);
-                    }
                     else
-                    {
-                        pictureBox2.Image = null; // Clear if no image found
-                    }
+                        pictureBox2.Image = null;
                 }
                 else
                 {
                     MessageBox.Show("Employee ID not found.");
                 }
 
-                // Close Connection
                 if (emp_db.employee_sql_connection.State == ConnectionState.Open)
                     emp_db.employee_sql_connection.Close();
             }
@@ -265,7 +313,6 @@ namespace mainsystem.Prelim
 
                     MessageBox.Show("Record Deleted Successfully.");
 
-                    // Clear the screen after deleting
                     newBtn_Click(sender, e);
                 }
             }
@@ -332,5 +379,73 @@ namespace mainsystem.Prelim
             }
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            string findID = empNumberTxtBox.Text.Trim();
+            if (findID == "") return;
+
+            try
+            {
+                posdb_connect db = new posdb_connect();
+                db.pos_connString();
+                db.posdb_open();
+
+                string sql = "SELECT * FROM payrolTb1 WHERE emp_id = '" + findID + "'";
+
+                db.pos_sql = sql;
+                db.pos_cmd();
+
+                SqlDataReader dr = db.pos_sql_command.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    // Basic Pay (Fixed Names)
+                    basic_rateTxtbox.Text = dr["basic_rate_hr"].ToString();
+                    basic_numhrsTxtbox.Text = dr["basic_no_of_hrs_cutOff"].ToString();
+                    basic_netincomeTxtbox.Text = dr["basic_income_per_cutOff"].ToString();
+
+                    // Honorarium (Fixed Names)
+                    hono_rateTxtbox.Text = dr["honorarium_rate_hr"].ToString();
+                    hono_numhrsTxtbox.Text = dr["honorarium_no_of_hrs_cutOff"].ToString();
+                    hono_netincomeTxtbox.Text = dr["honorarium_income_per_cutOff"].ToString();
+
+                    // Other Income (Fixed Names)
+                    other_rateTxtbox.Text = dr["other_rate_hr"].ToString();
+                    other_numhrsTxtbox.Text = dr["other_no_of_hrs_cutOff"].ToString();
+                    other_netincomeTxtbox.Text = dr["other_income_per_cutOff"].ToString();
+
+                    // Regular Deductions (Fixed Names)
+                    sss_contribTxtbox.Text = dr["sss_contrib"].ToString();
+                    philhealth_contribTxtbox.Text = dr["philhealth_contrib"].ToString();
+                    pagibig_contribTxtbox.Text = dr["pagibig_contrib"].ToString();
+                    tax_contribTxtbox.Text = dr["tax_contrib"].ToString();
+
+                    // Loans (Fixed Names)
+                    sss_loanTxtbox.Text = dr["sss_loan"].ToString();
+                    pagibig_loanTxtbox.Text = dr["pagibig_loan"].ToString();
+                    FSD_depositTxtbox.Text = dr["fac_savings_deposit"].ToString();
+                    FS_loanTxtbox.Text = dr["fac_savings_loan"].ToString();
+                    sal_loanTxtbox.Text = dr["salary_loan"].ToString();
+                    others_loanTxtbox.Text = dr["other_loans"].ToString();
+
+                    // Summaries
+                    gross_incomeTxtbox.Text = dr["gross_income"].ToString();
+                    total_deducTxtbox.Text = dr["total_deductions"].ToString();
+                    net_incomeTxtbox.Text = dr["net_income"].ToString();
+
+                    MessageBox.Show("Payroll Record Loaded.");
+                }
+                else
+                {
+                    MessageBox.Show("Employee Payroll Record not found.");
+                }
+
+                db.posdb_close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Search Error: " + ex.Message);
+            }
+        }
     }
 }

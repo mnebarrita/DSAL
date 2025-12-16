@@ -67,8 +67,57 @@ namespace mainsystem
             mnameTxtBox.Enabled = false;
             surnameTxtBox.Enabled = false;
             designationTxtBox.Enabled = false;
+
+            ApplySecurityRestrictions();
+        }
+        private void ApplySecurityRestrictions()
+        {
+            // 1. Get the Role
+            string role = GetCurrentRole();
+
+            // 2. IT STAFF RESTRICTIONS
+            if (role == "IT Staff")
+            {
+                // DISABLE UPDATE
+                if (updateBtn != null) updateBtn.Enabled = false;
+
+                // DISABLE DELETE
+                if (deleteBtn != null) deleteBtn.Enabled = false;
+
+                // DISABLE SEARCH FOR UPDATE
+                if (searchUpdateBtn != null) searchUpdateBtn.Enabled = false;
+            }
         }
 
+        private string GetCurrentRole()
+        {
+            string role = "";
+            try
+            {
+                posdb_connect db = new posdb_connect();
+                db.pos_connString();
+                db.posdb_open();
+
+                // Get account_type based on the Global ID
+                string sql = "SELECT account_type FROM useraccountTb1 WHERE username = '" + Program.CurrentEmpID + "'";
+
+                db.pos_sql = sql;
+                db.pos_cmd();
+
+                object result = db.pos_sql_command.ExecuteScalar();
+                if (result != null)
+                {
+                    role = result.ToString();
+                }
+
+                db.posdb_close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Security Check Error: " + ex.Message);
+            }
+            return role;
+        }
         private void CenterPanel()
         {
             panelMain.Left = (this.ClientSize.Width - panelMain.Width) / 2;

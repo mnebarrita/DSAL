@@ -23,7 +23,15 @@ namespace mainsystem
             panelMain.BackColor = Color.FromArgb(100, 0, 0, 0);
         }
 
-        
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;  // Turn on Double Buffering at the OS level
+                return cp;
+            }
+        }
         private void AdminLoungeFrm_Load(object sender, EventArgs e)
         {
             this.BackgroundImage = Properties.Resources.background1;
