@@ -28,28 +28,20 @@ namespace mainsystem
         {
             try
             {
-                // 1. Setup Connection
-                pos_db.pos_connString(); // Sets up the variables
-                pos_db.posdb_open();     // Actually opens the connection
-
-                // 2. Pass the SQL Query
+                pos_db.pos_connString(); 
+                pos_db.posdb_open();   
                 pos_db.pos_sql = sqlQuery;
-
-                // 3. Create Command & Adapter
                 pos_db.pos_cmd();
                 pos_db.pos_sqladapterSelect();
-
-                // 4. Fill Dataset (Using your specific SALES method)
                 pos_db.pos_sqldatasetSELECTSALES();
 
-                // 5. Bind to Grid
+
                 if (pos_db.pos_sql_dataset.Tables.Count > 0)
                 {
                     dataGridView1.DataSource = pos_db.pos_sql_dataset.Tables[0];
                     dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 }
 
-                // 6. Close Connection
                 pos_db.posdb_close();
             }
             catch (Exception ex)
@@ -86,21 +78,16 @@ namespace mainsystem
             string search = optionInputTxtbox.Text;
             string condition = "";
 
-            // Mapping Dropdown options to Database Columns
-            // NOTE: Ensure your database columns match these names exactly!
-
             if (optionCombo.Text == "transaction_id")
             {
                 condition = "WHERE transaction_id LIKE '%" + search + "%'";
             }
             else if (optionCombo.Text == "terminal_number")
             {
-                // In your screenshot, this column is 'terminal_no'
                 condition = "WHERE terminal_no LIKE '%" + search + "%'";
             }
             else if (optionCombo.Text == "date and time")
             {
-                // In your screenshot, this column is 'time_date'
                 condition = "WHERE time_date LIKE '%" + search + "%'";
             }
             else if (optionCombo.Text == "product name")
@@ -109,7 +96,6 @@ namespace mainsystem
             }
             else if (optionCombo.Text == "employee_number")
             {
-                // In your screenshot, this column is 'emp_id'
                 condition = "WHERE emp_id LIKE '%" + search + "%'";
             }
             else
@@ -127,11 +113,6 @@ namespace mainsystem
             optionInputTxtbox.Clear();
             optionCombo.SelectedIndex = -1;
             LoadGrid("SELECT * FROM salesTb1");
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

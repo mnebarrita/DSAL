@@ -40,8 +40,6 @@ namespace mainsystem
             {
                 OpenConnection();
 
-                // SQL Query: Joins User Table with Employee Table to show names
-                // It selects everything (*) from both, which is what the book example does
                 string sql = "SELECT pos_empRegTb1.emp_id, emp_fname, emp_mname, emp_surname, " +
                              "user_id, username, password, user_status, account_type " +
                              "FROM pos_empRegTb1 " +
@@ -114,12 +112,11 @@ namespace mainsystem
             {
                 condition = "WHERE pos_empRegTb1.emp_fname LIKE '%" + search + "%'";
             }
-            // Special Cases: Search by Status (ignores textbox input usually)
             else if (optionCombo.Text == "active")
             {
                 condition = "WHERE useraccountTb1.user_status = 'Active'";
             }
-            else if (optionCombo.Text == "deactivate") // Book uses "deactivate" for "Inactive"
+            else if (optionCombo.Text == "deactivate") 
             {
                 condition = "WHERE useraccountTb1.user_status = 'Inactive'";
             }

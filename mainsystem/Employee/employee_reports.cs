@@ -36,7 +36,6 @@ namespace mainsystem
                 if (emp_db.employee_sql_dataset.Tables.Count > 0)
                 {
                     dataGridView1.DataSource = emp_db.employee_sql_dataset.Tables[0];
-                    // Make it look nice
                     dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 }
 
@@ -66,8 +65,6 @@ namespace mainsystem
             string searchInput = optionInputTxtbox.Text;
             string sql = "";
 
-            // The book uses specific keywords for the ComboBox.
-            // Ensure your ComboBox items match these strings exactly!
 
             if (optionCombo.Text == "employee_number")
             {

@@ -39,8 +39,6 @@ namespace mainsystem
             {
                 payrol_db.payrol_connString();
 
-                // This JOIN connects the Name (from Reg Table) to the Money (from Payroll Table)
-                // We explicitly select columns to avoid duplicate "emp_id" errors
                 string sql = "SELECT " +
                     "pos_empRegTb1.emp_id, " +
                     "pos_empRegTb1.emp_fname, " +
@@ -48,11 +46,10 @@ namespace mainsystem
                     "payrolTb1.pay_date, " +
                     "payrolTb1.gross_income, " +
                     "payrolTb1.total_deductions, " +
-                    "payrolTb1.net_income " + // You can add more payroll columns here if you want
+                    "payrolTb1.net_income " + 
                     "FROM pos_empRegTb1 " +
                     "INNER JOIN payrolTb1 ON pos_empRegTb1.emp_id = payrolTb1.emp_id ";
 
-                // Add the search filter if one exists
                 if (whereClause != "")
                 {
                     sql += whereClause;
@@ -85,12 +82,10 @@ namespace mainsystem
 
             if (optionCombo.Text == "employee_number")
             {
-                // Use LIKE for partial matches (e.g., typing '1' finds '1001')
                 condition = "WHERE payrolTb1.emp_id LIKE '%" + search + "%'";
             }
             else if (optionCombo.Text == "gross_income")
             {
-                // Finds '15000' inside '15000.00'
                 condition = "WHERE payrolTb1.gross_income LIKE '%" + search + "%'";
             }
             else if (optionCombo.Text == "net_income")
@@ -99,7 +94,6 @@ namespace mainsystem
             }
             else if (optionCombo.Text == "pay_date")
             {
-                // Dates usually need exact matches, but LIKE works for years too (e.g., '2025')
                 condition = "WHERE payrolTb1.pay_date LIKE '%" + search + "%'";
             }
             else

@@ -14,10 +14,7 @@ namespace mainsystem.Prelim
 {
     public partial class employee_payrol : Form
     {
-        // 1. Connection for Saving Payroll (New Database)
         payrol_dbconnection payrol_db = new payrol_dbconnection();
-
-        // 2. Connection for Searching Employees (Old Activity 4 Database)
         employee_dbconnection emp_db = new employee_dbconnection();
         public employee_payrol()
         {
@@ -107,38 +104,22 @@ namespace mainsystem.Prelim
             try
             {
                 payrol_db.payrol_connString();
-
-                // QUERY: Matches your database structure (Basic Pay first -> ID/Date last)
                 string sql = "INSERT INTO payrolTb1 (" +
-                    // Basic Pay
                     "basic_rate_hr, basic_no_of_hrs_cutOff, basic_income_per_cutOff, " +
-                    // Honorarium
                     "honorarium_rate_hr, honorarium_no_of_hrs_cutOff, honorarium_income_per_cutOff, " +
-                    // Other Income
                     "other_rate_hr, other_no_of_hrs_cutOff, other_income_per_cutOff, " +
-                    // Regular Deductions
                     "sss_contrib, philhealth_contrib, pagibig_contrib, tax_contrib, " +
-                    // Loans
                     "sss_loan, pagibig_loan, fac_savings_deposit, fac_savings_loan, salary_loan, other_loans, " +
-                    // Summary
                     "total_deductions, gross_income, net_income, " +
-                    // ID & Date (At the end)
                     "emp_id, pay_date) " +
 
                     "VALUES ('" +
-                    // Basic Pay
                     basic_rateTxtbox.Text + "', '" + basic_numhrsTxtbox.Text + "', '" + basic_netincomeTxtbox.Text + "', '" +
-                    // Honorarium
                     hono_rateTxtbox.Text + "', '" + hono_numhrsTxtbox.Text + "', '" + hono_netincomeTxtbox.Text + "', '" +
-                    // Other Income
                     other_rateTxtbox.Text + "', '" + other_numhrsTxtbox.Text + "', '" + other_netincomeTxtbox.Text + "', '" +
-                    // Regular Deductions
                     sss_contribTxtbox.Text + "', '" + philhealth_contribTxtbox.Text + "', '" + pagibig_contribTxtbox.Text + "', '" + tax_contribTxtbox.Text + "', '" +
-                    // Loans
                     sss_loanTxtbox.Text + "', '" + pagibig_loanTxtbox.Text + "', '" + FSD_depositTxtbox.Text + "', '" + FS_loanTxtbox.Text + "', '" + sal_loanTxtbox.Text + "', '" + others_loanTxtbox.Text + "', '" +
-                    // Summary
                     total_deducTxtbox.Text + "', '" + gross_incomeTxtbox.Text + "', '" + net_incomeTxtbox.Text + "', '" +
-                    // ID & Date
                     empNumberTxtBox.Text + "', '" + paydateDatePicker.Value.ToString("yyyy-MM-dd") + "')";
 
                 payrol_db.payrol_sql = sql;
@@ -149,8 +130,6 @@ namespace mainsystem.Prelim
                     payrol_db.payrol_sql_connection.Close();
 
                 MessageBox.Show("Payroll Record Saved Successfully!");
-                // Optional: Clear fields after save
-                // newBtn_Click(sender, e); 
             }
             catch (Exception ex)
             {
@@ -249,14 +228,11 @@ namespace mainsystem.Prelim
                     // 7. Date
                     "pay_date = '" + paydateDatePicker.Value.ToString("yyyy-MM-dd") + "' " +
 
-                    // WHERE Clause (Identify which record to update)
                     "WHERE emp_id = '" + empNumberTxtBox.Text + "'";
 
                 payrol_db.payrol_sql = sql;
                 payrol_db.payrol_cmd();
 
-                // NOTE: If you haven't added payrol_sqladapterUpdate to your class yet,
-                // you can use payrol_sqladapterInsert() since it just runs ExecuteNonQuery.
                 payrol_db.payrol_sqladapterInsert();
 
                 if (payrol_db.payrol_sql_connection.State == ConnectionState.Open)
@@ -303,7 +279,7 @@ namespace mainsystem.Prelim
         {
             try
             {
-                // Helper function to safely convert text to number (treats empty as 0)
+                // Helper function to safely convert text to number
                 double GetVal(string text)
                 {
                     return string.IsNullOrWhiteSpace(text) ? 0 : Convert.ToDouble(text);

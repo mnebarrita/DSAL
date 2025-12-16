@@ -13,10 +13,7 @@ namespace mainsystem
 {
     public partial class user_account : Form
     {
-        // 1. Connection for User Accounts (To Save/Edit)
         useraccount_db_connection user_db = new useraccount_db_connection();
-
-        // 2. Connection for Employee Info (To Search Names from Activity 4)
         employee_dbconnection emp_db = new employee_dbconnection();
         public user_account()
         {
@@ -58,7 +55,7 @@ namespace mainsystem
             surnameTxtBox.ForeColor = Color.Silver;
 
             // --- Password Placeholders ---
-            passwordTxtBox.UseSystemPasswordChar = false; // Show text initially
+            passwordTxtBox.UseSystemPasswordChar = false;
             passwordTxtBox.Text = "Password";
             passwordTxtBox.ForeColor = Color.Silver;
 
@@ -66,7 +63,6 @@ namespace mainsystem
             confirmPassTxtBox.Text = "Confirm Password";
             confirmPassTxtBox.ForeColor = Color.Silver;
 
-            // Disable Name fields (Read-only since they come from Search)
             fnameTxtBox.Enabled = false;
             mnameTxtBox.Enabled = false;
             surnameTxtBox.Enabled = false;
@@ -83,7 +79,6 @@ namespace mainsystem
         {
             try
             {
-                // We use the Employee Connection here
                 emp_db.employee_connString();
                 emp_db.employee_sql = "SELECT * FROM pos_empRegTb1 WHERE emp_id = '" + empIdTxtBox.Text + "'";
 
@@ -180,7 +175,7 @@ namespace mainsystem
                 if (passwordTxtBox.Text != confirmPassTxtBox.Text)
                 {
                     MessageBox.Show("Passwords do not match!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return; // STOP here. Do not save.
+                    return;
                 }
                 OpenUserConnection();
 
@@ -224,20 +219,16 @@ namespace mainsystem
                 user_db.useraccount_cmd();
                 user_db.useraccount_sqldataadapterSelect();
 
-                // [FIX] Reset the Dataset so it accepts the new columns (like emp_fname)
                 user_db.useraccount_sql_dataset = new DataSet();
 
-                // Fill the fresh dataset
                 user_db.useraccount_sql_dataadapter.Fill(user_db.useraccount_sql_dataset);
 
-                // [FIX] Use Tables[0] instead of a specific name to be safe
                 if (user_db.useraccount_sql_dataset.Tables[0].Rows.Count > 0)
                 {
                     DataRow row = user_db.useraccount_sql_dataset.Tables[0].Rows[0];
 
                     empIdTxtBox.Text = row["emp_id"].ToString();
 
-                    // Now this will work because the table was reset!
                     fnameTxtBox.Text = row["emp_fname"].ToString();
                     fnameTxtBox.ForeColor = Color.Black;
 
@@ -367,7 +358,7 @@ namespace mainsystem
         {
             if (passwordTxtBox.Text == "")
             {
-                passwordTxtBox.UseSystemPasswordChar = false; // Turn off dots to read "Password"
+                passwordTxtBox.UseSystemPasswordChar = false;
                 passwordTxtBox.Text = "Password";
                 passwordTxtBox.ForeColor = Color.Silver;
             }
@@ -379,7 +370,7 @@ namespace mainsystem
             {
                 passwordTxtBox.Text = "";
                 passwordTxtBox.ForeColor = Color.Black;
-                passwordTxtBox.UseSystemPasswordChar = true; // Turn on dots
+                passwordTxtBox.UseSystemPasswordChar = true;
             }
         }
 

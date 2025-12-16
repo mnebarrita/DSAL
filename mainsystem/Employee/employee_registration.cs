@@ -88,11 +88,9 @@ namespace mainsystem
             emp_fname.Text = "";
             emp_mname.Text = "";
             emp_surname.Text = "";
-
-            // For ComboBoxes, clearing text is safe, or use SelectedIndex = -1
             emp_age.Text = "";
             emp_gender.Text = "";
-            emp_status.Text = "";        // Civil Status
+            emp_status.Text = "";        
 
             // --- Government IDs ---
             emp_sss_no.Text = "";
@@ -176,7 +174,6 @@ namespace mainsystem
                 emp_db.employee_connString();
 
                 // 2. SQL String
-                // We skip 'name_id' because the database auto-generates it.
                 string sql = "INSERT INTO pos_empRegTb1 (" +
                     "emp_id, emp_fname, emp_mname, emp_surname, emp_age, emp_gender, " +
                     "emp_sss_no, emp_tin_no, emp_philhealth_no, emp_pagibig_no, emp_status, " +
@@ -200,8 +197,8 @@ namespace mainsystem
                     emp_tin_no.Text + "', '" +
                     emp_philhealth_no.Text + "', '" +
                     emp_pagibig_no.Text + "', '" +
-                    emp_status.Text + "', '" +              // Civil Status
-                                                            // Physical & Address
+                    emp_status.Text + "', '" +              
+
                     emp_height.Text + "', '" +
                     emp_weight.Text + "', '" +
                     add_yrs_stay.Text + "', '" +
@@ -290,7 +287,6 @@ namespace mainsystem
                     DataRow row = emp_db.employee_sql_dataset.Tables[0].Rows[0];
 
                     // --- Personal Info ---
-                    // Note: We skip 'emp_id' since that's what we searched for
                     emp_fname.Text = row["emp_fname"].ToString();
                     emp_mname.Text = row["emp_mname"].ToString();
                     emp_surname.Text = row["emp_surname"].ToString();
@@ -397,8 +393,7 @@ namespace mainsystem
                 // 1. Connect
                 emp_db.employee_connString();
 
-                // 2. The MASSIVE Update Query
-                // This now includes Address, Education, Awards, EVERYTHING.
+                // 2. The Update Query
                 string sql = "UPDATE pos_empRegTb1 SET " +
                     "emp_fname = '" + emp_fname.Text + "', " +
                     "emp_mname = '" + emp_mname.Text + "', " +
@@ -471,7 +466,6 @@ namespace mainsystem
                 emp_db.employee_cmd();
 
                 // Execute Update
-                // Note: Using Insert/Update/Delete adapter usually works the same if they just run ExecuteNonQuery
                 emp_db.employee_sqladapterInsert();
 
                 if (emp_db.employee_sql_connection.State == ConnectionState.Open)
@@ -500,14 +494,14 @@ namespace mainsystem
                     emp_db.employee_sql = sql;
 
                     emp_db.employee_cmd();
-                    emp_db.employee_sqladapterInsert(); // ExecuteNonQuery
+                    emp_db.employee_sqladapterInsert(); 
 
                     if (emp_db.employee_sql_connection.State == ConnectionState.Open)
                         emp_db.employee_sql_connection.Close();
 
                     MessageBox.Show("Record Deleted Successfully.");
-                    RefreshGrid();   // Update the table
-                    ClearAllFields(); // Clear the textboxes
+                    RefreshGrid();   
+                    ClearAllFields(); 
                 }
             }
             catch (Exception ex)
