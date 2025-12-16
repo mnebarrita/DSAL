@@ -19,7 +19,7 @@ namespace mainsystem
             //Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new L6MainForm_Admin());
+            Application.Run(new LoginFrm_Database());
         }
     }
 }
