@@ -263,5 +263,6 @@ namespace mainsystem
             lounge.Dock = DockStyle.Fill; 
             lounge.Show();
         }
+
     }
 }

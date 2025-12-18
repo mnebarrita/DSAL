@@ -118,6 +118,7 @@ namespace mainsystem.Prelim
                 // Disable Action Buttons
                 if (editBtn != null) editBtn.Enabled = false;
                 if (deleteBtn != null) deleteBtn.Enabled = false;
+                if (pictureBox1 != null) pictureBox1.Enabled = false;
 
                 firstnameTxtbox.ReadOnly = true;
                 MNameTxtbox.ReadOnly = true;
