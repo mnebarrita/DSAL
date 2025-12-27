@@ -41,11 +41,11 @@ namespace mainsystem
             discounttotaltxtbox.Enabled = false;
 
             // Codes for inserting pictures or image
-            pictureBox16.Image = Image.FromFile(@"C:\Users\Mica\source\repos\mnebarrita\DSAL\mainsystem\Images\RGX.jpg");
-            pictureBox17.Image = Image.FromFile(@"C:\Users\Mica\source\repos\mnebarrita\DSAL\mainsystem\Images\glitchpop.jpg");
-            pictureBox18.Image = Image.FromFile(@"C:\Users\Mica\source\repos\mnebarrita\DSAL\mainsystem\Images\EX-O-Valorant-skins-1024x576.jpg");
-            pictureBox19.Image = Image.FromFile(@"C:\Users\Mica\source\repos\mnebarrita\DSAL\mainsystem\Images\Mystbloom-Valorant-1024x576.jpg");
-            pictureBox20.Image = Image.FromFile(@"C:\Users\Mica\source\repos\mnebarrita\DSAL\mainsystem\Images\splashx-valorant-skins-1024x576.jpg");
+            pictureBox16.Image = Properties.Resources.RGX;
+            pictureBox17.Image = Properties.Resources.glitchpop;
+            pictureBox18.Image = Properties.Resources.EX_O_Valorant_skins_1024x576;
+            pictureBox19.Image = Properties.Resources.Mystbloom_Valorant_1024x576;
+            pictureBox20.Image = Properties.Resources.splashx_valorant_skins_1024x576;
 
             // codes for inserting name of the image inside the label tool
             // Row 1

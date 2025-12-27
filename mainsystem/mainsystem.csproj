@@ -403,7 +403,7 @@
     <None Include="Images\evori dreamwings.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Images\EX-O-Valorant-skins-1024x576.jpg" />
+    <None Include="Images\EX_O_Valorant_skins_1024x576.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Images\FoodBundleA.jpeg" />
