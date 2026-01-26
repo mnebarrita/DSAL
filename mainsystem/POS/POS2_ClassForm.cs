@@ -62,7 +62,7 @@ namespace mainsystem
 
         private void EXAM_Load(object sender, EventArgs e)
         {
-            this.DisplayPictureBox.Image = Resources.clear1;
+            this.DisplayPictureBox.Image = Properties.Resources.clear;
             this.DisplayPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             this.BackgroundImage = Properties.Resources.POS2wallpaper;
             this.BackgroundImageLayout = ImageLayout.Stretch;
@@ -288,7 +288,7 @@ namespace mainsystem
         }
         private void button4_Click(object sender, EventArgs e)
         {
-            this.DisplayPictureBox.Image = Resources.clear1;
+            this.DisplayPictureBox.Image = Properties.Resources.clear;
             this.DisplayPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             // Uncheck Radio Buttons
             foodARdbt.Checked = false;

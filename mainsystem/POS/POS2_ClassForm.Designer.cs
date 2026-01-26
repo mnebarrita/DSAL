@@ -648,7 +648,7 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = global::mainsystem.Properties.Resources.pepperoni1;
+            this.pictureBox4.Image = global::mainsystem.Properties.Resources.pepperoni;
             this.pictureBox4.Location = new System.Drawing.Point(298, 24);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox4.Name = "pictureBox4";

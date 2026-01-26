@@ -429,7 +429,9 @@
   <ItemGroup>
     <None Include="Resources\background1.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\amanos.jpg" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\download %284%29.jpg" />
   </ItemGroup>
@@ -471,6 +473,288 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\background3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cauliflower crust.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clear1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dominos.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FoodBundleA.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FoodBundleB.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hawaii.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NYPizza.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pepperoni1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pizza 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pizza 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pizza 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pizza 4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pizza 5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pizza 6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pizza 7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pizza 8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pizza 9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pizza barbeque.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pizza special a.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pizza special b.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pizza special c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pizza special d.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Doombringer-skins-1024x576.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\elderflame.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\evori dreamwings.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EX-O-Valorant-skins-1024x576.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FoodBundleA1.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FoodBundleB1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gaia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\glitchpop.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kuronami-skinline.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mystbloom-Valorant-1024x576.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nocturnum-skins-1024x576.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\prelude.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\prime.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Primordium-skinline.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\protocol.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\radiantcrisis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RES.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RGX.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SOL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spectrum-skins-scaled.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\splashx-valorant-skins-1024x576.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pfp1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pfp2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pfp3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pfp4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pfp5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pfp6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dog-meme-dog-funny.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ff0a4b4fd408d604d33bb8772438ac3b.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\meme-faces-funny-pictures-7xvkefh4z0cz2nb5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-11-04 142539.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-11-04 142551.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-11-04 142600.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-11-04 142614.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-11-04 142630.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-11-04 142640.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-11-04 142706.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-11-04 142823.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-11-04 142831.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-11-04 142843.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-11-04 142853.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-11-04 142904.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-11-04 142915.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-11-04 142935.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-11-04 143000.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-11-04 143024.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-11-04 143038.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0ff6826e-4429-4892-8b5d-e5fa75f4f18e1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\84a2abf7b1934c0fe9d9a6ae62780c401.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %281%291.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %282%291.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %283%291.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %284%291.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %285%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %286%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %287%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %288%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %289%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %2810%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Excitebike Windows Login Screen1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loginwp1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\me whwn im omw1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nopfp1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\POS1wallpaper1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\POS2wallpaper1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sad-Cat-Meme-Download-PNG-Image1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot %28973%291.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

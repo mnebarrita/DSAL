@@ -1077,7 +1077,7 @@
             this.DisplayPictureBox.TabIndex = 26;
             this.DisplayPictureBox.TabStop = false;
             // 
-            // EXAM
+            // EXAM_Cashier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1096,7 +1096,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Name = "EXAM";
+            this.Name = "EXAM_Cashier";
             this.Text = "EXAM";
             this.Load += new System.EventHandler(this.EXAM_Load);
             this.groupBox5.ResumeLayout(false);

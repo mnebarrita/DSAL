@@ -74,7 +74,7 @@ namespace mainsystem
         private void EXAM_Load(object sender, EventArgs e)
         {
 
-            this.DisplayPictureBox.Image = Resources.clear1;
+            this.DisplayPictureBox.Image = Properties.Resources.clear;
             this.DisplayPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             CenterPanel();
             this.Resize += (s, ev) => CenterPanel();

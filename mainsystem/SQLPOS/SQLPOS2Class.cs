@@ -38,9 +38,9 @@ namespace mainsystem
             try
             {
                 // --- VISUAL SETUP ---
-                this.BackgroundImage = Properties.Resources.background11;
+                this.BackgroundImage = Properties.Resources.background1;
                 this.BackgroundImageLayout = ImageLayout.Stretch;
-                this.DisplayPictureBox.Image = Resources.clear1;
+                this.DisplayPictureBox.Image = Properties.Resources.clear;
                 this.DisplayPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
 
                 CenterPanel();
@@ -249,7 +249,7 @@ namespace mainsystem
         }
         private void button4_Click(object sender, EventArgs e)
         {
-            this.DisplayPictureBox.Image = Resources.clear1;
+            this.DisplayPictureBox.Image = Properties.Resources.clear;
             this.DisplayPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
 
             foodARdbt.Checked = false;

@@ -125,7 +125,7 @@ namespace mainsystem
                 this.BackColor = Color.LightBlue;
 
                 // insert image in PictureBox
-                DisplayPictureBox.Image = Properties.Resources.FoodBundleB;
+                DisplayPictureBox.Image = Properties.Resources.FoodBundleB; ;
 
                 // check bundle A checkboxes
                 A_CokeCheckBox.Checked = false;
@@ -215,7 +215,7 @@ namespace mainsystem
             foodARdbt.Enabled = true;
             foodBRdbt.Enabled = true;
 
-            DisplayPictureBox.Image = Properties.Resources.clear;
+            DisplayPictureBox.Image = null;
 
             // reset all checkboxes
             A_CokeCheckBox.Checked = false;

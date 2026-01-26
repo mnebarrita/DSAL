@@ -966,7 +966,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::mainsystem.Properties.Resources.WIN_20250923_11_05_27_Pro;
+            this.pictureBox1.Image = null;
             this.pictureBox1.Location = new System.Drawing.Point(391, 78);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
