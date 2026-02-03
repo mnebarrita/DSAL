@@ -182,6 +182,7 @@
             this.menuFlowPanel.Name = "menuFlowPanel";
             this.menuFlowPanel.Size = new System.Drawing.Size(1056, 854);
             this.menuFlowPanel.TabIndex = 70;
+            this.menuFlowPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.menuFlowPanel_Paint);
             // 
             // groupBox1
             // 

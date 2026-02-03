@@ -22,7 +22,7 @@ namespace mainsystem.L14_Classes
         {
             // connection of c# to sql
             employee_sql_connection = new SqlConnection();
-            employee_connectionString = "Data Source=MICACHU\\SQLEXPRESS; Initial Catalog=POSDB; User ID=Micachu; Password=morats;";
+            employee_connectionString = "Server=10.118.141.165,1433;Database=POS_Database;User Id=sa;Password=rylle;TrustServerCertificate=True;"; ;
             employee_sql_connection = new SqlConnection(employee_connectionString);
             employee_sql_connection.ConnectionString = employee_connectionString;
             employee_sql_connection.Open();

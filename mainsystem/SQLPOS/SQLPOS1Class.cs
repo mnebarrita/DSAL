@@ -462,5 +462,10 @@ namespace mainsystem
             GenerateMenuFromHorizontalDB();
             ClearInputsOnly();
         }
+
+        private void menuFlowPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

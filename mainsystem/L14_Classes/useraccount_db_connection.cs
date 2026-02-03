@@ -21,8 +21,7 @@ namespace mainsystem
         {
             //codes to establish connection from C# Forms to the SQL Server database
             useraccount_sql_connection = new SqlConnection();
-            useraccount_connectionString = "Data Source=MICACHU\\SQLEXPRESS; " +
-                "Initial Catalog=POSDB; User ID=Micachu; Password=morats;";
+            useraccount_connectionString = "Server=10.118.141.165,1433;Database=POS_Database;User Id=sa;Password=rylle;TrustServerCertificate=True;"; ;
         }
         public void useraccount_cmd()//public function codes that support the mssql query
         {

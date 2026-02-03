@@ -20,7 +20,7 @@ namespace mainsystem
 
         public void pos_connString()
         {
-            pos_connectionString = "Data Source=MICACHU\\SQLEXPRESS; Initial Catalog=POSDB; User ID=Micachu; Password=morats;";
+            pos_connectionString = "Server=10.118.141.165,1433;Database=POS_Database;User Id=sa;Password=rylle;TrustServerCertificate=True;"; ;
             pos_sql_connection = new SqlConnection(pos_connectionString);
         }
 
