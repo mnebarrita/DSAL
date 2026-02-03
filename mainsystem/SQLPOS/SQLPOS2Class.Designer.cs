@@ -29,6 +29,16 @@
         private void InitializeComponent()
         {
             this.panelMain = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.lblHeaderTerminal = new System.Windows.Forms.Label();
+            this.lblHeaderName = new System.Windows.Forms.Label();
+            this.lblHeaderEmpID = new System.Windows.Forms.Label();
+            this.lblHeaderDate = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.submitBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -135,16 +145,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.foodBRdbt = new System.Windows.Forms.RadioButton();
             this.foodARdbt = new System.Windows.Forms.RadioButton();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.lblHeaderTerminal = new System.Windows.Forms.Label();
-            this.lblHeaderName = new System.Windows.Forms.Label();
-            this.lblHeaderEmpID = new System.Windows.Forms.Label();
-            this.lblHeaderDate = new System.Windows.Forms.Label();
             this.panelMain.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
@@ -209,6 +209,105 @@
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(1430, 908);
             this.panelMain.TabIndex = 37;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(547, 34);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(132, 19);
+            this.label16.TabIndex = 74;
+            this.label16.Text = "PC Terminal No.";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(394, 34);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(128, 19);
+            this.label7.TabIndex = 75;
+            this.label7.Text = "Employee Name";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(261, 34);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(108, 19);
+            this.label8.TabIndex = 76;
+            this.label8.Text = "Employee ID.";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(14, 34);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(43, 19);
+            this.label18.TabIndex = 77;
+            this.label18.Text = "Date";
+            // 
+            // lblHeaderTerminal
+            // 
+            this.lblHeaderTerminal.AutoSize = true;
+            this.lblHeaderTerminal.Location = new System.Drawing.Point(551, 74);
+            this.lblHeaderTerminal.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblHeaderTerminal.Name = "lblHeaderTerminal";
+            this.lblHeaderTerminal.Size = new System.Drawing.Size(39, 20);
+            this.lblHeaderTerminal.TabIndex = 78;
+            this.lblHeaderTerminal.Text = "Item";
+            // 
+            // lblHeaderName
+            // 
+            this.lblHeaderName.AutoSize = true;
+            this.lblHeaderName.Location = new System.Drawing.Point(396, 74);
+            this.lblHeaderName.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblHeaderName.Name = "lblHeaderName";
+            this.lblHeaderName.Size = new System.Drawing.Size(39, 20);
+            this.lblHeaderName.TabIndex = 79;
+            this.lblHeaderName.Text = "Item";
+            // 
+            // lblHeaderEmpID
+            // 
+            this.lblHeaderEmpID.AutoSize = true;
+            this.lblHeaderEmpID.Location = new System.Drawing.Point(261, 74);
+            this.lblHeaderEmpID.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblHeaderEmpID.Name = "lblHeaderEmpID";
+            this.lblHeaderEmpID.Size = new System.Drawing.Size(39, 20);
+            this.lblHeaderEmpID.TabIndex = 80;
+            this.lblHeaderEmpID.Text = "Item";
+            // 
+            // lblHeaderDate
+            // 
+            this.lblHeaderDate.AutoSize = true;
+            this.lblHeaderDate.Location = new System.Drawing.Point(14, 74);
+            this.lblHeaderDate.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblHeaderDate.Name = "lblHeaderDate";
+            this.lblHeaderDate.Size = new System.Drawing.Size(39, 20);
+            this.lblHeaderDate.TabIndex = 81;
+            this.lblHeaderDate.Text = "Item";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(1352, 49);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(71, 28);
+            this.comboBox1.TabIndex = 73;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(1355, 19);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(68, 19);
+            this.label17.TabIndex = 72;
+            this.label17.Text = "POS ID.";
             // 
             // submitBtn
             // 
@@ -294,6 +393,7 @@
             this.groupBox5.Controls.Add(this.checkBox2);
             this.groupBox5.Controls.Add(this.checkBox1);
             this.groupBox5.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox5.Location = new System.Drawing.Point(688, 78);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox5.Name = "groupBox5";
@@ -1408,105 +1508,6 @@
             this.foodARdbt.Text = "Food Bundle A";
             this.foodARdbt.UseVisualStyleBackColor = true;
             this.foodARdbt.CheckedChanged += new System.EventHandler(this.foodARdbt_CheckedChanged);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(1352, 49);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(71, 28);
-            this.comboBox1.TabIndex = 73;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(1355, 19);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(68, 19);
-            this.label17.TabIndex = 72;
-            this.label17.Text = "POS ID.";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(547, 34);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(132, 19);
-            this.label16.TabIndex = 74;
-            this.label16.Text = "PC Terminal No.";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(394, 34);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(128, 19);
-            this.label7.TabIndex = 75;
-            this.label7.Text = "Employee Name";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(261, 34);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(108, 19);
-            this.label8.TabIndex = 76;
-            this.label8.Text = "Employee ID.";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(14, 34);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(43, 19);
-            this.label18.TabIndex = 77;
-            this.label18.Text = "Date";
-            // 
-            // lblHeaderTerminal
-            // 
-            this.lblHeaderTerminal.AutoSize = true;
-            this.lblHeaderTerminal.Location = new System.Drawing.Point(551, 74);
-            this.lblHeaderTerminal.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblHeaderTerminal.Name = "lblHeaderTerminal";
-            this.lblHeaderTerminal.Size = new System.Drawing.Size(39, 20);
-            this.lblHeaderTerminal.TabIndex = 78;
-            this.lblHeaderTerminal.Text = "Item";
-            // 
-            // lblHeaderName
-            // 
-            this.lblHeaderName.AutoSize = true;
-            this.lblHeaderName.Location = new System.Drawing.Point(396, 74);
-            this.lblHeaderName.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblHeaderName.Name = "lblHeaderName";
-            this.lblHeaderName.Size = new System.Drawing.Size(39, 20);
-            this.lblHeaderName.TabIndex = 79;
-            this.lblHeaderName.Text = "Item";
-            // 
-            // lblHeaderEmpID
-            // 
-            this.lblHeaderEmpID.AutoSize = true;
-            this.lblHeaderEmpID.Location = new System.Drawing.Point(261, 74);
-            this.lblHeaderEmpID.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblHeaderEmpID.Name = "lblHeaderEmpID";
-            this.lblHeaderEmpID.Size = new System.Drawing.Size(39, 20);
-            this.lblHeaderEmpID.TabIndex = 80;
-            this.lblHeaderEmpID.Text = "Item";
-            // 
-            // lblHeaderDate
-            // 
-            this.lblHeaderDate.AutoSize = true;
-            this.lblHeaderDate.Location = new System.Drawing.Point(14, 74);
-            this.lblHeaderDate.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblHeaderDate.Name = "lblHeaderDate";
-            this.lblHeaderDate.Size = new System.Drawing.Size(39, 20);
-            this.lblHeaderDate.TabIndex = 81;
-            this.lblHeaderDate.Text = "Item";
             // 
             // SQLPOS2Class
             // 

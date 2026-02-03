@@ -137,8 +137,8 @@ namespace mainsystem
                 }
 
                 // Default to ID 3 (Fast Food) if available, otherwise pick the first one
-                if (comboBox1.Items.Contains("3"))
-                    comboBox1.SelectedItem = "3";
+                if (comboBox1.Items.Contains("2"))
+                    comboBox1.SelectedItem = "2";
                 else if (comboBox1.Items.Count > 0)
                     comboBox1.SelectedIndex = 0;
 

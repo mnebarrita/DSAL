@@ -38,6 +38,8 @@ namespace mainsystem
             this.BackgroundImage = Properties.Resources.login;
             this.BackgroundImageLayout = ImageLayout.Stretch;
 
+            usernameTxtBox.Focus();
+
             passwordTxtBox.UseSystemPasswordChar = true;
         }
 
