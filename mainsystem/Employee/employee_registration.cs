@@ -193,7 +193,7 @@ namespace mainsystem
 
             // --- Image Section ---
             picpath.Text = "";
-            pictureBox1.Image = Image.FromFile(@"C:\Users\Mica\Pictures\DSAL\pics\nopfp.jpg"); // Clears the actual image picture
+            pictureBox1.Image = null; // Clears the actual image picture
         }
 
         private void browseBtn_Click(object sender, EventArgs e)

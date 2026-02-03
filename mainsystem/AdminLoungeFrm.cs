@@ -38,7 +38,7 @@ namespace mainsystem
             string myID = Program.CurrentEmpID;
             if (string.IsNullOrEmpty(myID)) myID = "0000-Admin";
 
-            lblWelcome.Text = "Welcome, Administrator Mica!";
+            lblWelcome.Text = "Welcome, Administrator " + myID + "!";
             lblWelcome.Left = (panelMain.Width - lblWelcome.Width) / 2;
             lblWelcome.Top = 350;
 
@@ -235,6 +235,11 @@ namespace mainsystem
                 e.SuppressKeyPress = true; 
                 btnSearch.PerformClick();  
             }
+        }
+
+        private void panelMain_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -53,11 +53,11 @@
             // 
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.BackColor = System.Drawing.Color.Transparent;
-            this.lblWelcome.Font = new System.Drawing.Font("Vineta BT", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWelcome.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblWelcome.Location = new System.Drawing.Point(529, 37);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(984, 68);
+            this.lblWelcome.Size = new System.Drawing.Size(557, 58);
             this.lblWelcome.TabIndex = 0;
             this.lblWelcome.Text = "Welcome Administrator!";
             // 
@@ -84,6 +84,7 @@
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(1920, 1080);
             this.panelMain.TabIndex = 1;
+            this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
             // 
             // btnSearch
             // 

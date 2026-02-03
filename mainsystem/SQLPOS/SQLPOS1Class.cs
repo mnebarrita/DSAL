@@ -35,7 +35,10 @@ namespace mainsystem
         }
         private void SQLPOS1Class_Load(object sender, EventArgs e)
         {
-            this.BackgroundImage = Properties.Resources.background1;
+            Image img = Properties.Resources.download;
+            img.RotateFlip(RotateFlipType.Rotate270FlipNone);
+
+            this.BackgroundImage = img;
             this.BackgroundImageLayout = ImageLayout.Stretch;
 
             CenterPanel();
@@ -290,8 +293,8 @@ namespace mainsystem
 
                 if (string.IsNullOrEmpty(myEmpID))
                 {
-                    myTerminal = "Terminal-0";  
-                    myEmpID = "0000-DEV";       
+                    myTerminal = "Terminal-0";
+                    myEmpID = "0000-DEV";
                 }
 
                 pos_db.pos_connString();
@@ -302,32 +305,47 @@ namespace mainsystem
                 else if (regularRdbtn.Checked) discOption = "Discount Card";
                 else if (EmployeeRdbtn.Checked) discOption = "Employee Disc";
 
+                // --- THE FIX: Clean the numbers by removing commas ---
+                string cleanPrice = priceTxtbox.Text.Replace(",", "");
+                string cleanQty = qtyTxtbox.Text.Replace(",", "");
+                string cleanDiscountAmt = discountTxtbox.Text.Replace(",", "");
+                string cleanDiscountedAmt = discountedTxtbox.Text.Replace(",", "");
+                string cleanTotalQty = qtyTotalTxtbox.Text.Replace(",", "");
+                string cleanTotalDisc = discountTotalTxtbox.Text.Replace(",", "");
+                string cleanTotalAmount = discountedTotalTxtbox.Text.Replace(",", "");
+
+                // Handle empty boxes just in case
+                if (cleanDiscountAmt == "") cleanDiscountAmt = "0.00";
+                if (cleanDiscountedAmt == "") cleanDiscountedAmt = "0.00";
+                if (cleanTotalDisc == "") cleanTotalDisc = "0.00";
+                if (cleanTotalAmount == "") cleanTotalAmount = "0.00";
+
                 string sql = "INSERT INTO salesTb1 (" +
-                    "terminal_no, " +                        // 1
-                    "product_name, " +                       // 2
-                    "product_price, " +                      // 3
-                    "product_quantity_per_transaction, " +   // 4
-                    "discount_option, " +                    // 5
-                    "discount_amount_per_transaction, " +    // 6
-                    "discounted_amount_per_transaction, " +  // 7
-                    "summary_total_quantity, " +             // 8
-                    "summary_total_disc_given, " +           // 9
-                    "summary_total_discounted_amount, " +    // 10
-                    "time_date, " +                          // 11
-                    "emp_id" +                               // 12
+                    "terminal_no, " +
+                    "product_name, " +
+                    "product_price, " +
+                    "product_quantity_per_transaction, " +
+                    "discount_option, " +
+                    "discount_amount_per_transaction, " +
+                    "discounted_amount_per_transaction, " +
+                    "summary_total_quantity, " +
+                    "summary_total_disc_given, " +
+                    "summary_total_discounted_amount, " +
+                    "time_date, " +
+                    "emp_id" +
                     ") VALUES (" +
-                    "'" + myTerminal + "', " +                       // 1 (Value for terminal_no)
-                    "'" + itemnameTxtbox.Text + "', " +      // 2 (Value for product_name)
-                    "'" + priceTxtbox.Text + "', " +         // 3
-                    "'" + qtyTxtbox.Text + "', " +           // 4
-                    "'" + discOption + "', " +               // 5
-                    "'" + discountTxtbox.Text + "', " +      // 6
-                    "'" + discountedTxtbox.Text + "', " +    // 7
-                    "'" + qtyTotalTxtbox.Text + "', " +      // 8
-                    "'" + discountTotalTxtbox.Text + "', " + // 9
-                    "'" + discountedTotalTxtbox.Text + "', " + // 10
-                    "'" + DateTime.Now.ToString("yyyy-MM-dd") + "', " + // 11
-                    "'" + myEmpID + "'" +                               // 12
+                    "'" + myTerminal + "', " +
+                    "'" + itemnameTxtbox.Text + "', " +
+                    "'" + cleanPrice + "', " +              // Fixed
+                    "'" + cleanQty + "', " +                // Fixed
+                    "'" + discOption + "', " +
+                    "'" + cleanDiscountAmt + "', " +        // Fixed
+                    "'" + cleanDiscountedAmt + "', " +      // Fixed
+                    "'" + cleanTotalQty + "', " +           // Fixed
+                    "'" + cleanTotalDisc + "', " +          // Fixed
+                    "'" + cleanTotalAmount + "', " +        // Fixed (This was the likely crasher!)
+                    "'" + DateTime.Now.ToString("yyyy-MM-dd") + "', " +
+                    "'" + myEmpID + "'" +
                     ")";
 
                 pos_db.pos_sql = sql;
@@ -344,6 +362,7 @@ namespace mainsystem
                 MessageBox.Show("Error saving: " + ex.Message);
             }
         }
+
 
         private void ClearInputsOnly()
         {

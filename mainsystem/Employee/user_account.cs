@@ -378,6 +378,7 @@ namespace mainsystem
             mnameTxtBox.Text = "Middle Name"; mnameTxtBox.ForeColor = Color.Silver;
             surnameTxtBox.Text = "Surname"; surnameTxtBox.ForeColor = Color.Silver;
             designationTxtBox.Clear();
+            pictureBox1.Image = null;
 
             usernameTxtBox.Clear();
 

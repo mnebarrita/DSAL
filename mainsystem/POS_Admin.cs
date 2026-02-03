@@ -235,6 +235,7 @@ namespace mainsystem
                 posdb_connect.pos_connString();
                 posdb_connect.posdb_open();
                 {
+                    // 1. Get the Data
                     posdb_connect.pos_sql = "SELECT * FROM pos_nameTb1 " +
                         "INNER JOIN pos_picTb1 ON pos_nameTb1.pos_id = pos_picTb1.pos_id " +
                         "INNER JOIN pos_priceTb1 ON pos_picTb1.pos_id = pos_priceTb1.pos_id " +
@@ -244,115 +245,105 @@ namespace mainsystem
                     posdb_connect.pos_sqladapterSelect();
                     posdb_connect.pos_sqldatasetSELECT();
 
+                    // 2. Load the Grid (Visuals)
                     DataTable original = posdb_connect.pos_sql_dataset.Tables[0];
                     DataTable transposed = TransposeDataTable(original);
                     dataGridView1.DataSource = transposed;
 
-                    // Name TextBoxes
-                    nameTxtbox1.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][2] == DBNull.Value ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][2].ToString();
-                    nameTxtbox2.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][3] == DBNull.Value ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][3].ToString();
-                    nameTxtbox3.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][4] == DBNull.Value ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][4].ToString();
-                    nameTxtbox4.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][5] == DBNull.Value ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][5].ToString();
-                    nameTxtbox5.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][6] == DBNull.Value ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][6].ToString();
-                    nameTxtbox6.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][7] == DBNull.Value ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][7].ToString();
-                    nameTxtbox7.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][8] == DBNull.Value ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][8].ToString();
-                    nameTxtbox8.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][9] == DBNull.Value ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][9].ToString();
-                    nameTxtbox9.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][10] == DBNull.Value ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][10].ToString();
-                    nameTxtbox10.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][11] == DBNull.Value ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][11].ToString();
-                    nameTxtbox11.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][12] == DBNull.Value ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][12].ToString();
-                    nameTxtbox12.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][13] == DBNull.Value ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][13].ToString();
-                    nameTxtbox13.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][14] == DBNull.Value ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][14].ToString();
-                    nameTxtbox14.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][15] == DBNull.Value ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][15].ToString();
-                    nameTxtbox15.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][16] == DBNull.Value ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][16].ToString();
-                    nameTxtbox16.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][17] == DBNull.Value ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][17].ToString();
-                    nameTxtbox17.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][18] == DBNull.Value ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][18].ToString();
-                    nameTxtbox18.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][19] == DBNull.Value ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][19].ToString();
-                    nameTxtbox19.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][20] == DBNull.Value ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][20].ToString();
-                    nameTxtbox20.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][21] == DBNull.Value ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][21].ToString();
+                    // 3. FILL TEXTBOXES (The Corrected Mapping!)
+                    DataRow row = posdb_connect.pos_sql_dataset.Tables[0].Rows[0];
 
+                    // --- NAMES (Indices 1 to 20) ---
+                    nameTxtbox1.Text = row[1].ToString();
+                    nameTxtbox2.Text = row[2].ToString();
+                    nameTxtbox3.Text = row[3].ToString();
+                    nameTxtbox4.Text = row[4].ToString();
+                    nameTxtbox5.Text = row[5].ToString();
+                    nameTxtbox6.Text = row[6].ToString();
+                    nameTxtbox7.Text = row[7].ToString();
+                    nameTxtbox8.Text = row[8].ToString();
+                    nameTxtbox9.Text = row[9].ToString();
+                    nameTxtbox10.Text = row[10].ToString();
+                    nameTxtbox11.Text = row[11].ToString();
+                    nameTxtbox12.Text = row[12].ToString();
+                    nameTxtbox13.Text = row[13].ToString();
+                    nameTxtbox14.Text = row[14].ToString();
+                    nameTxtbox15.Text = row[15].ToString();
+                    nameTxtbox16.Text = row[16].ToString();
+                    nameTxtbox17.Text = row[17].ToString();
+                    nameTxtbox18.Text = row[18].ToString();
+                    nameTxtbox19.Text = row[19].ToString();
+                    nameTxtbox20.Text = row[20].ToString();
 
-                    picpathTxtbox1.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][24].ToString();
+                    // --- PICTURE PATHS (Indices 22 to 41) ---
+                    // Note: Index 21 is the duplicate 'pos_id' from the second table, so we skip it.
+                    picpathTxtbox1.Text = row[22].ToString();
+                    picpathTxtbox2.Text = row[23].ToString();
+                    picpathTxtbox3.Text = row[24].ToString();
+                    picpathTxtbox4.Text = row[25].ToString();
+                    picpathTxtbox5.Text = row[26].ToString();
+                    picpathTxtbox6.Text = row[27].ToString();
+                    picpathTxtbox7.Text = row[28].ToString();
+                    picpathTxtbox8.Text = row[29].ToString();
+                    picpathTxtbox9.Text = row[30].ToString();
+                    picpathTxtbox10.Text = row[31].ToString();
+                    picpathTxtbox11.Text = row[32].ToString();
+                    picpathTxtbox12.Text = row[33].ToString();
+                    picpathTxtbox13.Text = row[34].ToString();
+                    picpathTxtbox14.Text = row[35].ToString();
+                    picpathTxtbox15.Text = row[36].ToString();
+                    picpathTxtbox16.Text = row[37].ToString();
+                    picpathTxtbox17.Text = row[38].ToString();
+                    picpathTxtbox18.Text = row[39].ToString();
+                    picpathTxtbox19.Text = row[40].ToString();
+                    picpathTxtbox20.Text = row[41].ToString();
+
+                    // Load the actual images into PictureBoxes
                     if (File.Exists(picpathTxtbox1.Text)) pictureBox1.Image = Image.FromFile(picpathTxtbox1.Text); else pictureBox1.Image = null;
-
-                    picpathTxtbox2.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][25].ToString();
                     if (File.Exists(picpathTxtbox2.Text)) pictureBox2.Image = Image.FromFile(picpathTxtbox2.Text); else pictureBox2.Image = null;
-
-                    picpathTxtbox3.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][26].ToString();
                     if (File.Exists(picpathTxtbox3.Text)) pictureBox3.Image = Image.FromFile(picpathTxtbox3.Text); else pictureBox3.Image = null;
-
-                    picpathTxtbox4.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][27].ToString();
                     if (File.Exists(picpathTxtbox4.Text)) pictureBox4.Image = Image.FromFile(picpathTxtbox4.Text); else pictureBox4.Image = null;
-
-                    picpathTxtbox5.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][28].ToString();
                     if (File.Exists(picpathTxtbox5.Text)) pictureBox5.Image = Image.FromFile(picpathTxtbox5.Text); else pictureBox5.Image = null;
-
-                    picpathTxtbox6.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][29].ToString();
                     if (File.Exists(picpathTxtbox6.Text)) pictureBox6.Image = Image.FromFile(picpathTxtbox6.Text); else pictureBox6.Image = null;
-
-                    picpathTxtbox7.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][30].ToString();
                     if (File.Exists(picpathTxtbox7.Text)) pictureBox7.Image = Image.FromFile(picpathTxtbox7.Text); else pictureBox7.Image = null;
-
-                    picpathTxtbox8.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][31].ToString();
                     if (File.Exists(picpathTxtbox8.Text)) pictureBox8.Image = Image.FromFile(picpathTxtbox8.Text); else pictureBox8.Image = null;
-
-                    picpathTxtbox9.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][32].ToString();
                     if (File.Exists(picpathTxtbox9.Text)) pictureBox9.Image = Image.FromFile(picpathTxtbox9.Text); else pictureBox9.Image = null;
-
-                    picpathTxtbox10.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][33].ToString();
                     if (File.Exists(picpathTxtbox10.Text)) pictureBox10.Image = Image.FromFile(picpathTxtbox10.Text); else pictureBox10.Image = null;
-
-                    picpathTxtbox11.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][34].ToString();
                     if (File.Exists(picpathTxtbox11.Text)) pictureBox11.Image = Image.FromFile(picpathTxtbox11.Text); else pictureBox11.Image = null;
-
-                    picpathTxtbox12.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][35].ToString();
                     if (File.Exists(picpathTxtbox12.Text)) pictureBox12.Image = Image.FromFile(picpathTxtbox12.Text); else pictureBox12.Image = null;
-
-                    picpathTxtbox13.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][36].ToString();
                     if (File.Exists(picpathTxtbox13.Text)) pictureBox13.Image = Image.FromFile(picpathTxtbox13.Text); else pictureBox13.Image = null;
-
-                    picpathTxtbox14.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][37].ToString();
                     if (File.Exists(picpathTxtbox14.Text)) pictureBox14.Image = Image.FromFile(picpathTxtbox14.Text); else pictureBox14.Image = null;
-
-                    picpathTxtbox15.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][38].ToString();
                     if (File.Exists(picpathTxtbox15.Text)) pictureBox15.Image = Image.FromFile(picpathTxtbox15.Text); else pictureBox15.Image = null;
-
-                    picpathTxtbox16.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][39].ToString();
                     if (File.Exists(picpathTxtbox16.Text)) pictureBox16.Image = Image.FromFile(picpathTxtbox16.Text); else pictureBox16.Image = null;
-
-                    picpathTxtbox17.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][40].ToString();
                     if (File.Exists(picpathTxtbox17.Text)) pictureBox17.Image = Image.FromFile(picpathTxtbox17.Text); else pictureBox17.Image = null;
-
-                    picpathTxtbox18.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][41].ToString();
                     if (File.Exists(picpathTxtbox18.Text)) pictureBox18.Image = Image.FromFile(picpathTxtbox18.Text); else pictureBox18.Image = null;
-
-                    picpathTxtbox19.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][42].ToString();
                     if (File.Exists(picpathTxtbox19.Text)) pictureBox19.Image = Image.FromFile(picpathTxtbox19.Text); else pictureBox19.Image = null;
-
-                    picpathTxtbox20.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][43].ToString();
                     if (File.Exists(picpathTxtbox20.Text)) pictureBox20.Image = Image.FromFile(picpathTxtbox20.Text); else pictureBox20.Image = null;
 
+                    // --- PRICES (Indices 43 to 62) ---
+                    // Note: Index 42 is the duplicate 'pos_id' from the third table, so we skip it.
+                    priceTxtbox1.Text = row[43].ToString();
+                    priceTxtbox2.Text = row[44].ToString();
+                    priceTxtbox3.Text = row[45].ToString();
+                    priceTxtbox4.Text = row[46].ToString();
+                    priceTxtbox5.Text = row[47].ToString();
+                    priceTxtbox6.Text = row[48].ToString();
+                    priceTxtbox7.Text = row[49].ToString();
+                    priceTxtbox8.Text = row[50].ToString();
+                    priceTxtbox9.Text = row[51].ToString();
+                    priceTxtbox10.Text = row[52].ToString();
+                    priceTxtbox11.Text = row[53].ToString();
+                    priceTxtbox12.Text = row[54].ToString();
+                    priceTxtbox13.Text = row[55].ToString();
+                    priceTxtbox14.Text = row[56].ToString();
+                    priceTxtbox15.Text = row[57].ToString();
+                    priceTxtbox16.Text = row[58].ToString();
+                    priceTxtbox17.Text = row[59].ToString();
+                    priceTxtbox18.Text = row[60].ToString();
+                    priceTxtbox19.Text = row[61].ToString();
+                    priceTxtbox20.Text = row[62].ToString(); // This is the final column!
 
-                    priceTxtbox1.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0].IsNull(46) ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][46].ToString();
-                    priceTxtbox2.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0].IsNull(47) ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][47].ToString();
-                    priceTxtbox3.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0].IsNull(48) ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][48].ToString();
-                    priceTxtbox4.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0].IsNull(49) ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][49].ToString();
-                    priceTxtbox5.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0].IsNull(50) ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][50].ToString();
-                    priceTxtbox6.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0].IsNull(51) ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][51].ToString();
-                    priceTxtbox7.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0].IsNull(52) ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][52].ToString();
-                    priceTxtbox8.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0].IsNull(53) ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][53].ToString();
-                    priceTxtbox9.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0].IsNull(54) ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][54].ToString();
-                    priceTxtbox10.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0].IsNull(55) ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][55].ToString();
-                    priceTxtbox11.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0].IsNull(56) ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][56].ToString();
-                    priceTxtbox12.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0].IsNull(57) ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][57].ToString();
-                    priceTxtbox13.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0].IsNull(58) ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][58].ToString();
-                    priceTxtbox14.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0].IsNull(59) ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][59].ToString();
-                    priceTxtbox15.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0].IsNull(60) ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][60].ToString();
-                    priceTxtbox16.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0].IsNull(61) ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][61].ToString();
-                    priceTxtbox17.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0].IsNull(62) ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][62].ToString();
-                    priceTxtbox18.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0].IsNull(63) ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][63].ToString();
-                    priceTxtbox19.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0].IsNull(64) ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][64].ToString();
-                    priceTxtbox20.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0].IsNull(65) ? "" : posdb_connect.pos_sql_dataset.Tables[0].Rows[0][65].ToString();
-
+                    MessageBox.Show("Record successfully updated!", "Update Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)

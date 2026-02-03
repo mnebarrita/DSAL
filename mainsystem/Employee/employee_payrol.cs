@@ -253,6 +253,7 @@ namespace mainsystem.Prelim
             departmentTxtBox.Clear();
             numDependentsTxtBox.Clear();
             emp_statusTxtBox.Clear();
+            pictureBox2.Image = null;
 
             // Clear Calculations (Set to empty string or "0")
             basic_rateTxtbox.Clear(); basic_numhrsTxtbox.Clear(); basic_netincomeTxtbox.Clear();

@@ -31,7 +31,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.emp_status = new System.Windows.Forms.ComboBox();
             this.emp_gender = new System.Windows.Forms.ComboBox();
-            this.emp_age = new System.Windows.Forms.ComboBox();
             this.searchBtn = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -140,6 +139,7 @@
             this.label48 = new System.Windows.Forms.Label();
             this.label46 = new System.Windows.Forms.Label();
             this.label47 = new System.Windows.Forms.Label();
+            this.emp_age = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelMain.SuspendLayout();
@@ -152,7 +152,6 @@
             // 
             this.groupBox1.Controls.Add(this.emp_status);
             this.groupBox1.Controls.Add(this.emp_gender);
-            this.groupBox1.Controls.Add(this.emp_age);
             this.groupBox1.Controls.Add(this.searchBtn);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.label8);
@@ -170,6 +169,7 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.emp_age);
             this.groupBox1.Controls.Add(this.emp_id);
             this.groupBox1.Controls.Add(this.emp_fname);
             this.groupBox1.Controls.Add(this.emp_mname);
@@ -215,22 +215,6 @@
             this.emp_gender.Name = "emp_gender";
             this.emp_gender.Size = new System.Drawing.Size(149, 27);
             this.emp_gender.TabIndex = 4;
-            // 
-            // emp_age
-            // 
-            this.emp_age.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emp_age.FormattingEnabled = true;
-            this.emp_age.Items.AddRange(new object[] {
-            "0-18",
-            "19-36",
-            "37-54",
-            "55-72",
-            "73-90",
-            "90+"});
-            this.emp_age.Location = new System.Drawing.Point(148, 619);
-            this.emp_age.Name = "emp_age";
-            this.emp_age.Size = new System.Drawing.Size(149, 27);
-            this.emp_age.TabIndex = 4;
             // 
             // searchBtn
             // 
@@ -1314,6 +1298,14 @@
             this.label47.TabIndex = 10;
             this.label47.Text = "Date Hired";
             // 
+            // emp_age
+            // 
+            this.emp_age.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emp_age.Location = new System.Drawing.Point(148, 619);
+            this.emp_age.Name = "emp_age";
+            this.emp_age.Size = new System.Drawing.Size(149, 27);
+            this.emp_age.TabIndex = 4;
+            // 
             // employee_registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -1343,7 +1335,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox emp_status;
         private System.Windows.Forms.ComboBox emp_gender;
-        private System.Windows.Forms.ComboBox emp_age;
         private System.Windows.Forms.Button searchBtn;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label8;
@@ -1452,5 +1443,6 @@
         private System.Windows.Forms.TextBox add_state_province;
         private System.Windows.Forms.TextBox add_sub_name;
         private System.Windows.Forms.TextBox add_house_no;
+        private System.Windows.Forms.TextBox emp_age;
     }
 }

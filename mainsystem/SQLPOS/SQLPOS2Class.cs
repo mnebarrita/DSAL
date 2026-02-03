@@ -38,7 +38,7 @@ namespace mainsystem
             try
             {
                 // --- VISUAL SETUP ---
-                this.BackgroundImage = Properties.Resources.background1;
+                this.BackgroundImage = Properties.Resources.POS2wallpaper;
                 this.BackgroundImageLayout = ImageLayout.Stretch;
                 this.DisplayPictureBox.Image = Properties.Resources.clear;
                 this.DisplayPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
