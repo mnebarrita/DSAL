@@ -53,10 +53,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminLoungeFrm.cs">
+    <Compile Include="SQLPOS\AdminLoungeFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminLoungeFrm.Designer.cs">
+    <Compile Include="SQLPOS\AdminLoungeFrm.Designer.cs">
       <DependentUpon>AdminLoungeFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Employee\employee_registration.cs">
@@ -85,10 +85,10 @@
     <Compile Include="Employee\payrol_report.Designer.cs">
       <DependentUpon>payrol_report.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginFrm_Database.cs">
+    <Compile Include="SQLPOS\LoginFrm_Database.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginFrm_Database.Designer.cs">
+    <Compile Include="SQLPOS\LoginFrm_Database.Designer.cs">
       <DependentUpon>LoginFrm_Database.cs</DependentUpon>
     </Compile>
     <Compile Include="POS\Payroll_ClassForm.cs">
@@ -185,16 +185,16 @@
     <Compile Include="Prelim\L1E1.Designer.cs">
       <DependentUpon>L1E1.cs</DependentUpon>
     </Compile>
-    <Compile Include="L5E1_Login.cs">
+    <Compile Include="SQLPOS\L5E1_Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="L5E1_Login.Designer.cs">
+    <Compile Include="SQLPOS\L5E1_Login.Designer.cs">
       <DependentUpon>L5E1_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="L6MainForm_Admin.cs">
+    <Compile Include="SQLPOS\L6MainForm_Admin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="L6MainForm_Admin.Designer.cs">
+    <Compile Include="SQLPOS\L6MainForm_Admin.Designer.cs">
       <DependentUpon>L6MainForm_Admin.cs</DependentUpon>
     </Compile>
     <Compile Include="Prelim\PayslipForm.cs">
@@ -204,10 +204,10 @@
       <DependentUpon>PayslipForm.cs</DependentUpon>
     </Compile>
     <Compile Include="POS\POS2_Functions.cs" />
-    <Compile Include="POS_Admin.cs">
+    <Compile Include="SQLPOS\POS_Admin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="POS_Admin.Designer.cs">
+    <Compile Include="SQLPOS\POS_Admin.Designer.cs">
       <DependentUpon>POS_Admin.cs</DependentUpon>
     </Compile>
     <Compile Include="L14_Classes\posdb_connect.cs" />
@@ -237,10 +237,10 @@
     <Compile Include="Employee\sales_reports.Designer.cs">
       <DependentUpon>sales_reports.cs</DependentUpon>
     </Compile>
-    <Compile Include="SampleLongMethod.cs">
+    <Compile Include="Prelim\SampleLongMethod.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SampleLongMethod.Designer.cs">
+    <Compile Include="Prelim\SampleLongMethod.Designer.cs">
       <DependentUpon>SampleLongMethod.cs</DependentUpon>
     </Compile>
     <Compile Include="SQLPOS\SQLPOS1Class.cs">
@@ -255,7 +255,7 @@
     <Compile Include="SQLPOS\SQLPOS2Class.Designer.cs">
       <DependentUpon>SQLPOS2Class.cs</DependentUpon>
     </Compile>
-    <Compile Include="TransparentPanel.cs">
+    <Compile Include="Prelim\TransparentPanel.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="L14_Classes\useraccount_db_connection.cs" />
@@ -271,8 +271,8 @@
     <Compile Include="Employee\user_account.Designer.cs">
       <DependentUpon>user_account.cs</DependentUpon>
     </Compile>
-    <Compile Include="Variables.cs" />
-    <EmbeddedResource Include="AdminLoungeFrm.resx">
+    <Compile Include="Prelim\Variables.cs" />
+    <EmbeddedResource Include="SQLPOS\AdminLoungeFrm.resx">
       <DependentUpon>AdminLoungeFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Employee\employee_registration.resx">
@@ -287,7 +287,7 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginFrm_Database.resx">
+    <EmbeddedResource Include="SQLPOS\LoginFrm_Database.resx">
       <DependentUpon>LoginFrm_Database.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="POS\Payroll_ClassForm.resx">
@@ -335,16 +335,16 @@
     <EmbeddedResource Include="Prelim\L1E1.resx">
       <DependentUpon>L1E1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="L5E1_Login.resx">
+    <EmbeddedResource Include="SQLPOS\L5E1_Login.resx">
       <DependentUpon>L5E1_Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="L6MainForm_Admin.resx">
+    <EmbeddedResource Include="SQLPOS\L6MainForm_Admin.resx">
       <DependentUpon>L6MainForm_Admin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Prelim\PayslipForm.resx">
       <DependentUpon>PayslipForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="POS_Admin.resx">
+    <EmbeddedResource Include="SQLPOS\POS_Admin.resx">
       <DependentUpon>POS_Admin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -361,7 +361,7 @@
     <EmbeddedResource Include="Employee\sales_reports.resx">
       <DependentUpon>sales_reports.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SampleLongMethod.resx">
+    <EmbeddedResource Include="Prelim\SampleLongMethod.resx">
       <DependentUpon>SampleLongMethod.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SQLPOS\SQLPOS1Class.resx">
